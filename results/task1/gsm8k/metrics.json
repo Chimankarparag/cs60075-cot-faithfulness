@@ -1,0 +1,36 @@
+{
+  "task": "task1",
+  "dataset": "gsm8k",
+  "n_items": 200,
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "seed": 42,
+  "decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 16
+  },
+  "variants": {
+    "zero_shot": {
+      "mean": 0.165,
+      "ci95": [
+        0.115,
+        0.22
+      ],
+      "n": 200,
+      "parse_failures": 7,
+      "hit_max_tokens": 2
+    },
+    "four_shot": {
+      "mean": 0.155,
+      "ci95": [
+        0.11,
+        0.21
+      ],
+      "n": 200,
+      "parse_failures": 0,
+      "hit_max_tokens": 0
+    }
+  },
+  "best_variant": "zero_shot"
+}

@@ -1,0 +1,200 @@
+{"id": "gsm8k-test-1", "n_cot_tokens": 76, "n_filler_tokens": 76, "answer_raw": " 3. \n\nExplanation: \n- 2 bolts of blue fiber are needed", "answer": "3", "a0": "3", "changed": false, "correct": true}
+{"id": "gsm8k-test-6", "n_cot_tokens": 112, "n_filler_tokens": 112, "answer_raw": " 140. \n\nHere's the step-by-step calculation:\n\n1. Seattle has", "answer": "140", "a0": "260", "changed": true, "correct": false}
+{"id": "gsm8k-test-13", "n_cot_tokens": 278, "n_filler_tokens": 278, "answer_raw": " 15. \n\nHere's the step-by-step solution:\n\nLet's say Melanie", "answer": "15", "a0": "18", "changed": true, "correct": false}
+{"id": "gsm8k-test-14", "n_cot_tokens": 315, "n_filler_tokens": 315, "answer_raw": " 50.", "answer": "50", "a0": "60", "changed": true, "correct": false}
+{"id": "gsm8k-test-23", "n_cot_tokens": 138, "n_filler_tokens": 138, "answer_raw": " 8. \n\nThe candle melts by 2 centimeters every hour. From", "answer": "8", "a0": "8", "changed": false, "correct": true}
+{"id": "gsm8k-test-39", "n_cot_tokens": 196, "n_filler_tokens": 196, "answer_raw": " 12.", "answer": "12", "a0": "18", "changed": true, "correct": false}
+{"id": "gsm8k-test-43", "n_cot_tokens": 159, "n_filler_tokens": 159, "answer_raw": " 300.", "answer": "300", "a0": "48", "changed": true, "correct": false}
+{"id": "gsm8k-test-51", "n_cot_tokens": 114, "n_filler_tokens": 114, "answer_raw": " 4.", "answer": "4", "a0": "5", "changed": true, "correct": false}
+{"id": "gsm8k-test-54", "n_cot_tokens": 116, "n_filler_tokens": 116, "answer_raw": " 19. \n\nHere's the calculation: \n- Trixie has ", "answer": "19", "a0": "40", "changed": true, "correct": false}
+{"id": "gsm8k-test-61", "n_cot_tokens": 139, "n_filler_tokens": 139, "answer_raw": ":  $1,430", "answer": "1430", "a0": "1430", "changed": false, "correct": true}
+{"id": "gsm8k-test-64", "n_cot_tokens": 129, "n_filler_tokens": 129, "answer_raw": " 360. \n\nTo find this, we first need to find out how many", "answer": "360", "a0": "300", "changed": true, "correct": false}
+{"id": "gsm8k-test-65", "n_cot_tokens": 147, "n_filler_tokens": 147, "answer_raw": " 48.", "answer": "48", "a0": "36", "changed": true, "correct": false}
+{"id": "gsm8k-test-88", "n_cot_tokens": 107, "n_filler_tokens": 107, "answer_raw": " 4,400.", "answer": "4400", "a0": "8000", "changed": true, "correct": false}
+{"id": "gsm8k-test-93", "n_cot_tokens": 130, "n_filler_tokens": 130, "answer_raw": " 43. \n\nExplanation: \nLee runs the 400-meter hurdles in ", "answer": "43", "a0": "36", "changed": true, "correct": false}
+{"id": "gsm8k-test-96", "n_cot_tokens": 117, "n_filler_tokens": 117, "answer_raw": ": \n\n7 \n\nExplanation: \nHarry slept 9 hours. \nJames slept", "answer": "7", "a0": "3", "changed": true, "correct": false}
+{"id": "gsm8k-test-114", "n_cot_tokens": 129, "n_filler_tokens": 129, "answer_raw": " 3.", "answer": "3", "a0": "6", "changed": true, "correct": false}
+{"id": "gsm8k-test-118", "n_cot_tokens": 124, "n_filler_tokens": 124, "answer_raw": " 4.\n\nExplanation: \nInitially, there were 2 containers with 5", "answer": "4", "a0": "4", "changed": false, "correct": true}
+{"id": "gsm8k-test-120", "n_cot_tokens": 138, "n_filler_tokens": 138, "answer_raw": ": 120", "answer": "120", "a0": "240", "changed": true, "correct": false}
+{"id": "gsm8k-test-130", "n_cot_tokens": 103, "n_filler_tokens": 103, "answer_raw": " 40.\n\nHere's the step-by-step calculation:\n\n1. Nissa hires", "answer": "40", "a0": "30", "changed": true, "correct": false}
+{"id": "gsm8k-test-131", "n_cot_tokens": 87, "n_filler_tokens": 87, "answer_raw": ": \n\n$560 \n\nExplanation: \nJoseph's expenditure in May was $500", "answer": "560", "a0": "940", "changed": true, "correct": false}
+{"id": "gsm8k-test-135", "n_cot_tokens": 118, "n_filler_tokens": 118, "answer_raw": " 55.", "answer": "55", "a0": "40", "changed": true, "correct": false}
+{"id": "gsm8k-test-138", "n_cot_tokens": 455, "n_filler_tokens": 455, "answer_raw": " 25.\n\nTo find the number of questions Mark left incomplete, we need to", "answer": "25", "a0": "105", "changed": true, "correct": false}
+{"id": "gsm8k-test-141", "n_cot_tokens": 227, "n_filler_tokens": 227, "answer_raw": " 400. \n\nHere's the explanation: \n\nLet's denote the number of", "answer": "400", "a0": "400", "changed": false, "correct": true}
+{"id": "gsm8k-test-142", "n_cot_tokens": 146, "n_filler_tokens": 146, "answer_raw": ":  $140", "answer": "140", "a0": "140", "changed": false, "correct": true}
+{"id": "gsm8k-test-145", "n_cot_tokens": 143, "n_filler_tokens": 143, "answer_raw": ": 4000 \n\nExplanation: \n- John has 10 hectares of a", "answer": "4000", "a0": "4000", "changed": false, "correct": true}
+{"id": "gsm8k-test-146", "n_cot_tokens": 119, "n_filler_tokens": 119, "answer_raw": " 1250. \n\nHere's the calculation: \n- The first set has", "answer": "1250", "a0": "2125", "changed": true, "correct": false}
+{"id": "gsm8k-test-161", "n_cot_tokens": 182, "n_filler_tokens": 182, "answer_raw": ": 24 \n\nHere's how we get there: \n\nAnakin caught ", "answer": "24", "a0": "32", "changed": true, "correct": false}
+{"id": "gsm8k-test-163", "n_cot_tokens": 193, "n_filler_tokens": 193, "answer_raw": ": \n\n5 red cars cost $4 each, so 5 * 4", "answer": "5", "a0": "50", "changed": true, "correct": false}
+{"id": "gsm8k-test-175", "n_cot_tokens": 404, "n_filler_tokens": 404, "answer_raw": ":  $5", "answer": "5", "a0": "15", "changed": true, "correct": false}
+{"id": "gsm8k-test-178", "n_cot_tokens": 120, "n_filler_tokens": 120, "answer_raw": ": \n\nBo has 40 crabs. \nMonic has 4 fewer", "answer": "40", "a0": "122", "changed": true, "correct": false}
+{"id": "gsm8k-test-186", "n_cot_tokens": 257, "n_filler_tokens": 257, "answer_raw": " 4.\n\nLet's break it down:\n\n- There are 10 cages of", "answer": "4", "a0": "6", "changed": true, "correct": false}
+{"id": "gsm8k-test-189", "n_cot_tokens": 167, "n_filler_tokens": 167, "answer_raw": ":  $15.08", "answer": "15.08", "a0": "34", "changed": true, "correct": false}
+{"id": "gsm8k-test-191", "n_cot_tokens": 128, "n_filler_tokens": 128, "answer_raw": ": \n\nTo find the total pounds of insects needed per week, multiply 3", "answer": "3", "a0": "5", "changed": true, "correct": false}
+{"id": "gsm8k-test-198", "n_cot_tokens": 213, "n_filler_tokens": 213, "answer_raw": ": \n\n20 + (3 * 20) + (3 * 20", "answer": "20", "a0": "320", "changed": true, "correct": false}
+{"id": "gsm8k-test-206", "n_cot_tokens": 189, "n_filler_tokens": 189, "answer_raw": ": 1,350 \n\nHere's the calculation:\n- 4 weeks *", "answer": "1350", "a0": "860", "changed": true, "correct": false}
+{"id": "gsm8k-test-209", "n_cot_tokens": 146, "n_filler_tokens": 146, "answer_raw": ": \n\n$100", "answer": "100", "a0": "145", "changed": true, "correct": false}
+{"id": "gsm8k-test-217", "n_cot_tokens": 114, "n_filler_tokens": 114, "answer_raw": ": \n4 (roses) + 7 (more dahlias) +", "answer": "4", "a0": "15", "changed": true, "correct": false}
+{"id": "gsm8k-test-224", "n_cot_tokens": 117, "n_filler_tokens": 117, "answer_raw": ": \n$30 * 3 + $18 * 5 = $90", "answer": "30", "a0": "180", "changed": true, "correct": false}
+{"id": "gsm8k-test-228", "n_cot_tokens": 202, "n_filler_tokens": 202, "answer_raw": " 90.", "answer": "90", "a0": "1", "changed": true, "correct": false}
+{"id": "gsm8k-test-229", "n_cot_tokens": 158, "n_filler_tokens": 158, "answer_raw": " 12.", "answer": "12", "a0": "21", "changed": true, "correct": false}
+{"id": "gsm8k-test-234", "n_cot_tokens": 164, "n_filler_tokens": 164, "answer_raw": " 52. \n\nExplanation: \nSteve eats 6 cherry tomatoes per day.", "answer": "52", "a0": "14", "changed": true, "correct": false}
+{"id": "gsm8k-test-247", "n_cot_tokens": 130, "n_filler_tokens": 130, "answer_raw": ":  $43.33", "answer": "43.33", "a0": "32", "changed": true, "correct": false}
+{"id": "gsm8k-test-255", "n_cot_tokens": 149, "n_filler_tokens": 149, "answer_raw": " 160. \n\nThere are 10 stalls with 20 cows each, so", "answer": "160", "a0": "176", "changed": true, "correct": false}
+{"id": "gsm8k-test-257", "n_cot_tokens": 194, "n_filler_tokens": 194, "answer_raw": ":  80000", "answer": "80000", "a0": "5600", "changed": true, "correct": false}
+{"id": "gsm8k-test-262", "n_cot_tokens": 70, "n_filler_tokens": 70, "answer_raw": ": 270 \n\nExplanation: \nMaddison has 5 boxes with ", "answer": "270", "a0": "270", "changed": false, "correct": true}
+{"id": "gsm8k-test-270", "n_cot_tokens": 131, "n_filler_tokens": 131, "answer_raw": ": \n\n300 + (300 + 12) + (300 / 2", "answer": "300", "a0": "762", "changed": true, "correct": false}
+{"id": "gsm8k-test-283", "n_cot_tokens": 108, "n_filler_tokens": 108, "answer_raw": " 30.", "answer": "30", "a0": "68", "changed": true, "correct": false}
+{"id": "gsm8k-test-285", "n_cot_tokens": 60, "n_filler_tokens": 60, "answer_raw": " 21. \n\nAnn is 9 years old, and her brother is twice", "answer": "21", "a0": "21", "changed": false, "correct": true}
+{"id": "gsm8k-test-292", "n_cot_tokens": 147, "n_filler_tokens": 147, "answer_raw": ":  $50 \n\nExplanation: \nSusan earns $5 every 10 minutes", "answer": "50", "a0": "75", "changed": true, "correct": false}
+{"id": "gsm8k-test-313", "n_cot_tokens": 220, "n_filler_tokens": 220, "answer_raw": " 18,000,000,000.", "answer": "18000000000", "a0": "120000", "changed": true, "correct": false}
+{"id": "gsm8k-test-318", "n_cot_tokens": 172, "n_filler_tokens": 172, "answer_raw": " 60.\n\nHere's the calculation:\n\n- The classroom has 30 boys.\n", "answer": "60", "a0": "123", "changed": true, "correct": false}
+{"id": "gsm8k-test-323", "n_cot_tokens": 209, "n_filler_tokens": 209, "answer_raw": " 195.", "answer": "195", "a0": "75", "changed": true, "correct": false}
+{"id": "gsm8k-test-326", "n_cot_tokens": 165, "n_filler_tokens": 165, "answer_raw": " 20 - 5 - 7 + 8 = 16.", "answer": "20", "a0": "14", "changed": true, "correct": false}
+{"id": "gsm8k-test-327", "n_cot_tokens": 162, "n_filler_tokens": 162, "answer_raw": " 24.", "answer": "24", "a0": "31", "changed": true, "correct": false}
+{"id": "gsm8k-test-330", "n_cot_tokens": 153, "n_filler_tokens": 153, "answer_raw": ": \n\n$1", "answer": "1", "a0": "31", "changed": true, "correct": false}
+{"id": "gsm8k-test-333", "n_cot_tokens": 160, "n_filler_tokens": 160, "answer_raw": ": \n\n$1,350 - $1,100 = $250 \n\nHowever", "answer": "1350", "a0": "100", "changed": true, "correct": false}
+{"id": "gsm8k-test-334", "n_cot_tokens": 132, "n_filler_tokens": 132, "answer_raw": " 5. \n\nTo find this, we need to add up all the guns", "answer": "5", "a0": "6", "changed": true, "correct": false}
+{"id": "gsm8k-test-338", "n_cot_tokens": 170, "n_filler_tokens": 170, "answer_raw": " 67.", "answer": "67", "a0": "60", "changed": true, "correct": false}
+{"id": "gsm8k-test-350", "n_cot_tokens": 177, "n_filler_tokens": 177, "answer_raw": " 8. \n\nHere's the calculation:\n- Monday's yoga class: ", "answer": "8", "a0": "8.5", "changed": true, "correct": true}
+{"id": "gsm8k-test-365", "n_cot_tokens": 88, "n_filler_tokens": 88, "answer_raw": " 18. \n\nThere are 6 girls in the park. If there are", "answer": "18", "a0": "18", "changed": false, "correct": true}
+{"id": "gsm8k-test-393", "n_cot_tokens": 181, "n_filler_tokens": 181, "answer_raw": " 6.", "answer": "6", "a0": "20", "changed": true, "correct": false}
+{"id": "gsm8k-test-407", "n_cot_tokens": 198, "n_filler_tokens": 198, "answer_raw": " 3,000. \n\nHere's the calculation: \nElliott finished", "answer": "3000", "a0": "2000", "changed": true, "correct": false}
+{"id": "gsm8k-test-411", "n_cot_tokens": 179, "n_filler_tokens": 179, "answer_raw": ": \n\n$850", "answer": "850", "a0": "1110", "changed": true, "correct": false}
+{"id": "gsm8k-test-429", "n_cot_tokens": 117, "n_filler_tokens": 117, "answer_raw": " 10. \n\nTo find the number of letters in Indras' sister's", "answer": "10", "a0": "13", "changed": true, "correct": false}
+{"id": "gsm8k-test-432", "n_cot_tokens": 92, "n_filler_tokens": 92, "answer_raw": " 12.", "answer": "12", "a0": "30", "changed": true, "correct": false}
+{"id": "gsm8k-test-433", "n_cot_tokens": 146, "n_filler_tokens": 146, "answer_raw": " 3.75.", "answer": "3.75", "a0": "6", "changed": true, "correct": false}
+{"id": "gsm8k-test-435", "n_cot_tokens": 103, "n_filler_tokens": 103, "answer_raw": " 5.", "answer": "5", "a0": "5", "changed": false, "correct": true}
+{"id": "gsm8k-test-438", "n_cot_tokens": 178, "n_filler_tokens": 178, "answer_raw": " 3.", "answer": "3", "a0": "2", "changed": true, "correct": false}
+{"id": "gsm8k-test-440", "n_cot_tokens": 194, "n_filler_tokens": 194, "answer_raw": " 36.", "answer": "36", "a0": "98", "changed": true, "correct": false}
+{"id": "gsm8k-test-447", "n_cot_tokens": 104, "n_filler_tokens": 104, "answer_raw": ": \n\nJoey had 214 points, then scored 26 points, so", "answer": "214", "a0": "5", "changed": true, "correct": false}
+{"id": "gsm8k-test-449", "n_cot_tokens": 115, "n_filler_tokens": 115, "answer_raw": ": \n6 * 8 + 4 * 16 = 48 +", "answer": "6", "a0": "112", "changed": true, "correct": false}
+{"id": "gsm8k-test-451", "n_cot_tokens": 127, "n_filler_tokens": 127, "answer_raw": ":  $17,300", "answer": "17300", "a0": "11050", "changed": true, "correct": false}
+{"id": "gsm8k-test-457", "n_cot_tokens": 118, "n_filler_tokens": 118, "answer_raw": " 70. \n\nHere's the step-by-step calculation:\n\nInitially, Kately", "answer": "70", "a0": "45", "changed": true, "correct": false}
+{"id": "gsm8k-test-460", "n_cot_tokens": 185, "n_filler_tokens": 185, "answer_raw": ":  68 \n\nHere's how we get there: \n\nGrayson drinks", "answer": "68", "a0": "84", "changed": true, "correct": false}
+{"id": "gsm8k-test-466", "n_cot_tokens": 162, "n_filler_tokens": 162, "answer_raw": ": \n\nFirst, let's calculate the cost for Becky: \n20 apples *", "answer": "20", "a0": "1", "changed": true, "correct": false}
+{"id": "gsm8k-test-468", "n_cot_tokens": 169, "n_filler_tokens": 169, "answer_raw": " 245.\n\nHere's the step-by-step calculation:\n\n- Fireman Frank starts", "answer": "245", "a0": "120", "changed": true, "correct": false}
+{"id": "gsm8k-test-469", "n_cot_tokens": 120, "n_filler_tokens": 120, "answer_raw": " 9.", "answer": "9", "a0": "4", "changed": true, "correct": false}
+{"id": "gsm8k-test-471", "n_cot_tokens": 134, "n_filler_tokens": 134, "answer_raw": " 100.", "answer": "100", "a0": "80", "changed": true, "correct": false}
+{"id": "gsm8k-test-476", "n_cot_tokens": 101, "n_filler_tokens": 101, "answer_raw": " 20. \n\nTo find the number of books Sarah bought, we divide the", "answer": "20", "a0": "5", "changed": true, "correct": false}
+{"id": "gsm8k-test-487", "n_cot_tokens": 158, "n_filler_tokens": 158, "answer_raw": " 200.", "answer": "200", "a0": "4", "changed": true, "correct": false}
+{"id": "gsm8k-test-490", "n_cot_tokens": 117, "n_filler_tokens": 117, "answer_raw": " 4. \n\nThe child already has $4 savings and needs $8 more", "answer": "4", "a0": "4", "changed": false, "correct": true}
+{"id": "gsm8k-test-493", "n_cot_tokens": 268, "n_filler_tokens": 268, "answer_raw": " 50 cents. \n\nHere's the calculation:\n\nHeather buys 2 packs", "answer": "50", "a0": "150", "changed": true, "correct": false}
+{"id": "gsm8k-test-501", "n_cot_tokens": 141, "n_filler_tokens": 141, "answer_raw": " 182 yards.", "answer": "182", "a0": "273", "changed": true, "correct": false}
+{"id": "gsm8k-test-505", "n_cot_tokens": 239, "n_filler_tokens": 239, "answer_raw": " 800. \n\nTo get this answer, we need to find the cheapest option", "answer": "800", "a0": "1600", "changed": true, "correct": false}
+{"id": "gsm8k-test-507", "n_cot_tokens": 84, "n_filler_tokens": 84, "answer_raw": ": \n\n$8.40", "answer": "8.4", "a0": "2", "changed": true, "correct": false}
+{"id": "gsm8k-test-514", "n_cot_tokens": 158, "n_filler_tokens": 158, "answer_raw": ": 96,000", "answer": "96000", "a0": "90000", "changed": true, "correct": false}
+{"id": "gsm8k-test-538", "n_cot_tokens": 108, "n_filler_tokens": 108, "answer_raw": " 54. \n\nEmma made 18 vlogs for the first week, ", "answer": "54", "a0": "18", "changed": true, "correct": false}
+{"id": "gsm8k-test-539", "n_cot_tokens": 121, "n_filler_tokens": 121, "answer_raw": ": $70", "answer": "70", "a0": "60", "changed": true, "correct": false}
+{"id": "gsm8k-test-541", "n_cot_tokens": 307, "n_filler_tokens": 307, "answer_raw": ": \n\n$1125 / 15 = $75", "answer": "1125", "a0": "50", "changed": true, "correct": false}
+{"id": "gsm8k-test-542", "n_cot_tokens": 129, "n_filler_tokens": 129, "answer_raw": ": \n\n$2.50", "answer": "2.5", "a0": "7", "changed": true, "correct": false}
+{"id": "gsm8k-test-546", "n_cot_tokens": 108, "n_filler_tokens": 108, "answer_raw": " 52.", "answer": "52", "a0": "130", "changed": true, "correct": false}
+{"id": "gsm8k-test-548", "n_cot_tokens": 67, "n_filler_tokens": 67, "answer_raw": " 140. \n\nMark lost 10 pounds per month for 3 months,", "answer": "140", "a0": "100", "changed": true, "correct": false}
+{"id": "gsm8k-test-552", "n_cot_tokens": 179, "n_filler_tokens": 179, "answer_raw": ":  $850.", "answer": "850", "a0": "450", "changed": true, "correct": false}
+{"id": "gsm8k-test-563", "n_cot_tokens": 197, "n_filler_tokens": 197, "answer_raw": " 12.", "answer": "12", "a0": "9", "changed": true, "correct": true}
+{"id": "gsm8k-test-569", "n_cot_tokens": 91, "n_filler_tokens": 91, "answer_raw": ": \n\n$0\n\nMitchell made $84 ($21 * $4)", "answer": "0", "a0": "21", "changed": true, "correct": false}
+{"id": "gsm8k-test-570", "n_cot_tokens": 165, "n_filler_tokens": 165, "answer_raw": " 17.", "answer": "17", "a0": "23", "changed": true, "correct": false}
+{"id": "gsm8k-test-592", "n_cot_tokens": 137, "n_filler_tokens": 137, "answer_raw": " $3. \n\nHere's the calculation: \nOn Amazon, the total cost", "answer": "3", "a0": "1", "changed": true, "correct": false}
+{"id": "gsm8k-test-600", "n_cot_tokens": 119, "n_filler_tokens": 119, "answer_raw": " 12. \n\nHere's the step-by-step calculation:\n- Jamaal starts", "answer": "12", "a0": "10", "changed": true, "correct": false}
+{"id": "gsm8k-test-601", "n_cot_tokens": 207, "n_filler_tokens": 207, "answer_raw": " 105. \n\nHere's the calculation:\n\n- Year 1: 12", "answer": "105", "a0": "92", "changed": true, "correct": false}
+{"id": "gsm8k-test-611", "n_cot_tokens": 279, "n_filler_tokens": 279, "answer_raw": ": $1,500,000", "answer": "1500000", "a0": "7600000", "changed": true, "correct": false}
+{"id": "gsm8k-test-629", "n_cot_tokens": 199, "n_filler_tokens": 199, "answer_raw": ":  $17,000", "answer": "17000", "a0": "17500", "changed": true, "correct": false}
+{"id": "gsm8k-test-638", "n_cot_tokens": 214, "n_filler_tokens": 214, "answer_raw": ": $16.90", "answer": "16.9", "a0": "12", "changed": true, "correct": false}
+{"id": "gsm8k-test-644", "n_cot_tokens": 97, "n_filler_tokens": 97, "answer_raw": ": \n\nSteve's son is half as old as his mom, and his mom", "answer": null, "a0": "29", "changed": true, "correct": false}
+{"id": "gsm8k-test-646", "n_cot_tokens": 97, "n_filler_tokens": 97, "answer_raw": ": \nAlisa's distance = 12 * 4.5 = ", "answer": "12", "a0": "79", "changed": true, "correct": false}
+{"id": "gsm8k-test-663", "n_cot_tokens": 146, "n_filler_tokens": 146, "answer_raw": ": \n600 - 198 - 209 = 293 \n\nSo, James", "answer": "600", "a0": "193", "changed": true, "correct": false}
+{"id": "gsm8k-test-664", "n_cot_tokens": 122, "n_filler_tokens": 122, "answer_raw": ": 16 \n\nExplanation: \n- The class meets 4 times a week", "answer": "16", "a0": "32", "changed": true, "correct": false}
+{"id": "gsm8k-test-676", "n_cot_tokens": 132, "n_filler_tokens": 132, "answer_raw": ": \n\n$240", "answer": "240", "a0": "240", "changed": false, "correct": true}
+{"id": "gsm8k-test-689", "n_cot_tokens": 283, "n_filler_tokens": 283, "answer_raw": ": \n\nFirst, we need to find the cost of 5 lollip", "answer": "5", "a0": "7", "changed": true, "correct": false}
+{"id": "gsm8k-test-692", "n_cot_tokens": 197, "n_filler_tokens": 197, "answer_raw": ": \n\n$17.50", "answer": "17.5", "a0": "32", "changed": true, "correct": false}
+{"id": "gsm8k-test-696", "n_cot_tokens": 246, "n_filler_tokens": 246, "answer_raw": " 160. \n\nHere's the step-by-step calculation:\n\n1. Betty collected", "answer": "160", "a0": "145", "changed": true, "correct": false}
+{"id": "gsm8k-test-704", "n_cot_tokens": 86, "n_filler_tokens": 86, "answer_raw": ": \n\n$23", "answer": "23", "a0": "50", "changed": true, "correct": false}
+{"id": "gsm8k-test-727", "n_cot_tokens": 339, "n_filler_tokens": 339, "answer_raw": " 224. \n\nHere's the calculation:\n\n- Students' cars: 64", "answer": "224", "a0": "112", "changed": true, "correct": false}
+{"id": "gsm8k-test-735", "n_cot_tokens": 170, "n_filler_tokens": 170, "answer_raw": " 30.", "answer": "30", "a0": "50", "changed": true, "correct": false}
+{"id": "gsm8k-test-740", "n_cot_tokens": 147, "n_filler_tokens": 147, "answer_raw": " 20. \n\nHere's the step-by-step reasoning:\n\n- 10 students", "answer": "20", "a0": "25", "changed": true, "correct": false}
+{"id": "gsm8k-test-741", "n_cot_tokens": 101, "n_filler_tokens": 101, "answer_raw": " 32. \n\nHere's the step-by-step calculation:\n\n1. Jeremy saw", "answer": "32", "a0": "28", "changed": true, "correct": false}
+{"id": "gsm8k-test-743", "n_cot_tokens": 116, "n_filler_tokens": 116, "answer_raw": ": 0", "answer": "0", "a0": "8", "changed": true, "correct": false}
+{"id": "gsm8k-test-747", "n_cot_tokens": 121, "n_filler_tokens": 121, "answer_raw": ": \n\n$10 \n\nExplanation: \nThe vendor used to buy 500 tomatoes", "answer": "10", "a0": "350", "changed": true, "correct": false}
+{"id": "gsm8k-test-758", "n_cot_tokens": 111, "n_filler_tokens": 111, "answer_raw": ": \n\n$133", "answer": "133", "a0": "133", "changed": false, "correct": true}
+{"id": "gsm8k-test-764", "n_cot_tokens": 116, "n_filler_tokens": 116, "answer_raw": ": \n\n3 * 2 + 5 * 1 + 1 *", "answer": "3", "a0": "14", "changed": true, "correct": false}
+{"id": "gsm8k-test-765", "n_cot_tokens": 149, "n_filler_tokens": 149, "answer_raw": " 400.", "answer": "400", "a0": "490", "changed": true, "correct": false}
+{"id": "gsm8k-test-775", "n_cot_tokens": 147, "n_filler_tokens": 147, "answer_raw": " 0.\n\nHere's the calculation:\n\n- Total wheels needed for cars: ", "answer": "0", "a0": "276", "changed": true, "correct": false}
+{"id": "gsm8k-test-777", "n_cot_tokens": 195, "n_filler_tokens": 195, "answer_raw": ":  $4,400", "answer": "4400", "a0": "4400", "changed": false, "correct": true}
+{"id": "gsm8k-test-778", "n_cot_tokens": 155, "n_filler_tokens": 155, "answer_raw": ":  $38.00", "answer": "38", "a0": "38", "changed": false, "correct": true}
+{"id": "gsm8k-test-781", "n_cot_tokens": 125, "n_filler_tokens": 125, "answer_raw": ": 16", "answer": "16", "a0": "2", "changed": true, "correct": false}
+{"id": "gsm8k-test-788", "n_cot_tokens": 74, "n_filler_tokens": 74, "answer_raw": ":  $150", "answer": "150", "a0": "100", "changed": true, "correct": false}
+{"id": "gsm8k-test-810", "n_cot_tokens": 167, "n_filler_tokens": 167, "answer_raw": " 3190.", "answer": "3190", "a0": "310", "changed": true, "correct": false}
+{"id": "gsm8k-test-817", "n_cot_tokens": 138, "n_filler_tokens": 138, "answer_raw": " 15. \n\nPaul already has 8 chocolate cupcakes and 40 toffee", "answer": "15", "a0": "15", "changed": false, "correct": true}
+{"id": "gsm8k-test-821", "n_cot_tokens": 118, "n_filler_tokens": 118, "answer_raw": " 70.\n\nHere's the calculation:\n\nInitially, there were 50 cars.", "answer": "70", "a0": "35", "changed": true, "correct": false}
+{"id": "gsm8k-test-859", "n_cot_tokens": 193, "n_filler_tokens": 193, "answer_raw": ": \n\n$800 \n\nExplanation: \nRafaela received 40 *", "answer": "800", "a0": "1520", "changed": true, "correct": false}
+{"id": "gsm8k-test-864", "n_cot_tokens": 138, "n_filler_tokens": 138, "answer_raw": ": 530", "answer": "530", "a0": "80", "changed": true, "correct": false}
+{"id": "gsm8k-test-865", "n_cot_tokens": 189, "n_filler_tokens": 189, "answer_raw": " 5.\n\nHere's the step-by-step calculation:\n\n- The rink has", "answer": "5", "a0": "23", "changed": true, "correct": false}
+{"id": "gsm8k-test-866", "n_cot_tokens": 185, "n_filler_tokens": 185, "answer_raw": " 35.", "answer": "35", "a0": "28", "changed": true, "correct": false}
+{"id": "gsm8k-test-877", "n_cot_tokens": 233, "n_filler_tokens": 233, "answer_raw": ":  $7500", "answer": "7500", "a0": "7000", "changed": true, "correct": false}
+{"id": "gsm8k-test-890", "n_cot_tokens": 191, "n_filler_tokens": 191, "answer_raw": " 25.", "answer": "25", "a0": "25", "changed": false, "correct": true}
+{"id": "gsm8k-test-897", "n_cot_tokens": 142, "n_filler_tokens": 142, "answer_raw": " 4. \n\nHere's the explanation: \nMartha had 7 notebooks", "answer": "4", "a0": "1", "changed": true, "correct": false}
+{"id": "gsm8k-test-919", "n_cot_tokens": 170, "n_filler_tokens": 170, "answer_raw": ": \n\n$120", "answer": "120", "a0": "90", "changed": true, "correct": false}
+{"id": "gsm8k-test-924", "n_cot_tokens": 75, "n_filler_tokens": 75, "answer_raw": " 6.", "answer": "6", "a0": "12", "changed": true, "correct": false}
+{"id": "gsm8k-test-928", "n_cot_tokens": 173, "n_filler_tokens": 173, "answer_raw": ": \n\nTo find the average number of Junebugs removed per day, we need", "answer": null, "a0": "76", "changed": true, "correct": false}
+{"id": "gsm8k-test-929", "n_cot_tokens": 160, "n_filler_tokens": 160, "answer_raw": ": \n\nDistance traveled by the bus = 60 miles/hour * 5", "answer": "60", "a0": "60", "changed": false, "correct": true}
+{"id": "gsm8k-test-939", "n_cot_tokens": 134, "n_filler_tokens": 134, "answer_raw": ": \n\nCraig spelled 20 words with 15 letters each, so he spelled", "answer": "20", "a0": "650", "changed": true, "correct": false}
+{"id": "gsm8k-test-940", "n_cot_tokens": 91, "n_filler_tokens": 91, "answer_raw": ": \n8 * 7 * 5 = 280", "answer": "8", "a0": "56", "changed": true, "correct": false}
+{"id": "gsm8k-test-946", "n_cot_tokens": 107, "n_filler_tokens": 107, "answer_raw": ": \n\nSeven times as many loaves of bread as Sam had last Friday is", "answer": null, "a0": "450", "changed": true, "correct": false}
+{"id": "gsm8k-test-958", "n_cot_tokens": 171, "n_filler_tokens": 171, "answer_raw": " 40. \n\nTo find this, we need to calculate 20% of", "answer": "40", "a0": "40", "changed": false, "correct": true}
+{"id": "gsm8k-test-973", "n_cot_tokens": 93, "n_filler_tokens": 93, "answer_raw": " 54. \n\nThere are 50 states in the USA. Half of ", "answer": "54", "a0": "79", "changed": true, "correct": false}
+{"id": "gsm8k-test-994", "n_cot_tokens": 145, "n_filler_tokens": 145, "answer_raw": " 8.", "answer": "8", "a0": "2", "changed": true, "correct": false}
+{"id": "gsm8k-test-995", "n_cot_tokens": 136, "n_filler_tokens": 136, "answer_raw": ": \n\n$18", "answer": "18", "a0": "12", "changed": true, "correct": false}
+{"id": "gsm8k-test-1000", "n_cot_tokens": 221, "n_filler_tokens": 221, "answer_raw": " 5. \n\nHere's the calculation: \n\nDoctor Jones has 9 in", "answer": "5", "a0": "2", "changed": true, "correct": false}
+{"id": "gsm8k-test-1010", "n_cot_tokens": 141, "n_filler_tokens": 141, "answer_raw": ": \n\nBethany can run 10 laps, and Quinn can run 2", "answer": "10", "a0": "5", "changed": true, "correct": false}
+{"id": "gsm8k-test-1022", "n_cot_tokens": 253, "n_filler_tokens": 253, "answer_raw": " 30.", "answer": "30", "a0": "12", "changed": true, "correct": false}
+{"id": "gsm8k-test-1025", "n_cot_tokens": 158, "n_filler_tokens": 158, "answer_raw": " 60. \n\nHere's the calculation: \n- The Smith twins found ", "answer": "60", "a0": "30", "changed": true, "correct": false}
+{"id": "gsm8k-test-1034", "n_cot_tokens": 90, "n_filler_tokens": 90, "answer_raw": ": \n\n3 books * 16 dollars = 48 dollars\n3 pencils *", "answer": "3", "a0": "66", "changed": true, "correct": false}
+{"id": "gsm8k-test-1039", "n_cot_tokens": 166, "n_filler_tokens": 166, "answer_raw": " 184. \n\nTo find this, we first need to find the dimensions of", "answer": "184", "a0": "80", "changed": true, "correct": false}
+{"id": "gsm8k-test-1043", "n_cot_tokens": 121, "n_filler_tokens": 121, "answer_raw": " 130,000. \n\nThere are 26 countries in South America. \n", "answer": "130000", "a0": "130000", "changed": false, "correct": true}
+{"id": "gsm8k-test-1052", "n_cot_tokens": 155, "n_filler_tokens": 155, "answer_raw": " 192.\n\nHere's the step-by-step calculation:\n\n1. Romeo boards a", "answer": "192", "a0": "110", "changed": true, "correct": false}
+{"id": "gsm8k-test-1059", "n_cot_tokens": 120, "n_filler_tokens": 120, "answer_raw": " 12. \n\nHere's the calculation: \nImma feeds her 3", "answer": "12", "a0": "6", "changed": true, "correct": false}
+{"id": "gsm8k-test-1080", "n_cot_tokens": 175, "n_filler_tokens": 175, "answer_raw": ": 28800", "answer": "28800", "a0": "72000", "changed": true, "correct": false}
+{"id": "gsm8k-test-1083", "n_cot_tokens": 109, "n_filler_tokens": 109, "answer_raw": ":  $2.", "answer": "2", "a0": "2", "changed": false, "correct": true}
+{"id": "gsm8k-test-1086", "n_cot_tokens": 221, "n_filler_tokens": 221, "answer_raw": ": \n\n$135000", "answer": "135000", "a0": "131250", "changed": true, "correct": false}
+{"id": "gsm8k-test-1090", "n_cot_tokens": 129, "n_filler_tokens": 129, "answer_raw": ": \n\nThe first child is 6 feet tall, which is 72 inches", "answer": "6", "a0": "72", "changed": true, "correct": false}
+{"id": "gsm8k-test-1093", "n_cot_tokens": 244, "n_filler_tokens": 244, "answer_raw": ":  $96", "answer": "96", "a0": "144", "changed": true, "correct": false}
+{"id": "gsm8k-test-1098", "n_cot_tokens": 73, "n_filler_tokens": 73, "answer_raw": ": \n\n24 + 4 = 28 (Martha's age)\n28", "answer": "24", "a0": "30", "changed": true, "correct": false}
+{"id": "gsm8k-test-1099", "n_cot_tokens": 166, "n_filler_tokens": 166, "answer_raw": " 6 minutes. \n\nTo find the time it takes to ride each slide,", "answer": "6", "a0": "2", "changed": true, "correct": false}
+{"id": "gsm8k-test-1103", "n_cot_tokens": 201, "n_filler_tokens": 201, "answer_raw": " 30.\n\nHere's the explanation:\n\nLet's say the total number of jelly", "answer": "30", "a0": "90", "changed": true, "correct": false}
+{"id": "gsm8k-test-1104", "n_cot_tokens": 67, "n_filler_tokens": 67, "answer_raw": " 12. \n\nHere's the step-by-step explanation:\n\n1. Chris is", "answer": "12", "a0": "24", "changed": true, "correct": false}
+{"id": "gsm8k-test-1116", "n_cot_tokens": 119, "n_filler_tokens": 119, "answer_raw": " 60.", "answer": "60", "a0": "60", "changed": false, "correct": true}
+{"id": "gsm8k-test-1125", "n_cot_tokens": 110, "n_filler_tokens": 110, "answer_raw": ": 900", "answer": "900", "a0": "90", "changed": true, "correct": false}
+{"id": "gsm8k-test-1130", "n_cot_tokens": 186, "n_filler_tokens": 186, "answer_raw": " 25.", "answer": "25", "a0": "25", "changed": false, "correct": true}
+{"id": "gsm8k-test-1133", "n_cot_tokens": 161, "n_filler_tokens": 161, "answer_raw": " 60.", "answer": "60", "a0": "50", "changed": true, "correct": false}
+{"id": "gsm8k-test-1134", "n_cot_tokens": 125, "n_filler_tokens": 125, "answer_raw": " 10.\n\nTo find this, we need to calculate how much Jane has saved", "answer": "10", "a0": "7", "changed": true, "correct": false}
+{"id": "gsm8k-test-1140", "n_cot_tokens": 202, "n_filler_tokens": 202, "answer_raw": " 69.", "answer": "69", "a0": "18", "changed": true, "correct": false}
+{"id": "gsm8k-test-1149", "n_cot_tokens": 87, "n_filler_tokens": 87, "answer_raw": " 30. \n\nExplanation: \n- Jen has 3 fish.\n- Each", "answer": "30", "a0": "93", "changed": true, "correct": false}
+{"id": "gsm8k-test-1161", "n_cot_tokens": 215, "n_filler_tokens": 215, "answer_raw": ":  $1, 730", "answer": "1", "a0": "170", "changed": true, "correct": false}
+{"id": "gsm8k-test-1169", "n_cot_tokens": 198, "n_filler_tokens": 198, "answer_raw": " $3.\n\nHere's the explanation:\n\nLet's say Rissa was given $", "answer": "3", "a0": "2", "changed": true, "correct": false}
+{"id": "gsm8k-test-1180", "n_cot_tokens": 181, "n_filler_tokens": 181, "answer_raw": ": \n\n8000", "answer": "8000", "a0": "5600", "changed": true, "correct": false}
+{"id": "gsm8k-test-1182", "n_cot_tokens": 154, "n_filler_tokens": 154, "answer_raw": " 900. \n\nTo find this, we first find out how many books Bob", "answer": "900", "a0": "1800", "changed": true, "correct": false}
+{"id": "gsm8k-test-1195", "n_cot_tokens": 181, "n_filler_tokens": 181, "answer_raw": ": \n\n50 + 40 + 40 + (2 * 40)", "answer": "50", "a0": "320", "changed": true, "correct": false}
+{"id": "gsm8k-test-1197", "n_cot_tokens": 165, "n_filler_tokens": 165, "answer_raw": ":  $1,200", "answer": "1200", "a0": "2400", "changed": true, "correct": false}
+{"id": "gsm8k-test-1204", "n_cot_tokens": 154, "n_filler_tokens": 154, "answer_raw": " 140.", "answer": "140", "a0": "168", "changed": true, "correct": false}
+{"id": "gsm8k-test-1205", "n_cot_tokens": 169, "n_filler_tokens": 169, "answer_raw": " 2 miles. \n\nTo find this, we add up the miles the first", "answer": "2", "a0": "4", "changed": true, "correct": false}
+{"id": "gsm8k-test-1206", "n_cot_tokens": 146, "n_filler_tokens": 146, "answer_raw": ": $50,000", "answer": "50000", "a0": "40000", "changed": true, "correct": false}
+{"id": "gsm8k-test-1209", "n_cot_tokens": 215, "n_filler_tokens": 215, "answer_raw": " 36. \n\nHere's the calculation:\n\n- Low setting: 1 liter", "answer": "36", "a0": "29", "changed": true, "correct": false}
+{"id": "gsm8k-test-1220", "n_cot_tokens": 238, "n_filler_tokens": 238, "answer_raw": " 32. \n\nHere's the explanation: \nLet's say the shorter piece", "answer": "32", "a0": "32", "changed": false, "correct": true}
+{"id": "gsm8k-test-1221", "n_cot_tokens": 132, "n_filler_tokens": 132, "answer_raw": " 4.", "answer": "4", "a0": "10", "changed": true, "correct": false}
+{"id": "gsm8k-test-1226", "n_cot_tokens": 210, "n_filler_tokens": 210, "answer_raw": ": \n\n$83.60", "answer": "83.6", "a0": "90", "changed": true, "correct": false}
+{"id": "gsm8k-test-1232", "n_cot_tokens": 100, "n_filler_tokens": 100, "answer_raw": " 15.", "answer": "15", "a0": "15", "changed": false, "correct": true}
+{"id": "gsm8k-test-1236", "n_cot_tokens": 219, "n_filler_tokens": 219, "answer_raw": " 132.", "answer": "132", "a0": "84", "changed": true, "correct": false}
+{"id": "gsm8k-test-1242", "n_cot_tokens": 107, "n_filler_tokens": 107, "answer_raw": " 20. \n\nHere's the step-by-step calculation:\n\n- Half of the", "answer": "20", "a0": "20", "changed": false, "correct": true}
+{"id": "gsm8k-test-1247", "n_cot_tokens": 193, "n_filler_tokens": 193, "answer_raw": " 4. \n\nHere's the step-by-step reasoning:\n\n1. Brendan started", "answer": "4", "a0": "10", "changed": true, "correct": false}
+{"id": "gsm8k-test-1266", "n_cot_tokens": 115, "n_filler_tokens": 115, "answer_raw": ":  105", "answer": "105", "a0": "147", "changed": true, "correct": false}
+{"id": "gsm8k-test-1280", "n_cot_tokens": 76, "n_filler_tokens": 76, "answer_raw": " 9. \n\nTo find the answer, we need to find half of Steve", "answer": "9", "a0": "7", "changed": true, "correct": false}
+{"id": "gsm8k-test-1285", "n_cot_tokens": 84, "n_filler_tokens": 84, "answer_raw": ": 1,218 \n\nHere's how we get there: \nMam", "answer": "1218", "a0": "1218", "changed": false, "correct": true}
+{"id": "gsm8k-test-1287", "n_cot_tokens": 125, "n_filler_tokens": 125, "answer_raw": ":  64 \n\nExplanation: \n- The 12-year-old brother is", "answer": "64", "a0": "84", "changed": true, "correct": false}
+{"id": "gsm8k-test-1292", "n_cot_tokens": 101, "n_filler_tokens": 101, "answer_raw": ": \n\n36 - 6 - 3 = 27\n\nJackie grew", "answer": "36", "a0": "67", "changed": true, "correct": false}
+{"id": "gsm8k-test-1300", "n_cot_tokens": 115, "n_filler_tokens": 115, "answer_raw": ": \n\n$240", "answer": "240", "a0": "120", "changed": true, "correct": false}
+{"id": "gsm8k-test-1301", "n_cot_tokens": 236, "n_filler_tokens": 236, "answer_raw": " 19.\n\nHere's the step-by-step calculation:\n\nInitially, Randy had ", "answer": "19", "a0": "22", "changed": true, "correct": false}
+{"id": "gsm8k-test-1308", "n_cot_tokens": 98, "n_filler_tokens": 98, "answer_raw": " 30. \n\nThere are 10 eggs in the first basket. \nThere", "answer": "30", "a0": "30", "changed": false, "correct": true}
+{"id": "gsm8k-test-1309", "n_cot_tokens": 150, "n_filler_tokens": 150, "answer_raw": ": \n\nKim raises $320 more than Alexandra, who raises $430. So", "answer": "320", "a0": "2180", "changed": true, "correct": false}
+{"id": "gsm8k-test-1310", "n_cot_tokens": 114, "n_filler_tokens": 114, "answer_raw": " 32.", "answer": "32", "a0": "32", "changed": false, "correct": false}
+{"id": "gsm8k-test-1312", "n_cot_tokens": 131, "n_filler_tokens": 131, "answer_raw": ": \n\n6 * 2 * 5 + 6 * 5 =", "answer": "6", "a0": "180", "changed": true, "correct": false}
+{"id": "gsm8k-test-1316", "n_cot_tokens": 171, "n_filler_tokens": 171, "answer_raw": ": \n\n$400 * 0.2 = $80 (discounted price", "answer": "400", "a0": "230", "changed": true, "correct": false}

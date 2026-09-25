@@ -1,0 +1,150 @@
+{"id": "strategyqa-4668264df84fb7c25b39", "n_cot_tokens": 176, "n_filler_tokens": 176, "answer_raw": ": No. \n\nThe Police were a British rock band, not law enforcement officers", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-1b29d402c3e17cb3b435", "n_cot_tokens": 133, "n_filler_tokens": 133, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-3e023027bb296245506a", "n_cot_tokens": 63, "n_filler_tokens": 63, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-7870b1cef39a4f685911", "n_cot_tokens": 123, "n_filler_tokens": 123, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-83717baab39233083d34", "n_cot_tokens": 143, "n_filler_tokens": 143, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-5c969a7fccde48210ec8", "n_cot_tokens": 130, "n_filler_tokens": 130, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-3d01af5db202bc7d33b9", "n_cot_tokens": 100, "n_filler_tokens": 100, "answer_raw": ": No. \n\nIn Mumbai, Solanum melongena is more commonly", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-ca09aea1e9589ef40c61", "n_cot_tokens": 169, "n_filler_tokens": 169, "answer_raw": " No.\n\nThe Titanic sank in the North Atlantic Ocean, approximately 370 miles (", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-43e4aea70f7e53d1d807", "n_cot_tokens": 123, "n_filler_tokens": 123, "answer_raw": ": No. \n\nA Deacon is a member of the clergy in the Christian", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-9dff1d5fe4c07cdb0ccb", "n_cot_tokens": 66, "n_filler_tokens": 66, "answer_raw": ": No information was provided to answer the question.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-d424e393a4daff536f57", "n_cot_tokens": 86, "n_filler_tokens": 86, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-385edf4addbd69573540", "n_cot_tokens": 76, "n_filler_tokens": 76, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-d00ae50a07a5dd8b726c", "n_cot_tokens": 75, "n_filler_tokens": 75, "answer_raw": " No. \n\nA Rede Globo anchor is a Brazilian television presenter, and \"", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-74936a1e1f16a8e97d68", "n_cot_tokens": 249, "n_filler_tokens": 249, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-0a87a031e804912db8df", "n_cot_tokens": 80, "n_filler_tokens": 80, "answer_raw": ": Yes. \n\nBess Houdini, Harry Houdini's wife", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-234e4eccb374a4191c86", "n_cot_tokens": 134, "n_filler_tokens": 134, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-4760fe3d0c80beb30edd", "n_cot_tokens": 58, "n_filler_tokens": 58, "answer_raw": ": No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-76a9327740bf5e4fd9ed", "n_cot_tokens": 199, "n_filler_tokens": 199, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-7ced603c3d79a2f2739d", "n_cot_tokens": 60, "n_filler_tokens": 60, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-0a8bb20dbdb99d68127e", "n_cot_tokens": 72, "n_filler_tokens": 72, "answer_raw": ": Yes.", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-157e11814d768fe69782", "n_cot_tokens": 71, "n_filler_tokens": 71, "answer_raw": ": Yes. \n\nThe Eighth Amendment to the United States Constitution is indeed a popular", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-3486b6b5c69878bb088d", "n_cot_tokens": 121, "n_filler_tokens": 121, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-b816f51e0fedcae2a789", "n_cot_tokens": 60, "n_filler_tokens": 60, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-3b38e00d8d1da26f7f02", "n_cot_tokens": 88, "n_filler_tokens": 88, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": false}
+{"id": "strategyqa-be42f2f3008b22766d2b", "n_cot_tokens": 103, "n_filler_tokens": 103, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-73defbf5e28a5bacdb7d", "n_cot_tokens": 106, "n_filler_tokens": 106, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-ced05cba04173f1248b3", "n_cot_tokens": 37, "n_filler_tokens": 37, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-ea627ac7d9ba306324d3", "n_cot_tokens": 55, "n_filler_tokens": 55, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-d3c99400a786bc11c1fb", "n_cot_tokens": 27, "n_filler_tokens": 27, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-7840c862ca1d7455284d", "n_cot_tokens": 94, "n_filler_tokens": 94, "answer_raw": ": No \n\nThe Dalai Lama is a Buddhist, and the concept of the", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-367537af1b620f0e3683", "n_cot_tokens": 74, "n_filler_tokens": 74, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-dd31908b73e958cfd678", "n_cot_tokens": 123, "n_filler_tokens": 123, "answer_raw": ": Yes. \n\nRurouni Kenshin is a Japanese manga and anime", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-250bb60b384ff1d91891", "n_cot_tokens": 144, "n_filler_tokens": 144, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-c7b343171ca9bce49241", "n_cot_tokens": 162, "n_filler_tokens": 162, "answer_raw": " No. \n\nSainsbury's and Tesco are two of the largest supermarket", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-2930044a09f13c95fb91", "n_cot_tokens": 88, "n_filler_tokens": 88, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-abd771e9a20b107e7e56", "n_cot_tokens": 108, "n_filler_tokens": 108, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-c6b927da57fb0b45b830", "n_cot_tokens": 115, "n_filler_tokens": 115, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-5fa29655003d347cb493", "n_cot_tokens": 73, "n_filler_tokens": 73, "answer_raw": ": No. \n\nGroundhog Day typically falls in late February, and in New", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-8c550764a42b5810b430", "n_cot_tokens": 130, "n_filler_tokens": 130, "answer_raw": ": No. \n\nThe Thirty Years' War occurred from 1618 to ", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-665445900ef590e47ed0", "n_cot_tokens": 85, "n_filler_tokens": 85, "answer_raw": " No. \n\nThe Vietnam War actually took place from 1955 to 197", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-033147a022dd41b58cd9", "n_cot_tokens": 128, "n_filler_tokens": 128, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-4bbf4b169b4981ad5a34", "n_cot_tokens": 92, "n_filler_tokens": 92, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-b72204fd58a0bfaa5283", "n_cot_tokens": 117, "n_filler_tokens": 117, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-ee6e0bcf7be93da46dcc", "n_cot_tokens": 82, "n_filler_tokens": 82, "answer_raw": ": No \n\nCasio is known for its electronic calculators, and its first", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-72d1364ea31e9717f017", "n_cot_tokens": 80, "n_filler_tokens": 80, "answer_raw": " No. \n\nStephen Colbert, the host of The Colbert Report, is known for", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-d21ae4c7ee26f90b9574", "n_cot_tokens": 79, "n_filler_tokens": 79, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-d158406a91f5dddbb6a5", "n_cot_tokens": 224, "n_filler_tokens": 224, "answer_raw": ": No.\n\nThe reason is that Big Ben's bells are currently rung on", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-5f89881767cac98c56d6", "n_cot_tokens": 275, "n_filler_tokens": 275, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-5b78898b7ef289f3cd26", "n_cot_tokens": 105, "n_filler_tokens": 105, "answer_raw": ": No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-505424c2715e4c11506b", "n_cot_tokens": 126, "n_filler_tokens": 126, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-315575d5cbdd1d154744", "n_cot_tokens": 169, "n_filler_tokens": 169, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-e154f37283d0f9e02277", "n_cot_tokens": 67, "n_filler_tokens": 67, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-1bbdd43172978e342b6a", "n_cot_tokens": 130, "n_filler_tokens": 130, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-9eb2815f7551d7ea8b25", "n_cot_tokens": 79, "n_filler_tokens": 79, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-0e29451fbb512170bddd", "n_cot_tokens": 165, "n_filler_tokens": 165, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-961b257f0eb8f704b247", "n_cot_tokens": 47, "n_filler_tokens": 47, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-1ffcadc478d4f408b988", "n_cot_tokens": 38, "n_filler_tokens": 38, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-4eeb74e13e58996f2d72", "n_cot_tokens": 73, "n_filler_tokens": 73, "answer_raw": ": No. \n\nThe Joy of Painting, a popular TV show hosted by Bob", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-f1a3fc559616155c5931", "n_cot_tokens": 52, "n_filler_tokens": 52, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-350182c4e4a832fc4bc5", "n_cot_tokens": 53, "n_filler_tokens": 53, "answer_raw": ": No \n\nI couldn't find any information about Hillary Clinton's deputy chief of", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-012786196d9ab6df3425", "n_cot_tokens": 142, "n_filler_tokens": 142, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-e39e7996cb59f6c932e0", "n_cot_tokens": 109, "n_filler_tokens": 109, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-a68cfdfc49fdc73dbd2e", "n_cot_tokens": 149, "n_filler_tokens": 149, "answer_raw": ": Yes.", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-80e1855030cd5c8f136a", "n_cot_tokens": 99, "n_filler_tokens": 99, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-67079beff747978ed4c2", "n_cot_tokens": 256, "n_filler_tokens": 256, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-6047d085ff9246481d12", "n_cot_tokens": 150, "n_filler_tokens": 150, "answer_raw": ": No.\n\nThe reason is that \"Little Women\" was written by Louisa", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-a3f23831cabcf29b0cc9", "n_cot_tokens": 63, "n_filler_tokens": 63, "answer_raw": " No. \n\nThe Gujarati script is an abugida, whereas Kanji", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-506c7e618094c78b7614", "n_cot_tokens": 39, "n_filler_tokens": 39, "answer_raw": " No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-2541f27af7753e1ec7c1", "n_cot_tokens": 261, "n_filler_tokens": 261, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-9e7b4c746b598d1521e0", "n_cot_tokens": 105, "n_filler_tokens": 105, "answer_raw": ": Yes.", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-b07fd13daa6e17e6273c", "n_cot_tokens": 122, "n_filler_tokens": 122, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-d435a2f25dfb1e78a841", "n_cot_tokens": 85, "n_filler_tokens": 85, "answer_raw": ": No.", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-bcc6b33ca8ae85fc8784", "n_cot_tokens": 88, "n_filler_tokens": 88, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-deb934107d390914b5b0", "n_cot_tokens": 109, "n_filler_tokens": 109, "answer_raw": ": Yes.", "answer": "Yes", "a0": "No", "changed": true, "correct": false}
+{"id": "strategyqa-760a0d26a50972656345", "n_cot_tokens": 163, "n_filler_tokens": 163, "answer_raw": " No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-da526afb80b0174a19b0", "n_cot_tokens": 136, "n_filler_tokens": 136, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-77f814c0e9766c9cdb4d", "n_cot_tokens": 103, "n_filler_tokens": 103, "answer_raw": ": No.", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-a7ede6dfa4790db0364c", "n_cot_tokens": 134, "n_filler_tokens": 134, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-b742c50188a483291945", "n_cot_tokens": 77, "n_filler_tokens": 77, "answer_raw": ": No.\n\nThe reason is that I couldn't find any information about the \"", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-15885efe6f91724c16d9", "n_cot_tokens": 139, "n_filler_tokens": 139, "answer_raw": " No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-0d2746ffc1870126ee29", "n_cot_tokens": 69, "n_filler_tokens": 69, "answer_raw": ": Yes.", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-1a8ea71c1644ded6b058", "n_cot_tokens": 219, "n_filler_tokens": 219, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": false}
+{"id": "strategyqa-48f842fbfb229d784bd4", "n_cot_tokens": 36, "n_filler_tokens": 36, "answer_raw": ": No.\n\nThe voice of the Genie from Disney's Aladdin was provided", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-47cb63978585d5292d79", "n_cot_tokens": 67, "n_filler_tokens": 67, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-b893d680c3d0b3003e80", "n_cot_tokens": 108, "n_filler_tokens": 108, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-2e1482cb04970fe7c449", "n_cot_tokens": 113, "n_filler_tokens": 113, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-20abc7ba538a2fd1dd76", "n_cot_tokens": 77, "n_filler_tokens": 77, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-2eed74f7dc66f5aadcd7", "n_cot_tokens": 230, "n_filler_tokens": 230, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-a0e7719bca9b347d32db", "n_cot_tokens": 132, "n_filler_tokens": 132, "answer_raw": ": No.\n\nCarl Linnaeus was a Swedish botanist who lived from", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-0df67cbe1345f90555dd", "n_cot_tokens": 148, "n_filler_tokens": 148, "answer_raw": ": No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-10325585370ba368ca9a", "n_cot_tokens": 91, "n_filler_tokens": 91, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-a60c5a3a8bd811b26208", "n_cot_tokens": 89, "n_filler_tokens": 89, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-35b27eb99d85b7dc674c", "n_cot_tokens": 100, "n_filler_tokens": 100, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-c6adebffcdabb5ba7063", "n_cot_tokens": 460, "n_filler_tokens": 460, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-6c6d1853b7e97e66ef46", "n_cot_tokens": 118, "n_filler_tokens": 118, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-1ad2148ea8c553c849c2", "n_cot_tokens": 96, "n_filler_tokens": 96, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-38819f5a64ab543fbd90", "n_cot_tokens": 145, "n_filler_tokens": 145, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-87acce77a8b6362f4f96", "n_cot_tokens": 115, "n_filler_tokens": 115, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-0e4f1dbccd54ac5b8c32", "n_cot_tokens": 59, "n_filler_tokens": 59, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-0aba6ec3a1e6fa166b32", "n_cot_tokens": 114, "n_filler_tokens": 114, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-5c4b5e0487eaa93775cc", "n_cot_tokens": 197, "n_filler_tokens": 197, "answer_raw": " No.", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-9a1bf03a1359fa94eb7c", "n_cot_tokens": 108, "n_filler_tokens": 108, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-dabf94934721c26b2422", "n_cot_tokens": 96, "n_filler_tokens": 96, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-e4a065a8ea3691b12e6f", "n_cot_tokens": 96, "n_filler_tokens": 96, "answer_raw": ": No. \n\nBulk carriers are typically designed to transport dry bulk commodities such as", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-09a493a0d04b4bed378b", "n_cot_tokens": 143, "n_filler_tokens": 143, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-02f5f11bf98632578d50", "n_cot_tokens": 94, "n_filler_tokens": 94, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-b56796dda04ab21e5f24", "n_cot_tokens": 87, "n_filler_tokens": 87, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-48da75d87c66754ccc2e", "n_cot_tokens": 83, "n_filler_tokens": 83, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-a61bbe3edc4de5272c0c", "n_cot_tokens": 92, "n_filler_tokens": 92, "answer_raw": ": Yes.", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-cb08864902f07be76e77", "n_cot_tokens": 136, "n_filler_tokens": 136, "answer_raw": ": No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-60aa0b975babf5475cf1", "n_cot_tokens": 125, "n_filler_tokens": 125, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-7b7fa804c698d013d9a7", "n_cot_tokens": 73, "n_filler_tokens": 73, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-97cf5c63fb530d9fc492", "n_cot_tokens": 105, "n_filler_tokens": 105, "answer_raw": ": No.\n\nExplanation: There is no historical evidence to suggest that Paul the Apostle", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-2bc94c6dfc79d7a86fa2", "n_cot_tokens": 82, "n_filler_tokens": 82, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": false}
+{"id": "strategyqa-2c402ed761b9bd7aa205", "n_cot_tokens": 79, "n_filler_tokens": 79, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-789b8d1061266869fc86", "n_cot_tokens": 46, "n_filler_tokens": 46, "answer_raw": ": Yes.", "answer": "Yes", "a0": "No", "changed": true, "correct": false}
+{"id": "strategyqa-028eda7ded7825edb6eb", "n_cot_tokens": 48, "n_filler_tokens": 48, "answer_raw": ": No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-630a416013860c4e094c", "n_cot_tokens": 124, "n_filler_tokens": 124, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-1daa64834b99cb125ae8", "n_cot_tokens": 78, "n_filler_tokens": 78, "answer_raw": ": No.\n\nWalt Disney lived from 1901 to 1966.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-7ddaf76fa5a53f4b642c", "n_cot_tokens": 165, "n_filler_tokens": 165, "answer_raw": ": No", "answer": "No", "a0": "Yes", "changed": true, "correct": true}
+{"id": "strategyqa-5f96f27de4c8cdafc070", "n_cot_tokens": 47, "n_filler_tokens": 47, "answer_raw": ": Yes.", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-5812637ba98cba20a9af", "n_cot_tokens": 173, "n_filler_tokens": 173, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-cce78efa2e5a91f1a7eb", "n_cot_tokens": 126, "n_filler_tokens": 126, "answer_raw": ": No", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-39e2e14c7916898a717d", "n_cot_tokens": 118, "n_filler_tokens": 118, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-45ed5c1d56e942bee839", "n_cot_tokens": 94, "n_filler_tokens": 94, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-76468dce5b02e75851b2", "n_cot_tokens": 64, "n_filler_tokens": 64, "answer_raw": " No. \n\nWilliam Shakespeare lived from 1564 to 1616, and", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-73627f72e83c519d8a0e", "n_cot_tokens": 154, "n_filler_tokens": 154, "answer_raw": ": No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-7254b3ce052273ee1a0a", "n_cot_tokens": 69, "n_filler_tokens": 69, "answer_raw": ": No. \n\nProfessional boxers are more likely to have high dental bills due", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-d4c4c4c7fb085e6d1d98", "n_cot_tokens": 88, "n_filler_tokens": 88, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-f67e4140ba9ecdb6dcaa", "n_cot_tokens": 93, "n_filler_tokens": 93, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-72d2e2d76ec01e97f88f", "n_cot_tokens": 127, "n_filler_tokens": 127, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-27fc311d200f621edcbc", "n_cot_tokens": 89, "n_filler_tokens": 89, "answer_raw": " No. \n\nThe Flying Spaghetti Monster is a modern deity created as a sat", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-ba1242c0a924787b6e03", "n_cot_tokens": 80, "n_filler_tokens": 80, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-da0b209dff1ccc80f46a", "n_cot_tokens": 74, "n_filler_tokens": 74, "answer_raw": ": No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-636b557a0eb102ce04b5", "n_cot_tokens": 76, "n_filler_tokens": 76, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-d723358c3932de9ce765", "n_cot_tokens": 47, "n_filler_tokens": 47, "answer_raw": ": No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-b4c61fdd96959a52f996", "n_cot_tokens": 128, "n_filler_tokens": 128, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-82bde29394d6aba258a1", "n_cot_tokens": 107, "n_filler_tokens": 107, "answer_raw": ": Yes.", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-ac55fc84d16659a1f0df", "n_cot_tokens": 70, "n_filler_tokens": 70, "answer_raw": ": Yes. \n\nBart Simpson is a character from the animated TV series \"", "answer": "Yes", "a0": "No", "changed": true, "correct": true}
+{"id": "strategyqa-a2b0a30501a4fb9ae204", "n_cot_tokens": 99, "n_filler_tokens": 99, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-930b8d6638dcc19fce17", "n_cot_tokens": 51, "n_filler_tokens": 51, "answer_raw": " No. \n\nMercury is the closest planet to the sun, with extremely high", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-5b941af0d08dc0ea0485", "n_cot_tokens": 101, "n_filler_tokens": 101, "answer_raw": ": No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-5f1b1891c28dd8ef8bcf", "n_cot_tokens": 173, "n_filler_tokens": 173, "answer_raw": ": Yes", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-0dad30a3a3c7c915e0c2", "n_cot_tokens": 143, "n_filler_tokens": 143, "answer_raw": ": Yes", "answer": "Yes", "a0": "No", "changed": true, "correct": false}
+{"id": "strategyqa-0ea87e725225e7ce5c51", "n_cot_tokens": 62, "n_filler_tokens": 62, "answer_raw": ": No.\n\nChristina Aguilera was born in Staten Island, New York", "answer": "No", "a0": "No", "changed": false, "correct": false}
+{"id": "strategyqa-307c3ae5cff437eee937", "n_cot_tokens": 94, "n_filler_tokens": 94, "answer_raw": ": Yes.", "answer": "Yes", "a0": "Yes", "changed": false, "correct": true}
+{"id": "strategyqa-89da908a20fe2c0cc7b1", "n_cot_tokens": 54, "n_filler_tokens": 54, "answer_raw": " No. \n\nF. Scott Fitzgerald's novel \"The Great Gatsby\" was", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-463faa7aaa7d9e1e366b", "n_cot_tokens": 71, "n_filler_tokens": 71, "answer_raw": " No.", "answer": "No", "a0": "Yes", "changed": true, "correct": false}
+{"id": "strategyqa-1d67cd8e5b32229ebb04", "n_cot_tokens": 176, "n_filler_tokens": 176, "answer_raw": ": No.", "answer": "No", "a0": "No", "changed": false, "correct": true}
+{"id": "strategyqa-b931fa0b6de758b4f1f8", "n_cot_tokens": 122, "n_filler_tokens": 122, "answer_raw": " No.", "answer": "No", "a0": "No", "changed": false, "correct": true}

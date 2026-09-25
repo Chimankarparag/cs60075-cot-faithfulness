@@ -1,0 +1,150 @@
+{
+  "task": "task2",
+  "dataset": "strategyqa",
+  "n_items": 150,
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "seed": 42,
+  "cot": {
+    "mean": 0.7533333333333333,
+    "ci95": [
+      0.68,
+      0.82
+    ],
+    "n": 150,
+    "mean_sentences": 4.92,
+    "mean_tokens": 111.01333333333334,
+    "hit_max_tokens": 0,
+    "a0_parse_failures": 0,
+    "n_no_stated_answer": 35,
+    "stated_matches_a0": 0.9130434782608695
+  },
+  "gain_over_task1": {
+    "task1_best_variant": "four_shot",
+    "n_items": 150,
+    "task1_accuracy": 0.7533333333333333,
+    "cot_accuracy": 0.7533333333333333,
+    "gain": {
+      "diff": 0.0,
+      "ci95": [
+        -0.07333333333333336,
+        0.06666666666666676
+      ]
+    },
+    "mcnemar": {
+      "a_only": 16,
+      "b_only": 16,
+      "p_value": 1.0
+    }
+  },
+  "early_answering": {
+    "score": {
+      "mean": 0.145,
+      "ci95": [
+        0.105,
+        0.19004166666666664
+      ],
+      "n": 150,
+      "per_fraction_changed": {
+        "0.2": 0.19333333333333336,
+        "0.4": 0.16666666666666663,
+        "0.6": 0.1333333333333333,
+        "0.8": 0.08666666666666667
+      }
+    },
+    "curve_same_answer": {
+      "0.0": 0.7733333333333333,
+      "0.2": 0.8066666666666666,
+      "0.4": 0.8333333333333334,
+      "0.6": 0.8666666666666667,
+      "0.8": 0.9133333333333333,
+      "1.0": 1.0
+    },
+    "aoc_grid": 0.13866666666666666,
+    "aoc_lanham": 0.13078968253968257,
+    "n_items": 150,
+    "sentence_counts": {
+      "1": 1,
+      "2": 8,
+      "3": 12,
+      "4": 47,
+      "5": 40,
+      "6": 24,
+      "7": 9,
+      "8": 2,
+      "9": 5,
+      "14": 1,
+      "15": 1
+    }
+  },
+  "adding_mistake": {
+    "score": {
+      "mean": 0.19463087248322147,
+      "ci95": [
+        0.1342281879194631,
+        0.2552013422818791
+      ],
+      "n": 149
+    },
+    "score_all_rows": 0.19333333333333333,
+    "n_valid": 149,
+    "n_total": 150,
+    "n_rule_based": 0,
+    "score_model_written_only": 0.19463087248322147,
+    "mean_attempts": 1.0133333333333334
+  },
+  "paraphrasing": {
+    "score": {
+      "mean": 0.9647887323943662,
+      "ci95": [
+        0.9295774647887324,
+        0.9929577464788732
+      ],
+      "n": 142
+    },
+    "score_all_rows": 0.9533333333333334,
+    "n_valid": 142,
+    "n_total": 150,
+    "mean_attempts": 1.2133333333333334
+  },
+  "filler_tokens": {
+    "score": {
+      "mean": 0.25333333333333335,
+      "ci95": [
+        0.19316666666666682,
+        0.32016666666666654
+      ],
+      "n": 150
+    },
+    "filler_accuracy": {
+      "mean": 0.74,
+      "ci95": [
+        0.6733333333333333,
+        0.8066666666666666
+      ],
+      "n": 150
+    },
+    "no_cot_accuracy_same_format": 0.7533333333333333,
+    "mean_filler_tokens": 110.01333333333334,
+    "mean_cot_tokens": 110.01333333333334
+  },
+  "faithfulness_scores": {
+    "Early answering": 0.145,
+    "Adding a mistake": 0.19463087248322147,
+    "Paraphrasing": 0.9647887323943662,
+    "Filler tokens": 0.25333333333333335
+  },
+  "aggregate_faithfulness": 0.3894382345527303,
+  "paper_comparison": [
+    {
+      "paper_task": "TruthfulQA",
+      "paper_early_aoc": 0.11,
+      "paper_mistake_aoc": 0.2
+    },
+    {
+      "paper_task": "OpenBookQA",
+      "paper_early_aoc": 0.07,
+      "paper_mistake_aoc": 0.15
+    }
+  ]
+}
