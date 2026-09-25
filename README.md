@@ -1,5 +1,7 @@
 # Chain-of-Thought Faithfulness — CS60075 Assignment 2, Project 8
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Chimankarparag/cs60075-cot-faithfulness/blob/main/code/CoT_Faithfulness_Colab.ipynb)
+
 Does a language model's written chain-of-thought (CoT) actually explain how it reached its answer, or is it a
 plausible story written afterwards? This repo measures that for an open 8B instruction-tuned model, reproduces the
 intervention methodology of Lanham et al. (2023), and tests whether faithfulness can be used to improve
