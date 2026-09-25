@@ -33,3 +33,6 @@ venv/
 report/*.aux
 report/*.out
 report/*.synctex.gz
+
+# Smoke-test outputs (--n-limit)
+results/smoke/
