@@ -1,0 +1,35 @@
+# Data and model weights are downloaded, never committed (see README)
+data/raw/
+data/processed/
+hf_cache/
+*.safetensors
+*.bin
+*.pt
+*.gguf
+
+# Logs and scratch
+logs/
+*.log
+tmp/
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Secrets
+.env
+*.token
+.hf_token
+
+# OS / editors
+.DS_Store
+._*
+.idea/
+
+# LaTeX build files
+report/*.aux
+report/*.out
+report/*.synctex.gz
