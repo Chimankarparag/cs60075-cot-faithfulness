@@ -1,0 +1,32 @@
+# Pinned versions of the direct dependencies, taken from the `cotfaith` conda env
+# (Python 3.11.16) built on the IIT KGP GPU servers on 2026-09-25.
+# The full list of all 238 installed packages is in env/cotfaith-freeze.txt.
+#
+# torch 2.13.0 here is the CUDA 13.0 build and needs an NVIDIA driver >= 580.
+# On Google Colab, keep Colab's own torch and skip the vllm/torch lines; the notebook
+# installs only what Colab is missing.
+
+# Inference
+vllm==0.30.0
+torch==2.13.0
+transformers==5.17.0
+tokenizers==0.23.2
+safetensors==0.8.0
+huggingface_hub==1.33.0
+accelerate==1.15.0
+bitsandbytes==0.50.2
+
+# Data
+datasets==5.0.1
+pyarrow==25.0.1
+pandas==3.0.6
+numpy==2.3.5
+
+# Statistics and plots
+scipy==1.17.1
+statsmodels==0.15.0
+matplotlib==3.11.2
+
+# Utilities
+tqdm==4.70.1
+ipykernel==7.3.0

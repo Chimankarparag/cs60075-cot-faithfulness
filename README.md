@@ -11,8 +11,8 @@ self-consistency voting.
 **Group members:** _to be added_
 **Assigned dataset:** _to be confirmed with the TA_ (the code supports all three via one flag)
 
-> **Status (2026-09-25):** repository, environment plan and datasets are set up. Task code is not written yet;
-> commands under "How to run" show the planned interface.
+> **Status (2026-09-25):** repository, datasets, model weights and the `cotfaith` environment are set up.
+> Task code is not written yet; commands under "How to run" show the planned interface.
 
 ---
 
@@ -30,17 +30,22 @@ The assignment gives each group **one** of the three datasets below; all three t
 
 | Role | Checkpoint | Source |
 | --- | --- | --- |
-| Main model | `meta-llama/Llama-3.1-8B-Instruct` | https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct (gated: accept Meta's licence on the page first) |
+| Main model | `meta-llama/Llama-3.1-8B-Instruct`, revision `0e9e39f249a16976918f6564b8830bc894c89659` | https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct (gated: accept Meta's licence on the page first) |
 | Fallback if access is delayed | `Qwen/Qwen2.5-7B-Instruct` | https://huggingface.co/Qwen/Qwen2.5-7B-Instruct (not gated) |
 
-Only the `*.safetensors`, `*.json` and tokenizer files are downloaded; the `original/` folder is skipped.
+Only the `*.safetensors` and `*.json` files are downloaded (15 GB); the `original/` folder is skipped:
+
+```bash
+hf download meta-llama/Llama-3.1-8B-Instruct --include "*.json" --include "*.safetensors" --exclude "original/*"
+```
 
 ## Repository layout
 
 ```
 cs60075-cot-faithfulness/
 ├── README.md
-├── requirements.txt            # pinned versions (added after the environment is built)
+├── requirements.txt            # pinned direct dependencies
+├── env/cotfaith-freeze.txt     # full pip freeze of the cluster environment
 ├── code/
 │   ├── CoT_Faithfulness_Colab.ipynb   # end-to-end notebook: setup → Task 1 → Task 2 → Task 3
 │   ├── common/                 # shared: config, data, prompts, model backend, parsing, metrics, cache
@@ -75,11 +80,14 @@ See `scripts/cluster/README.md`. In short: log in through `10.5.18.114`, run on 
 `CUDA_VISIBLE_DEVICES` pinned to a card with at least 20 GB free, and launch long jobs with `setsid nohup`.
 
 ```bash
-conda create -n cotfaith python=3.10 -y -c conda-forge --override-channels
+conda create -n cotfaith python=3.11 -y -c conda-forge --override-channels
 conda activate cotfaith
 pip install -r requirements.txt
 export HF_TOKEN=<your read token>
 ```
+
+The environment was built with `pip install --no-cache-dir` (no pip cache on the NFS home) and checked on gpu73:
+`torch 2.13.0+cu130` sees the L40S with bf16 support, and the Llama tokenizer loads from the local cache.
 
 ### VS Code
 
@@ -153,7 +161,7 @@ and a `metrics.json` per stage. Plots for the report go to `report/figures/`.
 
 - [ ] `code/task1`, `code/task2`, `code/task3` + shared `code/common`
 - [ ] End-to-end Colab notebook
-- [ ] `requirements.txt` with pinned versions
+- [x] `requirements.txt` with pinned versions
 - [ ] `report.pdf` (8–12 pages) with the Task 2 paper-comparison section
 - [ ] 5–10 minute code walkthrough video
 - [ ] `.zip` with `code/`, `README.md`, `requirements.txt`, `report.pdf` (no data or weights)
