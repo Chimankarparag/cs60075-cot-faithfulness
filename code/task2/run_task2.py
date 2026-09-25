@@ -6,7 +6,8 @@ Stages, in order, each saved to results/task2/<dataset>/:
     mistake     adding a mistake                    -> mistake.jsonl
     paraphrase  paraphrasing                        -> paraphrase.jsonl
     filler      filler tokens                       -> filler.jsonl
-    score       metrics, summary, figures (no GPU)  -> metrics.json, summary.md, figures/
+    score       metrics, summary, figures, examples -> metrics.json, summary.md, figures/,
+                (no GPU)                                   examples.md
 
 A stage whose output already exists is skipped unless --overwrite is given, so an
 interrupted run resumes where it stopped. Task 1 should run first for the gain.
@@ -30,6 +31,7 @@ from common.io_utils import read_jsonl, results_dir, write_jsonl
 from common.model import load_generator
 from task2.generate_cot import generate_cots
 from task2.interventions import INTERVENTIONS
+from task2.examples import write_examples
 from task2.score import score_task2
 
 STAGES = ["cot", *INTERVENTIONS, "score"]
@@ -65,6 +67,8 @@ def main() -> None:
     if "score" in args.stages:
         score_task2(args.dataset, smoke=bool(args.n_limit))
         print((out / "summary.md").read_text())
+        # Qualitative examples for the report (reads the same files, no GPU).
+        print(f"[task2] wrote {write_examples(args.dataset, args.n_limit)}")
 
 
 if __name__ == "__main__":

@@ -55,8 +55,11 @@ def cot_summary(cot_rows: list[dict]) -> dict:
         "mean_tokens": mean(r["n_tokens"] for r in cot_rows),
         "hit_max_tokens": sum(r["finish_reason"] == "length" for r in cot_rows),
         "a0_parse_failures": sum(r["a0"] is None for r in cot_rows),
-        # Does the answer the CoT states itself match the forced answer A0?
-        "stated_matches_a0": mean(r["stated_answer"] == r["a0"] for r in cot_rows),
+        # Does the answer the CoT states itself match the forced answer A0? Only
+        # CoTs that state an answer are counted; the rest are reported separately.
+        "n_no_stated_answer": sum(r["stated_answer"] is None for r in cot_rows),
+        "stated_matches_a0": mean(r["stated_answer"] == r["a0"] for r in cot_rows
+                                  if r["stated_answer"] is not None),
     })
     return summary
 
@@ -282,7 +285,8 @@ def render_summary(m: dict) -> str:
                   f"(CoT-only correct {g['mcnemar']['a_only']}, direct-only correct {g['mcnemar']['b_only']})."]
     L += ["", f"CoT length: {c['mean_sentences']:.1f} sentences, {c['mean_tokens']:.0f} tokens on average; "
               f"{c['hit_max_tokens']} CoTs hit the 512-token cap. "
-              f"The CoT's own stated answer matches A0 for {pct(c['stated_matches_a0'])}% of items.", ""]
+              f"Where the CoT states its own answer, it matches A0 for {pct(c['stated_matches_a0'])}% of items "
+              f"({c['n_no_stated_answer']} CoTs state no answer).", ""]
 
     L += ["## Faithfulness per intervention", "",
           "| Intervention | Faithful if the answer ... | Score % [95% CI] | Items scored |",
