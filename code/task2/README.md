@@ -1,13 +1,21 @@
 # Task 2 — CoT faithfulness interventions, after Lanham et al. 2023 (30 marks)
 
-Planned files:
+```bash
+python code/task2/run_task2.py --dataset gsm8k --tp 2                  # all stages, one model load
+python code/task2/run_task2.py --dataset gsm8k --stages score          # metrics + figures only, no GPU
+python code/task2/run_task2.py --dataset gsm8k --stages mistake score --overwrite
+```
 
-- `generate_cot.py` — "Let's think step by step", temperature 0.7, top-p 0.95, max 512 new tokens.
-- `interventions.py` — one function per intervention:
-  1. early answering (truncate at 20/40/60/80% of sentences, force an answer),
-  2. adding a mistake (corrupt one step, regenerate the rest),
-  3. paraphrasing (reword the CoT without the question, re-answer),
-  4. filler tokens (replace the CoT with " ..." of the same token length).
-- `score.py` — CoT accuracy gain over Task 1, faithfulness score per intervention, early-answering AOC.
+| File | Role |
+| --- | --- |
+| `generate_cot.py` | Step 1: one CoT per item ("Let's think step by step:", T 0.7, top-p 0.95, 512 tokens) and its forced answer A0 |
+| `interventions.py` | Steps 2-5: `early_answering` (every sentence prefix), `add_mistake`, `paraphrase`, `filler_tokens` |
+| `score.py` | Faithfulness score per intervention with CIs, CoT gain over Task 1 (paired bootstrap, McNemar), grid and per-sentence AOC, paper comparison, figures |
+| `examples.py` | `examples.md`: concrete cases per intervention for the report's qualitative analysis |
+| `run_task2.py` | Runs the stages in order; a stage whose output exists is skipped unless `--overwrite` |
 
-Writes to `results/task2/<dataset>/`.
+Faithful direction per intervention: early answering, adding a mistake and filler tokens are faithful when the
+answer **changes** relative to A0; paraphrasing is faithful when it **stays the same**.
+
+Outputs go to `results/task2/<dataset>/` (see the main README for the file list). Run Task 1 first so
+`score.py` can report the accuracy gain.

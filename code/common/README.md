@@ -1,13 +1,22 @@
-# `code/common/` — shared building blocks (planned, not written yet)
+# `code/common/` — shared building blocks
 
-Used by all three tasks, so each task folder only holds its own logic.
+Used by every task, so each task folder only holds its own logic. Scripts put `code/` on `sys.path` and
+`import common.<module>`.
 
 | Module | Job |
 | --- | --- |
-| `config.py` | Dataset, model id, seeds, n, paths, decoding settings; all overridable from the command line |
-| `data.py` | Load the parquet files, normalise rows to one schema, build the eval and few-shot files |
-| `prompts.py` | Chat templates: direct zero-shot, direct 4-shot, CoT, forced answer, add-a-mistake, paraphrase |
-| `model.py` | One `generate()` interface over vLLM (cluster) and transformers (Colab / P100), incl. 4-bit on small GPUs |
-| `parsing.py` | Answer extraction per dataset and the CoT sentence splitter |
-| `metrics.py` | Accuracy + bootstrap 95% CI, McNemar test, faithfulness scores, AOC |
-| `cache.py` | JSONL cache keyed by item id + stage + settings, so reruns and the notebook replay instead of regenerating |
+| `config.py` | Paths, model id + pinned revision, seed 42, dataset specs (pinned Hub revisions, checksums, sample sizes), decoding settings |
+| `data.py` | Download parquet files (checksum-verified), normalise the three datasets to one item format, sample eval / few-shot sets. Run `python code/common/data.py --dataset all` |
+| `prompts.py` | Every prompt: direct answering, CoT, Lanham et al.'s forced-answer format, mistake and paraphrase rewrites |
+| `model.py` | `Request` → `Output` through vLLM (cluster) or transformers (Colab, optional 4-bit); per-request seeds; GPU memory sized from what is free |
+| `answering.py` | `force_answers()`: put a (modified) CoT in the assistant turn and read the answer off it |
+| `parsing.py` | Answer extraction (numbers, option letters, yes/no), the CoT's own stated answer, and the sentence splitter |
+| `metrics.py` | Bootstrap CIs, paired bootstrap difference, exact McNemar test, trapezoid AOC |
+| `io_utils.py` | JSON / JSONL read-write (atomic), result folders (`results/` or `results/smoke/`) |
+| `cli.py` | Shared command-line flags (`--dataset`, `--n-limit`, model flags) |
+
+Item format produced by `data.py`:
+
+```json
+{"id": "gsm8k-test-42", "index": 42, "question": "...", "options": null, "gold": "18"}
+```

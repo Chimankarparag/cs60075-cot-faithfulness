@@ -2,21 +2,26 @@
 
 Login node: `ssh <roll-no>@10.5.18.114` (password login; `.100` may be unreachable).
 GPU boxes (no scheduler): `10.5.18.73` (2x L40S 48 GB), `10.5.18.74` (2x A40 48 GB).
-Home (`/home/bt3/<roll-no>`) is shared NFS, so a clone or model download is visible on every machine.
+Home (`/home/bt3/<roll-no>`) is shared NFS, so a copy of the repo or a model download is visible on every machine.
 
-Before every run:
-
-```bash
-nvidia-smi --query-gpu=index,name,utilization.gpu,memory.used,memory.total --format=csv
-export CUDA_VISIBLE_DEVICES=<a card with >= 20 GB free>
-```
-
-Long jobs must survive the SSH session:
+| Script | Use |
+| --- | --- |
+| `env.sh` | Environment for the `cotfaith` conda env; `source scripts/cluster/env.sh` before running anything by hand |
+| `run.sh <gpus> <log> <script> [args]` | Start one script detached (`setsid nohup`), log to `logs/<log>.log` |
+| `run_tasks12.sh <gpus> <log> "<datasets>" [args]` | Task 1 then Task 2 for each dataset, detached |
 
 ```bash
-mkdir -p logs
-setsid nohup <command> > logs/<name>.log 2>&1 < /dev/null &
+nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv   # the cards are shared
+scripts/cluster/run_tasks12.sh 0,1 full "gsm8k bbh strategyqa" --tp 2
+tail -f logs/full.log
 ```
 
-SLURM fallback (P100 16 GB, no bf16, no vLLM): partition `gpupart_p100`, request both GPUs of one node.
-Launcher scripts for each task will be added here.
+Known issues handled in `env.sh`:
+
+- `ImportError: ... CXXABI_1.3.15 not found` — Rocky Linux 9's system `libstdc++` is older than conda-forge's
+  ICU needs; the env's own `lib/` is put first on `LD_LIBRARY_PATH`.
+- `FileNotFoundError: 'ninja'` during vLLM warm-up — FlashInfer tries to JIT-compile its sampler, which needs
+  `nvcc`; `VLLM_USE_FLASHINFER_SAMPLER=0` uses vLLM's PyTorch sampler instead.
+
+The model needs about 16 GB for weights plus a few GB of KV cache. `model.py` sizes vLLM's memory from what is
+free at start-up; if no single card has ~20 GB free, use both cards with `--tp 2`.
