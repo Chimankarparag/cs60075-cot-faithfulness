@@ -51,5 +51,6 @@ fi
 FINISH="source scripts/cluster/env.sh; \"\$PY\" code/analysis/compare_models.py > logs/compare.log 2>&1; \
   { echo; echo \"# Finished \$(date '+%F %T')\"; echo; grep -h 'ALL DONE\|FAILED' logs/*/campaign.log; echo; \
     sed -n '1,40p' results/comparison/models.md; } >> $STATUS"
-setsid nohup bash -c "$PLAN; $FINISH" > logs/run_all.log 2>&1 < /dev/null &
+# A newline (not ";") joins the two parts: PLAN may already end with "; ".
+setsid nohup bash -c "$PLAN"$'\n'"$FINISH" > logs/run_all.log 2>&1 < /dev/null &
 echo "started (pid $!); progress: scripts/cluster/status.sh"
