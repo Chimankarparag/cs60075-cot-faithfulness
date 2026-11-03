@@ -1,4 +1,4 @@
-# Task 1 - direct answering on bbh (n = 150)
+# Task 1 - direct answering on bbh (n = 150, meta-llama/Llama-3.1-8B-Instruct)
 
 | Variant | Accuracy % [95% CI] | Parse failures | Hit 16-token cap |
 | --- | --- | --- | --- |

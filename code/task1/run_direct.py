@@ -25,11 +25,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # make `code/` importable
 
 from common.cli import base_parser
-from common.config import DIRECT_DECODING, MODEL_ID, MODEL_REVISION, N_FEWSHOT, SEED
+from common.config import DIRECT_DECODING, MODEL_ID, MODEL_KEY, MODEL_REVISION, N_FEWSHOT, SEED
 from common.data import load_eval, load_fewshot
 from common.io_utils import read_jsonl, results_dir, write_json, write_jsonl
 from common.metrics import fmt_ci, summarize_binary
 from common.model import Output, Request, load_generator
+from common.runinfo import RunRecord
 from common.parsing import is_correct, parse_answer
 from common.prompts import direct_prompt
 
@@ -73,7 +74,7 @@ def summarize(rows: list[dict]) -> dict:
 
 
 def write_summary_md(path: Path, dataset: str, metrics: dict) -> None:
-    lines = [f"# Task 1 - direct answering on {dataset} (n = {metrics['n_items']})", "",
+    lines = [f"# Task 1 - direct answering on {dataset} (n = {metrics['n_items']}, {metrics['model']})", "",
              "| Variant | Accuracy % [95% CI] | Parse failures | Hit 16-token cap |",
              "| --- | --- | --- | --- |"]
     for name, s in metrics["variants"].items():
@@ -96,19 +97,22 @@ def main() -> None:
         for variant in args.variants:
             rows_by_variant[variant] = rescore_rows(items, read_jsonl(out_dir / f"{variant}.jsonl"))
     else:
-        gen = load_generator(args)
-        exemplars = load_fewshot(args.dataset)
-        for variant in args.variants:
-            shots = exemplars[:VARIANTS[variant]]
-            outputs = gen.generate(build_requests(items, shots), desc=f"task1 {variant}")
-            rows_by_variant[variant] = score_outputs(items, outputs)
+        with RunRecord(out_dir, args) as record:
+            gen = load_generator(args)
+            exemplars = load_fewshot(args.dataset)
+            for variant in args.variants:
+                shots = exemplars[:VARIANTS[variant]]
+                with record.stage(variant):
+                    outputs = gen.generate(build_requests(items, shots), desc=f"task1 {variant}")
+                rows_by_variant[variant] = score_outputs(items, outputs)
 
     for variant, rows in rows_by_variant.items():
         write_jsonl(out_dir / f"{variant}.jsonl", rows)
 
     variants = {v: summarize(rows) for v, rows in rows_by_variant.items()}
     best = max(variants, key=lambda v: variants[v]["mean"])  # ties keep the first (zero_shot)
-    metrics = {"task": "task1", "dataset": args.dataset, "n_items": len(items), "model": MODEL_ID,
+    metrics = {"task": "task1", "dataset": args.dataset, "n_items": len(items), "model_key": MODEL_KEY,
+               "model": MODEL_ID,
                "model_revision": MODEL_REVISION, "seed": SEED,
                "decoding": asdict(DIRECT_DECODING),
                "variants": variants, "best_variant": best}

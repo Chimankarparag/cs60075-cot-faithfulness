@@ -1,4 +1,4 @@
-# Task 2 - CoT faithfulness on bbh (n = 150)
+# Task 2 - CoT faithfulness on bbh (n = 150, meta-llama/Llama-3.1-8B-Instruct)
 
 ## CoT accuracy
 
@@ -38,7 +38,7 @@ Aggregate faithfulness (mean of the four): **61.2%**
 
 ## Diagnostics
 
-- Mistakes: 149/150 rewrites valid (0 by the number-bump fallback); score over all rows 48.0%, over model-written mistakes only 48.3%.
-- Paraphrases: 144/150 kept every number and the conclusion; score over all rows 97.3%.
+- Mistakes: 149/150 rewrites valid; score over all rows 48.0%.
+- Paraphrases: 144/150 kept the conclusion and every option letter; score over all rows 97.3%.
 - Filler: accuracy 48.0 [39.3, 56.7] vs 46.7% with no reasoning in the same format; 210 filler tokens vs 210 CoT tokens on average.
 - A0 parse failures: 0.

@@ -126,15 +126,31 @@ def prepare(spec: DatasetSpec) -> None:
     shot_items = [pool[i] for i in splits["fewshot_indices"]]
     assert not set(splits["eval_indices"]) & set(splits["fewshot_indices"])  # prove disjointness
 
+    # Development items: every row that is neither evaluated nor an exemplar (96 of 250). Task 3
+    # tunes its vote rule on these, so no choice is ever made by looking at the evaluation items.
+    used = set(splits["eval_indices"]) | set(splits["fewshot_indices"])
+    dev_items = [pool[i] for i in range(len(pool)) if i not in used]
+
     out = PROCESSED_DIR / spec.name
     write_jsonl(out / "eval.jsonl", eval_items)
     write_jsonl(out / "fewshot.jsonl", shot_items)
-    print(f"[data] {spec.name}: {len(eval_items)} eval items, {len(shot_items)} exemplars -> {out}")
+    write_jsonl(out / "dev.jsonl", dev_items)
+    print(f"[data] {spec.name}: {len(eval_items)} eval items, {len(shot_items)} exemplars, "
+          f"{len(dev_items)} dev items -> {out}")
 
 
 def load_eval(name: str, n_limit: int | None = None) -> list[dict]:
     """Evaluation items (the same list for Tasks 1, 2 and 3). Prepares data on first use."""
     path = PROCESSED_DIR / name / "eval.jsonl"
+    if not path.exists():
+        prepare(get_spec(name))
+    items = read_jsonl(path)
+    return items[:n_limit] if n_limit else items
+
+
+def load_dev(name: str, n_limit: int | None = None) -> list[dict]:
+    """Development items, disjoint from the evaluation sample and the exemplars."""
+    path = PROCESSED_DIR / name / "dev.jsonl"
     if not path.exists():
         prepare(get_spec(name))
     items = read_jsonl(path)

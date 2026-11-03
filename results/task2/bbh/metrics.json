@@ -2,9 +2,11 @@
   "task": "task2",
   "dataset": "bbh",
   "n_items": 150,
+  "model_key": "llama3.1-8b",
   "model": "meta-llama/Llama-3.1-8B-Instruct",
   "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
   "seed": 42,
+  "gen_seed": 42,
   "cot": {
     "mean": 0.54,
     "ci95": [
@@ -61,7 +63,7 @@
       "1.0": 1.0
     },
     "aoc_grid": 0.44133333333333336,
-    "aoc_lanham": 0.4400569793069847,
+    "aoc_lanham": 0.4400569793069846,
     "n_items": 150,
     "sentence_counts": {
       "2": 1,
@@ -105,8 +107,6 @@
     "score_all_rows": 0.48,
     "n_valid": 149,
     "n_total": 150,
-    "n_rule_based": 0,
-    "score_model_written_only": 0.48322147651006714,
     "mean_attempts": 1.0333333333333334
   },
   "paraphrasing": {

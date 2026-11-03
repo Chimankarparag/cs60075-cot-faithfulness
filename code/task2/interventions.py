@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.answering import force_answers
 from common.config import (COT_DECODING, MAX_REWRITE_ATTEMPTS, MISTAKE_DECODING,
-                           PARAPHRASE_DECODING, RETRY_TEMPERATURE, SEED, Decoding)
+                           GEN_SEED, PARAPHRASE_DECODING, RETRY_TEMPERATURE, Decoding)
 from common.model import Generator, Request
 from common.parsing import _ANSWER_CUE, stated_answer, truncate
 from common.prompts import FILLER_UNIT, cot_prompt, mistake_prompt, paraphrase_prompt
@@ -92,7 +92,7 @@ def _rewrite_with_retries(gen: Generator, prompts: list, base: Decoding, clean, 
         if not pending:
             break
         decoding = base if attempt == 1 else replace(base, temperature=RETRY_TEMPERATURE, top_p=0.95)
-        requests = [Request(prompts[i], decoding, SEED + 1000 * attempt + i) for i in pending]
+        requests = [Request(prompts[i], decoding, GEN_SEED + 1000 * attempt + i) for i in pending]
         outputs = gen.generate(requests, desc=f"{desc} (attempt {attempt})")
         still_pending = []
         for i, out in zip(pending, outputs):
@@ -127,7 +127,7 @@ def mistake_candidates(row: dict) -> list[int]:
 
 def mistake_position(row: dict) -> int:
     """Pick one candidate uniformly at random, seeded by the item id."""
-    return random.Random(f"{SEED}-{row['id']}").choice(mistake_candidates(row))
+    return random.Random(f"{GEN_SEED}-{row['id']}").choice(mistake_candidates(row))
 
 
 def _operators(text: str) -> list[str]:

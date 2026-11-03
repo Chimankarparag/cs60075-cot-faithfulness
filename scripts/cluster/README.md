@@ -10,12 +10,19 @@ Home (`/home/bt3/<roll-no>`) is shared NFS, so a copy of the repo or a model dow
 | `run.sh <gpus> <log> <script> [args]` | Start one script detached (`setsid nohup`), log to `logs/<log>.log` |
 | `run_tasks12.sh <gpus> <log> [args]` | Task 1 then Task 2 on BBH, detached |
 | `run_task3.sh <gpus> <log> [args]` | Task 3 on BBH, detached (run Tasks 1 and 2 first; one A40 or L40S is enough, `--tp 1`) |
+| `run_campaign.sh <gpus> <model> [args]` | Everything for one model, detached: Task 1 (if missing), Task 2 (missing stages), Task 3 on the dev items, Task 3 with seeds 42/20/30/40, seed summary; one log per step in `logs/<model>/` |
 
 ```bash
 nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv   # the cards are shared
 scripts/cluster/run_tasks12.sh 0,1 full --tp 2
 tail -f logs/full.log
+scripts/cluster/run_campaign.sh 0 qwen3-8b --tp 1                    # all tasks for the second model
+tail -f logs/qwen3-8b/campaign.log
 ```
+
+A model other than Llama must be in the Hugging Face cache first (`HF_HUB_OFFLINE=1` is set by `env.sh`), e.g.
+on the login node: `HF_HUB_OFFLINE=0 python -c "from huggingface_hub import snapshot_download as d;
+d('Qwen/Qwen3-8B', revision='b968826d9c46dd6066d109eabc6255188de91218')"`.
 
 Known issues handled in `env.sh`:
 

@@ -15,7 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.answering import force_answers
-from common.config import COT_DECODING, SEED
+from common.config import COT_DECODING, GEN_SEED
 from common.model import Generator, Request
 from common.parsing import is_correct, split_sentences, stated_answer
 from common.prompts import cot_prompt
@@ -24,7 +24,7 @@ from common.prompts import cot_prompt
 def cot_seed(position: int) -> int:
     """Seed for the CoT of the item at `position` in the eval list.
     Per-item seeds make every CoT reproducible regardless of batching."""
-    return SEED + position
+    return GEN_SEED + position
 
 
 def generate_cots(items: list[dict], gen: Generator) -> list[dict]:

@@ -14,7 +14,7 @@ import os
 import time
 from dataclasses import dataclass
 
-from common.config import MAX_MODEL_LEN, MODEL_ID, MODEL_REVISION, SEED, Decoding
+from common.config import MAX_MODEL_LEN, MODEL, MODEL_ID, MODEL_REVISION, SEED, Decoding
 from common.prompts import Prompt
 
 
@@ -43,11 +43,12 @@ class Generator:
         unfinished assistant message) keeps it byte-exact: the Llama template
         would otherwise trim trailing whitespace."""
         text = self.tokenizer.apply_chat_template(
-            list(prompt.messages), tokenize=False, add_generation_prompt=True)
+            list(prompt.messages), tokenize=False, add_generation_prompt=True,
+            **dict(MODEL.chat_template_kwargs))
         return text + (prompt.prefill or "")
 
     def encode(self, text: str) -> list[int]:
-        # The chat template already starts with <|begin_of_text|>, so no extra BOS.
+        # The chat template already adds any start token (<|begin_of_text|> for Llama), so no extra BOS.
         return self.tokenizer(text, add_special_tokens=False)["input_ids"]
 
     def count_tokens(self, text: str) -> int:

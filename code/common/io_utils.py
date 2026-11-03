@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 from typing import Iterable
 
-from common.config import RESULTS_DIR
+from common.config import GEN_SEED, RESULTS_DIR, SEED
 
 
 def write_jsonl(path: Path, rows: Iterable[dict]) -> None:
@@ -39,10 +39,21 @@ def read_json(path: Path) -> dict:
         return json.load(f)
 
 
-def results_dir(task: str, dataset: str, smoke: bool = False) -> Path:
-    """results/<task>/<dataset>/ for real runs, results/smoke/<task>/<dataset>/ for
-    quick tests with --n-limit, so a smoke test never overwrites real results."""
+def results_dir(task: str, dataset: str, smoke: bool = False, seed: int | None = None) -> Path:
+    """Where a task's results live.
+
+    results/<task>/<dataset>/            real runs with the default seed (42)
+    results/<task>/<dataset>/seed_<N>/   repeats with another generation seed (--seed N)
+    results/smoke/<task>/<dataset>/      quick tests with --n-limit (never overwrite real results)
+
+    RESULTS_DIR already points at results/models/<model>/ for a non-default model. `seed`
+    defaults to this run's GEN_SEED; pass SEED to address the default-seed results (the
+    Task 1 and Task 2 baselines that every Task 3 repeat is compared with).
+    """
     base = RESULTS_DIR / "smoke" if smoke else RESULTS_DIR
     path = base / task / dataset
+    seed = GEN_SEED if seed is None else seed
+    if seed != SEED:
+        path = path / f"seed_{seed}"
     path.mkdir(parents=True, exist_ok=True)
     return path

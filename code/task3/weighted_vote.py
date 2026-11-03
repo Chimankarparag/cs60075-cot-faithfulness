@@ -1,10 +1,18 @@
 """Task 3, steps 2-3 - early-answer every sample at 50% and take a weighted majority vote.
 
 Step 2. For each sampled CoT keep the first k = floor(0.5 * n) sentences, force an answer, and
-compare it with the sample's own final answer A0_j. The assignment calls a sample "more
-faithful / load-bearing" if that answer does NOT change (--faithful-if unchanged, the main
-setting). Task 2 and Lanham et al. use the opposite reading (a CoT is faithful if the answer
-DOES change when it is cut), so --faithful-if changed is run as an ablation.
+compare it with the sample's own final answer A0_j. Three flag rules:
+
+  unchanged    the assignment's wording: a sample is "more faithful / load-bearing" if its
+               answer does NOT change at 50% truncation (main setting).
+  loadbearing  unchanged at 50% AND its final answer differs from the model's no-reasoning
+               answer (the forced answer after an empty CoT, i.e. 0% of the reasoning).
+               Lanham et al. (2023, Sec. 3) use "same answer with and without CoT" as their
+               marker of post-hoc reasoning. "Unchanged at 50%" cannot tell "settled by the first
+               half of the reasoning" from "settled before any reasoning"; this rule keeps only
+               the first case. It is a stricter version of the assignment's rule, not a new signal.
+  changed      the opposite reading (Task 2 / Lanham: faithful if the answer DOES change when the
+               CoT is cut), run as an ablation.
 
 Step 3. Vote over the final answers A0_1..A0_k. A sample flagged "faithful" has weight 1, every
 other sample weight alpha (0 <= alpha <= 1). alpha = 1 is plain self-consistency (the control).
@@ -15,8 +23,8 @@ Rules, fixed in advance so they cannot be tuned on the evaluation set:
   * if every vote has weight 0 (alpha = 0 and no flagged sample) the vote falls back to alpha = 1;
   * the pipeline's output CoT is the winning letter's highest-weight sample (ties: lowest j).
 
-Outputs: results/task3/<dataset>/early50.jsonl (this file needs the model); the votes are pure
-functions of the saved files, so `vote()` can be re-run for any alpha without a GPU.
+Outputs: results/task3/<dataset>/early50.jsonl and prior.jsonl (these need the model); the votes
+are pure functions of the saved files, so `vote()` can be re-run for any rule and alpha without a GPU.
 """
 from __future__ import annotations
 
@@ -31,7 +39,7 @@ from common.model import Generator
 from common.parsing import truncate
 
 TRUNCATION = 0.5
-FAITHFUL_IF = ("unchanged", "changed")
+FAITHFUL_IF = ("unchanged", "loadbearing", "changed")
 
 
 def k_at(fraction: float, n: int) -> int:
@@ -50,9 +58,24 @@ def early_answer_50(items_by_id: dict[str, dict], sample_rows: list[dict], gen: 
             for r, k, a in zip(sample_rows, ks, answers)]
 
 
-def is_flagged(same_as_a0: bool, faithful_if: str) -> bool:
+def prior_answers(items: list[dict], gen: Generator) -> list[dict]:
+    """The model's answer with no reasoning at all (empty CoT, same forced-answer prompt). This
+    is Task 2's 0% early-answering point; it is the same for every sample of an item."""
+    answers = force_answers(gen, items, [""] * len(items), desc="task3 no-reasoning answer per item")
+    return [{"id": item["id"], "answer_raw": a["raw"], "answer": a["answer"]}
+            for item, a in zip(items, answers)]
+
+
+def is_flagged(same_as_a0: bool, faithful_if: str, a0: str | None = None,
+               prior: str | None = None) -> bool:
+    """Is a sample flagged faithful under rule `faithful_if`? `a0` (the sample's final answer) and
+    `prior` (the item's no-reasoning answer) are only needed for the loadbearing rule."""
     assert faithful_if in FAITHFUL_IF
-    return same_as_a0 if faithful_if == "unchanged" else not same_as_a0
+    if faithful_if == "unchanged":
+        return same_as_a0
+    if faithful_if == "changed":
+        return not same_as_a0
+    return same_as_a0 and a0 is not None and a0 != prior
 
 
 def vote(samples: list[dict], flags: list[bool], alpha: float) -> dict:

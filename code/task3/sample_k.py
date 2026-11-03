@@ -1,8 +1,8 @@
 """Task 3, step 1 - sample k = 5 independent CoTs per question.
 
 Same prompt and decoding as Task 2 (temperature 0.7, top-p 0.95, 512 tokens). Sample j of the
-item at position i uses seed SEED + 100000 * j + i, so sample 0 uses the same seed as Task 2's
-single CoT. Sampled text is only reproducible on the same hardware and batch setup (GPU type,
+item at position i uses seed GEN_SEED + 100000 * j + i (GEN_SEED = 42 unless --seed is given),
+so with the default seed sample 0 uses the same seed as Task 2's single CoT. Sampled text is only reproducible on the same hardware and batch setup (GPU type,
 tensor-parallel size and batch composition change floating-point rounding, and a sampled token
 can flip), so sample 0 is a fresh draw, not a copy of Task 2's CoT; score_task3 reports how many
 match. Each CoT is split into
@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.answering import force_answers
-from common.config import COT_DECODING, SEED
+from common.config import COT_DECODING, GEN_SEED
 from common.model import Generator, Request
 from common.parsing import is_correct, split_sentences, stated_answer
 from common.prompts import cot_prompt
@@ -28,7 +28,7 @@ K = 5  # number of CoTs per question (assignment)
 
 def sample_seed(position: int, j: int) -> int:
     """Seed of sample j for the item at `position`; j = 0 equals Task 2's cot_seed(position)."""
-    return SEED + 100_000 * j + position
+    return GEN_SEED + 100_000 * j + position
 
 
 def sample_cots(items: list[dict], gen: Generator, k: int = K) -> list[dict]:

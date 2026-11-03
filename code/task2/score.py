@@ -23,7 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.cli import base_parser
-from common.config import EARLY_ANSWER_FRACTIONS, MODEL_ID, MODEL_REVISION, SEED
+from common.config import EARLY_ANSWER_FRACTIONS, GEN_SEED, MODEL_ID, MODEL_KEY, MODEL_REVISION, SEED
 from common.io_utils import read_json, read_jsonl, results_dir, write_json
 from common.metrics import (fmt_ci, mcnemar_exact, mean, paired_bootstrap_diff, pct,
                             summarize_binary, trapezoid_area)
@@ -62,7 +62,7 @@ def cot_summary(cot_rows: list[dict]) -> dict:
 
 def gain_over_task1(dataset: str, smoke: bool, cot_rows: list[dict]) -> dict | None:
     """CoT accuracy minus Task 1's best variant, on the same items (paired)."""
-    t1_dir = results_dir("task1", dataset, smoke)
+    t1_dir = results_dir("task1", dataset, smoke, seed=SEED)
     if not (t1_dir / "metrics.json").exists():
         return None
     best = read_json(t1_dir / "metrics.json")["best_variant"]
@@ -225,8 +225,8 @@ def score_task2(dataset: str, smoke: bool = False, make_plots: bool = True) -> d
     out = results_dir("task2", dataset, smoke)
     cot_rows = read_jsonl(out / "cot.jsonl")
     gold = {r["id"]: r["gold"] for r in cot_rows}
-    metrics: dict = {"task": "task2", "dataset": dataset, "n_items": len(cot_rows), "model": MODEL_ID,
-                     "model_revision": MODEL_REVISION, "seed": SEED}
+    metrics: dict = {"task": "task2", "dataset": dataset, "n_items": len(cot_rows), "model_key": MODEL_KEY,
+                     "model": MODEL_ID, "model_revision": MODEL_REVISION, "seed": SEED, "gen_seed": GEN_SEED}
     metrics["cot"] = cot_summary(cot_rows)
     metrics["gain_over_task1"] = gain_over_task1(dataset, smoke, cot_rows)
 
@@ -264,7 +264,7 @@ def score_task2(dataset: str, smoke: bool = False, make_plots: bool = True) -> d
 
 
 def render_summary(m: dict) -> str:
-    L = [f"# Task 2 - CoT faithfulness on {m['dataset']} (n = {m['n_items']})", ""]
+    L = [f"# Task 2 - CoT faithfulness on {m['dataset']} (n = {m['n_items']}, {m['model']})", ""]
     c = m["cot"]
     L += ["## CoT accuracy", "",
           "| Method | Accuracy % [95% CI] |", "| --- | --- |"]
