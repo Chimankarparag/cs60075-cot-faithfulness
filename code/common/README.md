@@ -5,7 +5,7 @@ Used by every task, so each task folder only holds its own logic. Scripts put `c
 
 | Module | Job |
 | --- | --- |
-| `config.py` | Paths, the models (id + pinned revision; `--model`), seed 42 for data and statistics, the generation seed (`--seed`), the BBH dataset spec (pinned Hub revision, checksum, sample size), decoding settings |
+| `config.py` | Paths, the models (id + pinned revision; `--model`), seed 20 for data and statistics, the generation seeds 20/30/40 (`--seed`), the BBH dataset spec (pinned Hub revision, checksum, sample size), decoding settings |
 | `data.py` | Download parquet files (checksum-verified), normalise BBH logical deduction to one item format, sample eval / few-shot sets and the 96 leftover dev items. Run `python code/common/data.py` |
 | `prompts.py` | Every prompt: direct answering, CoT, Lanham et al.'s forced-answer format, mistake and paraphrase rewrites |
 | `model.py` | `Request` → `Output` through vLLM (cluster) or transformers (Colab, optional 4-bit); per-request seeds; GPU memory sized from what is free |

@@ -83,11 +83,13 @@ RESULTS_DIR = RESULTS_ROOT if MODEL_KEY == DEFAULT_MODEL else RESULTS_ROOT / "mo
 # --------------------------------------------------------------------------- #
 # Randomness. The data split, exemplars and bootstrap use SEED; sampling uses GEN_SEED.
 # --------------------------------------------------------------------------- #
-SEED = 42
-# Seed for sampled generations (CoTs, Task 3 samples, mistake/paraphrase retries). It equals SEED
-# unless a run passes --seed N (Task 3 is repeated with seeds 20, 30 and 40). The data split,
-# the few-shot exemplars and the bootstrap always use SEED, so every run sees the same items.
-GEN_SEED = int(_run_choice("--seed", "COTFAITH_SEED", str(SEED)))
+SEED = 20
+# Seeds for sampled generations (Task 2's CoT and interventions, Task 3's samples, rewrite retries).
+# Tasks 2 and 3 are run once per seed in GEN_SEEDS and reported as mean and spread; a run picks its
+# seed with --seed N (default: the first). The data split, the few-shot exemplars, the dev items and
+# the bootstrap always use SEED, so every run sees the same items.
+GEN_SEEDS = (20, 30, 40)
+GEN_SEED = int(_run_choice("--seed", "COTFAITH_SEED", str(GEN_SEEDS[0])))
 N_FEWSHOT = 4  # the spec asks for 4-shot direct answering in Task 1
 
 

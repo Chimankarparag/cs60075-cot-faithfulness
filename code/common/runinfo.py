@@ -4,7 +4,7 @@ Every task script wraps its work in a RunRecord. On exit it appends one entry to
 <results dir>/run_info.json (a list, so resumed or partial runs keep their history):
 
     {"script": "code/task3/run_task3.py --tp 1", "host": "gpu74.cse.iitkgp",
-     "gpus": ["NVIDIA A40"], "cuda_visible_devices": "0", "model": ..., "gen_seed": 42,
+     "gpus": ["NVIDIA A40"], "cuda_visible_devices": "0", "model": ..., "gen_seed": 20,
      "started": "2026-11-03T15:02:11+05:30", "finished": ..., "seconds": 1234.5,
      "stages": {"sample": 512.3, "early50": 40.1, ...}, "versions": {...}, "status": "ok"}
 

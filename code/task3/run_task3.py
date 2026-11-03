@@ -2,7 +2,7 @@
 
     python code/task3/run_task3.py --split dev --tp 2          # 1) choose the vote rule on dev items
     python code/task3/run_task3.py --tp 2                      # 2) everything on the 150 eval items
-    python code/task3/run_task3.py --seed 20 --tp 2            #    a repeat with another sampling seed
+    python code/task3/run_task3.py --seed 30 --tp 2            #    a repeat with another sampling seed
     python code/task3/run_task3.py --stages score              # recompute metrics/figures, no GPU
     python code/task3/run_task3.py --model qwen3-8b --tp 2     # the same for another model
 
@@ -14,9 +14,9 @@ Stages (each saves a file; a stage whose file exists is skipped unless --overwri
     interventions  pipeline_<name>/*.jsonl  Task 2's four interventions on the CoT each vote selects
     score          metrics.json, summary.md, votes.jsonl, figures/
 
-Folders: results/task3/<dataset>/ (seed 42), .../seed_<N>/ (other seeds), .../dev/ (dev split);
-under results/models/<model>/ for a model other than the default. Run Tasks 1 and 2 first: their
-saved default-seed results are the baselines. Where and how long each run took is appended to
+Folders: results/task3/<dataset>/ (seed 20), .../seed_<N>/ (seeds 30, 40), .../dev/ (dev split, seed 20);
+under results/models/<model>/ for a model other than the default. Run Tasks 1 and 2 first: Task 1
+and the Task 2 run with the same --seed are the baselines. Where and how long each run took is appended to
 run_info.json in the same folder.
 """
 from __future__ import annotations
@@ -28,6 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from common.cli import base_parser
+from common.config import SEED
 from common.data import load_dev, load_eval
 from common.io_utils import read_jsonl, write_jsonl
 from common.model import load_generator
@@ -54,7 +55,7 @@ def main() -> None:
     args = parser.parse_args()
     smoke = bool(args.n_limit)
     dev = args.split == "dev"
-    if dev and args.seed != 42:
+    if dev and args.seed != SEED:
         parser.error("the dev split is run once, with the default seed")
     stages = args.stages or ([s for s in STAGES if s not in ("interventions", "score")] if dev
                              else [s for s in STAGES if s != "tune"])

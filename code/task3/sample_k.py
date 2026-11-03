@@ -1,8 +1,8 @@
 """Task 3, step 1 - sample k = 5 independent CoTs per question.
 
 Same prompt and decoding as Task 2 (temperature 0.7, top-p 0.95, 512 tokens). Sample j of the
-item at position i uses seed GEN_SEED + 100000 * j + i (GEN_SEED = 42 unless --seed is given),
-so with the default seed sample 0 uses the same seed as Task 2's single CoT. Sampled text is only reproducible on the same hardware and batch setup (GPU type,
+item at position i uses seed GEN_SEED + 100000 * j + i (GEN_SEED = 20, 30 or 40),
+so sample 0 uses the same seed as the Task 2 CoT of the same seed. Sampled text is only reproducible on the same hardware and batch setup (GPU type,
 tensor-parallel size and batch composition change floating-point rounding, and a sampled token
 can flip), so sample 0 is a fresh draw, not a copy of Task 2's CoT; score_task3 reports how many
 match. Each CoT is split into

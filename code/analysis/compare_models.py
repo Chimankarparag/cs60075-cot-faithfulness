@@ -103,7 +103,8 @@ def render(models: dict, runs: list[dict]) -> str:
         return f"| {label} | " + " | ".join(cells) + " |"
 
     L = ["# Model comparison on BBH logical deduction (five objects), n = 150", "",
-         "Same items, prompts, decoding settings and code for every model; only the checkpoint differs.", "",
+         "Same items, prompts, decoding settings and code for every model; only the checkpoint differs. "
+         "Single-run rows use generation seed 20.", "",
          "## Accuracy (%)", "", head, sep,
          row("Task 1 zero-shot", lambda m: _f(m["task1"]["zero_shot"])),
          row("Task 1 4-shot", lambda m: _f(m["task1"]["four_shot"])),
@@ -116,9 +117,14 @@ def render(models: dict, runs: list[dict]) -> str:
          row("Task 3 weighted, tuned on dev", lambda m: _f(m["task3"]["accuracy"]["tuned"])
              + f" ({m['tuning']['chosen']['faithful_if']}, alpha {m['tuning']['chosen']['alpha']})"),
          row("Task 3 weighted (changed, ablation)", lambda m: _f(m["task3"]["accuracy"]["ablation_changed"])),
-         "", "## Task 3 accuracy over seeds 42/20/30/40 (mean, SD in points)", "", head, sep]
+         "", "## Mean over the generation seeds 20/30/40 (SD in points)", "",
+         "The rows above are the seed-20 runs; these average all three.", "", head, sep,
+         row("Task 2 single CoT accuracy", lambda m: f"{_f(m['seeds']['task2']['cot_accuracy']['mean'])} "
+                                                    f"(SD {100 * m['seeds']['task2']['cot_accuracy']['sd']:.1f})"),
+         row("Task 2 aggregate faithfulness", lambda m: f"{_f(m['seeds']['task2']['aggregate']['mean'])} "
+                                                       f"(SD {100 * m['seeds']['task2']['aggregate']['sd']:.1f})")]
     for p in T3_PIPES:
-        L.append(row(p, lambda m, p=p: f"{_f(m['seeds']['pipelines'][p]['accuracy']['mean'])} "
+        L.append(row(f"Task 3 {p}", lambda m, p=p: f"{_f(m['seeds']['pipelines'][p]['accuracy']['mean'])} "
                                        f"(SD {100 * m['seeds']['pipelines'][p]['accuracy']['sd']:.1f})"))
     L += ["", "## Faithfulness (%)", "", head, sep]
     for n in SCORE_NAMES:
@@ -133,7 +139,7 @@ def render(models: dict, runs: list[dict]) -> str:
           row("Task 3 aggregate, tuned", lambda m: _f(m["task3"]["aggregate_faithfulness"]["tuned"])),
           row("Task 3 aggregate, changed (ablation)",
               lambda m: _f(m["task3"]["aggregate_faithfulness"]["ablation_changed"])),
-          "", "## The 50% flag (Task 3, seed 42)", "", head, sep,
+          "", "## The 50% flag (Task 3, seed 20)", "", head, sep,
           row("Share of samples flagged (unchanged)", lambda m: _f(m["task3"]["flags"]["unchanged"]["share_flagged"])),
           row("Accuracy flagged / other", lambda m: f"{_f(m['task3']['flags']['unchanged']['accuracy_flagged'])} / "
               f"{_f(m['task3']['flags']['unchanged']['accuracy_unflagged'])}"),
@@ -221,6 +227,9 @@ def plot(models: dict) -> None:
 
 def main() -> None:
     models = {k: collect(k) for k in MODELS if (model_root(k) / "task1" / DATASET / "metrics.json").exists()}
+    if not models:
+        print("no results to compare yet")
+        return
     runs = runs_table()
     OUT.mkdir(parents=True, exist_ok=True)
     write_json(OUT / "models.json", models)

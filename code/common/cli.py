@@ -19,7 +19,8 @@ def base_parser(description: str, needs_model: bool = True) -> argparse.Argument
     parser.add_argument("--model", default=DEFAULT_MODEL, choices=sorted(MODELS),
                         help="model to run; non-default models write to results/models/<model>/")
     parser.add_argument("--seed", type=int, default=SEED,
-                        help="generation seed (default 42); other seeds write to .../seed_<N>/")
+                        help="generation seed (default 20; the project uses 20, 30, 40); seeds other than 20 "
+                             "write to .../seed_<N>/")
     if needs_model:
         add_model_args(parser)
     return parser

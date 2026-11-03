@@ -10,14 +10,16 @@ Home (`/home/bt3/<roll-no>`) is shared NFS, so a copy of the repo or a model dow
 | `run.sh <gpus> <log> <script> [args]` | Start one script detached (`setsid nohup`), log to `logs/<log>.log` |
 | `run_tasks12.sh <gpus> <log> [args]` | Task 1 then Task 2 on BBH, detached |
 | `run_task3.sh <gpus> <log> [args]` | Task 3 on BBH, detached (run Tasks 1 and 2 first; one A40 or L40S is enough, `--tp 1`) |
-| `run_campaign.sh <gpus> <model> [args]` | Everything for one model, detached: Task 1 (if missing), Task 2 (missing stages), Task 3 on the dev items, Task 3 with seeds 42/20/30/40, seed summary; one log per step in `logs/<model>/` |
+| `run_all.sh llama\|qwen\|both [args]` | **One command for everything**: picks GPUs with >= 20 GB free, runs `campaign.sh` for the chosen model(s) detached (two models in parallel when two GPUs have room), then writes `results/comparison/` and `logs/STATUS.md` |
+| `campaign.sh <model> [args]` | Everything for one model, in the foreground: Task 1 (if missing), Task 2 with seeds 20/30/40, Task 3 on the dev items, Task 3 with seeds 20/30/40, the seed summary; one log per step in `logs/<model>/` |
+| `status.sh` | One short screen: current step per model, its last timing, and the final summary when done |
 
 ```bash
 nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv   # the cards are shared
 scripts/cluster/run_tasks12.sh 0,1 full --tp 2
 tail -f logs/full.log
-scripts/cluster/run_campaign.sh 0 qwen3-8b --tp 1                    # all tasks for the second model
-tail -f logs/qwen3-8b/campaign.log
+scripts/cluster/run_all.sh both --tp 1                               # every task, both models
+scripts/cluster/status.sh                                            # progress, one screen
 ```
 
 A model other than Llama must be in the Hugging Face cache first (`HF_HUB_OFFLINE=1` is set by `env.sh`), e.g.

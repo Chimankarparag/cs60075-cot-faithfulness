@@ -95,7 +95,7 @@ def normalise_bbh(row: dict, index: int) -> dict:
 
 
 # --------------------------------------------------------------------------- #
-# 3. Choose the evaluation sample and the few-shot exemplars (seed 42)
+# 3. Choose the evaluation sample and the few-shot exemplars (seed SEED = 20)
 # --------------------------------------------------------------------------- #
 def choose_indices(spec: DatasetSpec) -> dict:
     """Pick eval and few-shot row indices reproducibly.

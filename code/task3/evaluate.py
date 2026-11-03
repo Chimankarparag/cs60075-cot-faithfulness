@@ -49,8 +49,8 @@ LABELS = {"plain_sc": "Plain self-consistency (alpha = 1, control)",
 
 
 def task3_dir(dataset: str, smoke: bool = False, split: str = "test") -> Path:
-    """results/task3/<dataset>/ (or .../seed_<N>/ for a repeat); the dev run lives in dev/ below
-    the default-seed folder."""
+    """results/task3/<dataset>/ (seed 20) or .../seed_<N>/ (30, 40); the dev run lives in dev/ below
+    the seed-20 folder."""
     if split == "dev":
         path = results_dir("task3", dataset, smoke, seed=SEED) / "dev"
         path.mkdir(parents=True, exist_ok=True)
@@ -225,8 +225,8 @@ def score_task3(dataset: str, smoke: bool = False, make_plots: bool = True) -> d
         "a0_parse_failures": sum(s["a0"] is None for s in all_samples),
         "mean_sentences": mean(s["n_sentences"] for s in all_samples),
     }
-    # Baselines are the default-seed Task 1 and Task 2 runs of the same model.
-    t2_dir = results_dir("task2", dataset, smoke, seed=SEED)
+    # Baselines: Task 1 (greedy, run once) and the Task 2 run with the same generation seed.
+    t2_dir = results_dir("task2", dataset, smoke)
     t2_path = t2_dir / "cot.jsonl"
     t2_rows = {r["id"]: r for r in read_jsonl(t2_path)} if t2_path.exists() else {}
     if t2_rows:
@@ -317,7 +317,7 @@ def score_task3(dataset: str, smoke: bool = False, make_plots: bool = True) -> d
 # Report text and figures
 # --------------------------------------------------------------------------- #
 def render_summary(m: dict) -> str:
-    seed_note = "" if m.get("gen_seed", SEED) == SEED else f", generation seed {m['gen_seed']}"
+    seed_note = f", generation seed {m['gen_seed']}"
     L = [f"# Task 3 - faithfulness-weighted self-consistency on {m['dataset']} "
          f"(n = {m['n_items']}, k = {m['k']}, {m.get('model', MODEL_ID)}{seed_note})", ""]
     s = m["samples"]
@@ -326,7 +326,7 @@ def render_summary(m: dict) -> str:
           f"pass@{m['k']} (some sample right): {pct(s['pass_at_k'])}; items where all samples agree: {pct(s['unanimous_items'])}%.",
           f"- {s['hit_max_tokens']} samples hit the 512-token cap, {s['a0_parse_failures']} final answers could not be parsed; "
           f"{s['mean_sentences']:.1f} sentences per CoT on average."]
-    if "sample0_matches_task2_cot" in m and m.get("gen_seed", SEED) == SEED:
+    if "sample0_matches_task2_cot" in m:
         c = m["sample0_matches_task2_cot"]
         L.append(f"- Sample 0 has the same text as Task 2's CoT for {c['matches']} of {c['of']} items: it uses the same seed, but sampled "
             "text depends on GPU type, tensor-parallel size and batch composition, so the samples are fresh draws.")

@@ -42,13 +42,13 @@ def read_json(path: Path) -> dict:
 def results_dir(task: str, dataset: str, smoke: bool = False, seed: int | None = None) -> Path:
     """Where a task's results live.
 
-    results/<task>/<dataset>/            real runs with the default seed (42)
+    results/<task>/<dataset>/            real runs with the default generation seed (20)
     results/<task>/<dataset>/seed_<N>/   repeats with another generation seed (--seed N)
     results/smoke/<task>/<dataset>/      quick tests with --n-limit (never overwrite real results)
 
     RESULTS_DIR already points at results/models/<model>/ for a non-default model. `seed`
-    defaults to this run's GEN_SEED; pass SEED to address the default-seed results (the
-    Task 1 and Task 2 baselines that every Task 3 repeat is compared with).
+    defaults to this run's GEN_SEED; pass SEED to address the default-seed results (e.g. Task 1,
+    which is greedy and run once).
     """
     base = RESULTS_DIR / "smoke" if smoke else RESULTS_DIR
     path = base / task / dataset
