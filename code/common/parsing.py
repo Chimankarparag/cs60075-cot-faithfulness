@@ -3,8 +3,8 @@
 Two jobs live here because both are pure text processing with no model involved,
 which makes them easy to unit-test on a laptop:
 
-1. Answer extraction: map free text such as " $1,000." or " (C) The raven ..." to a
-   canonical string ("1000", "C", "Yes") so answers can be compared with `==`.
+1. Answer extraction: map free text such as " (C) The raven ..." or "is C." to a
+   canonical option letter ("C") so answers can be compared with `==`.
 2. Sentence splitting: early answering, adding mistakes and paraphrasing all work
    on "the first k sentences" of a chain of thought, so they must all use the same
    splitter. We keep character offsets (spans) rather than a list of strings, so a
@@ -13,43 +13,6 @@ which makes them easy to unit-test on a laptop:
 from __future__ import annotations
 
 import re
-from decimal import Decimal, InvalidOperation
-
-# --------------------------------------------------------------------------- #
-# Numbers (GSM8K)
-# --------------------------------------------------------------------------- #
-# Either a comma-grouped number ("1,234,567") or a plain one ("1234"), with an
-# optional decimal part and minus sign. Grouping must be exactly 3 digits, so a
-# list like "3,4" is read as two numbers rather than as 34.
-NUMBER_RE = re.compile(r"-?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?")
-
-
-def canonical_number(text: str) -> str | None:
-    """'$1,000.00' -> '1000', '3.50' -> '3.5', 'abc' -> None.
-
-    Integers are written without a decimal point and trailing zeros are removed,
-    so equal values always give equal strings.
-    """
-    match = NUMBER_RE.search(text.replace("$", "").replace("−", "-"))
-    if match is None:
-        return None
-    try:
-        value = Decimal(match.group().replace(",", ""))
-    except InvalidOperation:
-        return None
-    if value == value.to_integral_value():
-        return str(int(value))
-    return format(value.normalize(), "f")
-
-
-def extract_number(text: str, last: bool = False) -> str | None:
-    """First (or last) number mentioned in `text`, canonicalised."""
-    cleaned = text.replace("$", "").replace("−", "-")
-    matches = NUMBER_RE.findall(cleaned)
-    if not matches:
-        return None
-    return canonical_number(matches[-1] if last else matches[0])
-
 
 # --------------------------------------------------------------------------- #
 # Option letters (BBH)
@@ -82,41 +45,18 @@ def extract_letter(text: str, options: dict[str, str] | None, last: bool = False
 
 
 # --------------------------------------------------------------------------- #
-# Yes / No (StrategyQA)
+# One entry point for answer extraction
 # --------------------------------------------------------------------------- #
-_YESNO = re.compile(r"\b(yes|no|true|false)\b", re.IGNORECASE)
-# "not a simple yes or no" mentions both words without choosing either.
-_YESNO_PHRASE = re.compile(r"\b(yes\s*(or|/)\s*no|no\s*(or|/)\s*yes|true\s*(or|/)\s*false)\b", re.IGNORECASE)
-
-
-def extract_yesno(text: str, last: bool = False) -> str | None:
-    matches = _YESNO.findall(_YESNO_PHRASE.sub(" ", text))
-    if not matches:
-        return None
-    word = (matches[-1] if last else matches[0]).lower()
-    return "Yes" if word in ("yes", "true") else "No"
-
-
-# --------------------------------------------------------------------------- #
-# One entry point for all three answer types
-# --------------------------------------------------------------------------- #
-def parse_answer(text: str, answer_type: str, options: dict[str, str] | None = None,
-                 last: bool = False) -> str | None:
-    """Canonical answer from a short model output, or None if nothing parseable."""
-    if answer_type == "number":
-        return extract_number(text, last)
-    if answer_type == "letter":
-        return extract_letter(text, options, last)
-    if answer_type == "yesno":
-        return extract_yesno(text, last)
-    raise ValueError(f"unknown answer_type {answer_type!r}")
+def parse_answer(text: str, options: dict[str, str] | None = None, last: bool = False) -> str | None:
+    """Canonical option letter from a short model output, or None if nothing parseable."""
+    return extract_letter(text, options, last)
 
 
 _ANSWER_CUE = re.compile(r"answer\s*(?:is|:)|\\boxed\{", re.IGNORECASE)
 
 
-def stated_answer(cot: str, answer_type: str, options: dict[str, str] | None = None) -> str | None:
-    """The answer a CoT states itself (e.g. '... so the answer is 18.').
+def stated_answer(cot: str, options: dict[str, str] | None = None) -> str | None:
+    """The answer a CoT states itself (e.g. '... so the answer is (C).').
 
     Takes the text after the last "answer is" / "answer:" / "\\boxed{" cue; if the
     CoT has no cue, falls back to the last answer-like token in the whole CoT.
@@ -124,10 +64,10 @@ def stated_answer(cot: str, answer_type: str, options: dict[str, str] | None = N
     """
     cues = list(_ANSWER_CUE.finditer(cot))
     if cues:
-        found = parse_answer(cot[cues[-1].end():], answer_type, options)
+        found = parse_answer(cot[cues[-1].end():], options)
         if found is not None:
             return found
-    return parse_answer(cot, answer_type, options, last=True)
+    return parse_answer(cot, options, last=True)
 
 
 def is_correct(pred: str | None, gold: str) -> bool:

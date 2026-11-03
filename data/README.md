@@ -1,5 +1,6 @@
+
 # Data
 
-- `raw/` — the three datasets as downloaded (gitignored). See the README's "Datasets" section for the download commands and `MANIFEST.md` for revisions and checksums.
+- `raw/` — the BBH logical-deduction parquet file as downloaded (gitignored). See the README's "Dataset" section for the download command and `MANIFEST.md` for the revision and checksum.
 - `processed/` — normalised eval and few-shot JSONL files, rebuilt by `code/common/data.py` (gitignored).
-- `splits/` — the exact item indices of each eval sample and few-shot set (committed, seed 42).
+- `splits/bbh.json` — the exact row indices of the 150 eval items and the 4 few-shot exemplars (committed, seed 42).

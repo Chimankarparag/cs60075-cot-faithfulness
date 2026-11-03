@@ -12,16 +12,16 @@ from common.parsing import parse_answer
 from common.prompts import forced_answer_prompt
 
 
-def force_answers(gen: Generator, items: list[dict], reasonings: list[str], answer_type: str,
+def force_answers(gen: Generator, items: list[dict], reasonings: list[str],
                   desc: str = "forced answers") -> list[dict]:
     """For each (item, reasoning) pair, ask for the final answer greedily.
 
     Returns one dict per pair: {"raw": model text after the prefill,
-    "answer": canonical answer or None}.
+    "answer": option letter or None}.
     """
     assert len(items) == len(reasonings)
-    requests = [Request(forced_answer_prompt(item, answer_type, reasoning), ANSWER_DECODING, SEED)
+    requests = [Request(forced_answer_prompt(item, reasoning), ANSWER_DECODING, SEED)
                 for item, reasoning in zip(items, reasonings)]
     outputs = gen.generate(requests, desc)
-    return [{"raw": out.text, "answer": parse_answer(out.text, answer_type, item["options"])}
+    return [{"raw": out.text, "answer": parse_answer(out.text, item["options"])}
             for item, out in zip(items, outputs)]

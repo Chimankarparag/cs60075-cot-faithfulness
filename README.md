@@ -5,14 +5,16 @@
 Does a language model's written chain-of-thought (CoT) actually explain how it reached its answer, or is it a
 plausible story written afterwards? This repo measures that for an open 8B instruction-tuned model, reproduces the
 intervention methodology of Lanham et al. (2023), and tests whether faithfulness can be used to improve
-self-consistency voting.
+self-consistency voting. The project covers one dataset: **BIG-Bench-Hard (BBH), logical deduction with five
+objects**, a multiple-choice task (options A–E).
 
 **Author:** Parag Chimankar (23CS10049), IIT Kharagpur — CS60075 Natural Language Processing
 **Group members:** _to be added_
-**Assigned dataset:** _to be confirmed with the TA_ (the code supports all three via one flag)
+**Assigned dataset:** BIG-Bench-Hard — logical deduction (five objects), used for all three tasks
 
-> **Status (2026-09-25):** Tasks 1 and 2 are implemented and have been run on all three datasets
-> (results below and in `results/`). Task 3 is next.
+> **Status:** Tasks 1 and 2 are implemented and have been run on BBH (results below and in `results/`).
+> Task 3 is next; its plan is in `code/task3/README.md`. The earlier GSM8K and StrategyQA code and results were
+> removed when the group's dataset was confirmed; they remain in the git history.
 
 ---
 
@@ -24,7 +26,7 @@ self-consistency voting.
 | 2. Paper reproduction (done) | 30 | Standard CoT, then four interventions on it: early answering, adding a mistake, paraphrasing, filler tokens | CoT accuracy gain over Task 1; faithfulness score per intervention |
 | 3. Combine & improve (to do) | 40 | Sample 5 CoTs, check each with 50% early answering, weight the majority vote toward "faithful" samples | Accuracy vs Tasks 1 and 2; aggregate faithfulness vs Task 2 |
 
-The assignment gives each group **one** of the three datasets below; all three tasks are run on that one dataset.
+All three tasks are run on the same dataset (BBH logical deduction, five objects).
 
 ## Model
 
@@ -49,7 +51,7 @@ cs60075-cot-faithfulness/
 ├── code/
 │   ├── CoT_Faithfulness_Colab.ipynb # end-to-end notebook: setup -> Task 1 -> Task 2
 │   ├── common/                      # shared by all tasks
-│   │   ├── config.py                #   paths, model revision, seed, datasets, decoding settings
+│   │   ├── config.py                #   paths, model revision, seed, BBH spec, decoding settings
 │   │   ├── data.py                  #   download (pinned + checksummed), normalise, sample
 │   │   ├── prompts.py               #   every prompt, incl. Lanham et al.'s forced-answer format
 │   │   ├── model.py                 #   vLLM / transformers backends behind one generate()
@@ -70,8 +72,8 @@ cs60075-cot-faithfulness/
 │   ├── splits/                      # exact eval and few-shot indices (seed 42, committed)
 │   ├── raw/, processed/             # downloaded / prepared data (gitignored)
 ├── results/
-│   ├── task1/<dataset>/             # zero_shot.jsonl, four_shot.jsonl, metrics.json, summary.md
-│   └── task2/<dataset>/             # cot/early/mistake/paraphrase/filler.jsonl, metrics.json,
+│   ├── task1/bbh/                   # zero_shot.jsonl, four_shot.jsonl, metrics.json, summary.md
+│   └── task2/bbh/                   # cot/early/mistake/paraphrase/filler.jsonl, metrics.json,
 │                                    # summary.md, examples.md, figures/*.png
 └── scripts/cluster/                 # env.sh, run.sh, run_tasks12.sh for the KGP GPU servers
 ```
@@ -100,11 +102,11 @@ transformers; on L4 / A100 it runs in bf16. The notebook keeps Colab's own PyTor
 # once, on a login node (10.5.18.114)
 conda create -n cotfaith python=3.11 -y -c conda-forge --override-channels
 ~/miniconda3/envs/cotfaith/bin/pip install --no-cache-dir -r requirements.txt
-~/miniconda3/envs/cotfaith/bin/python code/common/data.py --dataset all
+~/miniconda3/envs/cotfaith/bin/python code/common/data.py
 
 # on gpu73 (2x L40S) or gpu74 (2x A40): check free memory, then launch detached
 nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv
-scripts/cluster/run_tasks12.sh 0,1 full "gsm8k bbh strategyqa" --tp 2
+scripts/cluster/run_tasks12.sh 0,1 full --tp 2
 tail -f logs/full.log
 ```
 
@@ -118,127 +120,109 @@ tensor parallelism over both cards (`--tp 2`).
 
 Recommended extensions are listed in `.vscode/extensions.json` (Python, Jupyter, Google Colab, Remote-SSH).
 
-## Datasets — download and prepare (all three)
+## Dataset — download and prepare
 
 | Name used here | Hub repo | Config / split | Rows | Used for |
 | --- | --- | --- | --- | --- |
-| `gsm8k` | [`openai/gsm8k`](https://huggingface.co/datasets/openai/gsm8k) | `main` / `test` (+ `train` for exemplars) | 1,319 (+7,473) | eval n = 200 from test; 4 exemplars from train |
 | `bbh` | [`maveriq/bigbenchhard`](https://huggingface.co/datasets/maveriq/bigbenchhard) | `logical_deduction_five_objects` / `train` | 250 | eval n = 150; 4 exemplars from the remaining 100 |
-| `strategyqa` | [`wics/strategy-qa`](https://huggingface.co/datasets/wics/strategy-qa) | `strategyQA` / `test` | 2,290 | eval n = 150; 4 exemplars from disjoint indices |
 
-BBH and StrategyQA are loading-script repos, which `datasets` 4.x refuses to run, so we download the Hub's
-auto-converted parquet files at pinned revisions. One command downloads, verifies and prepares everything:
+`maveriq/bigbenchhard` is a loading-script repo, which `datasets` 4.x refuses to run, so we download the Hub's
+auto-converted parquet file at a pinned revision. One command downloads, verifies and prepares everything:
 
 ```bash
-python code/common/data.py --dataset all
+python code/common/data.py
 ```
 
-It writes `data/raw/` (checksums checked against `data/MANIFEST.md`), `data/processed/<dataset>/eval.jsonl` and
-`fewshot.jsonl`, and reuses the committed indices in `data/splits/`. The same files by hand:
+It writes `data/raw/` (checksum checked against `data/MANIFEST.md`), `data/processed/bbh/eval.jsonl` and
+`fewshot.jsonl`, and reuses the committed indices in `data/splits/bbh.json`. The same file by hand:
 
 ```bash
-mkdir -p data/raw/{gsm8k,bbh_logical_deduction_five_objects,strategyqa}
-HF=https://huggingface.co/datasets
-curl -L -o data/raw/gsm8k/train.parquet  $HF/openai/gsm8k/resolve/740312add88f781978c0658806c59bc2815b9866/main/train-00000-of-00001.parquet
-curl -L -o data/raw/gsm8k/test.parquet   $HF/openai/gsm8k/resolve/740312add88f781978c0658806c59bc2815b9866/main/test-00000-of-00001.parquet
+mkdir -p data/raw/bbh_logical_deduction_five_objects
 curl -L -o data/raw/bbh_logical_deduction_five_objects/train.parquet \
-  $HF/maveriq/bigbenchhard/resolve/a493490a030bfe06c7baa2db022263afbfa04cfb/logical_deduction_five_objects/train/0000.parquet
-curl -L -o data/raw/strategyqa/test.parquet \
-  $HF/wics/strategy-qa/resolve/c9a25e4b10d32364d25f1f1387bf445921b6e75e/strategyQA/test/0000.parquet
+  https://huggingface.co/datasets/maveriq/bigbenchhard/resolve/a493490a030bfe06c7baa2db022263afbfa04cfb/logical_deduction_five_objects/train/0000.parquet
 (cd data && sha256sum raw/*/*.parquet)   # compare with data/MANIFEST.md
 ```
 
-Preprocessing (done by `code/common/data.py`):
-
-- **GSM8K:** gold = number after `####`; strip `$` and commas before comparing.
-- **BBH:** options parsed from `input` with one regex; gold = the letter in `target`, e.g. `(A)`.
-- **StrategyQA:** `answer` is a bool → `Yes` / `No`; `facts` and `decomposition` are never shown to the model.
+Preprocessing (done by `code/common/data.py`): the options `(A)`..`(E)` are parsed from `input` with one regex,
+and gold = the letter in `target`, e.g. `(A)`. The loader stops if the gold letter is not one of the options.
 
 ## How to run
 
-Every script takes `--dataset {gsm8k,bbh,strategyqa}`; `--n-limit N` runs a quick test on the first N items
-and writes to `results/smoke/` instead. Model flags: `--backend vllm|hf`, `--tp 2` (vLLM on two GPUs),
-`--quant 4bit` (transformers only).
+`--n-limit N` runs a quick test on the first N items and writes to `results/smoke/` instead. Model flags:
+`--backend vllm|hf`, `--tp 2` (vLLM on two GPUs), `--quant 4bit` (transformers only). The scripts also accept
+`--dataset bbh`, the only value.
 
 ```bash
 # Task 1 - direct answering, zero-shot and 4-shot
-python code/task1/run_direct.py --dataset gsm8k --tp 2
-python code/task1/run_direct.py --dataset gsm8k --rescore          # re-parse saved outputs, no GPU
+python code/task1/run_direct.py --tp 2
+python code/task1/run_direct.py --rescore          # re-parse saved outputs, no GPU
 
 # Task 2 - CoT + four interventions + scoring, one model load (run Task 1 first for the gain)
-python code/task2/run_task2.py --dataset gsm8k --tp 2
-python code/task2/run_task2.py --dataset gsm8k --stages score      # recompute metrics/figures, no GPU
-python code/task2/run_task2.py --dataset gsm8k --stages paraphrase score --overwrite   # redo one stage
+python code/task2/run_task2.py --tp 2
+python code/task2/run_task2.py --stages score      # recompute metrics/figures, no GPU
+python code/task2/run_task2.py --stages paraphrase score --overwrite   # redo one stage
 
-# Both tasks, several datasets, detached on a KGP GPU box
-scripts/cluster/run_tasks12.sh 0,1 full "gsm8k bbh strategyqa" --tp 2
+# Both tasks, detached on a KGP GPU box
+scripts/cluster/run_tasks12.sh 0,1 full --tp 2
 ```
 
 Task 2's stages (`cot`, `early`, `mistake`, `paraphrase`, `filler`, `score`) each save a JSONL file; a stage whose
-file exists is skipped, so an interrupted run resumes where it stopped. Full runs of both tasks on all three
-datasets took about 9 minutes on two L40S cards.
+file exists is skipped, so an interrupted run resumes where it stopped.
 
 ## Outputs
 
 | File | Contents |
 | --- | --- |
-| `results/task1/<d>/zero_shot.jsonl`, `four_shot.jsonl` | per item: raw output, parsed answer, gold, correct, token count |
-| `results/task1/<d>/metrics.json`, `summary.md` | accuracy + 95% CI per variant, parse failures, best variant |
-| `results/task2/<d>/cot.jsonl` | CoT text, sentence spans, forced answer A0, the CoT's own stated answer, correct |
-| `results/task2/<d>/early.jsonl` | answer after every sentence prefix k = 0..n |
-| `results/task2/<d>/mistake.jsonl` | corrupted sentence (before/after), regenerated CoT, new answer |
-| `results/task2/<d>/paraphrase.jsonl`, `filler.jsonl` | paraphrase / filler length, new answer |
-| `results/task2/<d>/metrics.json`, `summary.md` | all Task 2 numbers, incl. the paper comparison |
-| `results/task2/<d>/examples.md` | qualitative examples for the report |
-| `results/task2/<d>/figures/` | early-answering curve, faithfulness bar chart |
+| `results/task1/bbh/zero_shot.jsonl`, `four_shot.jsonl` | per item: raw output, parsed answer, gold, correct, token count |
+| `results/task1/bbh/metrics.json`, `summary.md` | accuracy + 95% CI per variant, parse failures, best variant |
+| `results/task2/bbh/cot.jsonl` | CoT text, sentence spans, forced answer A0, the CoT's own stated answer, correct |
+| `results/task2/bbh/early.jsonl` | answer after every sentence prefix k = 0..n |
+| `results/task2/bbh/mistake.jsonl` | corrupted sentence (before/after), regenerated CoT, new answer |
+| `results/task2/bbh/paraphrase.jsonl`, `filler.jsonl` | paraphrase / filler length, new answer |
+| `results/task2/bbh/metrics.json`, `summary.md` | all Task 2 numbers, incl. the paper comparison |
+| `results/task2/bbh/examples.md` | qualitative examples for the report |
+| `results/task2/bbh/figures/` | early-answering curve, faithfulness bar chart |
 
-## Results so far (Tasks 1 and 2, all three datasets)
+## Results so far (Tasks 1 and 2, BBH logical deduction, five objects)
 
-Llama-3.1-8B-Instruct in bf16 (vLLM), seed 42. Brackets are 95% bootstrap intervals. Only the group's assigned
-dataset is required; all three were run because the assignment is not yet confirmed.
+Llama-3.1-8B-Instruct in bf16 (vLLM), seed 42, n = 150 items. Brackets are 95% bootstrap intervals.
 
 **Task 1 and CoT accuracy (%)**
 
-| Dataset | n | Direct, zero-shot | Direct, 4-shot | CoT (Task 2) | CoT gain over best direct |
-| --- | --- | --- | --- | --- | --- |
-| GSM8K | 200 | 16.5 [11.5, 22.0] | 15.5 [11.0, 21.0] | 90.0 [86.0, 94.0] | +73.5 [66.5, 80.0], McNemar p < 1e-39 |
-| BBH logical deduction (5 objects) | 150 | 46.0 [38.0, 54.0] | 43.3 [35.3, 52.0] | 54.0 [46.0, 62.0] | +8.0 [-2.0, 17.3], p = 0.13 |
-| StrategyQA | 150 | 64.0 [56.0, 71.3] | 75.3 [68.0, 82.0] | 75.3 [68.0, 82.0] | 0.0 [-7.3, 6.7], p = 1 |
+| Direct, zero-shot | Direct, 4-shot | CoT (Task 2) | CoT gain over best direct |
+| --- | --- | --- | --- |
+| 46.0 [38.0, 54.0] | 43.3 [35.3, 52.0] | 54.0 [46.0, 62.0] | +8.0 [-2.0, 17.3], McNemar p = 0.13 (32 vs 20 discordant items) |
 
 **Task 2 faithfulness scores (%)** — share of items whose answer changes (early answering, mistake, filler)
 or stays the same (paraphrase) relative to the answer after the full CoT
 
-| Dataset | Early answering | Adding a mistake | Paraphrasing | Filler tokens | Aggregate |
-| --- | --- | --- | --- | --- | --- |
-| GSM8K | 63.7 [59.9, 67.4] | 65.5 [59.0, 72.0] | 99.4 [98.3, 100.0] | 85.0 [80.0, 89.5] | 78.4 |
-| BBH | 48.5 [41.3, 55.8] | 48.3 [40.9, 55.7] | 97.2 [94.4, 99.3] | 50.7 [42.7, 59.3] | 61.2 |
-| StrategyQA | 14.5 [10.5, 19.0] | 19.5 [13.4, 25.5] | 96.5 [93.0, 99.3] | 25.3 [19.3, 32.0] | 38.9 |
-
-**Early-answering AOC vs Lanham et al. (2023), Table 2** (175B model; the paper did not test these datasets,
-so the closest task is shown)
-
-| Dataset | Ours: grid AOC | Ours: per-sentence AOC | Closest paper task | Paper AOC |
+| Early answering | Adding a mistake | Paraphrasing | Filler tokens | Aggregate |
 | --- | --- | --- | --- | --- |
-| GSM8K | 0.60 | 0.56 | AQuA | 0.44 |
-| BBH | 0.44 | 0.44 | LogiQA | 0.26 |
-| StrategyQA | 0.14 | 0.13 | TruthfulQA / OpenBookQA | 0.11 / 0.07 |
+| 48.5 [41.3, 55.8] | 48.3 [40.9, 55.7] (n = 149) | 97.2 [94.4, 99.3] (n = 144) | 50.7 [42.7, 59.3] | 61.2 |
+
+**Early-answering AOC vs Lanham et al. (2023), Table 2** (175B model; closest paper task is LogiQA)
+
+| Ours: grid AOC | Ours: per-sentence AOC | Paper AOC (LogiQA) |
+| --- | --- | --- |
+| 0.44 | 0.44 | 0.26 |
+
+Share of items whose early answer already equals the final answer A0, by fraction of the CoT shown:
+46.7% at 0%, 47.3% at 20%, 47.3% at 40%, 50.7% at 60%, 60.7% at 80% (100% by definition at the end).
 
 First observations:
 
-- Across our three datasets, faithfulness tracks how much the CoT helps: GSM8K gains 73.5 points from CoT and
-  its answers depend heavily on the reasoning; StrategyQA gains nothing and its answers are mostly fixed before
-  the reasoning starts (77% already match the final answer with 0% of the CoT). Lanham et al. found this link
-  weak across their tasks (LogiQA gains about 1 point yet has the second-highest AOC), which is worth
-  discussing in the report.
-- All our AOCs are higher than the closest paper task. The paper reports that smaller models often give more
-  faithful CoTs, which fits an 8B model scoring above a 175B one; one CoT per item and a fixed truncation
-  grid also differ from their setup.
-- Paraphrasing almost never changes the answer (96-99%), so there is no sign of information hidden in the
-  exact wording, matching the paper's finding.
-- Filler tokens do not help: filler accuracy is close to answering with no reasoning in the same format
-  (GSM8K 15.5% vs 10.0%, BBH 48.0% vs 46.7%, StrategyQA 74.0% vs 75.3%).
-- On StrategyQA, 8.7% of CoTs that state an answer end with a different answer from the one the model then
-  gives when asked (see `results/task2/strategyqa/examples.md`).
+- CoT helps by 8 points, but the interval includes zero (p = 0.13), so with 150 items the gain is suggestive,
+  not established.
+- About half the answers (46.7%) are already fixed before any reasoning is shown, and the curve stays flat until
+  the last 40% of the CoT, so the conclusion is mostly reached late. Our AOC (0.44) is above the paper's LogiQA
+  value (0.26). The paper reports that smaller models often give more faithful CoTs, which fits an 8B model
+  scoring above a 175B one; one CoT per item and a fixed truncation grid also differ from their setup.
+- Paraphrasing almost never changes the answer (97.2%), so there is no sign of information hidden in the exact
+  wording, matching the paper's finding.
+- Filler tokens do not help: filler accuracy is 48.0%, close to answering with no reasoning in the same format
+  (46.7%).
+- CoTs average 12.0 sentences (211 tokens); 5 hit the 512-token cap and 7 never state an answer. For the rest,
+  the CoT's own stated answer matches the forced answer A0 in 92.3% of items.
 
 ## Implementation notes and deviations
 
@@ -248,16 +232,15 @@ First observations:
 - **Early answering** is run after every sentence, not only at 20/40/60/80%; the spec's score uses those four
   points (k = floor(p × n) sentences), and the extra points give a per-sentence AOC comparable to the paper's.
 - **Adding a mistake**: one sentence, chosen at random (seeded by item id) among non-final sentences that do not
-  announce the answer (GSM8K: sentences containing a number), is rewritten by the same model with a 3-shot
-  prompt; rewrites that change only punctuation are rejected (up to 3 attempts; for GSM8K a rule-based
-  number change is the fallback, used 6 times). The rest of the CoT is regenerated with the original settings.
+  announce the answer, is rewritten by the same model with a 3-shot
+  prompt; rewrites that change only punctuation are rejected (up to 3 attempts; if all fail the item is
+  dropped, which is why n = 149). The rest of the CoT is regenerated with the original settings.
   The paper corrupts sentences with a separate model and averages over positions; we use one position per item.
 - **Paraphrasing** rewrites the whole CoT without the question; a paraphrase counts only if it keeps the stated
-  conclusion and the numbers (GSM8K, StrategyQA) or option letters (BBH). Valid: 179/200, 144/150, 142/150.
+  conclusion and every option letter it mentions. Valid: 144/150.
 - **Filler** is `" ..."` repeated to the CoT's token length (the paper's filler token).
 - **One CoT per item** (the paper samples 100), and an 8B model instead of 175B.
 - **Direct answering** is enforced by an answer-only instruction, a "The answer is" prefill and a 16-token cap.
-  On GSM8K zero-shot, 7 outputs refuse ("not directly calculable ...") and count as wrong.
 
 ## Reproducibility
 
@@ -270,8 +253,8 @@ First observations:
 | Rewrite retries | temperature 0.7, top-p 0.95, seed 42 + 1000 × attempt + item position |
 | Bootstrap confidence intervals | 1,000 resamples, seed 42 |
 
-vLLM uses one seed per request, so outputs do not depend on batching: re-running all forced answers for GSM8K
-and StrategyQA in a different batch composition reproduced every A0 exactly.
+vLLM uses one seed per request, so outputs do not depend on batching: re-running all forced answers in a
+different batch composition reproduced every A0 exactly.
 
 ## Submission checklist
 
@@ -288,6 +271,4 @@ and StrategyQA in a different batch composition reproduced every A0 exactly.
 - Lanham et al., *Measuring Faithfulness in Chain-of-Thought Reasoning*, [arXiv:2307.13702](https://arxiv.org/abs/2307.13702), 2023.
 - Wei et al., *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*, [arXiv:2201.11903](https://arxiv.org/abs/2201.11903), 2022.
 - Wang et al., *Self-Consistency Improves Chain of Thought Reasoning in Language Models*, [arXiv:2203.11171](https://arxiv.org/abs/2203.11171), 2022.
-- Cobbe et al., *Training Verifiers to Solve Math Word Problems* (GSM8K), [arXiv:2110.14168](https://arxiv.org/abs/2110.14168), 2021.
 - Suzgun et al., *Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them* (BBH), [arXiv:2210.09261](https://arxiv.org/abs/2210.09261), 2022.
-- Geva et al., *Did Aristotle Use a Laptop? A Question Answering Benchmark with Implicit Reasoning Strategies* (StrategyQA), TACL 2021.

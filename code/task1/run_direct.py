@@ -12,9 +12,9 @@ Outputs (results/task1/<dataset>/):
     summary.md                         the same numbers as a table
 
 Usage:
-    python code/task1/run_direct.py --dataset gsm8k
-    python code/task1/run_direct.py --dataset gsm8k --n-limit 10     # smoke test
-    python code/task1/run_direct.py --dataset gsm8k --rescore        # re-parse saved outputs, no GPU
+    python code/task1/run_direct.py --dataset bbh
+    python code/task1/run_direct.py --dataset bbh --n-limit 10     # smoke test
+    python code/task1/run_direct.py --dataset bbh --rescore        # re-parse saved outputs, no GPU
 """
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # make `code/` importable
 
 from common.cli import base_parser
-from common.config import DIRECT_DECODING, MODEL_ID, MODEL_REVISION, N_FEWSHOT, SEED, get_spec
+from common.config import DIRECT_DECODING, MODEL_ID, MODEL_REVISION, N_FEWSHOT, SEED
 from common.data import load_eval, load_fewshot
 from common.io_utils import read_jsonl, results_dir, write_json, write_jsonl
 from common.metrics import fmt_ci, summarize_binary
@@ -37,29 +37,29 @@ from common.prompts import direct_prompt
 VARIANTS = {"zero_shot": 0, "four_shot": N_FEWSHOT}
 
 
-def build_requests(items: list[dict], answer_type: str, exemplars: list[dict]) -> list[Request]:
+def build_requests(items: list[dict], exemplars: list[dict]) -> list[Request]:
     """One greedy request per item. `exemplars` is empty for zero-shot."""
-    return [Request(direct_prompt(item, answer_type, exemplars), DIRECT_DECODING, SEED) for item in items]
+    return [Request(direct_prompt(item, exemplars), DIRECT_DECODING, SEED) for item in items]
 
 
-def score_row(item: dict, output_text: str, n_tokens: int, finish_reason: str, answer_type: str) -> dict:
+def score_row(item: dict, output_text: str, n_tokens: int, finish_reason: str) -> dict:
     """Parse one output and compare it with the gold answer."""
-    pred = parse_answer(output_text, answer_type, item["options"])
+    pred = parse_answer(output_text, item["options"])
     return {"id": item["id"], "gold": item["gold"], "output": output_text, "pred": pred,
             "correct": is_correct(pred, item["gold"]), "n_tokens": n_tokens,
             "hit_max_tokens": finish_reason == "length"}
 
 
-def score_outputs(items: list[dict], outputs: list[Output], answer_type: str) -> list[dict]:
-    return [score_row(item, out.text, out.n_tokens, out.finish_reason, answer_type)
+def score_outputs(items: list[dict], outputs: list[Output]) -> list[dict]:
+    return [score_row(item, out.text, out.n_tokens, out.finish_reason)
             for item, out in zip(items, outputs)]
 
 
-def rescore_rows(items: list[dict], rows: list[dict], answer_type: str) -> list[dict]:
+def rescore_rows(items: list[dict], rows: list[dict]) -> list[dict]:
     """Re-parse saved outputs (e.g. after improving the parser) without the model."""
     by_id = {item["id"]: item for item in items}
     return [score_row(by_id[r["id"]], r["output"], r["n_tokens"],
-                      "length" if r["hit_max_tokens"] else "stop", answer_type) for r in rows]
+                      "length" if r["hit_max_tokens"] else "stop") for r in rows]
 
 
 def summarize(rows: list[dict]) -> dict:
@@ -88,22 +88,20 @@ def main() -> None:
     parser.add_argument("--rescore", action="store_true", help="re-parse saved outputs; no model needed")
     args = parser.parse_args()
 
-    spec = get_spec(args.dataset)
     items = load_eval(args.dataset, args.n_limit)
     out_dir = results_dir("task1", args.dataset, smoke=bool(args.n_limit))
 
     rows_by_variant: dict[str, list[dict]] = {}
     if args.rescore:
         for variant in args.variants:
-            rows_by_variant[variant] = rescore_rows(items, read_jsonl(out_dir / f"{variant}.jsonl"),
-                                                    spec.answer_type)
+            rows_by_variant[variant] = rescore_rows(items, read_jsonl(out_dir / f"{variant}.jsonl"))
     else:
         gen = load_generator(args)
         exemplars = load_fewshot(args.dataset)
         for variant in args.variants:
             shots = exemplars[:VARIANTS[variant]]
-            outputs = gen.generate(build_requests(items, spec.answer_type, shots), desc=f"task1 {variant}")
-            rows_by_variant[variant] = score_outputs(items, outputs, spec.answer_type)
+            outputs = gen.generate(build_requests(items, shots), desc=f"task1 {variant}")
+            rows_by_variant[variant] = score_outputs(items, outputs)
 
     for variant, rows in rows_by_variant.items():
         write_jsonl(out_dir / f"{variant}.jsonl", rows)

@@ -1,16 +1,16 @@
-"""Download, normalise and sample the three Project 8 datasets.
+"""Download, normalise and sample the BIG-Bench-Hard logical-deduction data.
 
-Every dataset ends up as a list of *items* with the same keys, so the rest of the
-pipeline never needs dataset-specific loading code:
+Every question ends up as an *item* with the same keys, so the rest of the pipeline
+never needs dataset-specific loading code:
 
-    {"id": "gsm8k-test-42",   # stable identifier: dataset, source split, row index
+    {"id": "bbh-42",          # stable identifier: dataset and row index
      "index": 42,             # row index inside the source parquet file
-     "question": "...",       # text shown to the model (BBH: includes the options)
-     "options": {"A": ...},   # BBH only: option letter -> option text; else None
-     "gold": "18"}            # canonical gold answer: number / letter / "Yes"|"No"
+     "question": "...",       # text shown to the model (includes the (A)..(E) options)
+     "options": {"A": ...},   # option letter -> option text
+     "gold": "C"}             # gold option letter
 
 Run as a script to download and prepare everything:
-    python code/common/data.py --dataset all
+    python code/common/data.py
 """
 from __future__ import annotations
 
@@ -24,10 +24,9 @@ from pathlib import Path
 if __package__ in (None, ""):  # allow `python code/common/data.py`
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from common.config import (DATASETS, N_FEWSHOT, PROCESSED_DIR, RAW_DIR, SEED, SPLITS_DIR,
-                           DatasetSpec, RawFile, get_spec)
+from common.config import (DATASETS, DEFAULT_DATASET, N_FEWSHOT, PROCESSED_DIR, RAW_DIR, SEED,
+                           SPLITS_DIR, DatasetSpec, RawFile, get_spec)
 from common.io_utils import read_json, read_jsonl, write_json, write_jsonl
-from common.parsing import canonical_number
 
 
 # --------------------------------------------------------------------------- #
@@ -77,21 +76,6 @@ def load_rows(raw: RawFile) -> list[dict]:
 # --------------------------------------------------------------------------- #
 # 2. Normalise each dataset's rows into the common item format
 # --------------------------------------------------------------------------- #
-def gsm8k_gold(answer_field: str) -> str:
-    """GSM8K solutions end with '#### <number>'; the gold answer is that number,
-    with currency symbols and thousands separators stripped."""
-    final = answer_field.split("####")[-1].strip()
-    number = canonical_number(final)
-    if number is None:
-        raise ValueError(f"Could not parse GSM8K gold answer from {final!r}")
-    return number
-
-
-def normalise_gsm8k(row: dict, index: int, split: str) -> dict:
-    return {"id": f"gsm8k-{split}-{index}", "index": index, "question": row["question"].strip(),
-            "options": None, "gold": gsm8k_gold(row["answer"])}
-
-
 # One option per line, e.g. "(C) The raven is the rightmost".
 _BBH_OPTION = re.compile(r"^\(([A-Z])\)\s*(.+?)\s*$", re.MULTILINE)
 
@@ -110,47 +94,20 @@ def normalise_bbh(row: dict, index: int) -> dict:
             "options": options, "gold": gold}
 
 
-def normalise_strategyqa(row: dict, index: int) -> dict:
-    # This mirror stores the answer as a Python/NumPy bool; we map it to "Yes"/"No".
-    # facts / decomposition are deliberately dropped: the model must never see them.
-    answer = row["answer"]
-    if not isinstance(answer, (bool,)) and str(answer) not in ("True", "False"):
-        raise ValueError(f"StrategyQA row {index}: unexpected answer encoding {answer!r}")
-    gold = "Yes" if str(answer) == "True" else "No"
-    return {"id": f"strategyqa-{row['qid']}", "index": index, "question": row["question"].strip(),
-            "options": None, "gold": gold}
-
-
-def normalise(spec: DatasetSpec, rows: list[dict], split: str) -> list[dict]:
-    if spec.name == "gsm8k":
-        return [normalise_gsm8k(r, i, split) for i, r in enumerate(rows)]
-    if spec.name == "bbh":
-        return [normalise_bbh(r, i) for i, r in enumerate(rows)]
-    if spec.name == "strategyqa":
-        return [normalise_strategyqa(r, i) for i, r in enumerate(rows)]
-    raise ValueError(spec.name)
-
-
 # --------------------------------------------------------------------------- #
 # 3. Choose the evaluation sample and the few-shot exemplars (seed 42)
 # --------------------------------------------------------------------------- #
 def choose_indices(spec: DatasetSpec) -> dict:
     """Pick eval and few-shot row indices reproducibly.
 
-    * GSM8K: eval = 200 rows of `test`; exemplars = 4 rows of `train`
-      (two independent pools, so overlap is impossible).
-    * BBH / StrategyQA: one pool. Shuffle all indices once with the seed; the
-      first 4 become exemplars and the next n_eval the eval set, so the two
-      sets are disjoint by construction.
+    One pool of 250 rows: shuffle all indices once with the seed; the first 4 become
+    the few-shot exemplars and the next n_eval the evaluation set, so the two sets are
+    disjoint by construction.
     """
-    if spec.fewshot_file is not None:
-        eval_idx = random.Random(SEED).sample(range(spec.eval_file.n_rows), spec.n_eval)
-        shot_idx = random.Random(SEED + 1).sample(range(spec.fewshot_file.n_rows), N_FEWSHOT)
-    else:
-        perm = list(range(spec.eval_file.n_rows))
-        random.Random(SEED).shuffle(perm)
-        shot_idx = perm[:N_FEWSHOT]
-        eval_idx = perm[N_FEWSHOT:N_FEWSHOT + spec.n_eval]
+    perm = list(range(spec.eval_file.n_rows))
+    random.Random(SEED).shuffle(perm)
+    shot_idx = perm[:N_FEWSHOT]
+    eval_idx = perm[N_FEWSHOT:N_FEWSHOT + spec.n_eval]
     return {"dataset": spec.name, "seed": SEED,
             "eval_indices": sorted(eval_idx), "fewshot_indices": shot_idx}
 
@@ -164,14 +121,10 @@ def prepare(spec: DatasetSpec) -> None:
         splits = choose_indices(spec)
         write_json(split_path, splits)
 
-    eval_split = "test" if spec.name == "gsm8k" else "all"
-    eval_pool = normalise(spec, load_rows(spec.eval_file), eval_split)
-    shot_pool = eval_pool if spec.fewshot_file is None else normalise(spec, load_rows(spec.fewshot_file), "train")
-
-    eval_items = [eval_pool[i] for i in splits["eval_indices"]]
-    shot_items = [shot_pool[i] for i in splits["fewshot_indices"]]
-    if spec.fewshot_file is None:  # same pool: prove disjointness instead of assuming it
-        assert not set(splits["eval_indices"]) & set(splits["fewshot_indices"])
+    pool = [normalise_bbh(r, i) for i, r in enumerate(load_rows(spec.eval_file))]
+    eval_items = [pool[i] for i in splits["eval_indices"]]
+    shot_items = [pool[i] for i in splits["fewshot_indices"]]
+    assert not set(splits["eval_indices"]) & set(splits["fewshot_indices"])  # prove disjointness
 
     out = PROCESSED_DIR / spec.name
     write_jsonl(out / "eval.jsonl", eval_items)
@@ -198,8 +151,7 @@ def load_fewshot(name: str) -> list[dict]:
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Download and prepare the datasets.")
-    parser.add_argument("--dataset", default="all", choices=["all", *DATASETS])
+    parser = argparse.ArgumentParser(description="Download and prepare the BBH data.")
+    parser.add_argument("--dataset", default=DEFAULT_DATASET, choices=sorted(DATASETS))
     args = parser.parse_args()
-    for name in (DATASETS if args.dataset == "all" else [args.dataset]):
-        prepare(get_spec(name))
+    prepare(get_spec(args.dataset))

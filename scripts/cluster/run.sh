@@ -5,8 +5,8 @@
 # Usage, from the repo root on the GPU box:
 #   scripts/cluster/run.sh <gpu-ids> <log-name> <script> [script args...]
 # Examples:
-#   scripts/cluster/run.sh 0,1 task1_gsm8k code/task1/run_direct.py --dataset gsm8k --tp 2
-#   scripts/cluster/run.sh 1   task2_gsm8k code/task2/run_task2.py  --dataset gsm8k
+#   scripts/cluster/run.sh 0,1 task1_bbh code/task1/run_direct.py --dataset bbh --tp 2
+#   scripts/cluster/run.sh 1   task2_bbh code/task2/run_task2.py  --dataset bbh
 #
 # Check free memory first:  nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv
 set -euo pipefail

@@ -8,11 +8,11 @@ Home (`/home/bt3/<roll-no>`) is shared NFS, so a copy of the repo or a model dow
 | --- | --- |
 | `env.sh` | Environment for the `cotfaith` conda env; `source scripts/cluster/env.sh` before running anything by hand |
 | `run.sh <gpus> <log> <script> [args]` | Start one script detached (`setsid nohup`), log to `logs/<log>.log` |
-| `run_tasks12.sh <gpus> <log> "<datasets>" [args]` | Task 1 then Task 2 for each dataset, detached |
+| `run_tasks12.sh <gpus> <log> [args]` | Task 1 then Task 2 on BBH, detached |
 
 ```bash
 nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv   # the cards are shared
-scripts/cluster/run_tasks12.sh 0,1 full "gsm8k bbh strategyqa" --tp 2
+scripts/cluster/run_tasks12.sh 0,1 full --tp 2
 tail -f logs/full.log
 ```
 

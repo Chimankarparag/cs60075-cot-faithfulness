@@ -1,4 +1,4 @@
-"""Central configuration for the CoT-faithfulness project.
+"""Central configuration for the CoT-faithfulness project (BIG-Bench-Hard, logical deduction).
 
 Everything that must be identical across Tasks 1-3 lives here: paths, the model
 checkpoint, seeds, dataset definitions and decoding settings. Scripts import
@@ -49,34 +49,18 @@ class RawFile:
 
 @dataclass(frozen=True)
 class DatasetSpec:
-    """How to load, sample and grade one dataset."""
+    """How to load and sample the dataset."""
 
     name: str
-    answer_type: str                 # "number" (GSM8K), "letter" (BBH) or "yesno" (StrategyQA)
-    n_eval: int                      # evaluation sample size fixed by the assignment
-    eval_file: RawFile               # pool the evaluation sample is drawn from
-    fewshot_file: RawFile | None     # separate exemplar pool, or None = same pool, disjoint indices
+    n_eval: int          # evaluation sample size fixed by the assignment
+    eval_file: RawFile   # pool the evaluation sample AND the few-shot exemplars are drawn from
 
 
-_GSM8K_REV = "740312add88f781978c0658806c59bc2815b9866"
-
+# BIG-Bench-Hard, subtask logical_deduction_five_objects: 250 multiple-choice questions.
+# 150 form the evaluation sample (assignment); 4 more are the few-shot exemplars, disjoint from them.
 DATASETS: dict[str, DatasetSpec] = {
-    "gsm8k": DatasetSpec(
-        name="gsm8k",
-        answer_type="number",
-        n_eval=200,
-        eval_file=RawFile(
-            "openai/gsm8k", _GSM8K_REV, "main/test-00000-of-00001.parquet", "gsm8k/test.parquet",
-            "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59", 1319,
-        ),
-        fewshot_file=RawFile(
-            "openai/gsm8k", _GSM8K_REV, "main/train-00000-of-00001.parquet", "gsm8k/train.parquet",
-            "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d", 7473,
-        ),
-    ),
     "bbh": DatasetSpec(
         name="bbh",
-        answer_type="letter",
         n_eval=150,
         eval_file=RawFile(
             "maveriq/bigbenchhard", "a493490a030bfe06c7baa2db022263afbfa04cfb",
@@ -84,20 +68,9 @@ DATASETS: dict[str, DatasetSpec] = {
             "bbh_logical_deduction_five_objects/train.parquet",
             "1ddb7e4512bca5fa1009be8fcb8d40f345b8774f0a970978d78f296c53f501b2", 250,
         ),
-        fewshot_file=None,
-    ),
-    "strategyqa": DatasetSpec(
-        name="strategyqa",
-        answer_type="yesno",
-        n_eval=150,
-        eval_file=RawFile(
-            "wics/strategy-qa", "c9a25e4b10d32364d25f1f1387bf445921b6e75e",
-            "strategyQA/test/0000.parquet", "strategyqa/test.parquet",
-            "c86cb39299a458683427ade4296546c92c94bee7640e2fa9d3642a0f7675f490", 2290,
-        ),
-        fewshot_file=None,
     ),
 }
+DEFAULT_DATASET = "bbh"
 
 
 @dataclass(frozen=True)

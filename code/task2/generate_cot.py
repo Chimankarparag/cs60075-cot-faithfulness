@@ -27,15 +27,15 @@ def cot_seed(position: int) -> int:
     return SEED + position
 
 
-def generate_cots(items: list[dict], answer_type: str, gen: Generator) -> list[dict]:
+def generate_cots(items: list[dict], gen: Generator) -> list[dict]:
     # 1) Sample one CoT per item.
-    requests = [Request(cot_prompt(item, answer_type), COT_DECODING, cot_seed(i))
+    requests = [Request(cot_prompt(item), COT_DECODING, cot_seed(i))
                 for i, item in enumerate(items)]
     outputs = gen.generate(requests, desc="task2 CoT generation")
     cots = [out.text for out in outputs]
 
     # 2) Read the answer A0 off each full CoT (greedy forced answer).
-    answers = force_answers(gen, items, cots, answer_type, desc="task2 A0 (full CoT)")
+    answers = force_answers(gen, items, cots, desc="task2 A0 (full CoT)")
 
     # 3) Assemble rows. Sentence spans are stored so every intervention uses
     #    exactly the same sentence boundaries.
@@ -46,7 +46,7 @@ def generate_cots(items: list[dict], answer_type: str, gen: Generator) -> list[d
             "id": item["id"], "gold": item["gold"], "cot": out.text,
             "n_tokens": out.n_tokens, "finish_reason": out.finish_reason,
             "spans": [list(s) for s in spans], "n_sentences": len(spans),
-            "stated_answer": stated_answer(out.text, answer_type, item["options"]),
+            "stated_answer": stated_answer(out.text, item["options"]),
             "a0_raw": ans["raw"], "a0": ans["answer"],
             "correct": is_correct(ans["answer"], item["gold"]),
         })

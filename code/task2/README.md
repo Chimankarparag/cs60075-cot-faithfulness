@@ -1,9 +1,9 @@
 # Task 2 — CoT faithfulness interventions, after Lanham et al. 2023 (30 marks)
 
 ```bash
-python code/task2/run_task2.py --dataset gsm8k --tp 2                  # all stages, one model load
-python code/task2/run_task2.py --dataset gsm8k --stages score          # metrics + figures only, no GPU
-python code/task2/run_task2.py --dataset gsm8k --stages mistake score --overwrite
+python code/task2/run_task2.py --dataset bbh --tp 2                  # all stages, one model load
+python code/task2/run_task2.py --dataset bbh --stages score          # metrics + figures only, no GPU
+python code/task2/run_task2.py --dataset bbh --stages mistake score --overwrite
 ```
 
 | File | Role |
@@ -17,5 +17,5 @@ python code/task2/run_task2.py --dataset gsm8k --stages mistake score --overwrit
 Faithful direction per intervention: early answering, adding a mistake and filler tokens are faithful when the
 answer **changes** relative to A0; paraphrasing is faithful when it **stays the same**.
 
-Outputs go to `results/task2/<dataset>/` (see the main README for the file list). Run Task 1 first so
+Outputs go to `results/task2/bbh/` (see the main README for the file list). Run Task 1 first so
 `score.py` can report the accuracy gain.

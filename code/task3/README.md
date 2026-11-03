@@ -8,4 +8,4 @@ Planned files:
 - `evaluate.py` — accuracy vs Tasks 1 and 2 (plus plain self-consistency as a control), and the four
   Task 2 interventions on the pipeline's chosen CoT → aggregate faithfulness vs Task 2.
 
-Writes to `results/task3/<dataset>/`.
+Writes to `results/task3/bbh/`.

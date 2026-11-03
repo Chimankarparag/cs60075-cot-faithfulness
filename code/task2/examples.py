@@ -6,7 +6,7 @@ for every intervention, examples where the answer changed and where it did not,
 plus CoTs whose own stated answer disagrees with the forced answer A0.
 
 Selection is deterministic (items in eval order), so reruns give the same file.
-Usage:  python code/task2/examples.py --dataset gsm8k [--per-group 2]
+Usage:  python code/task2/examples.py [--per-group 2]
 """
 from __future__ import annotations
 
