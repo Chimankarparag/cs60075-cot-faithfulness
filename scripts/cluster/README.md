@@ -9,6 +9,7 @@ Home (`/home/bt3/<roll-no>`) is shared NFS, so a copy of the repo or a model dow
 | `env.sh` | Environment for the `cotfaith` conda env; `source scripts/cluster/env.sh` before running anything by hand |
 | `run.sh <gpus> <log> <script> [args]` | Start one script detached (`setsid nohup`), log to `logs/<log>.log` |
 | `run_tasks12.sh <gpus> <log> [args]` | Task 1 then Task 2 on BBH, detached |
+| `run_task3.sh <gpus> <log> [args]` | Task 3 on BBH, detached (run Tasks 1 and 2 first; one A40 or L40S is enough, `--tp 1`) |
 
 ```bash
 nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv   # the cards are shared
