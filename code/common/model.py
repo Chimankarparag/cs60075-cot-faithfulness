@@ -6,7 +6,7 @@
 
 Both take a list of ``Request`` objects (prompt + decoding settings + seed) and
 return one ``Output`` per request, in the same order. Tasks never talk to vLLM or
-transformers directly, so switching backend is a command-line flag.
+transformers directly; ``load_generator(model, backend=...)`` picks one.
 """
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ import os
 import time
 from dataclasses import dataclass
 
-from common.config import MAX_MODEL_LEN, MODEL, MODEL_ID, MODEL_REVISION, SEED, Decoding
+from common.config import MAX_MODEL_LEN, SEED, Decoding, ModelSpec, model_spec
 from common.prompts import Prompt
 
 
@@ -36,6 +36,7 @@ class Generator:
     """Shared logic: turning a Prompt into the exact text the model sees."""
 
     tokenizer = None  # set by subclasses
+    spec: ModelSpec   # the model being run
 
     def render(self, prompt: Prompt) -> str:
         """Apply the model's chat template, open the assistant turn, then append the
@@ -44,7 +45,7 @@ class Generator:
         would otherwise trim trailing whitespace."""
         text = self.tokenizer.apply_chat_template(
             list(prompt.messages), tokenize=False, add_generation_prompt=True,
-            **dict(MODEL.chat_template_kwargs))
+            **dict(self.spec.chat_template_kwargs))
         return text + (prompt.prefill or "")
 
     def encode(self, text: str) -> list[int]:
@@ -58,10 +59,10 @@ class Generator:
         raise NotImplementedError
 
 
-def _load_tokenizer():
+def _load_tokenizer(spec: ModelSpec):
     from transformers import AutoTokenizer
 
-    return AutoTokenizer.from_pretrained(MODEL_ID, revision=MODEL_REVISION)
+    return AutoTokenizer.from_pretrained(spec.hf_id, revision=spec.revision)
 
 
 def auto_gpu_mem_util(margin_gib: float = 1.5) -> float:
@@ -85,15 +86,16 @@ def auto_gpu_mem_util(margin_gib: float = 1.5) -> float:
 
 
 class VLLMGenerator(Generator):
-    def __init__(self, tensor_parallel: int = 1, gpu_mem_util: float | None = None,
+    def __init__(self, spec: ModelSpec, tensor_parallel: int = 1, gpu_mem_util: float | None = None,
                  enforce_eager: bool = True, max_model_len: int = MAX_MODEL_LEN):
         from vllm import LLM
 
+        self.spec = spec
         util = gpu_mem_util or auto_gpu_mem_util()
-        print(f"[model] vLLM: tp={tensor_parallel} gpu_memory_utilization={util:.2f} "
+        print(f"[model] vLLM {spec.hf_id}: tp={tensor_parallel} gpu_memory_utilization={util:.2f} "
               f"eager={enforce_eager}", flush=True)
-        self.tokenizer = _load_tokenizer()
-        self.llm = LLM(model=MODEL_ID, revision=MODEL_REVISION, tokenizer_revision=MODEL_REVISION,
+        self.tokenizer = _load_tokenizer(spec)
+        self.llm = LLM(model=spec.hf_id, revision=spec.revision, tokenizer_revision=spec.revision,
                        dtype="bfloat16", tensor_parallel_size=tensor_parallel,
                        gpu_memory_utilization=util, max_model_len=max_model_len,
                        seed=SEED, enforce_eager=enforce_eager)
@@ -124,22 +126,23 @@ class HFGenerator(Generator):
     Colab T4. Sampling uses one seed per batch, so sampled outputs will differ from
     the vLLM runs; greedy outputs should match up to numerical noise."""
 
-    def __init__(self, quant: str | None = None, batch_size: int = 16):
+    def __init__(self, spec: ModelSpec, quant: str | None = None, batch_size: int = 16):
         import torch
         from transformers import AutoModelForCausalLM, BitsAndBytesConfig
 
+        self.spec = spec
         self.batch_size = batch_size
-        self.tokenizer = _load_tokenizer()
+        self.tokenizer = _load_tokenizer(spec)
         self.tokenizer.padding_side = "left"  # decoder-only models must be padded on the left
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
         dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
-        kwargs = {"revision": MODEL_REVISION, "dtype": dtype, "device_map": "auto"}
+        kwargs = {"revision": spec.revision, "dtype": dtype, "device_map": "auto"}
         if quant == "4bit":
             kwargs["quantization_config"] = BitsAndBytesConfig(
                 load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=dtype)
         print(f"[model] transformers: dtype={dtype} quant={quant} batch_size={batch_size}", flush=True)
-        self.model = AutoModelForCausalLM.from_pretrained(MODEL_ID, **kwargs).eval()
+        self.model = AutoModelForCausalLM.from_pretrained(spec.hf_id, **kwargs).eval()
         eos = self.model.generation_config.eos_token_id
         self.stop_ids = set(eos if isinstance(eos, list) else [eos])
 
@@ -186,20 +189,11 @@ class HFGenerator(Generator):
                                   "length" if cut is None else "stop")
 
 
-def add_model_args(parser) -> None:
-    """Command-line flags shared by every script that loads the model."""
-    group = parser.add_argument_group("model")
-    group.add_argument("--backend", choices=["vllm", "hf"], default="vllm")
-    group.add_argument("--tp", type=int, default=1, help="vLLM tensor parallel size (GPUs)")
-    group.add_argument("--gpu-mem-util", type=float, default=None,
-                       help="vLLM memory fraction; default = computed from free memory")
-    group.add_argument("--no-eager", action="store_true", help="vLLM: allow CUDA graphs")
-    group.add_argument("--quant", choices=["none", "4bit"], default="none", help="hf backend only")
-    group.add_argument("--batch-size", type=int, default=16, help="hf backend only")
-
-
-def load_generator(args) -> Generator:
-    if args.backend == "vllm":
-        return VLLMGenerator(tensor_parallel=args.tp, gpu_mem_util=args.gpu_mem_util,
-                             enforce_eager=not args.no_eager)
-    return HFGenerator(quant=None if args.quant == "none" else args.quant, batch_size=args.batch_size)
+def load_generator(model: str, backend: str = "vllm", tp: int = 1, gpu_mem_util: float | None = None,
+                   eager: bool = True, quant: str | None = None, batch_size: int = 16) -> Generator:
+    """Load `model` (a key of config.MODELS) with vLLM (cluster) or transformers (e.g. Colab;
+    quant="4bit" fits an 8B model on a T4)."""
+    spec = model_spec(model)
+    if backend == "vllm":
+        return VLLMGenerator(spec, tensor_parallel=tp, gpu_mem_util=gpu_mem_util, enforce_eager=eager)
+    return HFGenerator(spec, quant=quant, batch_size=batch_size)

@@ -5,7 +5,6 @@
 from __future__ import annotations
 
 import json
-import statistics
 from pathlib import Path
 
 import matplotlib
@@ -15,10 +14,9 @@ import matplotlib.pyplot as plt
 
 REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "report" / "figures"
-MODELS = {"Llama-3.1-8B": REPO / "results", "Qwen3-8B": REPO / "results" / "models" / "qwen3-8b"}
+MODELS = {"Llama-3.1-8B": REPO / "results/models/llama3.1-8b", "Qwen3-8B": REPO / "results/models/qwen3-8b"}
 COLORS = {"Llama-3.1-8B": "#2a78d6", "Qwen3-8B": "#eb6834"}
 INK, INK2, GRID = "#0b0b0b", "#52514e", "#e4e3df"
-SEEDS = {20: "", 30: "seed_30/", 40: "seed_40/"}
 
 
 def load(path: Path) -> dict:
@@ -42,17 +40,17 @@ def accuracy() -> None:
     width = 0.38
     for mi, (name, root) in enumerate(MODELS.items()):
         t1 = load(root / "task1/bbh/metrics.json")
-        best = max(v["mean"] for v in t1["variants"].values())
-        t2 = [load(root / f"task2/bbh/{d}metrics.json")["cot"]["mean"] for d in SEEDS.values()]
-        t3 = [load(root / f"task3/bbh/{d}metrics.json")["accuracy"] for d in SEEDS.values()]
-        series = [[best], t2] + [[m[p]["mean"] for m in t3] for p in ("plain_sc", "weighted", "tuned", "ablation_changed")]
-        means = [100 * statistics.mean(s) for s in series]
-        sds = [100 * statistics.stdev(s) if len(s) > 1 else 0 for s in series]
+        t2 = load(root / "task2/bbh/metrics.json")
+        t3 = load(root / "task3/bbh/metrics.json")
+        best = t1["variants"][t1["best_variant"]]
+        series = [best, t2["cot"]] + [t3["accuracy"][p] for p in ("plain_sc", "weighted", "tuned", "ablation_changed")]
+        means = [100 * s["mean"] for s in series]
+        err = [[100 * (s["mean"] - s["ci95"][0]) for s in series], [100 * (s["ci95"][1] - s["mean"]) for s in series]]
         xs = [g + (mi - 0.5) * width for g in range(len(groups))]
-        ax.bar(xs, means, width * 0.92, color=COLORS[name], label=name, yerr=sds, ecolor=INK2, capsize=2,
+        ax.bar(xs, means, width * 0.92, color=COLORS[name], label=name, yerr=err, ecolor=INK2, capsize=2,
                error_kw={"lw": 0.8})
         for x, v in zip(xs, means):
-            ax.text(x, v + 3.2, f"{v:.0f}", ha="center", fontsize=6.5, color=INK)
+            ax.text(x, 3, f"{v:.0f}", ha="center", fontsize=6.5, color="white")
     ax.axhline(20, color=INK2, lw=0.7, ls=":")
     ax.text(len(groups) - 0.45, 21.5, "chance", fontsize=6.5, color=INK2, ha="right")
     ax.set_xticks(range(len(groups)), groups, fontsize=7.5)
@@ -69,12 +67,8 @@ def early_curves() -> None:
     fig, ax = plt.subplots(figsize=(3.3, 2.5))
     xs = [0, 20, 40, 60, 80, 100]
     for name, root in MODELS.items():
-        curves = [load(root / f"task2/bbh/{d}metrics.json")["early_answering"]["curve_same_answer"]
-                  for d in SEEDS.values()]
-        for c in curves:
-            ax.plot(xs, [100 * c[f"{x / 100:.1f}"] for x in xs], color=COLORS[name], lw=0.6, alpha=0.35)
-        mean = [100 * statistics.mean(c[f"{x / 100:.1f}"] for c in curves) for x in xs]
-        ax.plot(xs, mean, color=COLORS[name], lw=2, marker="o", ms=3.5, label=name)
+        c = load(root / "task2/bbh/metrics.json")["early_answering"]["curve_same_answer"]
+        ax.plot(xs, [100 * c[f"{x / 100:.1f}"] for x in xs], color=COLORS[name], lw=2, marker="o", ms=3.5, label=name)
     ax.set_xlabel("% of CoT sentences kept", fontsize=8, color=INK2)
     ax.set_ylabel("% same answer as full CoT", fontsize=8, color=INK2)
     ax.set_ylim(0, 105)

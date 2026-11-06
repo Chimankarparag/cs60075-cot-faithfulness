@@ -1,4 +1,4 @@
-"""Small file helpers: JSON / JSONL reading and writing, and result folders."""
+"""Small file helpers shared by every task: JSON / JSONL read-write and result folders."""
 from __future__ import annotations
 
 import json
@@ -6,12 +6,13 @@ import os
 from pathlib import Path
 from typing import Iterable
 
-from common.config import GEN_SEED, RESULTS_DIR, SEED
+from common.config import DATASET, RESULTS_ROOT
 
 
 def write_jsonl(path: Path, rows: Iterable[dict]) -> None:
-    """Write one JSON object per line. Writes to a temp file first, then renames,
-    so a crash never leaves a half-written file that a later stage would trust."""
+    """Write one JSON object per line, atomically (temp file + rename), so an
+    interrupted run never leaves a half-written file that looks finished."""
+    path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
     with open(tmp, "w", encoding="utf-8") as f:
@@ -26,11 +27,11 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def write_json(path: Path, obj: dict) -> None:
+    path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=2, ensure_ascii=False)
-        f.write("\n")
     os.replace(tmp, path)
 
 
@@ -39,21 +40,10 @@ def read_json(path: Path) -> dict:
         return json.load(f)
 
 
-def results_dir(task: str, dataset: str, smoke: bool = False, seed: int | None = None) -> Path:
-    """Where a task's results live.
-
-    results/<task>/<dataset>/            real runs with the default generation seed (20)
-    results/<task>/<dataset>/seed_<N>/   repeats with another generation seed (--seed N)
-    results/smoke/<task>/<dataset>/      quick tests with --n-limit (never overwrite real results)
-
-    RESULTS_DIR already points at results/models/<model>/ for a non-default model. `seed`
-    defaults to this run's GEN_SEED; pass SEED to address the default-seed results (e.g. Task 1,
-    which is greedy and run once).
-    """
-    base = RESULTS_DIR / "smoke" if smoke else RESULTS_DIR
-    path = base / task / dataset
-    seed = GEN_SEED if seed is None else seed
-    if seed != SEED:
-        path = path / f"seed_{seed}"
+def results_dir(model: str, task: str, smoke: bool = False) -> Path:
+    """results/models/<model>/<task>/bbh/ (results/smoke/<model>/<task>/bbh/ for quick tests
+    with a limited number of items, so a smoke test never overwrites real results)."""
+    base = RESULTS_ROOT / "smoke" if smoke else RESULTS_ROOT / "models"
+    path = base / model / task / DATASET
     path.mkdir(parents=True, exist_ok=True)
     return path

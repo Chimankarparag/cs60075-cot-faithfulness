@@ -1,14 +1,12 @@
 """Central configuration for the CoT-faithfulness project (BIG-Bench-Hard, logical deduction).
 
-Everything that must be identical across Tasks 1-3 lives here: paths, the model
-checkpoint, seeds, dataset definitions and decoding settings. Scripts import
+Everything that must be identical across Tasks 1-3 lives here: paths, the models,
+the seed, the dataset definition and decoding settings. The task notebooks import
 these constants instead of hard-coding values, so one edit changes the whole
 pipeline and the report can point to a single file for "what settings were used".
 """
 from __future__ import annotations
 
-import os
-import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -17,28 +15,10 @@ from pathlib import Path
 # --------------------------------------------------------------------------- #
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data"
-RAW_DIR = DATA_DIR / "raw"              # downloaded parquet files (gitignored)
-PROCESSED_DIR = DATA_DIR / "processed"  # normalised JSONL (gitignored)
+RAW_DIR = DATA_DIR / "raw"              # downloaded parquet file (gitignored download cache)
 SPLITS_DIR = DATA_DIR / "splits"        # chosen indices (committed)
 RESULTS_ROOT = REPO_ROOT / "results"   # generations + metrics (committed)
-
-
-# --------------------------------------------------------------------------- #
-# Run-level choices: which model, which generation seed.
-#
-# Both are module constants imported all over the code, so they must be known when
-# this module is first imported, before argparse runs. They are therefore read here
-# from the command line (--model X / --seed N, also declared in cli.py so --help and
-# validation work) or from the environment (COTFAITH_MODEL / COTFAITH_SEED).
-# --------------------------------------------------------------------------- #
-def _run_choice(flag: str, env: str, default: str) -> str:
-    argv = sys.argv[1:]
-    for i, arg in enumerate(argv):
-        if arg == flag and i + 1 < len(argv):
-            return argv[i + 1]
-        if arg.startswith(flag + "="):
-            return arg.split("=", 1)[1]
-    return os.environ.get(env, default)
+DATASET = "bbh"                         # the one dataset; used in result paths
 
 
 # --------------------------------------------------------------------------- #
@@ -47,7 +27,7 @@ def _run_choice(flag: str, env: str, default: str) -> str:
 # --------------------------------------------------------------------------- #
 @dataclass(frozen=True)
 class ModelSpec:
-    key: str                  # short name used on the command line and in result paths
+    key: str                  # short name used in the notebooks and in result paths
     hf_id: str                # Hugging Face model id
     revision: str             # pinned commit
     chat_template_kwargs: tuple = ()   # extra (name, value) arguments for the chat template
@@ -55,7 +35,7 @@ class ModelSpec:
 
 
 MODELS: dict[str, ModelSpec] = {
-    # The model used for the main results (Tasks 1-3).
+    # The first model (the default).
     "llama3.1-8b": ModelSpec("llama3.1-8b", "meta-llama/Llama-3.1-8B-Instruct",
                              "0e9e39f249a16976918f6564b8830bc894c89659",
                              about="Meta Llama 3.1 8B Instruct (July 2024)"),
@@ -67,29 +47,22 @@ MODELS: dict[str, ModelSpec] = {
                           about="Alibaba Qwen3 8B (April 2025), thinking mode off"),
 }
 DEFAULT_MODEL = "llama3.1-8b"
-MODEL_KEY = _run_choice("--model", "COTFAITH_MODEL", DEFAULT_MODEL)
-if MODEL_KEY not in MODELS:
-    raise SystemExit(f"Unknown model {MODEL_KEY!r}; choose from {sorted(MODELS)}")
-MODEL = MODELS[MODEL_KEY]
-MODEL_ID = MODEL.hf_id
-MODEL_REVISION = MODEL.revision
 MAX_MODEL_LEN = 4096  # prompt + generation budget; our longest prompts are ~2k tokens
 
-# Results of the default model stay at results/<task>/bbh/ (the paths used since Task 1);
-# every other model gets its own tree, results/models/<key>/<task>/bbh/, so the two can be
-# compared side by side without overwriting each other.
-RESULTS_DIR = RESULTS_ROOT if MODEL_KEY == DEFAULT_MODEL else RESULTS_ROOT / "models" / MODEL_KEY
+
+def model_spec(key: str) -> ModelSpec:
+    if key not in MODELS:
+        raise ValueError(f"Unknown model {key!r}; choose from {sorted(MODELS)}")
+    return MODELS[key]
+
 
 # --------------------------------------------------------------------------- #
-# Randomness. The data split, exemplars and bootstrap use SEED; sampling uses GEN_SEED.
+# Randomness. One seed for the whole project: the item sample, the exemplars, the
+# dev items, the bootstrap and every sampled generation. Per-request generation
+# seeds are this seed plus an offset (item position, sample index, retry number),
+# so each request is reproducible on its own.
 # --------------------------------------------------------------------------- #
-SEED = 20
-# Seeds for sampled generations (Task 2's CoT and interventions, Task 3's samples, rewrite retries).
-# Tasks 2 and 3 are run once per seed in GEN_SEEDS and reported as mean and spread; a run picks its
-# seed with --seed N (default: the first). The data split, the few-shot exemplars, the dev items and
-# the bootstrap always use SEED, so every run sees the same items.
-GEN_SEEDS = (20, 30, 40)
-GEN_SEED = int(_run_choice("--seed", "COTFAITH_SEED", str(GEN_SEEDS[0])))
+SEED = 49
 N_FEWSHOT = 4  # the spec asks for 4-shot direct answering in Task 1
 
 
@@ -105,30 +78,15 @@ class RawFile:
     n_rows: int
 
 
-@dataclass(frozen=True)
-class DatasetSpec:
-    """How to load and sample the dataset."""
-
-    name: str
-    n_eval: int          # evaluation sample size fixed by the assignment
-    eval_file: RawFile   # pool the evaluation sample AND the few-shot exemplars are drawn from
-
-
 # BIG-Bench-Hard, subtask logical_deduction_five_objects: 250 multiple-choice questions.
-# 150 form the evaluation sample (assignment); 4 more are the few-shot exemplars, disjoint from them.
-DATASETS: dict[str, DatasetSpec] = {
-    "bbh": DatasetSpec(
-        name="bbh",
-        n_eval=150,
-        eval_file=RawFile(
-            "maveriq/bigbenchhard", "a493490a030bfe06c7baa2db022263afbfa04cfb",
-            "logical_deduction_five_objects/train/0000.parquet",
-            "bbh_logical_deduction_five_objects/train.parquet",
-            "1ddb7e4512bca5fa1009be8fcb8d40f345b8774f0a970978d78f296c53f501b2", 250,
-        ),
-    ),
-}
-DEFAULT_DATASET = "bbh"
+# 150 form the evaluation sample (assignment), 4 the few-shot exemplars, the other 96 the dev items.
+BBH_FILE = RawFile(
+    "maveriq/bigbenchhard", "a493490a030bfe06c7baa2db022263afbfa04cfb",
+    "logical_deduction_five_objects/train/0000.parquet",
+    "bbh_logical_deduction_five_objects/train.parquet",
+    "1ddb7e4512bca5fa1009be8fcb8d40f345b8774f0a970978d78f296c53f501b2", 250,
+)
+N_EVAL = 150
 
 
 @dataclass(frozen=True)
@@ -159,9 +117,3 @@ EARLY_ANSWER_FRACTIONS = (0.2, 0.4, 0.6, 0.8)
 # Bootstrap settings for confidence intervals.
 N_BOOTSTRAP = 1000
 
-
-def get_spec(name: str) -> DatasetSpec:
-    """Look up a dataset by name with a helpful error message."""
-    if name not in DATASETS:
-        raise ValueError(f"Unknown dataset {name!r}; choose from {sorted(DATASETS)}")
-    return DATASETS[name]

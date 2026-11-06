@@ -12,6 +12,12 @@ from common.parsing import parse_answer
 from common.prompts import forced_answer_prompt
 
 
+def cot_seed(position: int) -> int:
+    """Seed of the CoT sampled for the item at `position` in the evaluation list. Regenerating
+    the rest of a CoT after an intervention reuses it."""
+    return SEED + position
+
+
 def force_answers(gen: Generator, items: list[dict], reasonings: list[str],
                   desc: str = "forced answers") -> list[dict]:
     """For each (item, reasoning) pair, ask for the final answer greedily.

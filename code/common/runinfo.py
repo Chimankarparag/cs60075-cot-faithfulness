@@ -1,10 +1,10 @@
 """Record where and how long a run took: host, GPUs, software versions, wall-clock per stage.
 
-Every task script wraps its work in a RunRecord. On exit it appends one entry to
+Every task notebook wraps its GPU work in a RunRecord. On exit it appends one entry to
 <results dir>/run_info.json (a list, so resumed or partial runs keep their history):
 
-    {"script": "code/task3/run_task3.py --tp 1", "host": "gpu74.cse.iitkgp",
-     "gpus": ["NVIDIA A40"], "cuda_visible_devices": "0", "model": ..., "gen_seed": 20,
+    {"task": "task3", "host": "gpu74.cse.iitkgp",
+     "gpus": ["NVIDIA A40"], "cuda_visible_devices": "0", "model": ..., "seed": 49,
      "started": "2026-11-03T15:02:11+05:30", "finished": ..., "seconds": 1234.5,
      "stages": {"sample": 512.3, "early50": 40.1, ...}, "versions": {...}, "status": "ok"}
 
@@ -19,13 +19,12 @@ import os
 import platform
 import socket
 import subprocess
-import sys
 import time
 from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
 
-from common.config import GEN_SEED, MODEL_ID, MODEL_KEY, MODEL_REVISION
+from common.config import SEED, model_spec
 
 
 def _now() -> str:
@@ -59,18 +58,20 @@ def _versions() -> dict:
 
 
 class RunRecord:
-    def __init__(self, out_dir: Path, args=None, enabled: bool = True):
+    def __init__(self, out_dir: Path, task: str, model: str, backend: str | None = None,
+                 tp: int | None = None, enabled: bool = True):
+        spec = model_spec(model)
         self.enabled = enabled
         self.path = Path(out_dir) / "run_info.json"
         self.entry = {
-            "script": " ".join([os.path.relpath(sys.argv[0])] + sys.argv[1:]),
+            "task": task,
             "host": socket.gethostname(),
             "gpus": _gpus() if enabled else [],
             "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
-            "backend": getattr(args, "backend", None),
-            "tensor_parallel": getattr(args, "tp", None),
-            "model_key": MODEL_KEY, "model": MODEL_ID, "model_revision": MODEL_REVISION,
-            "gen_seed": GEN_SEED,
+            "backend": backend,
+            "tensor_parallel": tp,
+            "model_key": model, "model": spec.hf_id, "model_revision": spec.revision,
+            "seed": SEED,
             "started": _now(), "finished": None, "seconds": None,
             "stages": {}, "status": "running",
         }
