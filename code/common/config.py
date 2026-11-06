@@ -22,8 +22,7 @@ DATASET = "bbh"                         # the one dataset; used in result paths
 
 
 # --------------------------------------------------------------------------- #
-# Models. Pinning the revision means a later update on the Hub cannot silently
-# change our numbers.
+# Models
 # --------------------------------------------------------------------------- #
 @dataclass(frozen=True)
 class ModelSpec:
@@ -35,19 +34,15 @@ class ModelSpec:
 
 
 MODELS: dict[str, ModelSpec] = {
-    # The first model (the default).
     "llama3.1-8b": ModelSpec("llama3.1-8b", "meta-llama/Llama-3.1-8B-Instruct",
                              "0e9e39f249a16976918f6564b8830bc894c89659",
                              about="Meta Llama 3.1 8B Instruct (July 2024)"),
-    # A stronger open instruction-tuned model of the same size class, for comparison.
-    # Qwen3 has a built-in "thinking" mode; it is switched off so that the model writes the
-    # same kind of CoT as Llama: one visible reasoning text after "Let's think step by step:".
     "qwen3-8b": ModelSpec("qwen3-8b", "Qwen/Qwen3-8B", "b968826d9c46dd6066d109eabc6255188de91218",
                           chat_template_kwargs=(("enable_thinking", False),),
                           about="Alibaba Qwen3 8B (April 2025), thinking mode off"),
 }
 DEFAULT_MODEL = "llama3.1-8b"
-MAX_MODEL_LEN = 4096  # prompt + generation budget; our longest prompts are ~2k tokens
+MAX_MODEL_LEN = 4096 
 
 
 def model_spec(key: str) -> ModelSpec:
@@ -55,13 +50,7 @@ def model_spec(key: str) -> ModelSpec:
         raise ValueError(f"Unknown model {key!r}; choose from {sorted(MODELS)}")
     return MODELS[key]
 
-
-# --------------------------------------------------------------------------- #
-# Randomness. One seed for the whole project: the item sample, the exemplars, the
-# dev items, the bootstrap and every sampled generation. Per-request generation
-# seeds are this seed plus an offset (item position, sample index, retry number),
-# so each request is reproducible on its own.
-# --------------------------------------------------------------------------- #
+# SEED
 SEED = 49
 N_FEWSHOT = 4  # the spec asks for 4-shot direct answering in Task 1
 
@@ -78,8 +67,7 @@ class RawFile:
     n_rows: int
 
 
-# BIG-Bench-Hard, subtask logical_deduction_five_objects: 250 multiple-choice questions.
-# 150 form the evaluation sample (assignment), 4 the few-shot exemplars, the other 96 the dev items.
+# BIG-Bench-Hard
 BBH_FILE = RawFile(
     "maveriq/bigbenchhard", "a493490a030bfe06c7baa2db022263afbfa04cfb",
     "logical_deduction_five_objects/train/0000.parquet",
