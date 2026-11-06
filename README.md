@@ -377,7 +377,7 @@ committed generations with `--stages score` (re-scoring the committed outputs re
 - [x] Colab notebook for Tasks 1-3 and the model comparison (replay mode re-scores the committed results; the new cells have not been run in Colab yet)
 - [x] Both models, seeds 20/30/40, run logs and timings committed
 - [x] `requirements.txt` with pinned versions
-- [ ] `report.pdf` (8–12 pages) with the Task 2 paper-comparison section
+- [x] `report/report.pdf` (9 pages: 8+ of body, then references and a prompt appendix; source `report/report.tex`, figures from `report/make_figures.py`); group members still to be filled in
 - [ ] 5–10 minute code walkthrough video
 - [ ] `.zip` with `code/`, `README.md`, `requirements.txt`, `report.pdf` (no data or weights)
 

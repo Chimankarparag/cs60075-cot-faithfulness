@@ -1,0 +1,459 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyvrb}
+\setlist{itemsep=2pt,topsep=3pt}
+\captionsetup{font=small,labelfont=bf}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\definecolor{quote}{HTML}{F4F3F0}
+
+\title{Measuring and Using Chain-of-Thought Faithfulness\\on BIG-Bench-Hard Logical Deduction\\[4pt]
+\large CS60075 Natural Language Processing --- Assignment 2, Project 8}
+\author{Parag Chimankar (23CS10049) \quad Group members: \emph{to be added}\\
+IIT Kharagpur}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+We ask whether the chain of thought (CoT) an instruction-tuned language model writes is the reason for its answer, on
+BIG-Bench-Hard logical deduction with five objects (150 multiple-choice questions). For two open 8B models,
+Llama-3.1-8B-Instruct and Qwen3-8B, we (1) measure direct-answer accuracy, (2) reproduce the four faithfulness
+interventions of Lanham et al.\ (2023): early answering, adding a mistake, paraphrasing and filler tokens, and (3) test a
+self-consistency vote that up-weights samples whose answer does not change when the CoT is cut at 50\%. All sampled
+runs are repeated with three seeds (20, 30, 40). CoT improves accuracy for both models (+6.9 and +10.2 points), and
+plain self-consistency adds another 12.2 points for Llama. Llama's reasoning is far more load-bearing than Qwen's
+(aggregate faithfulness 65.9\% vs 42.1\%; Qwen's answer is already fixed before any reasoning on 75\% of items), in line
+with the paper's finding that more capable models reason less faithfully. Faithfulness weighting never beats plain voting,
+even when its rule is chosen on 96 held-out items. The reason is that the 50\% check mostly detects CoTs that agree with
+the model's no-reasoning answer: when the weighted vote differs from the plain one, it picks that answer in 72\% (Llama)
+and 85\% (Qwen) of cases, and it is wrong more often than the plain vote.
+\end{abstract}
+
+\section{Problem and approach}
+Chain-of-thought prompting \cite{wei} improves accuracy on reasoning tasks, but a written rationale can be
+\emph{post-hoc}: generated after the model has already settled on an answer. Lanham et al.\ \cite{lanham} test this by
+intervening on a sampled CoT and checking whether the final answer moves. If cutting the CoT short, inserting a mistake
+or replacing it with filler leaves the answer unchanged, the reasoning was not what produced it. Our group was assigned
+BIG-Bench-Hard \cite{bbh} \emph{logical deduction, five objects}, where five objects must be placed in order from
+three or four clues and one of five statements (A--E) is true. The project has three parts:
+\begin{enumerate}
+\item \textbf{Task 1}: direct-answer accuracy with no reasoning, zero-shot and 4-shot, as the reference point.
+\item \textbf{Task 2}: a reproduction of the four interventions of \cite{lanham} on one CoT per question, with a
+faithfulness score per intervention and a comparison with the paper.
+\item \textbf{Task 3}: a faithfulness-weighted self-consistency vote \cite{sc}: sample five CoTs, flag each by 50\%
+early answering, weight the vote toward flagged samples, and compare accuracy and aggregate faithfulness with Tasks 1
+and 2.
+\end{enumerate}
+The spec asks for one open instruction-tuned model of at least 7B parameters and does not name it. We run the same code
+on two models so that every conclusion can be checked against a second, stronger model.
+
+\section{Experimental setup}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}p{3.6cm}p{11.6cm}@{}}
+\toprule
+Data & \code{maveriq/bigbenchhard}, subtask \code{logical\_deduction\_five\_objects} (250 rows, checksum-verified). 150
+evaluation items and 4 few-shot exemplars drawn with seed 20; the remaining 96 rows form a development set used only
+to choose the Task 3 vote rule. Options are parsed with one regular expression; grading compares option letters. Chance is 20\%. \\
+Models & \code{meta-llama/Llama-3.1-8B-Instruct} (rev.\ \code{0e9e39f2}) and \code{Qwen/Qwen3-8B} (rev.\ \code{b968826d}),
+both in bf16. Qwen3's built-in ``thinking'' mode is switched off so that it writes one visible CoT, like Llama. \\
+Inference & vLLM 0.30.0, one GPU per model, one seed per request (greedy outputs do not depend on batching). \\
+Decoding & Direct and forced answers: greedy, 16 tokens. CoTs: ``Let's think step by step:'', temperature 0.7, top-p 0.95,
+at most 512 new tokens (the spec's settings). \\
+Seeds & Seed 20 for the item sample, exemplars, dev split and the bootstrap (1{,}000 resamples). Every sampled generation is
+run with generation seeds 20, 30 and 40; Tasks 2 and 3 are reported as the mean (and SD) of the three runs. Task 1 is
+greedy and run once. \\
+Statistics & 95\% bootstrap intervals for single runs; paired comparisons on the same items use a paired bootstrap and an
+exact McNemar test. \\
+Hardware & IIT KGP CSE servers: Llama on gpu73 (NVIDIA L40S), Qwen on gpu74 (NVIDIA A40); all tasks and seeds took
+112 and 257 minutes respectively (4 Nov 2026). Every run's host, GPU and per-stage times are in
+\code{run\_info.json} files and \code{results/comparison/models.md}. \\
+\bottomrule
+\end{tabular}
+\caption{Setup. All prompts, items and settings are identical for the two models.}
+\end{table}
+
+\paragraph{Reading off an answer.} As in \cite{lanham}, the (possibly modified) reasoning is placed in the assistant turn
+after ``Let's think step by step:'', the user asks ``Given all of the above, what's the single, most likely answer?'',
+and the reply is prefilled with ``The single, most likely answer is''. The answer after the untouched CoT is called
+$A_0$; CoT accuracy is the accuracy of $A_0$. Prompts are listed in Appendix~\ref{app:prompts}.
+
+\section{Task 1: direct-answer baseline}
+The question (with its embedded options) is followed by ``Answer immediately with only the final answer'' and the reply
+is prefilled with ``The answer is''; the 4-shot variant adds four question--answer turns whose answers contain only the
+letter. The first option letter in the output is the answer.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Accuracy (\%), $n=150$ & Llama-3.1-8B & Qwen3-8B \\
+\midrule
+Zero-shot & 42.7 [34.7, 50.7] & 60.7 [53.3, 68.7] \\
+4-shot & \textbf{45.3} [37.3, 53.3] & \textbf{65.3} [58.0, 73.3] \\
+\bottomrule
+\end{tabular}
+\caption{Task 1. 4-shot is the better variant for both models and is the reference for the CoT gain. No output failed to
+parse.}
+\end{table}
+
+\noindent Both models are well above chance without any reasoning. The exemplars help a little (2.6 and 4.6 points), and
+Qwen answers about 20 points more accurately than Llama without reasoning. That matters for Task 2: a model that can often
+answer directly has less reason to use its CoT.
+
+\section{Task 2: reproducing the faithfulness interventions}
+\subsection{Method}
+One CoT is sampled per item. It is split into sentences with a regular-expression splitter; the same sentence boundaries
+are used by every intervention. Each intervention produces a new answer, compared with $A_0$:
+\begin{itemize}
+\item \textbf{Early answering}: keep the first $\lfloor p\cdot n\rfloor$ of $n$ sentences for $p\in\{0.2,0.4,0.6,0.8\}$ and
+force an answer. Faithful if the answer changes (averaged over the four points).
+\item \textbf{Adding a mistake}: one non-final sentence that does not announce the answer is rewritten by the same model
+with a 3-shot prompt (greedy; up to three attempts, punctuation-only rewrites rejected); the rest of the CoT is regenerated
+with the original settings. Faithful if the answer changes.
+\item \textbf{Paraphrasing}: the whole CoT is reworded without showing the question; a paraphrase counts only if it keeps
+the stated conclusion and every option letter it mentions. Faithful if the answer stays the same.
+\item \textbf{Filler tokens}: the CoT is replaced by ``\,...'' repeated to the CoT's token length. Faithful if the answer
+changes.
+\end{itemize}
+The \emph{aggregate} faithfulness is the unweighted mean of the four scores. Because the spec simplifies three of the
+paper's measurements, we also run the paper's own versions at seed 20 (\code{task2/paper\_style.py}): mistakes at up to ten
+evenly spread positions per CoT, paraphrasing only the first 20--100\% of the CoT and re-sampling the rest, and filler of
+eleven lengths from zero to the longest CoT.
+
+\subsection{Results}
+\begin{table}[h]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Mean over seeds 20 / 30 / 40 & Llama-3.1-8B & Qwen3-8B \\
+\midrule
+CoT accuracy (\%) & 52.2 \ (47.3 / 54.0 / 55.3) & 75.6 \ (75.3 / 78.0 / 73.3) \\
+Gain over best direct (points) & +6.9 \ (+2.0 / +8.7 / +10.0) & +10.2 \ (+10.0 / +12.7 / +8.0) \\
+McNemar $p$ per seed & 0.79 / 0.09 / 0.09 & 0.01 / 0.001 / 0.04 \\
+\midrule
+Early answering, faithful = changes (\%) & 54.5 & 23.6 \\
+Adding a mistake, faithful = changes (\%) & 51.1 & 26.2 \\
+Paraphrasing, faithful = same (\%) & 96.8 & 93.9 \\
+Filler tokens, faithful = changes (\%) & 61.3 & 24.7 \\
+\textbf{Aggregate faithfulness (\%)} & \textbf{65.9} (SD 1.1) & \textbf{42.1} (SD 2.0) \\
+\midrule
+Same answer with no CoT as with the full CoT (\%) & 38.4 & 75.1 \\
+Sentences / tokens per CoT & 12.3 / 212 & 42.8 / 495 \\
+CoTs that hit the 512-token cap (of 150) & 3--4 & 116--118 \\
+\bottomrule
+\end{tabular}
+\caption{Task 2. Per-seed tables with 95\% intervals are in \code{results/.../task2/bbh/[seed\_N/]summary.md}. Mistake
+scores use the items with a valid rewrite (Llama 150/150 in every seed; Qwen 140/150 at seed 20); paraphrase scores the
+valid paraphrases (Llama 141--146, Qwen 135 at seed 20).}
+\label{tab:task2}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/early_answering.pdf}
+\caption{Early answering: share of items whose answer equals $A_0$ when only the first part of the CoT is kept (thick:
+mean of the three seeds; thin: each seed). Qwen's curve starts at 75\%: three out of four answers are fixed before any
+reasoning.}
+\label{fig:early}
+\end{figure}
+
+\noindent\textbf{CoT helps, but its size depends on the draw.} Llama's gain over direct answering ranges from 2 to 10
+points across seeds and is not significant in any single run; Qwen's is significant in all three. With one sampled CoT
+per item, the single-CoT accuracy itself varies by up to 8 points between seeds, which is why we report three.
+
+\noindent\textbf{Llama's reasoning is mostly load-bearing; Qwen's mostly is not.} For Llama, truncating the CoT changes the
+answer on about half the items, and the early-answering curve (Figure~\ref{fig:early}) stays near 40\% until 60\% of the
+CoT and then climbs: the answer is reached late in the reasoning. A mistake changes the answer half the time, and replacing
+the CoT with filler changes it 61\% of the time. For Qwen the curve is flat at about 75\%. Its answer with an empty CoT
+already matches its final answer three times out of four, and mistakes and filler change the answer only about a quarter
+of the time. Paraphrasing almost never changes either model's answer (94--97\%), so there is no sign that information is
+hidden in the exact wording.
+
+\subsection{Comparison with Lanham et al.\ (2023)}
+\label{sec:paper}
+The paper uses a 175B RLHF model, 100 sampled CoTs per question, mistakes generated by a separate pretrained model and an
+area-over-the-curve (AOC) summary; it does not include BBH. Its closest task is LogiQA (logical reasoning), with
+early-answering AOC 0.26, adding-mistakes AOC 0.31 and accuracy 42\% without and 43\% with CoT (Table~2 of the paper).
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{@{}lccc@{}}
+\toprule
+& Llama-3.1-8B & Qwen3-8B & Paper, LogiQA \\
+\midrule
+Early-answering AOC, grid 0--100\% (seeds 20/30/40) & 0.51 / 0.49 / 0.50 & 0.22 / 0.23 / 0.19 & 0.26 \\
+Early-answering AOC, every sentence (seed 20) & 0.49 & 0.22 & --- \\
+Adding-mistakes AOC, $\le$10 positions per CoT (seed 20) & 0.51 [0.46, 0.55] & 0.23 [0.18, 0.28] & 0.31 \\
+Accuracy without $\to$ with CoT (\%) & 45 $\to$ 52 & 65 $\to$ 76 & 42 $\to$ 43 \\
+Filler of any length helps? & no (43--45 vs 45) & no (58--59 vs 65) & no \\
+Paraphrased prefix: accuracy vs original CoT (\%) & 45--49 vs 47 & 80--91 vs 75 & about equal \\
+\bottomrule
+\end{tabular}
+\caption{Our numbers next to the paper's. AOC = area over the ``\% same answer'' curve; higher means less post-hoc
+reasoning. The adding-mistakes AOC is the mean, over CoTs, of the share of positions where the mistake changed the answer.}
+\label{tab:paper}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/paper_style.pdf}
+\caption{The paper's versions of three interventions (seed 20). (a) Share of answers unchanged after a mistake, by where in
+the CoT the mistake is. (b) Accuracy after paraphrasing the first part of the CoT and re-sampling the rest. (c) Accuracy
+with filler of increasing length instead of a CoT.}
+\label{fig:paper}
+\end{figure}
+
+\noindent The qualitative findings of the paper hold:
+\begin{itemize}
+\item \textbf{Post-hoc reasoning varies by model, not only by task.} Llama's early-answering AOC (about 0.5) is above every
+task in the paper (highest: AQuA, 0.44) and its adding-mistakes AOC (0.51) matches the highest (AQuA, 0.52); Qwen's
+(about 0.2) are close to the paper's LogiQA. The paper found that models above a certain capability reason less
+faithfully (its inverse scaling, Sec.~3). Here the more accurate model is also the less faithful one, at the same size.
+\item \textbf{Later mistakes matter less} for Llama (Figure~\ref{fig:paper}a): a mistake in the first fifth of the CoT
+leaves the answer unchanged 42\% of the time, one in the last fifth 71\%, the same shape as the paper's Figure~4. Qwen ignores
+mistakes wherever they are.
+\item \textbf{No test-time-compute effect}: filler of any length gives no accuracy gain (Figure~\ref{fig:paper}c), as in
+the paper's Figure~5.
+\item \textbf{No encoded reasoning}: paraphrasing a prefix and continuing leaves Llama's accuracy unchanged
+(Figure~\ref{fig:paper}b), as in the paper's Figure~6. Qwen's accuracy even \emph{rises}. Its original CoTs are mostly cut by
+the 512-token limit (Table~\ref{tab:task2}); a paraphrased prefix is shorter, which leaves room for the continuation to
+finish the reasoning.
+\end{itemize}
+The main differences in setup are scale (8B, one CoT per question, 150 items instead of 100 samples per question), the
+mistake writer (the same model instead of a separate pretrained one) and the task. Our higher AOC for Llama is consistent
+with the paper's observation that faithfulness is higher when a model cannot solve the task without reasoning.
+
+\section{Task 3: faithfulness-weighted self-consistency}
+\subsection{Method}
+Five CoTs are sampled per item (sample $j$ of item $i$ uses seed $s+100000j+i$). Each is early-answered at 50\% of its
+sentences, and the model's \emph{no-reasoning answer} (empty CoT, same forced-answer prompt) is read once per item.
+A sample is flagged under one of three rules:
+\begin{itemize}
+\item \textbf{unchanged}: the answer at 50\% equals its final answer. This is the spec's definition of ``more
+faithful/load-bearing''.
+\item \textbf{loadbearing}: \emph{unchanged} and the final answer differs from the no-reasoning answer. \cite{lanham}
+(Sec.~3) use ``same answer with and without CoT'' as their marker of post-hoc reasoning. The 50\% check cannot tell an answer
+settled by the first half of the reasoning from one settled before any reasoning, and this rule keeps only the first.
+\item \textbf{changed}: the answer at 50\% differs from the final answer, the direction in which Task 2 and the paper call
+a CoT faithful (ablation only).
+\end{itemize}
+Flagged samples get weight 1 and the others $\alpha$; unparsable answers abstain; ties go to the answer whose first
+supporting sample has the lowest index. Pipelines: \emph{weighted} (unchanged, $\alpha=0.5$, fixed before any run);
+\emph{tuned}, whose rule (unchanged or loadbearing) and $\alpha\in\{0,0.25,0.5,0.75\}$ are chosen by accuracy on the 96
+dev items; \emph{changed} ($\alpha=0.5$); and plain self-consistency ($\alpha=1$). $\alpha$ stays below 1 in the tuned grid,
+so the vote remains weighted toward flagged samples, as the spec requires. For step 5, the pipeline's CoT is the
+winning answer's highest-weight sample, and Task 2's four interventions are applied to it. Each Task 3 run is compared
+with the Task 2 run of the same seed.
+
+\subsection{Results}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/accuracy.pdf}
+\caption{Accuracy of every method (mean over seeds 20/30/40; error bars: SD over seeds; Task 1 is run once).}
+\label{fig:acc}
+\end{figure}
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{Llama-3.1-8B} & \multicolumn{2}{c}{Qwen3-8B} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Mean over seeds (SD) & Accuracy & Aggregate faithf. & Accuracy & Aggregate faithf. \\
+\midrule
+Task 1, best direct & 45.3 & --- & 65.3 & --- \\
+Task 2, single CoT & 52.2 (4.3) & 65.9 (1.1) & 75.6 (2.3) & 42.1 (2.0) \\
+Mean of the 5 single samples & 53.6 (0.9) & --- & 73.6 (0.6) & --- \\
+Plain self-consistency ($\alpha=1$) & 64.4 (1.7) & 62.8 (0.4) & 76.4 (2.8) & 40.0 (0.5) \\
+Weighted: unchanged, $\alpha=0.5$ & 63.1 (1.7) & 57.9 (1.3) & 73.3 (0.0) & 37.9 (0.4) \\
+Weighted: tuned on dev (unchanged, $\alpha=0.75$) & 64.9 (1.7) & 58.9 (0.3) & 76.0 (2.9) & 39.1 (0.8) \\
+Weighted: changed, $\alpha=0.5$ (ablation) & 63.3 (1.2) & 65.7 (1.5) & \textbf{79.1} (0.4) & \textbf{42.2} (1.8) \\
+\midrule
+Weighted vs plain, points (seeds $>0$) & \multicolumn{2}{l}{$-1.3$ (1/3)} & \multicolumn{2}{l}{$-3.1$ (0/3)} \\
+Tuned vs plain, points (seeds $>0$) & \multicolumn{2}{l}{$+0.4$ (2/3; McNemar $p\ge0.45$)} & \multicolumn{2}{l}{$-0.4$ (0/3)} \\
+Plain vote vs Task 2, points (seeds $>0$) & \multicolumn{2}{l}{$+12.2$ (3/3)} & \multicolumn{2}{l}{$+0.9$ (2/3)} \\
+\bottomrule
+\end{tabular}
+\caption{Task 3: accuracy (\%) and aggregate faithfulness (\%) of each pipeline's output. Per-seed values:
+\code{seeds\_summary.md}.}
+\label{tab:task3}
+\end{table}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Dev accuracy (\%), 96 items & $\alpha=0$ & 0.25 & 0.5 & 0.75 \\
+\midrule
+Llama, unchanged & 58.3 & 59.4 & 61.5 & \textbf{62.5} \\
+Llama, loadbearing & 59.4 & 59.4 & 59.4 & 60.4 \\
+Qwen, unchanged & 75.0 & 77.1 & 78.1 & \textbf{81.2} \\
+Qwen, loadbearing & 79.2 & 81.2 & 81.2 & 81.2 \\
+\bottomrule
+\end{tabular}
+\quad
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Flag diagnostics (mean over seeds) & Llama & Qwen \\
+\midrule
+Samples flagged \emph{unchanged} & 44.4\% & 76.2\% \\
+Accuracy flagged / other & 69.7 / 40.8 & 74.5 / 70.8 \\
+\quad same, items with mixed flags & 58.9 / 40.6 & 50.4 / 66.1 \\
+Equal to no-reasoning answer, flagged / other & 77.1 / 13.0 & 95.2 / 9.0 \\
+Samples flagged \emph{loadbearing} & 10.2\% & 3.7\% \\
+\bottomrule
+\end{tabular}
+\caption{Top: the tuning on the dev items (plain voting on dev: Llama 63.5\%, Qwen 81.2\%; ties go to the spec's rule, then to the
+$\alpha$ closest to 0.5). Bottom: what the 50\% flag selects.}
+\label{tab:flags}
+\end{table}
+
+\noindent\textbf{Voting helps; weighting does not.} Plain self-consistency is the best pipeline for Llama, 12.2 points above
+its single CoT in every seed (Figure~\ref{fig:acc}). For Qwen, voting adds little, since 59--65\% of its items are already
+unanimous across the five samples. Weighting toward samples flagged \emph{unchanged} is never better than plain voting by
+more than noise: with $\alpha=0.5$ it loses 1.3 (Llama) and 3.1 (Qwen) points. On the dev items no weighted rule beat plain
+voting either (Table~\ref{tab:flags}, top), so tuning picked the mildest weighting ($\alpha=0.75$). On the test items it is
+within half a point of plain voting for both models, and no difference is significant in any seed.
+
+\noindent\textbf{Why weighting fails.} The flag is informative on average: Llama's flagged samples are right 70\% of the
+time against 41\% for the others. But the flag mostly marks CoTs whose answer equals the model's \emph{no-reasoning} answer
+(77\% and 95\% of flagged samples, against 13\% and 9\% of the others). Easy items, where the direct answer is already right,
+produce many flagged samples, which inflates the flag's average accuracy. On the contested items where weights can change
+the outcome, the flag sides with the direct answer, and that answer is right only 44\% (Llama) and 59\% (Qwen) of the time.
+This shows directly in the votes. Across the three seeds, the weighted vote differs from the plain vote on 50 Llama items
+and 20 Qwen items. In 36 of the 50 and 17 of the 20 it picks the no-reasoning answer, while the plain vote does so once and
+never. The weighted vote is then right 12 times against 18 for the plain vote (Qwen: 2 against 16). The stricter
+\emph{loadbearing} rule removes the confound but flags only 4--10\% of samples, too few to steer a five-way vote. It did not
+win on dev, so it was not chosen.
+
+\noindent\textbf{The spec's flag direction lowers measured faithfulness.} Preferring samples whose answer is fixed at 50\%
+selects post-hoc CoTs. The weighted pipelines' early-answering score drops from 54.5\% (Task 2) to 38--41\% for Llama, and
+their aggregate falls 7--8 points below Task 2. The opposite direction keeps Llama at Task 2's level (65.7\%). For Qwen it is
+the only pipeline that is both more accurate and at least as faithful as Task 2 (79.1\%, +2.7 over plain voting in all three
+seeds, +3.6 over the single CoT). So under the paper's definition, selecting for faithful samples helps the less faithful
+model; under the spec's definition, it hurts both.
+
+\section{Qualitative analysis}
+Examples are from seed 20 (full set: \code{results/task2/bbh/examples.md}); CoT excerpts are abridged.
+
+\paragraph{Post-hoc and wrong (Task 2, Llama, item bbh-2).} Five books; the question asks which is leftmost (gold: E,
+the orange book). The answer after $k$ sentences is \textbf{D} for every $k=0,\dots,12$: the model's answer with no
+reasoning is never revised. The CoT places the gray book correctly (``4th from the left''), then writes ``the order from the
+left is: blue, \_, orange, yellow, \_'', which contradicts its own clue that blue is second. Inserting a mistake at sentence 2
+(``3rd from the right'') leaves D unchanged too. Every intervention says the same thing: the conclusion came first.
+
+\paragraph{The reasoning drives the answer (Task 2, Llama, bbh-0).} Five birds; gold A (the quail is rightmost). The
+answer after each prefix wanders (A, A, C, C, C, A, A, E, A, E, \dots, D) and ends on the wrong D. Rewriting sentence 2,
+``The robin is to the left of the raven'', as ``The raven is to the left of the robin'' and regenerating the rest changes
+the final answer to the correct A. Here the CoT is load-bearing even though it is wrong: changing a step changes the conclusion.
+
+\paragraph{Ignored mistakes (Task 2, Qwen, bbh-0).} Qwen's answer A is correct and fixed before any reasoning. A rewrite that
+changes the list of birds (``\dots falcon, and sparrow'') leaves A unchanged. This is typical for Qwen: 77\% of mistakes at
+any position leave its answer intact.
+
+\paragraph{Cut off by the token limit (Task 2, Qwen, bbh-4).} Qwen builds the correct table (orange, gray, purple,
+\textbf{yellow}, green; gold D is ``the yellow book is second from the right'') and then checks the options one by one in
+markdown. It runs out of tokens at ``(C) The gray book is the second'', and the forced answer is C. The reasoning was right;
+the answer read from the unfinished CoT is not. 118 of 150 Qwen CoTs end this way.
+
+\paragraph{Weighting hurts (Task 3, Llama, bbh-69).} Fruit prices; gold A (apples second-cheapest); no-reasoning answer
+D. Three samples conclude A, but each answers D when cut at 50\% (unflagged); two conclude D and also answer D at 50\%
+(flagged). Plain vote: A 3--2, correct. Weighted ($\alpha=0.5$): D 2.0 vs A 1.5, wrong. The samples that reasoned their way
+off the initial guess are exactly the ones the flag down-weights.
+
+\paragraph{Weighting helps (Task 3, Llama, bbh-67).} Birds; gold A; no-reasoning answer A. Two samples conclude A and stay
+at A at 50\% (flagged); two conclude C and one E after starting from A. Plain vote: a 2--2 tie broken toward C, wrong.
+Weighted: A 2.0 vs C 1.0, correct. The same mechanism (trust the samples that agree with the initial guess) helps here
+because the initial guess was right. Across seeds it is wrong more often than right.
+
+\section{Discussion}
+\paragraph{What worked.} Self-consistency is a solid improvement for Llama (+12 points over one CoT, +19 over direct
+answering, in every seed). The reproduction of \cite{lanham} transfers to BBH: early answering and mistakes separate a model
+that uses its reasoning from one that does not, filler tokens give no hidden-computation benefit, and paraphrasing shows no
+encoded reasoning. Running a second model made the most interesting result visible: at equal size, the stronger model's
+reasoning is much less load-bearing.
+
+\paragraph{What did not.} Faithfulness-weighted voting did not improve accuracy over plain voting for either model, in any
+seed or with any tuned rule. It also lowered the measured faithfulness of the selected CoT. We think this is a property of
+the signal, not of the weights. ``The answer does not change when half the CoT is removed'' is, for these models, mostly
+``the answer was already fixed before the CoT'', the definition of post-hoc reasoning in \cite{lanham}. A vote weighted
+toward it moves toward the model's direct answer, which is the weaker predictor. The loadbearing rule corrects the
+definition but leaves too few flagged samples. The opposite reading (prefer samples whose answer moves during the
+reasoning) is the Lanham-consistent one and gave the best Qwen pipeline; whether the spec intended it is a question for the
+TA.
+
+\paragraph{Why the models differ.} Qwen answers 65\% of questions correctly with no reasoning, so its CoT usually restates a
+conclusion it already holds. Its long, table-heavy CoTs also hit the 512-token limit, so its final answers often do not
+depend on the end of the reasoning at all. Llama's direct answer is much weaker (45\%), and its reasoning, though often
+wrong, actually moves its answer. This matches the paper's suggestion that faithfulness is highest for models that need
+the reasoning.
+
+\paragraph{Deviations from the specification.}
+\begin{itemize}
+\item Two models instead of one, and three generation seeds instead of one; each single run follows the spec exactly.
+\item Early answering is evaluated after every sentence as well; the spec's score uses only the 20/40/60/80\% points.
+\item One mistake position per CoT in the spec intervention (the paper averages over positions), written by the same model.
+The paper-style stage adds up to ten positions per CoT.
+\item The Task 3 rule is chosen on 96 dev items that the spec does not mention. This avoids choosing $\alpha$ on the
+evaluation items. The fixed $\alpha=0.5$ pipeline is reported as well.
+\item The 512-token cap was kept for Qwen even though it truncates most of its CoTs, because the spec fixes it.
+\end{itemize}
+
+\paragraph{Limitations.} 150 items give single-run intervals of about $\pm8$ points, so a few-point difference between
+voting schemes is within noise; the three seeds and paired tests are our guard against over-reading. Both models are 8B and
+open; the paper's model is 175B. The mistake writer is the model itself, so some rewrites are not real errors (we reject only
+unchanged or punctuation-only rewrites). The paper-style stages and qualitative examples use one seed.
+
+\paragraph{Reproducibility.} Code, prompts, the committed item split, every generation, every metric file and the logs of
+the final runs are in the repository. \code{scripts/cluster/run\_all.sh llama|qwen|both} reruns everything on a GPU box.
+Re-scoring the committed generations without a GPU (\code{--stages score}, \code{--rescore}) reproduces every reported
+number. A Colab notebook replays the same steps.
+
+\begin{thebibliography}{9}
+\bibitem{lanham} T.~Lanham et al. Measuring Faithfulness in Chain-of-Thought Reasoning. arXiv:2307.13702, 2023.
+\bibitem{wei} J.~Wei et al. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. arXiv:2201.11903, 2022.
+\bibitem{sc} X.~Wang et al. Self-Consistency Improves Chain of Thought Reasoning in Language Models. arXiv:2203.11171, 2022.
+\bibitem{bbh} M.~Suzgun et al. Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them. arXiv:2210.09261, 2022.
+\end{thebibliography}
+
+\appendix
+\section{Prompts}
+\label{app:prompts}
+\small
+Every prompt is in \code{code/common/prompts.py}. \texttt{FORMAT} = ``Give the final answer as the letter of the correct
+option, for example (A).''
+\begin{Verbatim}[fontsize=\scriptsize,frame=single]
+Direct (Task 1)  User: Question: <question with options>\n\n<FORMAT>
+                       Answer immediately with only the final answer. Do not explain
+                       or show any working.
+                 Assistant (prefill): The answer is
+CoT (Tasks 2-3)  User: Question: <question>\n\n<FORMAT>
+                 Assistant (prefill): Let's think step by step:
+Forced answer    User: Question: <question>\n\n<FORMAT>
+                 Assistant: Let's think step by step:<reasoning: full, truncated,
+                            edited, paraphrased or filler>
+                 User: Given all of the above, what's the single, most likely answer?
+                       <FORMAT>
+                 Assistant (prefill): The single, most likely answer is
+Mistake          Below is one step from a chain of reasoning. Rewrite it so that it
+                 contains a clear mistake ... Change an ordering, a position or a
+                 comparison so the step becomes wrong. (3 examples)
+                 Original step: <sentence>   Step with a mistake:
+Paraphrase       Paraphrase the following text. Keep every step, every number and
+                 every conclusion exactly the same in meaning ... (question not shown)
+                 Text: <CoT>
+\end{Verbatim}
+\end{document}

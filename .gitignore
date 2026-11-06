@@ -34,6 +34,9 @@ venv/
 report/*.aux
 report/*.out
 report/*.synctex.gz
+report/*.fls
+report/*.fdb_latexmk
+report/figures/*.png
 
 # Smoke-test outputs (--n-limit)
 results/smoke/
