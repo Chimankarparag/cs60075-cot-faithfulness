@@ -1,0 +1,33 @@
+[
+  {
+    "script": "code/task2/run_task2.py --seed 30 --stages cot early mistake paraphrase filler score --model llama3.1-8b --tp 1",
+    "host": "gpu73.cse.iitkgp",
+    "gpus": [
+      "NVIDIA L40S"
+    ],
+    "cuda_visible_devices": "0",
+    "backend": "vllm",
+    "tensor_parallel": 1,
+    "model_key": "llama3.1-8b",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "gen_seed": 30,
+    "started": "2026-11-04T03:58:35+05:30",
+    "finished": "2026-11-04T04:05:16+05:30",
+    "seconds": 400.5,
+    "stages": {
+      "cot": 59.5,
+      "early": 46.8,
+      "mistake": 60.9,
+      "paraphrase": 118.2,
+      "filler": 11.6
+    },
+    "status": "ok",
+    "versions": {
+      "python": "3.11.16",
+      "vllm": "0.30.0",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.17.0"
+    }
+  }
+]

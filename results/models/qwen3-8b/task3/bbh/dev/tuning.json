@@ -1,0 +1,21 @@
+{
+  "n_dev_items": 96,
+  "k": 5,
+  "dev_accuracy": {
+    "unchanged@0.0": 0.75,
+    "unchanged@0.25": 0.7708333333333334,
+    "unchanged@0.5": 0.78125,
+    "unchanged@0.75": 0.8125,
+    "loadbearing@0.0": 0.7916666666666666,
+    "loadbearing@0.25": 0.8125,
+    "loadbearing@0.5": 0.8125,
+    "loadbearing@0.75": 0.8125
+  },
+  "dev_accuracy_plain_sc": 0.8125,
+  "dev_accuracy_mean_single_sample": 0.78125,
+  "chosen": {
+    "faithful_if": "unchanged",
+    "alpha": 0.75
+  },
+  "selection_rule": "max dev accuracy; ties: unchanged before loadbearing, then alpha closest to 0.5, then larger alpha"
+}

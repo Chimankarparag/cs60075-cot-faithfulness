@@ -1,0 +1,47 @@
+[
+  {
+    "script": "code/task3/run_task3.py --seed 30 --model qwen3-8b --tp 1",
+    "host": "gpu74.cse.iitkgp",
+    "gpus": [
+      "NVIDIA A40"
+    ],
+    "cuda_visible_devices": "0",
+    "backend": "vllm",
+    "tensor_parallel": 1,
+    "model_key": "qwen3-8b",
+    "model": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "gen_seed": 30,
+    "started": "2026-11-04T06:00:22+05:30",
+    "finished": "2026-11-04T06:55:49+05:30",
+    "seconds": 3327.2,
+    "stages": {
+      "sample": 474.5,
+      "early50": 81.3,
+      "prior": 7.5,
+      "weighted/early": 203.2,
+      "weighted/mistake": 139.8,
+      "weighted/paraphrase": 289.5,
+      "weighted/filler": 33.1,
+      "ablation_changed/early": 207.7,
+      "ablation_changed/mistake": 142.2,
+      "ablation_changed/paraphrase": 289.1,
+      "ablation_changed/filler": 33.1,
+      "plain_sc/early": 208.5,
+      "plain_sc/mistake": 138.9,
+      "plain_sc/paraphrase": 287.6,
+      "plain_sc/filler": 33.2,
+      "tuned/early": 207.9,
+      "tuned/mistake": 140.7,
+      "tuned/paraphrase": 276.7,
+      "tuned/filler": 31.2
+    },
+    "status": "ok",
+    "versions": {
+      "python": "3.11.16",
+      "vllm": "0.30.0",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.17.0"
+    }
+  }
+]

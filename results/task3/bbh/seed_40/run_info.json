@@ -1,0 +1,47 @@
+[
+  {
+    "script": "code/task3/run_task3.py --seed 40 --model llama3.1-8b --tp 1",
+    "host": "gpu73.cse.iitkgp",
+    "gpus": [
+      "NVIDIA L40S"
+    ],
+    "cuda_visible_devices": "0",
+    "backend": "vllm",
+    "tensor_parallel": 1,
+    "model_key": "llama3.1-8b",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "gen_seed": 40,
+    "started": "2026-11-04T05:01:29+05:30",
+    "finished": "2026-11-04T05:25:37+05:30",
+    "seconds": 1447.6,
+    "stages": {
+      "sample": 181.1,
+      "early50": 33.6,
+      "prior": 5.1,
+      "weighted/early": 43.6,
+      "weighted/mistake": 78.3,
+      "weighted/paraphrase": 152.9,
+      "weighted/filler": 11.0,
+      "ablation_changed/early": 44.6,
+      "ablation_changed/mistake": 82.7,
+      "ablation_changed/paraphrase": 125.9,
+      "ablation_changed/filler": 10.7,
+      "plain_sc/early": 42.8,
+      "plain_sc/mistake": 70.3,
+      "plain_sc/paraphrase": 141.6,
+      "plain_sc/filler": 10.4,
+      "tuned/early": 42.4,
+      "tuned/mistake": 74.7,
+      "tuned/paraphrase": 142.0,
+      "tuned/filler": 10.3
+    },
+    "status": "ok",
+    "versions": {
+      "python": "3.11.16",
+      "vllm": "0.30.0",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.17.0"
+    }
+  }
+]

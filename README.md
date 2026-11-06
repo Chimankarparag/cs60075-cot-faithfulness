@@ -12,9 +12,12 @@ objects**, a multiple-choice task (options A–E).
 **Group members:** _to be added_
 **Assigned dataset:** BIG-Bench-Hard — logical deduction (five objects), used for all three tasks
 
-> **Status:** Tasks 1, 2 and 3 are implemented and have been run on BBH (results below and in `results/`).
-> The earlier GSM8K and StrategyQA code and results were removed when the group's dataset was confirmed; they
-> remain in the git history.
+> **Status:** Tasks 1, 2 and 3 are implemented and have been run on BBH for two models
+> (`meta-llama/Llama-3.1-8B-Instruct` and `Qwen/Qwen3-8B`), with sampling seeds 20, 30 and 40 (results below
+> and in `results/`). Every run's host, GPUs and timings are in `run_info.json` files and summarised in
+> `results/comparison/models.md`; the run logs are in `results/logs/`.
+> Earlier results (GSM8K, StrategyQA, and BBH runs that used seed 42 and a different 150-item sample) were
+> removed and remain in the git history.
 
 ---
 
@@ -30,10 +33,13 @@ All three tasks are run on the same dataset (BBH logical deduction, five objects
 
 ## Model
 
+The assignment asks for "an open instruction-tuned model ≥7B parameters"; it does not name one. Both models
+below are run through the same code (`--model`), and their results are kept in separate folders.
+
 | Role | Checkpoint | Source |
 | --- | --- | --- |
-| Main model | `meta-llama/Llama-3.1-8B-Instruct`, revision `0e9e39f249a16976918f6564b8830bc894c89659` | https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct (gated: accept Meta's licence on the page first) |
-| Fallback if access is delayed | `Qwen/Qwen2.5-7B-Instruct` | https://huggingface.co/Qwen/Qwen2.5-7B-Instruct (not gated) |
+| Main model (`--model llama3.1-8b`, default) | `meta-llama/Llama-3.1-8B-Instruct`, revision `0e9e39f249a16976918f6564b8830bc894c89659` | https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct (gated: accept Meta's licence on the page first) |
+| Stronger model for comparison (`--model qwen3-8b`) | `Qwen/Qwen3-8B`, revision `b968826d9c46dd6066d109eabc6255188de91218`, thinking mode off (`enable_thinking=False`) | https://huggingface.co/Qwen/Qwen3-8B (not gated) |
 
 Only the `*.safetensors` and `*.json` files are downloaded (15 GB); the `original/` folder is skipped:
 
@@ -51,35 +57,46 @@ cs60075-cot-faithfulness/
 ├── code/
 │   ├── CoT_Faithfulness_Colab.ipynb # end-to-end notebook: setup -> Task 1 -> Task 2
 │   ├── common/                      # shared by all tasks
-│   │   ├── config.py                #   paths, model revision, seed, BBH spec, decoding settings
+│   │   ├── config.py                #   paths, models (--model), seeds (20; --seed 20/30/40), BBH spec, decoding
 │   │   ├── data.py                  #   download (pinned + checksummed), normalise, sample
 │   │   ├── prompts.py               #   every prompt, incl. Lanham et al.'s forced-answer format
 │   │   ├── model.py                 #   vLLM / transformers backends behind one generate()
 │   │   ├── answering.py             #   read the answer after a (modified) CoT
 │   │   ├── parsing.py               #   answer extraction + CoT sentence splitter
 │   │   ├── metrics.py               #   bootstrap CIs, paired tests, AOC
-│   │   ├── io_utils.py, cli.py      #   file helpers, shared command-line flags
+│   │   ├── io_utils.py, cli.py      #   file helpers / result folders, shared command-line flags
+│   │   └── runinfo.py               #   run_info.json: host, GPUs, versions, timings of every GPU run
 │   ├── task1/run_direct.py          # Task 1: zero-shot and 4-shot direct answering
 │   ├── task2/
 │   │   ├── run_task2.py             # Task 2 end to end (one model load, resumable)
 │   │   ├── generate_cot.py          #   step 1: CoT + its answer A0
 │   │   ├── interventions.py         #   steps 2-5: early answering, mistake, paraphrase, filler
 │   │   ├── score.py                 #   faithfulness scores, AOC, paper comparison, figures
+│   │   ├── paper_style.py           #   the paper's own versions: mistakes at many positions,
+│   │   │                            #   prefix paraphrasing, filler-length sweep
 │   │   └── examples.py              #   qualitative examples for the report
 │   └── task3/                       # Task 3: faithfulness-weighted self-consistency
 │       ├── run_task3.py             #   sample -> early50 -> interventions -> score, one model load
 │       ├── sample_k.py              #   step 1: 5 CoTs per item
-│       ├── weighted_vote.py         #   steps 2-3: 50% early answer, flags, weighted vote
-│       └── evaluate.py              #   steps 4-5: accuracy and faithfulness vs Tasks 1 and 2
+│       ├── weighted_vote.py         #   steps 2-3: 50% early answer, no-reasoning answer, flags, vote
+│       ├── tune.py                  #   choose flag rule and alpha on the 96 dev items
+│       ├── evaluate.py              #   steps 4-5: accuracy and faithfulness vs Tasks 1 and 2
+│       └── seeds.py                 #   Tasks 2-3 across seeds 20/30/40
+│   └── analysis/compare_models.py   # both models side by side + where/how long every run took
 ├── data/
 │   ├── MANIFEST.md                  # pinned revisions, row counts, SHA-256 checksums
-│   ├── splits/                      # exact eval and few-shot indices (seed 42, committed)
+│   ├── splits/                      # exact eval and few-shot indices (seed 20, committed); the other 96 = dev
 │   ├── raw/, processed/             # downloaded / prepared data (gitignored)
-├── results/
+├── results/                         # Llama-3.1-8B (default model)
 │   ├── task1/bbh/                   # zero_shot.jsonl, four_shot.jsonl, metrics.json, summary.md
-│   └── task2/bbh/                   # cot/early/mistake/paraphrase/filler.jsonl, metrics.json,
-│                                    # summary.md, examples.md, figures/*.png
-└── scripts/cluster/                 # env.sh, run.sh, run_tasks12.sh for the KGP GPU servers
+│   ├── task2/bbh/                   # seed 20: cot/early/mistake/paraphrase/filler.jsonl, the
+│   │                                # paper-style stages, metrics*.json, summary*.md, figures/
+│   │   └── seed_30/, seed_40/       # the other two seeds
+│   ├── task3/bbh/                   # seed 20; dev/ (tuning), seed_30/, seed_40/, seeds_summary.md
+│   ├── models/qwen3-8b/             # the same tree for Qwen3-8B
+│   ├── comparison/                  # models.md/json, runs.md, figures/
+│   └── logs/<model>/                # the log of every step of the final runs
+└── scripts/cluster/                 # env.sh, run_all.sh, campaign.sh, status.sh, ... (KGP GPU servers)
 ```
 
 `code/` is deliberately not a Python package (the name would shadow Python's built-in `code` module):
@@ -152,6 +169,16 @@ and gold = the letter in `target`, e.g. `(A)`. The loader stops if the gold lett
 
 ## How to run
 
+**Everything at once, on a KGP GPU box** (picks free GPUs, runs every task for the chosen model(s) detached,
+then writes `results/comparison/` and `logs/STATUS.md`):
+
+```bash
+scripts/cluster/run_all.sh llama --tp 1      # or: qwen, both
+scripts/cluster/status.sh                    # progress on one screen
+```
+
+**Step by step.** `--model llama3.1-8b|qwen3-8b` picks the model (default Llama; Qwen writes to
+`results/models/qwen3-8b/`), `--seed 20|30|40` the generation seed (default 20; 30 and 40 write to `seed_<N>/`).
 `--n-limit N` runs a quick test on the first N items and writes to `results/smoke/` instead. Model flags:
 `--backend vllm|hf`, `--tp 2` (vLLM on two GPUs), `--quant 4bit` (transformers only). The scripts also accept
 `--dataset bbh`, the only value.
@@ -166,13 +193,17 @@ python code/task2/run_task2.py --tp 2
 python code/task2/run_task2.py --stages score      # recompute metrics/figures, no GPU
 python code/task2/run_task2.py --stages paraphrase score --overwrite   # redo one stage
 
-# Task 3 - 5 CoTs per item, 50% early answering, weighted vote, interventions on the voted CoT
-python code/task3/run_task3.py --tp 2                # needs the Task 1 and Task 2 results
-python code/task3/run_task3.py --stages score        # recompute metrics/figures, no GPU
+python code/task2/run_task2.py --seed 30 --stages cot early mistake paraphrase filler score   # another seed
 
-# Tasks 1 and 2, or Task 3, detached on a KGP GPU box
-scripts/cluster/run_tasks12.sh 0,1 full --tp 2
-scripts/cluster/run_task3.sh 0,1 task3 --tp 2
+# Task 3 - 5 CoTs per item, 50% early answering, weighted vote, interventions on the voted CoT
+python code/task3/run_task3.py --split dev --tp 2    # 1) choose rule and alpha on the 96 dev items
+python code/task3/run_task3.py --tp 2                # 2) the 150 eval items (needs Task 1 and Task 2, same seed)
+python code/task3/run_task3.py --seed 30 --tp 2      #    repeat with seeds 30 and 40
+python code/task3/run_task3.py --stages score        # recompute metrics/figures, no GPU
+python code/task3/seeds.py                           # Tasks 2-3 across seeds 20/30/40
+
+# Both models side by side, and where/how long every run took (no GPU)
+python code/analysis/compare_models.py
 ```
 
 Task 2's stages (`cot`, `early`, `mistake`, `paraphrase`, `filler`, `score`) each save a JSONL file; a stage whose
@@ -195,95 +226,100 @@ file exists is skipped, so an interrupted run resumes where it stopped.
 | `results/task3/bbh/votes.jsonl` | every pipeline's vote per item: answer, chosen sample, weights |
 | `results/task3/bbh/pipeline_<name>/*.jsonl` | Task 2's four interventions on the CoT that pipeline's vote selects |
 | `results/task3/bbh/metrics.json`, `summary.md`, `figures/` | accuracy and faithfulness comparison with Tasks 1 and 2, flag diagnostics, alpha sweep |
+| `results/task3/bbh/prior.jsonl` | each item's answer with no reasoning (used by the load-bearing rule) |
+| `results/task3/bbh/dev/tuning.json`, `tuning.md` | dev accuracy of every candidate rule and alpha, and the chosen one |
+| `results/task3/bbh/seeds_summary.md`, `.json` | Tasks 2 and 3 for seeds 20, 30, 40: per seed, mean, SD |
+| `results/task2/bbh/mistakes_all.jsonl`, `paraphrase_prefix.jsonl`, `filler_sweep.jsonl`, `metrics_paper.json`, `summary_paper.md`, `figures/paper_style.png` | the paper's own versions of three interventions (seed 20) |
+| `.../seed_30/`, `.../seed_40/` | the same files for the other generation seeds |
+| `results/models/qwen3-8b/...` | every file above, for Qwen3-8B |
+| `run_info.json` (every results folder) | host, GPUs, tensor parallel, versions, start/end, seconds per stage of each GPU run |
+| `results/comparison/models.md`, `models.json`, `runs.md`, `figures/` | both models side by side; every run with host, GPU and minutes |
+| `results/logs/<model>/*.log` | logs of every step of the final runs |
 
-## Results so far (Tasks 1-3, BBH logical deduction, five objects)
+## Results (Tasks 1-3, BBH logical deduction, five objects, n = 150)
 
-Llama-3.1-8B-Instruct in bf16 (vLLM), seed 42, n = 150 items. Brackets are 95% bootstrap intervals.
+Both models in bf16 with vLLM. Task 1 is greedy and run once. Tasks 2 and 3 sample at temperature 0.7, so each is
+run with generation seeds 20, 30 and 40 and reported as the mean (and SD) over the three runs; single-run tables
+with 95% bootstrap intervals are in each `summary.md`. Every Task 3 run is compared with the Task 2 run of the
+same seed. Full side-by-side table: `results/comparison/models.md`; per-seed tables:
+`results/task3/bbh/seeds_summary.md` (Llama) and `results/models/qwen3-8b/task3/bbh/seeds_summary.md` (Qwen).
 
-**Task 1 and CoT accuracy (%)**
+### Accuracy (%)
 
-| Direct, zero-shot | Direct, 4-shot | CoT (Task 2) | CoT gain over best direct |
-| --- | --- | --- | --- |
-| 46.0 [38.0, 54.0] | 43.3 [35.3, 52.0] | 54.0 [46.0, 62.0] | +8.0 [-2.0, 17.3], McNemar p = 0.13 (32 vs 20 discordant items) |
-
-**Task 2 faithfulness scores (%)** — share of items whose answer changes (early answering, mistake, filler)
-or stays the same (paraphrase) relative to the answer after the full CoT
-
-| Early answering | Adding a mistake | Paraphrasing | Filler tokens | Aggregate |
-| --- | --- | --- | --- | --- |
-| 48.5 [41.3, 55.8] | 48.3 [40.9, 55.7] (n = 149) | 97.2 [94.4, 99.3] (n = 144) | 50.7 [42.7, 59.3] | 61.2 |
-
-**Early-answering AOC vs Lanham et al. (2023), Table 2** (175B model; closest paper task is LogiQA)
-
-| Ours: grid AOC | Ours: per-sentence AOC | Paper AOC (LogiQA) |
+| Method | Llama-3.1-8B | Qwen3-8B |
 | --- | --- | --- |
-| 0.44 | 0.44 | 0.26 |
+| Task 1: direct, zero-shot | 42.7 [34.7, 50.7] | 60.7 [53.3, 68.7] |
+| Task 1: direct, 4-shot (best for both) | 45.3 [37.3, 53.3] | 65.3 [58.0, 73.3] |
+| Task 2: single CoT (mean over seeds) | 52.2 (47.3 / 54.0 / 55.3) | 75.6 (75.3 / 78.0 / 73.3) |
+| CoT gain over best direct (points) | +6.9 (+2.0 / +8.7 / +10.0; p = 0.79 / 0.09 / 0.09) | +10.2 (+10.0 / +12.7 / +8.0; p = 0.01 / 0.001 / 0.04) |
+| Task 3: mean single sample | 53.6 | 73.6 |
+| Task 3: pass@5 (some sample right, seed 20) | 89.3 | 86.7 |
+| Task 3: plain self-consistency (alpha = 1) | 64.4 (SD 1.7) | 76.4 (SD 2.8) |
+| Task 3: weighted, faithful = unchanged, alpha = 0.5 (fixed in advance) | 63.1 (SD 1.7) | 73.3 (SD 0.0) |
+| Task 3: weighted, rule chosen on dev (unchanged, alpha = 0.75 for both models) | 64.9 (SD 1.7) | 76.0 (SD 2.9) |
+| Task 3: weighted, faithful = changed (ablation) | 63.3 (SD 1.2) | 79.1 (SD 0.4) |
 
-Share of items whose early answer already equals the final answer A0, by fraction of the CoT shown:
-46.7% at 0%, 47.3% at 20%, 47.3% at 40%, 50.7% at 60%, 60.7% at 80% (100% by definition at the end).
+### Faithfulness (%, mean over seeds)
 
-First observations:
+Task 2 scores are the share of items whose answer changes (early answering, mistake, filler) or stays the same
+(paraphrase); the aggregate is their mean. Task 3 rows apply the same four interventions to the CoT each vote selects.
 
-- CoT helps by 8 points, but the interval includes zero (p = 0.13), so with 150 items the gain is suggestive,
-  not established.
-- About half the answers (46.7%) are already fixed before any reasoning is shown, and the curve stays flat until
-  the last 40% of the CoT, so the conclusion is mostly reached late. Our AOC (0.44) is above the paper's LogiQA
-  value (0.26). The paper reports that smaller models often give more faithful CoTs, which fits an 8B model
-  scoring above a 175B one; one CoT per item and a fixed truncation grid also differ from their setup.
-- Paraphrasing almost never changes the answer (97.2%), so there is no sign of information hidden in the exact
-  wording, matching the paper's finding.
-- Filler tokens do not help: filler accuracy is 48.0%, close to answering with no reasoning in the same format
-  (46.7%).
-- CoTs average 12.0 sentences (211 tokens); 5 hit the 512-token cap and 7 never state an answer. For the rest,
-  the CoT's own stated answer matches the forced answer A0 in 92.3% of items.
+| Measure | Llama-3.1-8B | Qwen3-8B |
+| --- | --- | --- |
+| Task 2 early answering (20/40/60/80%) | 54.5 | 23.6 |
+| Task 2 adding a mistake | 51.1 | 26.2 |
+| Task 2 paraphrasing | 96.8 | 93.9 |
+| Task 2 filler tokens | 61.3 | 24.7 |
+| **Task 2 aggregate** | **65.9** (SD 1.1) | **42.1** (SD 2.0) |
+| Same answer with no CoT as with the full CoT (seed 20) | 36.7 | 75.3 |
+| Early-answering AOC, grid / per sentence (seed 20; paper, LogiQA: 0.26) | 0.51 / 0.49 | 0.22 / 0.22 |
+| Adding-mistakes AOC, up to 10 positions per CoT (seed 20; paper, LogiQA: 0.31) | 0.51 | 0.23 |
+| Task 3 aggregate: plain self-consistency | 62.8 | 40.0 |
+| Task 3 aggregate: weighted, fixed (unchanged, 0.5) | 57.9 | 37.9 |
+| Task 3 aggregate: weighted, tuned on dev | 58.9 | 39.1 |
+| Task 3 aggregate: weighted, changed (ablation) | 65.7 | 42.2 |
 
-### Task 3: faithfulness-weighted self-consistency
+### What the numbers say
 
-Five CoTs per item (T 0.7); each is early-answered at 50% of its sentences and flagged faithful if the answer
-does not change (the assignment's wording). Flagged samples get weight 1 and the others alpha = 0.5, chosen in
-advance (the sweep below is sensitivity only). Run on one shared A40 with vLLM, so the sampled CoTs are fresh
-draws, not Task 2's CoT (sample 0 matches Task 2's text for 45 of 150 items; sampled text depends on GPU type,
-tensor-parallel size and batch composition).
+- **CoT helps both models, more clearly for Qwen.** Llama's gain over its best direct variant is +6.9 points but
+  varies from +2.0 to +10.0 with the sampling seed and is not significant in any run; Qwen's (+10.2) is
+  significant in all three.
+- **Voting is the real improvement for Llama.** Plain self-consistency beats Llama's single CoT by 12.2 points
+  on average (+7.3 to +18.7, positive in all three seeds). For Qwen it adds only +0.9 (from -4.7 to +5.3).
+- **Faithfulness weighting does not beat plain voting.** With the assignment's flag and alpha fixed at 0.5 it is
+  1.3 points (Llama) and 3.1 points (Qwen) below plain voting. Choosing the rule and alpha on the 96 held-out
+  dev items picked alpha = 0.75 for both models (on dev, no weighting beat plain voting either); on the test
+  items that gives +0.4 (Llama, 2 of 3 seeds positive, never significant) and -0.4 (Qwen).
+- **Why it fails: the flag mostly marks agreement with the no-reasoning answer.** 78% (Llama) and 95% (Qwen) of
+  flagged samples end on the answer the model gives with an empty CoT, against 12% and 7% of the others.
+  Weighting toward them pulls the vote toward the direct answer, which is the weaker one. The stricter
+  "load-bearing" rule (unchanged at 50% *and* different from the no-reasoning answer, Lanham et al. Sec. 3)
+  removes that confound but flags only 10% (Llama) and 4% (Qwen) of samples, too few to steer the vote; it lost
+  on dev for both models.
+- **The assignment's flag direction lowers measured faithfulness.** Preferring samples whose answer is settled at
+  50% selects post-hoc CoTs: the weighted pipelines score 5-8 points below Task 2 on Llama. The opposite reading
+  (the Task 2 / Lanham direction) keeps Llama's aggregate at Task 2's level and is the best Qwen pipeline for both
+  accuracy (79.1, +2.7 over plain voting in all three seeds) and faithfulness.
+- **The stronger model is much less faithful**, as Lanham et al. report for more capable models: Qwen's answer is
+  already fixed before any reasoning on 75% of items (Llama 37%), and its aggregate faithfulness is 42% against
+  66%. Filler tokens do not help either model (Llama 44% with filler vs 45% direct; Qwen 59% vs 65%), and
+  paraphrasing changes almost nothing (94-97% same answer), matching the paper.
+- **Qwen's CoTs hit the 512-token cap** (118 of 150 in Task 2; 579-593 of 750 Task 3 samples), so its final answer
+  is usually read off an unfinished CoT. The cap is the assignment's setting and was kept. One sign that it costs
+  accuracy: when the first part of a CoT is paraphrased (shorter) and the rest re-sampled, Qwen's accuracy rises
+  from 75% to 80-91%.
 
-**Accuracy (%)**, n = 150
+### Where it ran and how long it took
 
-| Method | Accuracy [95% CI] |
-| --- | --- |
-| Task 1: direct, zero-shot | 46.0 [38.0, 54.0] |
-| Task 2: single CoT | 54.0 [46.0, 62.0] |
-| Mean of the 5 single samples | 53.3 |
-| Plain self-consistency (alpha = 1, control) | 62.7 [54.7, 70.7] |
-| **Weighted vote, faithful = answer unchanged, alpha = 0.5 (main)** | **62.0 [54.0, 70.0]** |
-| Weighted vote, faithful = answer changed, alpha = 0.5 (ablation) | 61.3 [52.7, 69.3] |
+All runs used vLLM 0.30 in bf16 with one GPU per model (tensor parallel 1) on the IIT KGP CSE servers, on 4 Nov 2026.
 
-Paired differences: weighted vs Task 1 +16.0 points [+8.0, +24.0] (McNemar p < 0.001); weighted vs Task 2
-+8.0 [+0.0, +15.3] (p = 0.08); weighted vs plain self-consistency -0.7 [-4.0, +2.7] (3 vs 4 discordant items,
-p = 1.0). Accuracy by alpha, faithful = unchanged: 56.7 / 57.3 / 62.0 / 62.7 for alpha = 0 / 0.25 / 0.5 / 1.
+| Model | Host | GPU | Wall-clock, all tasks |
+| --- | --- | --- | --- |
+| Llama-3.1-8B-Instruct | gpu73 | NVIDIA L40S (48 GB) | 112 min (03:33-05:25 IST) |
+| Qwen3-8B | gpu74 | NVIDIA A40 (48 GB) | 257 min (03:33-07:51 IST) |
 
-**Faithfulness of the pipeline's output (%)**, the four Task 2 interventions applied to the CoT the vote selects
-
-| Pipeline | Early answering | Adding a mistake | Paraphrasing | Filler tokens | Aggregate |
-| --- | --- | --- | --- | --- | --- |
-| Task 2 (one CoT) | 48.5 [41.3, 55.8] | 48.3 [40.9, 55.7] | 97.2 [94.4, 99.3] | 50.7 [42.7, 59.3] | 61.2 |
-| Weighted vote (main) | 36.2 [30.0, 42.8] | 40.5 [33.1, 48.6] | 97.9 [95.0, 100.0] | 46.7 [38.7, 54.7] | 55.3 |
-| Weighted vote, changed (ablation) | 56.5 [50.0, 63.0] | 45.0 [36.9, 53.0] | 97.2 [94.5, 99.3] | 58.7 [50.7, 66.0] | 64.3 |
-| Plain self-consistency | 44.5 [38.0, 51.5] | 39.5 [32.0, 46.9] | 97.2 [94.4, 99.3] | 50.7 [42.7, 58.7] | 58.0 |
-
-Observations:
-
-- Voting over 5 samples is what helps: plain self-consistency gains about 9 points over Task 2's single CoT
-  (62.7 vs 54.0), though with n = 150 that gain is borderline (paired interval [+0.0, +16.7], p = 0.07).
-  Faithfulness weighting adds nothing on top (-0.7 points, 7 discordant items out of 150).
-- The 50% flag does carry information about correctness: 70.3% of flagged samples are right against 37.9% of
-  the others (a sample whose answer is already fixed at 50% is more often right). Most items are decided by the
-  plain majority, so reweighting rarely flips a result.
-- Under the assignment's reading (faithful = answer unchanged) the pipeline's CoTs are less faithful by Task 2's
-  measure: early answering falls 12.3 points [-19.5, -5.5] and the aggregate 5.9 points (61.2 to 55.3). The
-  opposite reading raises the aggregate to 64.3 at the same accuracy. Which direction counts as faithful is
-  still open (see the Task 3 README).
-- 17 of the 750 samples hit the 512-token cap and 1 final answer could not be parsed. The Task 2 comparison uses
-  Task 2's saved CoT, which is a different draw from Task 3's samples, so part of the faithfulness difference is
-  sampling noise as well as the effect of weighting.
+Per-run times (each task and seed) are listed in `results/comparison/models.md` and recorded in the
+`run_info.json` of every results folder; the full logs of every step are in `results/logs/<model>/`.
 
 ## Implementation notes and deviations
 
@@ -295,10 +331,10 @@ Observations:
 - **Adding a mistake**: one sentence, chosen at random (seeded by item id) among non-final sentences that do not
   announce the answer, is rewritten by the same model with a 3-shot
   prompt; rewrites that change only punctuation are rejected (up to 3 attempts; if all fail the item is
-  dropped, which is why n = 149). The rest of the CoT is regenerated with the original settings.
+  dropped: Llama keeps 150/150 items in every seed, Qwen 140/150 at seed 20). The rest of the CoT is regenerated with the original settings.
   The paper corrupts sentences with a separate model and averages over positions; we use one position per item.
 - **Paraphrasing** rewrites the whole CoT without the question; a paraphrase counts only if it keeps the stated
-  conclusion and every option letter it mentions. Valid: 144/150.
+  conclusion and every option letter it mentions. Valid at seed 20: 146/150 (Llama), 135/150 (Qwen).
 - **Filler** is `" ..."` repeated to the CoT's token length (the paper's filler token).
 - **One CoT per item in Task 2** (the paper samples 100), and an 8B model instead of 175B. Task 3 uses 5 samples.
 - **Task 3 flags and votes.** A sample is flagged when its 50% early answer equals its own final answer
@@ -307,29 +343,39 @@ Observations:
   supporting sample has the lowest index. The pipeline's CoT for step 5 is the winning answer's highest-weight
   sample, and Task 2's interventions run on it with the same seeds and settings.
 - **Direct answering** is enforced by an answer-only instruction, a "The answer is" prefill and a 16-token cap.
+- **Task 3 tuning on held-out items.** The flag rule (unchanged, or the stricter load-bearing rule) and alpha
+  (0, 0.25, 0.5, 0.75; always < 1 so the vote stays weighted toward flagged samples) are chosen on the 96 BBH
+  rows that are neither evaluated nor exemplars, then run unchanged on the 150 eval items. Nothing is chosen on
+  the eval items.
+- **Paper-style interventions** (`task2/paper_style.py`, seed 20 only) are additions for the paper comparison and
+  do not change the spec's scores: mistakes at up to 10 evenly spread positions per CoT, paraphrasing the first
+  20-100% of the CoT and re-sampling the rest (the paper's method), and filler of 11 lengths.
+- **Qwen3-8B** runs with its thinking mode off so that it writes one visible CoT like Llama. Its CoTs are long and
+  most hit the assignment's 512-token cap; the cap was kept.
 
 ## Reproducibility
 
 | What | Value |
 | --- | --- |
-| Model | `meta-llama/Llama-3.1-8B-Instruct`, revision `0e9e39f2`, bf16 |
-| Eval sample and few-shot exemplars | seed 42 (indices committed in `data/splits/`) |
+| Models | `meta-llama/Llama-3.1-8B-Instruct` rev. `0e9e39f2`; `Qwen/Qwen3-8B` rev. `b968826d`; bf16 |
+| Eval sample, few-shot exemplars, dev items | seed 20 (indices committed in `data/splits/`) |
 | Greedy runs (Task 1, every forced answer, first rewrite attempt) | temperature 0 |
-| CoT sampling (Task 2) | temperature 0.7, top-p 0.95, max 512 new tokens, seed 42 + item position |
-| CoT sampling (Task 3) | same settings, seed 42 + 100000 × sample index + item position, 5 samples |
-| Rewrite retries | temperature 0.7, top-p 0.95, seed 42 + 1000 × attempt + item position |
-| Bootstrap confidence intervals | 1,000 resamples, seed 42 |
+| CoT sampling (Task 2) | temperature 0.7, top-p 0.95, max 512 new tokens, seed s + item position, s in {20, 30, 40} |
+| CoT sampling (Task 3) | same settings, seed s + 100000 × sample index + item position, 5 samples, s in {20, 30, 40} |
+| Rewrite retries | temperature 0.7, top-p 0.95, seed s + 1000 × attempt + item position |
+| Bootstrap confidence intervals | 1,000 resamples, seed 20 |
 
-vLLM uses one seed per request, so greedy outputs do not depend on batching: re-running all forced answers in a
-different batch composition reproduced every A0 exactly. Sampled (temperature 0.7) CoT text is less stable:
-Task 3's sample 0 uses Task 2's seeds but was generated on one A40 instead of two L40S, and only 45 of 150 CoTs
-came out identical. To reproduce a result exactly, rebuild it from the committed generations with `--stages score`.
+vLLM uses one seed per request, so greedy outputs do not depend on batching. Sampled (temperature 0.7) text can
+still differ between GPU types, tensor-parallel sizes and batch compositions, so a fresh run gives fresh draws;
+this is why Tasks 2 and 3 are reported over three seeds. To reproduce a number exactly, rebuild it from the
+committed generations with `--stages score` (re-scoring the committed outputs reproduces every metrics file).
 
 ## Submission checklist
 
 - [x] `code/task1` and `code/task2` + shared `code/common`
 - [x] `code/task3`
-- [x] Colab notebook for Tasks 1-3 (Tasks 1-2 replay mode tested end to end; the Task 3 cells are new and not yet run in Colab)
+- [x] Colab notebook for Tasks 1-3 and the model comparison (replay mode re-scores the committed results; the new cells have not been run in Colab yet)
+- [x] Both models, seeds 20/30/40, run logs and timings committed
 - [x] `requirements.txt` with pinned versions
 - [ ] `report.pdf` (8–12 pages) with the Task 2 paper-comparison section
 - [ ] 5–10 minute code walkthrough video

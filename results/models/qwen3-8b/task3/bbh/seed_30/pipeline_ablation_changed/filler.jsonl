@@ -1,0 +1,150 @@
+{"id": "bbh-0", "n_cot_tokens": 447, "n_filler_tokens": 447, "answer_raw": " **(A) The quail is the rightmost**.\n\n### Reasoning", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-1", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The tractor is the second-oldest**.\n\n### Reason", "answer": "D", "a0": "D", "changed": false, "correct": false}
+{"id": "bbh-2", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The blue book is the leftmost**.\n\n### Step-by", "answer": "D", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-4", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(E) The purple book is the second from the right**.\n\n###", "answer": "E", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-7", "n_cot_tokens": 447, "n_filler_tokens": 447, "answer_raw": " **(A) Rob finished last**.\n\n### Reasoning:\n\nWe are given", "answer": "A", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-9", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The minivan is the second-oldest**.\n\n", "answer": "D", "a0": "D", "changed": false, "correct": false}
+{"id": "bbh-10", "n_cot_tokens": 436, "n_filler_tokens": 436, "answer_raw": ": **(C) The peaches are the second-cheapest**.\n\n###", "answer": "C", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-11", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The cantaloupes are the most expensive**.\n\n###", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-12", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The brown book is the third from the left**.\n\n###", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-15", "n_cot_tokens": 446, "n_filler_tokens": 446, "answer_raw": ": **(A) The yellow book is the rightmost**.\n\n### Reason", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-16", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(B) The convertible is the second-oldest**.\n\n###", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-17", "n_cot_tokens": 500, "n_filler_tokens": 500, "answer_raw": ": **(E) The robin is the second from the right**.\n\n###", "answer": "E", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-18", "n_cot_tokens": 402, "n_filler_tokens": 402, "answer_raw": " **(A) Mel finished first**.\n\n### Reasoning:\n\nWe are given", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-22", "n_cot_tokens": 432, "n_filler_tokens": 432, "answer_raw": " **(C) Amy finished last**.\n\n### Step-by-step reasoning:\n\nWe", "answer": "C", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-27", "n_cot_tokens": 441, "n_filler_tokens": 441, "answer_raw": ": **(E) Dan finished second-to-last**.\n\n### Step-by-step", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-28", "n_cot_tokens": 353, "n_filler_tokens": 353, "answer_raw": " **(A) Amy finished first**.\n\n### Reasoning:\n\nWe are given", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-31", "n_cot_tokens": 460, "n_filler_tokens": 460, "answer_raw": ": **(C) The raven is the third from the left**.\n\n", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-33", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The gray book is the second from the left**.\n\n###", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-34", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) Eli finished second-to-last**.\n\n### Step-by-step reasoning", "answer": "B", "a0": "B", "changed": false, "correct": false}
+{"id": "bbh-36", "n_cot_tokens": 317, "n_filler_tokens": 317, "answer_raw": ": **(C) The kiwis are the cheapest**.\n\n### Reasoning", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-37", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(E) The red book is the second from the right**.\n\n###", "answer": "E", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-44", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(A) The tractor is the third-newest**.\n\n### Explanation", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-45", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The crow is the rightmost**.\n\n### Reasoning:\n\n", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-46", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The quail is the second from the left.**\n\n", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-47", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The sedan is the second-newest**.\n\n### Reasoning", "answer": "D", "a0": "D", "changed": false, "correct": false}
+{"id": "bbh-49", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The crow is the leftmost**.\n\n### Step-by-step", "answer": "A", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-50", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) The purple book is the second from the right**.\n\n###", "answer": "C", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-55", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The crow is the rightmost**.\n\n### Step-by-step", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-58", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The quail is the leftmost**.\n\n### Reasoning", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-61", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The bus is the newest**.\n\n### Explanation:\n\nWe", "answer": "D", "a0": "D", "changed": false, "correct": false}
+{"id": "bbh-63", "n_cot_tokens": 511, "n_filler_tokens": 511, "answer_raw": " **(B) The owl is the leftmost**.\n\n### Reasoning:\n\n", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-67", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(A) The owl is the second from the right**.\n\nThis", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-69", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) The oranges are the second-cheapest**.\n\n### Reasoning", "answer": "C", "a0": "A", "changed": true, "correct": false}
+{"id": "bbh-73", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The limousine is the newest**.\n\n### Reason", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-74", "n_cot_tokens": 390, "n_filler_tokens": 390, "answer_raw": ": **(A) The mangoes are the third-most expensive**.\n\n###", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-75", "n_cot_tokens": 406, "n_filler_tokens": 406, "answer_raw": ": **(A) The mangoes are the second-cheapest**\n\n### Reason", "answer": "A", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-77", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The minivan is the oldest**.\n\n### Step-by-step", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-79", "n_cot_tokens": 447, "n_filler_tokens": 447, "answer_raw": ": **(D) The hawk is the third from the left.**\n\n###", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-80", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The brown book is the second from the left.**\n\n", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-82", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The mangoes are the third-most expensive**.\n\n###", "answer": "C", "a0": "C", "changed": false, "correct": false}
+{"id": "bbh-86", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(A) The station wagon is the newest**.\n\n### Reasoning", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-87", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The purple book is the rightmost**.\n\n### Step", "answer": "C", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-89", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(E) The blue book is the second from the left**.\n\n###", "answer": "E", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-90", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The red book is the third from the left.**\n\n", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-91", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The quail is the rightmost**.\n\n### Step-by", "answer": "D", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-92", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) Eli finished third**.\n\n### Step-by-step reasoning:\n\nWe", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-93", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) Rob finished third**.\n\n### Reasoning:\n\nWe are given", "answer": "A", "a0": "A", "changed": false, "correct": false}
+{"id": "bbh-95", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The blue book is the leftmost**.\n\n### Reasoning", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-96", "n_cot_tokens": 505, "n_filler_tokens": 505, "answer_raw": " **(B) The raven is the leftmost**.\n\n### Step-by", "answer": "B", "a0": "A", "changed": true, "correct": false}
+{"id": "bbh-98", "n_cot_tokens": 332, "n_filler_tokens": 332, "answer_raw": ": **(D) The convertible is the oldest**.\n\n### Reasoning:\n\n", "answer": "D", "a0": "E", "changed": true, "correct": true}
+{"id": "bbh-99", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The raven is the leftmost**.\n\n### Reasoning", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-100", "n_cot_tokens": 470, "n_filler_tokens": 470, "answer_raw": ": **(A) Eve finished first**.\n\n### Reasoning:\n\nWe are", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-101", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The station wagon is the third-newest**.\n\n### Reason", "answer": "B", "a0": "B", "changed": false, "correct": false}
+{"id": "bbh-102", "n_cot_tokens": 396, "n_filler_tokens": 396, "answer_raw": ": **(B) Ana finished third**.\n\n### Reasoning:\n\nWe are", "answer": "B", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-106", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The robin is the second from the left.**\n\n###", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-107", "n_cot_tokens": 357, "n_filler_tokens": 357, "answer_raw": ": **(C) The bus is the second-oldest**.\n\n###", "answer": "C", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-108", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The hummingbird is the second from the right**.\n\n", "answer": "D", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-111", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The motorcyle is the third-newest**.\n\n", "answer": "E", "a0": "C", "changed": true, "correct": false}
+{"id": "bbh-112", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\n### Reason", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-113", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The crow is the second from the left**.\n\n### Reason", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-116", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The pears are the second-cheapest**.\n\n### Reason", "answer": "D", "a0": "D", "changed": false, "correct": false}
+{"id": "bbh-117", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The owl is the second from the right**.\n\n### Step", "answer": "B", "a0": "B", "changed": false, "correct": false}
+{"id": "bbh-118", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The white book is the second from the left**.\n\n###", "answer": "A", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-119", "n_cot_tokens": 484, "n_filler_tokens": 484, "answer_raw": " **(B) Amy finished last**.\n\n### Reasoning:\n\nWe are given", "answer": "B", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-120", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The black book is the second from the right**.\n\n", "answer": "D", "a0": "C", "changed": true, "correct": false}
+{"id": "bbh-122", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The watermelons are the most expensive**.\n\n###", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-123", "n_cot_tokens": 507, "n_filler_tokens": 507, "answer_raw": " **(D) Eli finished second-to-last**.\n\n### Step-by-step reasoning", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-124", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) Ana finished second**.\n\n### Reasoning:\n\nWe are given", "answer": "B", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-126", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) Amy finished second**.\n\n### Reasoning:\n\nWe are given", "answer": "A", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-127", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The raven is the second from the right**.\n\n", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-128", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) The crow is the third from the left**.\n\n### Step", "answer": "C", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-129", "n_cot_tokens": 511, "n_filler_tokens": 511, "answer_raw": " **(A) The truck is the oldest**.\n\n### Step-by-step reasoning", "answer": "A", "a0": "C", "changed": true, "correct": true}
+{"id": "bbh-130", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The motorcyle is the third-newest**.\n\n", "answer": "C", "a0": "C", "changed": false, "correct": false}
+{"id": "bbh-131", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The gray book is the third from the left**.\n\n###", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-133", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The plums are the second-cheapest.**\n\n###", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-134", "n_cot_tokens": 437, "n_filler_tokens": 437, "answer_raw": ": **(C) Eli finished second-to-last**.\n\n### Step-by-step", "answer": "C", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-135", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The brown book is the second from the left**.\n\n###", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-136", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) Amy finished second-to-last**.\n\n### Reasoning:\n\nWe", "answer": "B", "a0": "B", "changed": false, "correct": false}
+{"id": "bbh-137", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) The truck is the oldest**.\n\n### Step-by-step reasoning", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-138", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The bus is the second-newest**.", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-139", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The kiwis are the second-most expensive**.\n\n###", "answer": "E", "a0": "E", "changed": false, "correct": false}
+{"id": "bbh-140", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The quail is the second from the right**.\n\n", "answer": "E", "a0": "E", "changed": false, "correct": false}
+{"id": "bbh-141", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The mangoes are the cheapest**.\n\n### Reasoning:\n\n", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-143", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The crow is the rightmost**.\n\n### Step-by-step", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-144", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The crow is the second from the right**.\n\n###", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-145", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The hummingbird is the rightmost**.\n\n### Step-by", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-147", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) Rob finished first**.\n\n### Reasoning:\n\nWe are given", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-149", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The peaches are the second-most expensive**.\n\n###", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-150", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) Rob finished second-to-last**.\n\n### Step-by-step reasoning", "answer": "A", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-151", "n_cot_tokens": 492, "n_filler_tokens": 492, "answer_raw": ": **(C) The robin is the leftmost**.\n\n### Reasoning", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-152", "n_cot_tokens": 412, "n_filler_tokens": 412, "answer_raw": " **(E) The peaches are the third-most expensive**.\n\n### Reason", "answer": "E", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-154", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The bus is the second-newest**.\n\n### Reason", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-155", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(A) The oranges are the most expensive**.\n\n### Reasoning", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-156", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The bus is the third-newest**.\n\n### Reasoning", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-157", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The purple book is the third from the left**.\n\n###", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-161", "n_cot_tokens": 453, "n_filler_tokens": 453, "answer_raw": ": **(D) Mya finished second-to-last**.\n\n### Reasoning", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-164", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The truck is the second-newest**.\n\n### Step-by", "answer": "A", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-166", "n_cot_tokens": 385, "n_filler_tokens": 385, "answer_raw": " **(D) The hummingbird is the rightmost**.\n\n### Step-by", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-167", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) Mya finished second-to-last**.\n\n### Reasoning:\n\n", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-168", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The truck is the third-newest**.\n\n### Step-by", "answer": "B", "a0": "B", "changed": false, "correct": false}
+{"id": "bbh-169", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The station wagon is the second-oldest**.\n\n###", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-170", "n_cot_tokens": 436, "n_filler_tokens": 436, "answer_raw": " **(D) The hawk is the leftmost**.\n\n### Reasoning:\n\n", "answer": "D", "a0": "C", "changed": true, "correct": false}
+{"id": "bbh-171", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) Mya finished second**.\n\n### Reasoning:\n\nWe are", "answer": "D", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-173", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The blue book is the rightmost**.\n\n### Reasoning", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-179", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The watermelons are the most expensive**.\n\n### Reason", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-181", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The robin is the second from the right**.\n\n###", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-182", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) Joe finished third**.\n\n### Reasoning:\n\nWe are given", "answer": "D", "a0": "B", "changed": true, "correct": false}
+{"id": "bbh-183", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The peaches are the third-most expensive**.\n\n### Reason", "answer": "D", "a0": "C", "changed": true, "correct": false}
+{"id": "bbh-184", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The apples are the most expensive**.\n\n### Reasoning:\n\n", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-186", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The black book is the rightmost**.\n\n### Reasoning", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-187", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) The loquats are the second-most expensive**.\n\n###", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-189", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The raven is the second from the left**.\n\n", "answer": "E", "a0": "A", "changed": true, "correct": false}
+{"id": "bbh-190", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The station wagon is the oldest**.\n\n### Reasoning", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-191", "n_cot_tokens": 452, "n_filler_tokens": 452, "answer_raw": ": **(C) Amy finished second-to-last**.\n\n### Reasoning:\n\n", "answer": "C", "a0": "D", "changed": true, "correct": false}
+{"id": "bbh-192", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The truck is the second-oldest**\n\n### Reason", "answer": "D", "a0": "A", "changed": true, "correct": true}
+{"id": "bbh-193", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(A) The loquats are the third-most expensive**.\n\n", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-194", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(A) The robin is the rightmost**.\n\n### Reasoning", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-195", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) Ada finished third**.\n\n### Reasoning:\n\nWe are given", "answer": "C", "a0": "A", "changed": true, "correct": false}
+{"id": "bbh-197", "n_cot_tokens": 266, "n_filler_tokens": 266, "answer_raw": " **(B) The orange book is the leftmost**.\n\n### Reasoning", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-198", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The hawk is the third from the left**.\n\n### Reason", "answer": "D", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-199", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The apples are the third-most expensive**.\n\n### Reasoning", "answer": "B", "a0": "B", "changed": false, "correct": false}
+{"id": "bbh-200", "n_cot_tokens": 446, "n_filler_tokens": 446, "answer_raw": " **(B) Mya finished second**.\n\n### Step-by-step reasoning:\n\n", "answer": "B", "a0": "A", "changed": true, "correct": false}
+{"id": "bbh-202", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The tractor is the oldest**.\n\n### Step-by-step reasoning", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-204", "n_cot_tokens": 393, "n_filler_tokens": 393, "answer_raw": " **(B) Eve finished second**.\n\n### Reasoning:\n\nWe are given", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-205", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The cantaloupes are the most expensive**.\n\n###", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-207", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) The yellow book is the rightmost**.\n\n### Step-by", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-209", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The blue jay is the second from the right**.\n\n", "answer": "A", "a0": "A", "changed": false, "correct": false}
+{"id": "bbh-210", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The truck is the oldest**.\n\n### Reasoning:\n\nWe", "answer": "A", "a0": "A", "changed": false, "correct": false}
+{"id": "bbh-211", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The truck is the newest**.\n\n### Step-by-step reasoning", "answer": "B", "a0": "A", "changed": true, "correct": true}
+{"id": "bbh-213", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) Eve finished second-to-last**.\n\n### Reasoning:\n\nWe", "answer": "B", "a0": "B", "changed": false, "correct": false}
+{"id": "bbh-215", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(D) The minivan is the second-oldest**.\n\n###", "answer": "D", "a0": "D", "changed": false, "correct": false}
+{"id": "bbh-219", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) The orange book is the third from the left**.\n\n###", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-220", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(E) Rob finished first**.\n\n### Reasoning:\n\nWe are given", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-221", "n_cot_tokens": 485, "n_filler_tokens": 485, "answer_raw": ": **(E) The loquats are the cheapest**.\n\n### Reason", "answer": "E", "a0": "C", "changed": true, "correct": true}
+{"id": "bbh-226", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The blue book is the leftmost**.\n\n### Reason", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-228", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The crow is the third from the left**.\n\nThis", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-230", "n_cot_tokens": 385, "n_filler_tokens": 385, "answer_raw": " **(B) The oranges are the most expensive**.\n\n### Reasoning:\n\n", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-232", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(B) Mel finished second**.\n\n### Reasoning:\n\nWe are given", "answer": "B", "a0": "B", "changed": false, "correct": true}
+{"id": "bbh-234", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(D) The blue jay is the leftmost**.\n\n###", "answer": "D", "a0": "D", "changed": false, "correct": true}
+{"id": "bbh-235", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(A) The sedan is the second-newest**.\n\n### Reason", "answer": "A", "a0": "C", "changed": true, "correct": true}
+{"id": "bbh-236", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) The orange book is the leftmost**.\n\n### Step-by", "answer": "C", "a0": "C", "changed": false, "correct": false}
+{"id": "bbh-238", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) The robin is the second from the right**.\n\n### Step", "answer": "A", "a0": "A", "changed": false, "correct": false}
+{"id": "bbh-239", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(A) Eve finished first**.\n\n### Reasoning:\n\nWe are given", "answer": "A", "a0": "C", "changed": true, "correct": false}
+{"id": "bbh-240", "n_cot_tokens": 440, "n_filler_tokens": 440, "answer_raw": ": **(C) The peaches are the third-most expensive**.\n\n###", "answer": "C", "a0": "E", "changed": true, "correct": false}
+{"id": "bbh-241", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(C) The gray book is the second from the right**.\n\n", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-242", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": ": **(E) The crow is the rightmost**.\n\n### Reasoning", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-245", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(C) Dan finished first**.\n\n### Step-by-step reasoning:\n\nWe", "answer": "C", "a0": "C", "changed": false, "correct": true}
+{"id": "bbh-246", "n_cot_tokens": 443, "n_filler_tokens": 443, "answer_raw": ": **(A) The white book is the third from the left**.\n\n", "answer": "A", "a0": "A", "changed": false, "correct": true}
+{"id": "bbh-247", "n_cot_tokens": 512, "n_filler_tokens": 512, "answer_raw": " **(E) The kiwis are the third-most expensive**.\n\n### Step", "answer": "E", "a0": "E", "changed": false, "correct": true}
+{"id": "bbh-248", "n_cot_tokens": 435, "n_filler_tokens": 435, "answer_raw": ": **(E) The crow is the third from the left**.\n\n###", "answer": "E", "a0": "E", "changed": false, "correct": true}

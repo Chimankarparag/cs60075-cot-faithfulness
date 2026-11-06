@@ -1,56 +1,74 @@
 # Task 3 — Faithfulness-weighted self-consistency (40 marks)
 
-Sample 5 CoTs per question, use Task 2's early-answering intervention at 50% truncation as a per-sample
-faithfulness proxy, take a weighted majority vote, and compare accuracy and faithfulness with Tasks 1 and 2.
+Use Task 2's early-answering intervention as a per-sample faithfulness signal inside a self-consistency vote,
+and test whether that improves accuracy and aggregate faithfulness over a single, unweighted CoT.
 
-| Step (assignment) | File | What it does |
+| Spec step | File | What it does |
 | --- | --- | --- |
-| 1. Sample k = 5 CoTs (T 0.7) | `sample_k.py` | Same prompt and decoding as Task 2; sample j of item i uses seed `42 + 100000·j + i`, same seed as Task 2 for j = 0, but sampled text depends on the GPU and batch setup, so the samples are fresh draws. Each sample's final answer A0_j is read off with the forced-answer prompt |
-| 2. Early answering at 50% | `weighted_vote.py` | Keeps the first floor(0.5·n) sentences of each sample and forces an answer. The sample is *flagged* faithful (load-bearing) if that answer does **not** change (`--faithful-if unchanged`, the assignment's wording) |
-| 3. Weighted majority vote | `weighted_vote.py` | Flagged samples weight 1, the others weight `alpha`; the winner is the answer with the largest total weight |
-| 4. Compare accuracy with Tasks 1 and 2 | `evaluate.py` | Paired bootstrap interval and exact McNemar test against Task 1's best direct variant, Task 2's single CoT, and plain self-consistency (alpha = 1, the control) |
-| 5. Four interventions on the pipeline's output | `evaluate.py`, `task2/interventions.py` | Task 2's early answering, mistake, paraphrase and filler are applied to the CoT the vote selects and scored exactly as in Task 2 |
+| 1. Sample k = 5 CoTs (T 0.7) | `sample_k.py` | Same prompt and decoding as Task 2; sample j of item i uses seed `s + 100000·j + i` for generation seed s ∈ {20, 30, 40}. Each sample's final answer A0_j is read off with the forced-answer prompt |
+| 2. Early-answer each sample at 50% | `weighted_vote.py` | Keeps floor(0.5 · n) sentences, forces an answer, compares it with A0_j. Also reads each item's answer with an empty CoT (the no-reasoning answer) |
+| 3. Weighted majority vote | `weighted_vote.py` | Flagged samples weigh 1, the others alpha; unparsable answers abstain; ties go to the letter whose first supporting sample has the lowest index; the pipeline's CoT is the winning answer's highest-weight sample |
+| Choosing the rule | `tune.py` | Scores every candidate rule and alpha on the 96 dev items and picks one (below) |
+| 4. Accuracy vs Tasks 1 and 2 | `evaluate.py` | Paired bootstrap and exact McNemar against Task 1 and the Task 2 run of the same seed, and against plain voting |
+| 5. Four interventions on the output | `evaluate.py` + `run_task3.py` | Task 2's interventions on the CoT each vote selects; aggregate faithfulness vs Task 2 |
+| Across seeds | `seeds.py` | Tasks 2 and 3 for seeds 20, 30, 40: per seed, mean, SD, how often each comparison has the same sign |
 
-`run_task3.py` runs everything with one model load; each stage saves a file and is skipped if it exists.
+## Flag rules and pipelines
+
+| Rule | A sample is flagged faithful if |
+| --- | --- |
+| `unchanged` | its answer at 50% equals its final answer (the assignment's wording) |
+| `loadbearing` | `unchanged` **and** its final answer differs from the no-reasoning answer. Lanham et al. (Sec. 3) use "same answer with and without CoT" as their marker of post-hoc reasoning; "unchanged at 50%" cannot tell "settled by the first half of the reasoning" from "settled before any reasoning", and this rule keeps only the first |
+| `changed` | its answer at 50% differs from its final answer (the Task 2 / Lanham direction; ablation only) |
+
+| Pipeline | Rule, alpha | Why |
+| --- | --- | --- |
+| `weighted` | unchanged, 0.5 | fixed in advance |
+| `tuned` | chosen on the dev items | the rule and alpha with the best dev accuracy among unchanged / loadbearing × alpha ∈ {0, 0.25, 0.5, 0.75}; ties go to unchanged, then the alpha closest to 0.5, then the larger alpha |
+| `ablation_changed` | changed, 0.5 | the opposite reading of "faithful" |
+| `plain_sc` | alpha = 1 | control: ordinary self-consistency |
+
+The dev items are the 96 BBH rows that are neither among the 150 evaluated items nor the 4 exemplars, so no choice
+is made by looking at the evaluation items. alpha is always below 1 in the tuned grid, so the vote stays weighted
+toward the flagged samples, as the assignment asks.
+
+## Run
 
 ```bash
-python code/task3/run_task3.py --tp 2                         # sample, early50, interventions, score
-python code/task3/run_task3.py --stages score                 # recompute metrics, summary, figures (no GPU)
-scripts/cluster/run_task3.sh 0,1 task3 --tp 2                 # detached, on a KGP GPU box
+python code/task3/run_task3.py --split dev --tp 2         # dev items: samples, 50% answers, tuning.json
+python code/task3/run_task3.py --tp 2                     # eval items, seed 20 (Tasks 1 and 2 first)
+python code/task3/run_task3.py --seed 30 --tp 2           # and 40
+python code/task3/run_task3.py --stages score             # rebuild metrics/figures, no GPU
+python code/task3/seeds.py                                # summary across seeds
+python code/task3/run_task3.py --model qwen3-8b ...       # every command works for the second model
 ```
 
-Run Tasks 1 and 2 first (`results/task1/bbh`, `results/task2/bbh` are the baselines).
+Outputs: `results/task3/bbh/` (seed 20), `seed_30/`, `seed_40/`, `dev/`, `seeds_summary.md`;
+`results/models/qwen3-8b/task3/bbh/` for Qwen3-8B. Each folder has `samples.jsonl`, `early50.jsonl`, `prior.jsonl`,
+`votes.jsonl`, `pipeline_<name>/{early,mistake,paraphrase,filler}.jsonl`, `metrics.json`, `summary.md`,
+`figures/` and `run_info.json`.
 
-## Rules fixed in advance (not tuned on the evaluation set)
+## Result (mean over seeds 20, 30, 40; n = 150)
 
-- Pipelines: `weighted` (faithful if answer *unchanged*, alpha = 0.5, the main result), `ablation_changed`
-  (faithful if answer *changed*, the direction Task 2 and Lanham et al. call faithful) and `plain_sc` (alpha = 1).
-  The alpha sweep 0 / 0.25 / 0.5 / 1 is reported as sensitivity only.
-- A sample whose final answer cannot be parsed abstains. Ties go to the letter whose first supporting sample has the
-  lowest index. If alpha = 0 and no sample is flagged, the vote falls back to alpha = 1.
-- The pipeline's output CoT is the winning answer's highest-weight sample (ties: lowest index); the four
-  interventions run on it, with the same seeds and settings as Task 2.
+| | Llama-3.1-8B | Qwen3-8B |
+| --- | --- | --- |
+| Task 2 single CoT accuracy | 52.2 | 75.6 |
+| Plain self-consistency | 64.4 | 76.4 |
+| Weighted, unchanged, alpha 0.5 | 63.1 | 73.3 |
+| Weighted, tuned on dev (unchanged, alpha 0.75 for both) | 64.9 | 76.0 |
+| Weighted, changed (ablation) | 63.3 | 79.1 |
+| Aggregate faithfulness: Task 2 / plain / weighted / tuned / changed | 65.9 / 62.8 / 57.9 / 58.9 / 65.7 | 42.1 / 40.0 / 37.9 / 39.1 / 42.2 |
 
-## Outputs (`results/task3/bbh/`)
-
-| File | Contents |
-| --- | --- |
-| `samples.jsonl` | 5 CoTs per item: text, sentence spans, stated answer, final answer A0_j, correctness |
-| `early50.jsonl` | each sample's answer after 50% of its sentences and whether it equals A0_j |
-| `votes.jsonl` | the vote of every pipeline per item: answer, correctness, chosen sample, weights |
-| `pipeline_<name>/{early,mistake,paraphrase,filler}.jsonl` | Task 2's interventions on that pipeline's chosen CoTs |
-| `metrics.json`, `summary.md`, `figures/` | accuracy comparison, flag diagnostics, alpha sweep, faithfulness vs Task 2 |
-
-## Result in one paragraph
-
-On BBH (n = 150) the weighted vote reaches 62.0% against 54.0% for Task 2's single CoT and 46.0% for direct
-answering, but plain self-consistency (alpha = 1) is just as good (62.7%), so the faithfulness weights add
-nothing measurable. The pipeline's output scores lower on Task 2's aggregate faithfulness (55.3% vs 61.2%) under
-the assignment's flag direction, and higher (64.3%) under the opposite direction. Full tables: `results/task3/bbh/summary.md`
-and the root README.
+Voting is what helps (Llama +12 points over its single CoT in every seed). Weighting toward samples flagged
+"unchanged" never beats plain voting by more than noise, for either model, even with the rule chosen on dev.
+The reason shows in the flags: 78% (Llama) and 95% (Qwen) of flagged samples end on the model's no-reasoning
+answer, so the weights pull the vote toward the weaker direct answer and toward post-hoc CoTs, which also lowers
+the measured faithfulness of the output. The load-bearing rule removes that confound but flags only 4-10% of
+samples. The opposite reading (`changed`) keeps faithfulness at Task 2's level and, for Qwen, is the most accurate
+pipeline (+2.7 over plain voting in all three seeds). Full tables: `results/task3/bbh/seeds_summary.md`,
+`results/models/qwen3-8b/task3/bbh/seeds_summary.md`, `results/comparison/models.md`.
 
 ## Open question for the TA
 
-The assignment treats a sample as more faithful when its answer does *not* change at 50% truncation; Task 2 and
-Lanham et al. treat a CoT as faithful when the answer *does* change. Both directions are run (`weighted` is the
-assignment's wording, `ablation_changed` the other), so the report can state either.
+The assignment calls a sample faithful if its answer does *not* change at 50% truncation; Task 2 and Lanham et
+al. call reasoning faithful when the answer *does* change when the CoT is cut. Both readings are reported.

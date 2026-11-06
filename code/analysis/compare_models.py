@@ -161,8 +161,10 @@ def runs_render(runs: list[dict]) -> list[str]:
         minutes = (r.get("seconds") or 0) / 60
         total[r["model"]] = total.get(r["model"], 0.0) + minutes
         gpus = ", ".join(r.get("gpus") or []) or "-"
+        status = r.get("status", "ok")
+        note = r.get("note") or ("" if status == "ok" else f"{status} (aborted at start-up; no output)")
         L.append(f"| {r['model']} | `{r['folder']}` | {r.get('host', '-')} | {gpus} ({r.get('tensor_parallel')}) | "
-                 f"{r.get('started', '-')} | {minutes:.1f} | {r.get('note', '')} |")
+                 f"{r.get('started', '-')} | {minutes:.1f} | {note} |")
     L += ["", "Total GPU wall-clock per model: " + "; ".join(f"{k} {v:.0f} min" for k, v in total.items()) + ".", ""]
     return L
 

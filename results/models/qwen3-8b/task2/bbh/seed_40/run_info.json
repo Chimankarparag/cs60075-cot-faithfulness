@@ -1,0 +1,33 @@
+[
+  {
+    "script": "code/task2/run_task2.py --seed 40 --stages cot early mistake paraphrase filler score --model qwen3-8b --tp 1",
+    "host": "gpu74.cse.iitkgp",
+    "gpus": [
+      "NVIDIA A40"
+    ],
+    "cuda_visible_devices": "0",
+    "backend": "vllm",
+    "tensor_parallel": 1,
+    "model_key": "qwen3-8b",
+    "model": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "gen_seed": 40,
+    "started": "2026-11-04T04:40:28+05:30",
+    "finished": "2026-11-04T04:55:35+05:30",
+    "seconds": 907.6,
+    "stages": {
+      "cot": 118.7,
+      "early": 213.1,
+      "mistake": 131.1,
+      "paraphrase": 297.6,
+      "filler": 33.1
+    },
+    "status": "ok",
+    "versions": {
+      "python": "3.11.16",
+      "vllm": "0.30.0",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.17.0"
+    }
+  }
+]

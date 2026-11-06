@@ -1,0 +1,31 @@
+[
+  {
+    "script": "code/task3/run_task3.py --split dev --model llama3.1-8b --tp 1",
+    "host": "gpu73.cse.iitkgp",
+    "gpus": [
+      "NVIDIA L40S"
+    ],
+    "cuda_visible_devices": "0",
+    "backend": "vllm",
+    "tensor_parallel": 1,
+    "model_key": "llama3.1-8b",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "gen_seed": 20,
+    "started": "2026-11-04T04:12:36+05:30",
+    "finished": "2026-11-04T04:16:42+05:30",
+    "seconds": 246.0,
+    "stages": {
+      "sample": 115.6,
+      "early50": 19.5,
+      "prior": 2.7
+    },
+    "status": "ok",
+    "versions": {
+      "python": "3.11.16",
+      "vllm": "0.30.0",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.17.0"
+    }
+  }
+]
