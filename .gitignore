@@ -7,9 +7,10 @@ hf_cache/
 *.pt
 *.gguf
 
-# Logs and scratch
-logs/
+# Logs and scratch (the logs of the final runs are kept, in results/logs/)
+/logs/
 *.log
+!results/logs/**/*.log
 tmp/
 
 # Python / Jupyter

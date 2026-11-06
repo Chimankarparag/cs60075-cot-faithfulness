@@ -1,0 +1,17 @@
+=== 2026-11-04 03:33:50 gpu74 gpu=0 start task1
+=== 2026-11-04 03:36:42 done task1
+=== 2026-11-04 03:36:42 gpu74 gpu=0 start task2_seed20
+=== 2026-11-04 04:25:31 done task2_seed20
+=== 2026-11-04 04:25:31 gpu74 gpu=0 start task2_seed30
+=== 2026-11-04 04:40:26 done task2_seed30
+=== 2026-11-04 04:40:26 gpu74 gpu=0 start task2_seed40
+=== 2026-11-04 04:55:41 done task2_seed40
+=== 2026-11-04 04:55:41 gpu74 gpu=0 start task3_dev
+=== 2026-11-04 05:04:52 done task3_dev
+=== 2026-11-04 05:04:52 gpu74 gpu=0 start task3_seed20
+=== 2026-11-04 06:00:20 done task3_seed20
+=== 2026-11-04 06:00:20 gpu74 gpu=0 start task3_seed30
+=== 2026-11-04 06:55:53 done task3_seed30
+=== 2026-11-04 06:55:53 gpu74 gpu=0 start task3_seed40
+=== 2026-11-04 07:51:25 done task3_seed40
+=== 2026-11-04 07:51:26 ALL DONE qwen3-8b
