@@ -1,0 +1,750 @@
+{"id": "bbh-0", "j": 0, "k": 20, "n": 40, "answer_raw": ":\n\n**(A) The quail is the rightmost**\n\n### Explanation:\n\nFrom", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-0", "j": 1, "k": 20, "n": 41, "answer_raw": ":\n\n**(A) The quail is the rightmost**\n\n### Explanation:\n\nFrom", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-0", "j": 2, "k": 18, "n": 37, "answer_raw": ": **(A) The quail is the rightmost**\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-0", "j": 3, "k": 21, "n": 43, "answer_raw": " **(A) The quail is the rightmost**.\n\nThis is directly", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-0", "j": 4, "k": 18, "n": 37, "answer_raw": ": **(A) The quail is the rightmost**\n\nThis is directly", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-1", "j": 0, "k": 20, "n": 40, "answer_raw": " **(D) The tractor is the second-oldest**.\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-1", "j": 1, "k": 26, "n": 52, "answer_raw": ": **(D) The tractor is the second-oldest.**\n\n---\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-1", "j": 2, "k": 25, "n": 51, "answer_raw": ": **(D) The tractor is the second-oldest.**\n\n---\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-1", "j": 3, "k": 22, "n": 45, "answer_raw": ": **(D) The tractor is the second-oldest**\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-1", "j": 4, "k": 22, "n": 44, "answer_raw": " **(D) The tractor is the second-oldest**.\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-3", "j": 0, "k": 20, "n": 40, "answer_raw": " **(A) The raven is the second from the left**.\n\n###", "answer": "A", "a0": "B", "same_as_a0": false}
+{"id": "bbh-3", "j": 1, "k": 28, "n": 56, "answer_raw": ": **(A) The raven is the second from the left**\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-3", "j": 2, "k": 16, "n": 33, "answer_raw": " **(A) The raven is the second from the left**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-3", "j": 3, "k": 22, "n": 45, "answer_raw": " **(A) The raven is the second from the left**.\n\n---\n\n", "answer": "A", "a0": "B", "same_as_a0": false}
+{"id": "bbh-3", "j": 4, "k": 26, "n": 53, "answer_raw": " **(A) The raven is the second from the left**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-4", "j": 0, "k": 27, "n": 54, "answer_raw": ": **(E) The purple book is the second from the right.**\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-4", "j": 1, "k": 25, "n": 51, "answer_raw": " **(E) The purple book is the second from the right**.\n\n###", "answer": "E", "a0": "D", "same_as_a0": false}
+{"id": "bbh-4", "j": 2, "k": 28, "n": 56, "answer_raw": ": **(E) The purple book is the second from the right**\n\n---\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-4", "j": 3, "k": 28, "n": 56, "answer_raw": ": **(E) The purple book is the second from the right.**\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-4", "j": 4, "k": 21, "n": 42, "answer_raw": " **(E) The purple book is the second from the right**.\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-6", "j": 0, "k": 28, "n": 56, "answer_raw": ":\n\n**(C) The minivan is the newest**\n\n### Explanation:\n\nWe are", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-6", "j": 1, "k": 22, "n": 44, "answer_raw": ": **(C) The minivan is the newest**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-6", "j": 2, "k": 23, "n": 46, "answer_raw": ":\n\n**(C) The minivan is the newest**\n\n### Explanation:\n\nWe are", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-6", "j": 3, "k": 21, "n": 43, "answer_raw": ": **(C) The minivan is the newest**.\n\n### Explanation:\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-6", "j": 4, "k": 25, "n": 50, "answer_raw": ": **(C) The minivan is the newest**.\n\n### Explanation:\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-8", "j": 0, "k": 23, "n": 47, "answer_raw": " **(D) The gray book is the rightmost**.\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-8", "j": 1, "k": 23, "n": 47, "answer_raw": ": **(D) The gray book is the rightmost**.\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-8", "j": 2, "k": 25, "n": 50, "answer_raw": ": **(D) The gray book is the rightmost**\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-8", "j": 3, "k": 20, "n": 40, "answer_raw": ": **(D) The gray book is the rightmost**.\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-8", "j": 4, "k": 20, "n": 40, "answer_raw": ": **(D) The gray book is the rightmost**\n\n---\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-9", "j": 0, "k": 20, "n": 41, "answer_raw": ":\n\n**(D) The minivan is the second-oldest**\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-9", "j": 1, "k": 19, "n": 38, "answer_raw": ": **(D) The minivan is the second-oldest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-9", "j": 2, "k": 21, "n": 42, "answer_raw": " **(D) The minivan is the second-oldest**.\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-9", "j": 3, "k": 17, "n": 34, "answer_raw": " **(D) The minivan is the second-oldest**.\n\n---\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-9", "j": 4, "k": 17, "n": 34, "answer_raw": ": **(D) The minivan is the second-oldest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-10", "j": 0, "k": 20, "n": 41, "answer_raw": ": **(C) The peaches are the second-cheapest**.\n\n---\n\n", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-10", "j": 1, "k": 20, "n": 41, "answer_raw": ":\n\n**(C) The peaches are the second-cheapest**\n\n### Explanation:\n\n", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-10", "j": 2, "k": 13, "n": 26, "answer_raw": ":\n\n**(D) The loquats are the second-cheapest**\n\n---\n\n###", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-10", "j": 3, "k": 17, "n": 35, "answer_raw": " **(C) The peaches are the second-cheapest**.\n\n### Let", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-10", "j": 4, "k": 22, "n": 45, "answer_raw": ": **(C) The peaches are the second-cheapest**.\n\n---\n\n", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-15", "j": 0, "k": 18, "n": 37, "answer_raw": " **(A) The yellow book is the rightmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-15", "j": 1, "k": 20, "n": 41, "answer_raw": ": **(A) The yellow book is the rightmost**.\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-15", "j": 2, "k": 20, "n": 40, "answer_raw": ": **(A) The yellow book is the rightmost**.\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-15", "j": 3, "k": 20, "n": 41, "answer_raw": ": **(A) The yellow book is the rightmost**.\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-15", "j": 4, "k": 21, "n": 43, "answer_raw": " **(A) The yellow book is the rightmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-19", "j": 0, "k": 27, "n": 54, "answer_raw": ":\n\n**(C) Joe finished second**\n\nThis is directly supported by the statement:", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-19", "j": 1, "k": 18, "n": 37, "answer_raw": ":\n\n**(C) Joe finished second**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-19", "j": 2, "k": 19, "n": 38, "answer_raw": ":\n\n**(C) Joe finished second**\n\n### Explanation:\n\nWe are told:\n\n1", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-19", "j": 3, "k": 25, "n": 50, "answer_raw": ":\n\n**(C) Joe finished second**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-19", "j": 4, "k": 23, "n": 47, "answer_raw": ":\n\n**(C) Joe finished second**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-20", "j": 0, "k": 22, "n": 45, "answer_raw": ": **(B) The apples are the second-cheapest**\n\n### Explanation:\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-20", "j": 1, "k": 22, "n": 44, "answer_raw": ": **(B) The apples are the second-cheapest**\n\n### Explanation:\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-20", "j": 2, "k": 24, "n": 48, "answer_raw": ": **(B) The apples are the second-cheapest**.\n\n### Explanation", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-20", "j": 3, "k": 20, "n": 41, "answer_raw": ": **(B) The apples are the second-cheapest**.\n\n### Explanation", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-20", "j": 4, "k": 24, "n": 49, "answer_raw": " **(B) The apples are the second-cheapest**.\n\n### Reasoning", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-22", "j": 0, "k": 20, "n": 40, "answer_raw": " **(C) Amy finished last**.\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-22", "j": 1, "k": 19, "n": 38, "answer_raw": ": **(C) Amy finished last**.\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-22", "j": 2, "k": 16, "n": 32, "answer_raw": ": **(C) Amy finished last**.\n\n### Final Answer: **(", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-22", "j": 3, "k": 28, "n": 57, "answer_raw": ": **(C) Amy finished last**.\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-22", "j": 4, "k": 19, "n": 38, "answer_raw": ": **(C) Amy finished last**.\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-23", "j": 0, "k": 25, "n": 50, "answer_raw": " **(A) The bus is the oldest**.\n\n### Final Answer: **", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-23", "j": 1, "k": 23, "n": 47, "answer_raw": " **(A) The bus is the oldest**.\n\n---\n\n### Let's summarize", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-23", "j": 2, "k": 21, "n": 42, "answer_raw": " **(A) The bus is the oldest**.\n\n### Final Answer: **", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-23", "j": 3, "k": 21, "n": 43, "answer_raw": " **(A) The bus is the oldest**.\n\n### Let's summarize the", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-23", "j": 4, "k": 26, "n": 52, "answer_raw": " **(A) The bus is the oldest**.\n\n---\n\n### Let's summarize", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-25", "j": 0, "k": 20, "n": 40, "answer_raw": ":\n\n**(E) The apples are the third-most expensive**\n\n---\n\n### Final Answer", "answer": "E", "a0": "B", "same_as_a0": false}
+{"id": "bbh-25", "j": 1, "k": 22, "n": 44, "answer_raw": " **(E) The apples are the third-most expensive**.\n\n---\n\n### Let", "answer": "E", "a0": null, "same_as_a0": false}
+{"id": "bbh-25", "j": 2, "k": 22, "n": 45, "answer_raw": " **(E) The apples are the third-most expensive**.\n\n---\n\n### **", "answer": "E", "a0": null, "same_as_a0": false}
+{"id": "bbh-25", "j": 3, "k": 17, "n": 35, "answer_raw": " **(E) The apples are the third-most expensive**.\n\n---\n\n### Let", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-25", "j": 4, "k": 18, "n": 36, "answer_raw": " **(E) The apples are the third-most expensive**.\n\n---\n\n### Let", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-26", "j": 0, "k": 22, "n": 44, "answer_raw": ":\n\n**(E) Ada finished last**\n\n### Explanation:\n\nFrom the given information:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-26", "j": 1, "k": 18, "n": 36, "answer_raw": ": **(E) Ada finished last**.\n\n### Explanation:\n\nWe are told", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-26", "j": 2, "k": 25, "n": 50, "answer_raw": ":\n\n**(E) Ada finished last**\n\nThis is directly supported by the statement:", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-26", "j": 3, "k": 19, "n": 39, "answer_raw": ":\n\n**(E) Ada finished last**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-26", "j": 4, "k": 13, "n": 26, "answer_raw": ":  \n**(E) Ada finished last**\n\n### Explanation:\n\nFrom the given information", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-27", "j": 0, "k": 21, "n": 43, "answer_raw": ": **(E) Dan finished second-to-last**.\n\n---\n\n### Final Answer", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-27", "j": 1, "k": 15, "n": 30, "answer_raw": " **(E) Dan finished second-to-last**.\n\n---\n\n### Let's summarize", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-27", "j": 2, "k": 22, "n": 45, "answer_raw": ": **(E) Dan finished second-to-last**\n\n---\n\n### Final Answer:", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-27", "j": 3, "k": 24, "n": 48, "answer_raw": " **(E) Dan finished second-to-last**.\n\n### Final Answer: **", "answer": "E", "a0": "A", "same_as_a0": false}
+{"id": "bbh-27", "j": 4, "k": 26, "n": 53, "answer_raw": ": **(E) Dan finished second-to-last**\n\n---\n\n### Final Answer:", "answer": "E", "a0": "D", "same_as_a0": false}
+{"id": "bbh-29", "j": 0, "k": 24, "n": 48, "answer_raw": " **(D) Joe finished second**.\n\n---\n\n### Let's summarize the known", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-29", "j": 1, "k": 20, "n": 40, "answer_raw": " **(D) Joe finished second**.\n\n### Let's summarize the logic:\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-29", "j": 2, "k": 26, "n": 53, "answer_raw": " **(D) Joe finished second**.\n\n---\n\n### Final Answer: **(", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-29", "j": 3, "k": 18, "n": 37, "answer_raw": " **(D) Joe finished second**.\n\n---\n\n### Let's summarize the known", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-29", "j": 4, "k": 26, "n": 53, "answer_raw": " **(D) Joe finished second**.\n\n---\n\n### Final Answer: **(", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-30", "j": 0, "k": 21, "n": 43, "answer_raw": " **(B) The hummingbird is the rightmost**.\n\n### Let's", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-30", "j": 1, "k": 22, "n": 44, "answer_raw": " **(B) The hummingbird is the rightmost**.\n\n### Let's", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-30", "j": 2, "k": 25, "n": 51, "answer_raw": " **(D) The hawk is the rightmost**.\n\n### Let's reconstruct", "answer": "D", "a0": "B", "same_as_a0": false}
+{"id": "bbh-30", "j": 3, "k": 19, "n": 38, "answer_raw": " **(B) The hummingbird is the rightmost**.\n\n---\n\n### **", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-30", "j": 4, "k": 27, "n": 54, "answer_raw": " **(B) The hummingbird is the rightmost**.\n\n### Let's", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-31", "j": 0, "k": 20, "n": 41, "answer_raw": ":\n\n**(C) The raven is the third from the left**\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-31", "j": 1, "k": 20, "n": 41, "answer_raw": ":\n\n**(C) The raven is the third from the left**\n\nThis is", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-31", "j": 2, "k": 20, "n": 41, "answer_raw": ":\n\n**(C) The raven is the third from the left**\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-31", "j": 3, "k": 20, "n": 40, "answer_raw": ":\n\n**(C) The raven is the third from the left**\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-31", "j": 4, "k": 21, "n": 43, "answer_raw": ":\n\n**(C) The raven is the third from the left**\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-32", "j": 0, "k": 21, "n": 43, "answer_raw": ": **(D) Eli**\n\n### Final Answer: **(D)**", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-32", "j": 1, "k": 13, "n": 27, "answer_raw": ": **(D) Eli finished second-to-last**\n\n### Final Answer: **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-32", "j": 2, "k": 19, "n": 38, "answer_raw": " **(D) Eli finished second-to-last**.\n\n---\n\n### **Step-by", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-32", "j": 3, "k": 14, "n": 28, "answer_raw": " **(D) Eli finished second-to-last**.\n\n---\n\n### Let's reconstruct", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-32", "j": 4, "k": 12, "n": 25, "answer_raw": ": **(D) Eli finished second-to-last**\n\n### Final Answer: **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-33", "j": 0, "k": 26, "n": 52, "answer_raw": " **(A) The gray book is the second from the left**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-33", "j": 1, "k": 23, "n": 47, "answer_raw": ": **(A) The gray book is the second from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-33", "j": 2, "k": 20, "n": 41, "answer_raw": ": **(A) The gray book is the second from the left**\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-33", "j": 3, "k": 29, "n": 58, "answer_raw": " **(A) The gray book is the second from the left**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-33", "j": 4, "k": 26, "n": 52, "answer_raw": " **(A) The gray book is the second from the left**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-36", "j": 0, "k": 19, "n": 39, "answer_raw": " **(C) The kiwis are the cheapest**.\n\n### Let's summarize", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-36", "j": 1, "k": 18, "n": 36, "answer_raw": " **(C) The kiwis are the cheapest**.\n\n### Final Answer:", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-36", "j": 2, "k": 20, "n": 41, "answer_raw": " **(C) The kiwis are the cheapest**.\n\n### Final Answer:", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-36", "j": 3, "k": 12, "n": 25, "answer_raw": " **(C) The kiwis are the cheapest**.\n\n### Let's summarize", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-36", "j": 4, "k": 21, "n": 42, "answer_raw": " **(C) The kiwis are the cheapest**.\n\n### Step-by-step", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-37", "j": 0, "k": 25, "n": 50, "answer_raw": " **(B) The purple book is the second from the right**.\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-37", "j": 1, "k": 17, "n": 34, "answer_raw": " **(B) The purple book is the second from the right**.\n\n---\n\n", "answer": "B", "a0": "E", "same_as_a0": false}
+{"id": "bbh-37", "j": 2, "k": 23, "n": 46, "answer_raw": " **(B) The purple book is the second from the right**.\n\n###", "answer": "B", "a0": "E", "same_as_a0": false}
+{"id": "bbh-37", "j": 3, "k": 26, "n": 52, "answer_raw": " **(B) The purple book is the second from the right**.\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-37", "j": 4, "k": 24, "n": 49, "answer_raw": " **(E) The red book is the second from the right**.\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-41", "j": 0, "k": 21, "n": 43, "answer_raw": " **(D) Joe finished third**.\n\n---\n\n### Let's summarize the constraints", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-41", "j": 1, "k": 23, "n": 47, "answer_raw": ": **(D) Joe finished third**.\n\n---\n\n### Final Answer: **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-41", "j": 2, "k": 25, "n": 50, "answer_raw": " **(D) Joe finished third**.\n\n### Final Answer: **(D", "answer": "D", "a0": "B", "same_as_a0": false}
+{"id": "bbh-41", "j": 3, "k": 17, "n": 35, "answer_raw": ": **(D) Joe finished third**\n\n---\n\n### Final Answer: **(", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-41", "j": 4, "k": 21, "n": 43, "answer_raw": " **(D) Joe finished third**.\n\n---\n\n### Let's summarize the logic", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-42", "j": 0, "k": 21, "n": 42, "answer_raw": ": **(C) The robin is the rightmost**.\n\n---\n\n### Final", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-42", "j": 1, "k": 22, "n": 45, "answer_raw": ": **(C) The robin is the rightmost**.\n\n---\n\n### Final", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-42", "j": 2, "k": 15, "n": 30, "answer_raw": ": **(C) The robin is the rightmost**.\n\n### Explanation:\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-42", "j": 3, "k": 27, "n": 54, "answer_raw": ": **(C) The robin is the rightmost**.\n\n---\n\n### Final", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-42", "j": 4, "k": 18, "n": 37, "answer_raw": ": **(C) The robin is the rightmost**.\n\n---\n\n### Step", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-43", "j": 0, "k": 23, "n": 47, "answer_raw": " **(E) The cardinal is the third from the left**.\n\n### Let", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-43", "j": 1, "k": 23, "n": 46, "answer_raw": ":\n\n**(D) The robin is the third from the left**\n\n### Let's", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-43", "j": 2, "k": 27, "n": 54, "answer_raw": " **(E) The cardinal is the third from the left**.\n\n---\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-43", "j": 3, "k": 18, "n": 36, "answer_raw": " **(E) The cardinal is the third from the left**.\n\n---\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-43", "j": 4, "k": 24, "n": 48, "answer_raw": ": **(E) The cardinal is the third from the left.**\n\n---\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-44", "j": 0, "k": 22, "n": 44, "answer_raw": ": **(A) The tractor is the third-newest**.\n\n---\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-44", "j": 1, "k": 22, "n": 44, "answer_raw": ": **(A) The tractor is the third-newest**\n\nThis is directly", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-44", "j": 2, "k": 22, "n": 44, "answer_raw": ": **(A) The tractor is the third-newest**\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-44", "j": 3, "k": 20, "n": 40, "answer_raw": ": **(A) The tractor is the third-newest**\n\n### Let's", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-44", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(A) The tractor is the third-newest**\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-45", "j": 0, "k": 25, "n": 51, "answer_raw": ": **(B) The crow is the rightmost.**\n\n### **Explanation", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-45", "j": 1, "k": 24, "n": 48, "answer_raw": ": **(B) The crow is the rightmost.**\n\n### Final Answer", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-45", "j": 2, "k": 20, "n": 41, "answer_raw": " **(B) The crow is the rightmost**.\n\n### Final Answer:", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-45", "j": 3, "k": 27, "n": 54, "answer_raw": ": **(B) The crow is the rightmost**.\n\n### Explanation:\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-45", "j": 4, "k": 28, "n": 57, "answer_raw": " **(B) The crow is the rightmost**.\n\n### Final Answer:", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-46", "j": 0, "k": 23, "n": 47, "answer_raw": ":  \n**(E) The quail is the second from the left**\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-46", "j": 1, "k": 24, "n": 49, "answer_raw": ":  \n**(E) The quail is the second from the left**\n\nThis", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-46", "j": 2, "k": 24, "n": 49, "answer_raw": ": **(E) The quail is the second from the left.**\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-46", "j": 3, "k": 22, "n": 45, "answer_raw": ": **(E) The quail is the second from the left.**\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-46", "j": 4, "k": 20, "n": 40, "answer_raw": ":  \n**(E) The quail is the second from the left**\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-48", "j": 0, "k": 20, "n": 40, "answer_raw": " **(A) The owl is the leftmost**.\n\n### Final Answer:", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-48", "j": 1, "k": 21, "n": 43, "answer_raw": " **(A) The owl is the leftmost**.\n\n### Final Answer:", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-48", "j": 2, "k": 22, "n": 45, "answer_raw": " **(A) The owl is the leftmost**.\n\n### Final Answer:", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-48", "j": 3, "k": 21, "n": 42, "answer_raw": ": **(A) The owl is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-48", "j": 4, "k": 19, "n": 38, "answer_raw": " **(A) The owl is the leftmost**.\n\n---\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-50", "j": 0, "k": 19, "n": 38, "answer_raw": ":\n\n**(C) The purple book is the second from the right**\n\n---\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-50", "j": 1, "k": 22, "n": 44, "answer_raw": ":\n\n**(C) The purple book is the second from the right**\n\n---\n\n###", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-50", "j": 2, "k": 23, "n": 47, "answer_raw": " **(C) The purple book is the second from the right**.\n\n---\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-50", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(C) The purple book is the second from the right**\n\n---\n\n", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-50", "j": 4, "k": 20, "n": 40, "answer_raw": " **(C) The purple book is the second from the right**.\n\n---\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-54", "j": 0, "k": 25, "n": 51, "answer_raw": " **(B) The orange book is the leftmost**.\n\n---\n\n### Let", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-54", "j": 1, "k": 24, "n": 49, "answer_raw": ": **(B) The orange book is the leftmost**.\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-54", "j": 2, "k": 27, "n": 55, "answer_raw": " **(B) The orange book is the leftmost**.\n\n### Reasoning", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-54", "j": 3, "k": 19, "n": 39, "answer_raw": " **(B) The orange book is the leftmost**.\n\n---\n\n### Step", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-54", "j": 4, "k": 30, "n": 60, "answer_raw": " **(B) The orange book is the leftmost**.\n\n### Final Answer", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-55", "j": 0, "k": 21, "n": 42, "answer_raw": " **(D) The crow is the rightmost**.\n\n---\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-55", "j": 1, "k": 24, "n": 49, "answer_raw": " **(D) The crow is the rightmost**.\n\n---\n\n### Final Positions", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-55", "j": 2, "k": 23, "n": 46, "answer_raw": " **(D) The crow is the rightmost**.\n\n---\n\n### Let's", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-55", "j": 3, "k": 22, "n": 44, "answer_raw": " **(D) The crow is the rightmost**.\n\n---\n\n### Let's", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-55", "j": 4, "k": 21, "n": 42, "answer_raw": " **(D) The crow is the rightmost**.\n\n---\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-57", "j": 0, "k": 20, "n": 41, "answer_raw": ": **(E) The robin is the second from the left**\n\n### Explanation", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-57", "j": 1, "k": 22, "n": 45, "answer_raw": ": **(E) The robin is the second from the left**\n\nThis is", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-57", "j": 2, "k": 26, "n": 53, "answer_raw": ": **(E) The robin is the second from the left**\n\n### Explanation", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-57", "j": 3, "k": 27, "n": 54, "answer_raw": ": **(E) The robin is the second from the left**.\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-57", "j": 4, "k": 18, "n": 36, "answer_raw": ": **(E) The robin is the second from the left**\n\nThis is", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-58", "j": 0, "k": 22, "n": 45, "answer_raw": ":\n\n**(B) The quail is the leftmost**\n\n### Explanation:\n\nFrom", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-58", "j": 1, "k": 21, "n": 42, "answer_raw": ": **(B) The quail is the leftmost**.\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-58", "j": 2, "k": 21, "n": 42, "answer_raw": ": **(B) The quail is the leftmost**.\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-58", "j": 3, "k": 18, "n": 36, "answer_raw": ": **(B) The quail is the leftmost**.\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-58", "j": 4, "k": 18, "n": 37, "answer_raw": ": **(B) The quail is the leftmost**.\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-59", "j": 0, "k": 19, "n": 39, "answer_raw": ":\n\n**(D) The bus is the second-oldest**\n\nThis is directly", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-59", "j": 1, "k": 24, "n": 48, "answer_raw": ": **(D) The bus is the second-oldest**.\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-59", "j": 2, "k": 23, "n": 46, "answer_raw": ": **(D) The bus is the second-oldest**\n\nThis is", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-59", "j": 3, "k": 19, "n": 39, "answer_raw": ": **(D) The bus is the second-oldest.**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-59", "j": 4, "k": 20, "n": 40, "answer_raw": ": **(D) The bus is the second-oldest**\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-60", "j": 0, "k": 23, "n": 47, "answer_raw": ":\n\n**(A) The cardinal is the leftmost**\n\n### Final Answer: **", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-60", "j": 1, "k": 24, "n": 49, "answer_raw": ":\n\n**(A) The cardinal is the leftmost**\n\n### Explanation:\n\nWe are", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-60", "j": 2, "k": 22, "n": 45, "answer_raw": ":\n\n**(A) The cardinal is the leftmost**\n\n### Explanation:\n\nWe already", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-60", "j": 3, "k": 27, "n": 55, "answer_raw": ": **(A) The cardinal is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-60", "j": 4, "k": 21, "n": 43, "answer_raw": ": **(A) The cardinal is the leftmost**\n\n### Reasoning:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-61", "j": 0, "k": 19, "n": 38, "answer_raw": ": **(D) The bus is the newest**.\n\n---\n\n### Let's", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-61", "j": 1, "k": 19, "n": 39, "answer_raw": ":\n\n**(D) The bus is the newest**\n\n### Explanation:\n\nWe are told", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-61", "j": 2, "k": 17, "n": 35, "answer_raw": ": **(D) The bus is the newest**.\n\n---\n\n### Let's", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-61", "j": 3, "k": 20, "n": 41, "answer_raw": ": **(D) The bus is the newest**\n\n### Explanation:\n\nFrom the", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-61", "j": 4, "k": 19, "n": 39, "answer_raw": ": **(D) The bus is the newest**.\n\n### Explanation:\n\nWe", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-62", "j": 0, "k": 18, "n": 37, "answer_raw": ": **(A) The green book is the third from the left**\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-62", "j": 1, "k": 21, "n": 43, "answer_raw": " **(A) The green book is the third from the left**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-62", "j": 2, "k": 25, "n": 50, "answer_raw": " **(A) The green book is the third from the left**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-62", "j": 3, "k": 20, "n": 40, "answer_raw": " **(A) The green book is the third from the left**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-62", "j": 4, "k": 22, "n": 45, "answer_raw": ": **(A) The green book is the third from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-64", "j": 0, "k": 27, "n": 54, "answer_raw": " **(B) The red book is the rightmost**.\n\n### Final Answer", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-64", "j": 1, "k": 25, "n": 51, "answer_raw": " **(B) The red book is the rightmost**.\n\n### Let's", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-64", "j": 2, "k": 24, "n": 48, "answer_raw": " **(B) The red book is the rightmost**.\n\n### Final Answer", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-64", "j": 3, "k": 21, "n": 43, "answer_raw": ": **(B) The red book is the rightmost**.\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-64", "j": 4, "k": 21, "n": 42, "answer_raw": " **(B) The red book is the rightmost**.\n\n### Final Answer", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-67", "j": 0, "k": 20, "n": 40, "answer_raw": ":\n\n**(A) The owl is the second from the right**\n\nThis is **", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-67", "j": 1, "k": 16, "n": 33, "answer_raw": ": **(A) The owl is the second from the right**\n\n### Reason", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-67", "j": 2, "k": 19, "n": 39, "answer_raw": ":\n\n**(A) The owl is the second from the right**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-67", "j": 3, "k": 20, "n": 40, "answer_raw": ":\n\n**(A) The owl is the second from the right**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-67", "j": 4, "k": 20, "n": 41, "answer_raw": " **(A) The owl is the second from the right**.\n\n### Reason", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-69", "j": 0, "k": 18, "n": 36, "answer_raw": ": **(C) The oranges are the second-cheapest**.\n\n---\n\n###", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-69", "j": 1, "k": 23, "n": 47, "answer_raw": ": **(C) The oranges are the second-cheapest**.\n\n### Let", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-69", "j": 2, "k": 20, "n": 41, "answer_raw": " **(C) The oranges are the second-cheapest**.\n\n### Final Answer", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-69", "j": 3, "k": 21, "n": 42, "answer_raw": " **(C) The oranges are the second-cheapest**.\n\n---\n\n### Final", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-69", "j": 4, "k": 18, "n": 37, "answer_raw": ":\n\n**(C) The oranges are the second-cheapest**\n\n### Explanation:\n\nFrom", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-71", "j": 0, "k": 19, "n": 39, "answer_raw": ": **(D) The cantaloupes are the second-cheapest**", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-71", "j": 1, "k": 16, "n": 33, "answer_raw": ": **(D) The cantaloupes are the second-cheapest.", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-71", "j": 2, "k": 20, "n": 41, "answer_raw": ": **(D) The cantaloupes are the second-cheapest**", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-71", "j": 3, "k": 20, "n": 41, "answer_raw": " **(D) The cantaloupes are the second-cheapest**.\n\n", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-71", "j": 4, "k": 18, "n": 36, "answer_raw": ":\n\n**(D) The cantaloupes are the second-cheapest**\n\n---\n\n", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-72", "j": 0, "k": 20, "n": 41, "answer_raw": ":\n\n**(D) Mya finished third**\n\nThis is directly stated in the paragraph", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-72", "j": 1, "k": 22, "n": 44, "answer_raw": ": **(D) Mya finished third**\n\n### Reasoning:\n\nWe are", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-72", "j": 2, "k": 18, "n": 37, "answer_raw": ":\n\n**(D) Mya finished third**\n\nThis is directly stated in the paragraph", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-72", "j": 3, "k": 15, "n": 30, "answer_raw": ":\n\n**(D) Mya finished third**\n\nThis is directly stated in the paragraph", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-72", "j": 4, "k": 19, "n": 39, "answer_raw": ":\n\n**(D) Mya finished third**\n\nThis is **explicitly stated**", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-74", "j": 0, "k": 21, "n": 42, "answer_raw": ":\n\n**(A) The mangoes are the third-most expensive**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-74", "j": 1, "k": 17, "n": 34, "answer_raw": ":\n\n**(A) The mangoes are the third-most expensive**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-74", "j": 2, "k": 16, "n": 32, "answer_raw": ":\n\n**(A) The mangoes are the third-most expensive**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-74", "j": 3, "k": 17, "n": 35, "answer_raw": " **(A) The mangoes are the third-most expensive**.\n\n---\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-74", "j": 4, "k": 19, "n": 38, "answer_raw": ": **(A) The mangoes are the third-most expensive**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-75", "j": 0, "k": 16, "n": 33, "answer_raw": ":\n\n**(A) The mangoes are the second-cheapest**\n\n### Explanation:\n\n", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-75", "j": 1, "k": 17, "n": 34, "answer_raw": " **(A) The mangoes are the second-cheapest**.\n\n### Let", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-75", "j": 2, "k": 20, "n": 40, "answer_raw": " **(A) The mangoes are the second-cheapest**.\n\n---\n\n###", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-75", "j": 3, "k": 17, "n": 34, "answer_raw": " **(A) The mangoes are the second-cheapest**.\n\n### Let", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-75", "j": 4, "k": 14, "n": 29, "answer_raw": ":\n\n**(A) The mangoes are the second-cheapest**\n\n### Explanation:\n\n", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-78", "j": 0, "k": 22, "n": 44, "answer_raw": ": **(B) Dan finished second-to-last**\n\n### Final Answer: **", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-78", "j": 1, "k": 19, "n": 39, "answer_raw": ": **(B) Dan finished second-to-last**\n\n---\n\n### Let's summarize", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-78", "j": 2, "k": 18, "n": 36, "answer_raw": ":\n\n**(B) Dan finished second-to-last**\n\n### Explanation:\n\nWe are told", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-78", "j": 3, "k": 25, "n": 50, "answer_raw": " **(B) Dan finished second-to-last**.\n\n---\n\n### Let's summarize", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-78", "j": 4, "k": 20, "n": 40, "answer_raw": " **(B) Dan finished second-to-last**.\n\n### Let's summarize the", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-79", "j": 0, "k": 25, "n": 51, "answer_raw": ":\n\n**(D) The hawk is the third from the left**\n\nThis is **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-79", "j": 1, "k": 26, "n": 52, "answer_raw": ": **(D) The hawk is the third from the left**.\n\nThis", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-79", "j": 2, "k": 22, "n": 45, "answer_raw": ": **(D) The hawk is the third from the left.**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-79", "j": 3, "k": 23, "n": 47, "answer_raw": ":\n\n**(D) The hawk is the third from the left**\n\n### Explanation:\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-79", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(D) The hawk is the third from the left**\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-80", "j": 0, "k": 23, "n": 46, "answer_raw": ": **(C) The brown book is the second from the left**.\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-80", "j": 1, "k": 26, "n": 52, "answer_raw": ":\n\n**(C) The brown book is the second from the left**\n\nThis is", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-80", "j": 2, "k": 24, "n": 49, "answer_raw": ":\n\n**(C) The brown book is the second from the left**\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-80", "j": 3, "k": 24, "n": 49, "answer_raw": ": **(C) The brown book is the second from the left.**\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-80", "j": 4, "k": 26, "n": 52, "answer_raw": ":\n\n**(C) The brown book is the second from the left**\n\nThis is", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-84", "j": 0, "k": 15, "n": 31, "answer_raw": " **(B) The station wagon is the second-newest**.\n\n### Let", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-84", "j": 1, "k": 21, "n": 43, "answer_raw": " **(B) The station wagon is the second-newest**.\n\n### Explanation", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-84", "j": 2, "k": 20, "n": 41, "answer_raw": ": **(B) The station wagon is the second-newest.**\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-84", "j": 3, "k": 18, "n": 37, "answer_raw": ": **(B) The station wagon is the second-newest.**\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-84", "j": 4, "k": 21, "n": 42, "answer_raw": " **(B) The station wagon is the second-newest**.\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-85", "j": 0, "k": 22, "n": 44, "answer_raw": ": **(D) The pears are the most expensive**.\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-85", "j": 1, "k": 23, "n": 46, "answer_raw": ": **(D) The pears are the most expensive**.\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-85", "j": 2, "k": 20, "n": 41, "answer_raw": " **(D) The pears are the most expensive**.\n\n### Reasoning", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-85", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(D) The pears are the most expensive**.\n\n### Here", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-85", "j": 4, "k": 26, "n": 52, "answer_raw": ": **(D) The pears are the most expensive**.\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-86", "j": 0, "k": 21, "n": 43, "answer_raw": ":\n\n**(A) The station wagon is the newest**\n\n### Explanation:\n\nFrom the", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-86", "j": 1, "k": 18, "n": 36, "answer_raw": ":\n\n**(A) The station wagon is the newest**\n\n### Explanation:\n\nFrom the", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-86", "j": 2, "k": 18, "n": 36, "answer_raw": ": **(A) The station wagon is the newest**.\n\nThis is directly", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-86", "j": 3, "k": 16, "n": 32, "answer_raw": ":\n\n**(A) The station wagon is the newest**\n\n### Explanation:\n\nWe are", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-86", "j": 4, "k": 20, "n": 41, "answer_raw": ":\n\n**(A) The station wagon is the newest**\n\nThis is directly stated in", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-87", "j": 0, "k": 23, "n": 47, "answer_raw": " **(C) The purple book is the rightmost**.\n\n### Final Answer", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-87", "j": 1, "k": 20, "n": 41, "answer_raw": " **(C) The purple book is the rightmost**.\n\n---\n\n### Final", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-87", "j": 2, "k": 20, "n": 40, "answer_raw": ": **(E) The white book is the rightmost**.\n\n### Final", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-87", "j": 3, "k": 23, "n": 46, "answer_raw": " **(C) The purple book is the rightmost**.\n\n### Let's", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-87", "j": 4, "k": 24, "n": 48, "answer_raw": " **(C) The purple book is the rightmost**.\n\n### Final Answer", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-89", "j": 0, "k": 25, "n": 50, "answer_raw": ": **(D) The yellow book is the second from the left.**\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-89", "j": 1, "k": 23, "n": 46, "answer_raw": ": **(D) The yellow book is the second from the left.**\n\n", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-89", "j": 2, "k": 30, "n": 60, "answer_raw": ":\n\n**(D) The yellow book is the second from the left**\n\n### Explanation", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-89", "j": 3, "k": 27, "n": 55, "answer_raw": " **(D) The yellow book is the second from the left**.\n\n---\n\n", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-89", "j": 4, "k": 19, "n": 39, "answer_raw": " **(D) The yellow book is the second from the left**.\n\n---\n\n", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-90", "j": 0, "k": 24, "n": 49, "answer_raw": ": **(E) The red book is the third from the left.**\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-90", "j": 1, "k": 24, "n": 49, "answer_raw": ": **(E) The red book is the third from the left**\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-90", "j": 2, "k": 26, "n": 53, "answer_raw": ": **(E) The red book is the third from the left**\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-90", "j": 3, "k": 29, "n": 58, "answer_raw": ": **(E) The red book is the third from the left.**\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-90", "j": 4, "k": 22, "n": 45, "answer_raw": ": **(E) The red book is the third from the left**\n\nThis", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-92", "j": 0, "k": 17, "n": 34, "answer_raw": ": **(C) Eli finished third**\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-92", "j": 1, "k": 21, "n": 42, "answer_raw": ": **(C) Eli finished third**.\n\n---\n\n### Step-by-step reasoning", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-92", "j": 2, "k": 19, "n": 38, "answer_raw": ": **(C) Eli finished third**\n\n### Final Answer: **(C", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-92", "j": 3, "k": 24, "n": 49, "answer_raw": ": **(C) Eli finished third**\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-92", "j": 4, "k": 26, "n": 52, "answer_raw": " **(C) Eli finished third**.\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-93", "j": 0, "k": 33, "n": 66, "answer_raw": " **(A) Rob finished third**.\n\n### Final Answer: **(A", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-93", "j": 1, "k": 22, "n": 45, "answer_raw": " **(A) Rob finished third**.\n\n---\n\n### Let's summarize the constraints", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-93", "j": 2, "k": 20, "n": 41, "answer_raw": " **(A) Rob finished third**.\n\n---\n\n### Final Answer: **(", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-93", "j": 3, "k": 23, "n": 47, "answer_raw": " **(A) Rob finished third**.\n\n---\n\n### Final Answer: **(", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-93", "j": 4, "k": 22, "n": 44, "answer_raw": " **(A) Rob finished third**.\n\n---\n\n### Let's summarize the logic", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-94", "j": 0, "k": 26, "n": 52, "answer_raw": ": **(C) The blue jay is the third from the left**\n\n", "answer": "C", "a0": null, "same_as_a0": false}
+{"id": "bbh-94", "j": 1, "k": 25, "n": 50, "answer_raw": ": **(C) The blue jay is the third from the left.", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-94", "j": 2, "k": 22, "n": 45, "answer_raw": ": **(C) The blue jay is the third from the left.", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-94", "j": 3, "k": 21, "n": 42, "answer_raw": ": **(C) The blue jay is the third from the left.", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-94", "j": 4, "k": 19, "n": 38, "answer_raw": ":\n\n**(C) The blue jay is the third from the left**\n\nThis", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-98", "j": 0, "k": 17, "n": 34, "answer_raw": " **(D) The convertible is the oldest**.\n\n### Let's summarize the", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-98", "j": 1, "k": 20, "n": 40, "answer_raw": ": **(D) The convertible is the oldest**.\n\n### Final Answer:", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-98", "j": 2, "k": 15, "n": 31, "answer_raw": " **(D) The convertible is the oldest**.\n\n### Let's break it", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-98", "j": 3, "k": 19, "n": 38, "answer_raw": ": **(D) The convertible is the oldest**.\n\n### Let's summarize", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-98", "j": 4, "k": 18, "n": 36, "answer_raw": ": **(D) The convertible is the oldest**.\n\n---\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-99", "j": 0, "k": 22, "n": 44, "answer_raw": " **(A) The raven is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-99", "j": 1, "k": 21, "n": 42, "answer_raw": ": **(D) The hummingbird is the leftmost**.\n\n### Let", "answer": "D", "a0": "A", "same_as_a0": false}
+{"id": "bbh-99", "j": 2, "k": 26, "n": 52, "answer_raw": " **(D) The hummingbird is the leftmost**.\n\nLet’s go", "answer": "D", "a0": "A", "same_as_a0": false}
+{"id": "bbh-99", "j": 3, "k": 23, "n": 47, "answer_raw": " **(D) The hummingbird is the leftmost**.\n\n### Let's", "answer": "D", "a0": "A", "same_as_a0": false}
+{"id": "bbh-99", "j": 4, "k": 24, "n": 48, "answer_raw": " **(D) The hummingbird is the leftmost**.\n\nLet’s go", "answer": "D", "a0": "A", "same_as_a0": false}
+{"id": "bbh-100", "j": 0, "k": 23, "n": 46, "answer_raw": ":\n\n**(A) Eve finished first**\n\n### Reasoning:\n\nWe are told:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-100", "j": 1, "k": 19, "n": 38, "answer_raw": ":\n\n**(A) Eve finished first**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-100", "j": 2, "k": 20, "n": 41, "answer_raw": ":\n\n**(A) Eve finished first**\n\n### Explanation:\n\nFrom the given information:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-100", "j": 3, "k": 20, "n": 41, "answer_raw": ":\n\n**(A) Eve finished first**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-100", "j": 4, "k": 22, "n": 44, "answer_raw": ":\n\n**(A) Eve finished first**\n\n### Explanation:\nWe are directly told in", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-101", "j": 0, "k": 17, "n": 35, "answer_raw": ": **(B) The station wagon is the third-newest**.\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-101", "j": 1, "k": 21, "n": 43, "answer_raw": ": **(B) The station wagon is the third-newest**.\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-101", "j": 2, "k": 15, "n": 31, "answer_raw": ": **(B) The station wagon is the third-newest.**\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-101", "j": 3, "k": 21, "n": 42, "answer_raw": ": **(B) The station wagon is the third-newest**.\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-101", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(B) The station wagon is the third-newest.**\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-103", "j": 0, "k": 18, "n": 37, "answer_raw": ":  \n**(D) The hatchback is the second-oldest**\n\nThis", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-103", "j": 1, "k": 18, "n": 36, "answer_raw": ":\n\n**(D) The hatchback is the second-oldest**\n\nThis is", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-103", "j": 2, "k": 16, "n": 33, "answer_raw": ": **(D) The hatchback is the second-oldest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-103", "j": 3, "k": 23, "n": 47, "answer_raw": ":\n\n**(D) The hatchback is the second-oldest**\n\nThis is", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-103", "j": 4, "k": 14, "n": 29, "answer_raw": ": **(D) The hatchback is the second-oldest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-104", "j": 0, "k": 26, "n": 53, "answer_raw": " **(A) The blue book is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-104", "j": 1, "k": 21, "n": 43, "answer_raw": ": **(A) The blue book is the leftmost**\n\n### Reasoning", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-104", "j": 2, "k": 23, "n": 47, "answer_raw": ": **(A) The blue book is the leftmost**.\n\n### Explanation", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-104", "j": 3, "k": 27, "n": 54, "answer_raw": " **(A) The blue book is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-104", "j": 4, "k": 26, "n": 52, "answer_raw": ": **(A) The blue book is the leftmost**.\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-106", "j": 0, "k": 25, "n": 51, "answer_raw": ": **(D) The robin is the second from the left.**\n\nThis", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-106", "j": 1, "k": 19, "n": 39, "answer_raw": ": **(D) The robin is the second from the left**\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-106", "j": 2, "k": 23, "n": 47, "answer_raw": ":\n\n**(D) The robin is the second from the left**\n\nThis is **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-106", "j": 3, "k": 20, "n": 40, "answer_raw": ":\n\n**(D) The robin is the second from the left**\n\nThis is **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-106", "j": 4, "k": 27, "n": 55, "answer_raw": ":\n\n**(D) The robin is the second from the left**\n\n### Explanation:\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-110", "j": 0, "k": 19, "n": 38, "answer_raw": ":\n\n**(D) The purple book is the second from the right**\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-110", "j": 1, "k": 21, "n": 43, "answer_raw": ": **(D) The purple book is the second from the right**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-110", "j": 2, "k": 20, "n": 41, "answer_raw": ":\n\n**(D) The purple book is the second from the right**\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-110", "j": 3, "k": 21, "n": 43, "answer_raw": ": **(D) The purple book is the second from the right**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-110", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(D) The purple book is the second from the right**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-112", "j": 0, "k": 21, "n": 42, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-112", "j": 1, "k": 24, "n": 49, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\nThis is", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-112", "j": 2, "k": 22, "n": 44, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\n### Reason", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-112", "j": 3, "k": 24, "n": 48, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-112", "j": 4, "k": 24, "n": 48, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\n### Reason", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-113", "j": 0, "k": 30, "n": 61, "answer_raw": " **(A) The crow is the second from the left**.\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-113", "j": 1, "k": 23, "n": 47, "answer_raw": ":\n\n**(A) The crow is the second from the left**\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-113", "j": 2, "k": 21, "n": 43, "answer_raw": ": **(A) The crow is the second from the left.**\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-113", "j": 3, "k": 23, "n": 46, "answer_raw": ": **(A) The crow is the second from the left.**\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-113", "j": 4, "k": 19, "n": 38, "answer_raw": ":\n\n**(A) The crow is the second from the left**\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-114", "j": 0, "k": 26, "n": 53, "answer_raw": ":\n\n**(D) The motorcyle is the second-oldest**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-114", "j": 1, "k": 20, "n": 40, "answer_raw": ":\n\n**(D) The motorcyle is the second-oldest**\n\n###", "answer": "D", "a0": "B", "same_as_a0": false}
+{"id": "bbh-114", "j": 2, "k": 29, "n": 59, "answer_raw": " **(D) The motorcyle is the second-oldest**.\n\n", "answer": "D", "a0": "B", "same_as_a0": false}
+{"id": "bbh-114", "j": 3, "k": 19, "n": 38, "answer_raw": ": **(D) The motorcyle is the second-oldest**", "answer": "D", "a0": "B", "same_as_a0": false}
+{"id": "bbh-114", "j": 4, "k": 18, "n": 36, "answer_raw": ": **(D) The motorcycle is the second-oldest.**\n\n###", "answer": "D", "a0": "B", "same_as_a0": false}
+{"id": "bbh-115", "j": 0, "k": 22, "n": 44, "answer_raw": " **(A) The loquats are the cheapest**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-115", "j": 1, "k": 19, "n": 38, "answer_raw": ": **(A) The loquats are the cheapest.**\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-115", "j": 2, "k": 21, "n": 43, "answer_raw": " **(A) The loquats are the cheapest**.\n\n### Let's", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-115", "j": 3, "k": 22, "n": 45, "answer_raw": " **(A) The loquats are the cheapest**.\n\n### Here's", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-115", "j": 4, "k": 19, "n": 39, "answer_raw": " **(A) The loquats are the cheapest**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-117", "j": 0, "k": 21, "n": 43, "answer_raw": " **(B) The owl is the second from the right**.\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-117", "j": 1, "k": 28, "n": 57, "answer_raw": " **(B) The owl is the second from the right**.\n\n### Let", "answer": "B", "a0": "D", "same_as_a0": false}
+{"id": "bbh-117", "j": 2, "k": 26, "n": 52, "answer_raw": " **(B) The owl is the second from the right**.\n\n### Let", "answer": "B", "a0": "E", "same_as_a0": false}
+{"id": "bbh-117", "j": 3, "k": 26, "n": 53, "answer_raw": " **(B) The owl is the second from the right**.\n\nLet’s", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-117", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(B) The owl is the second from the right**\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-119", "j": 0, "k": 21, "n": 42, "answer_raw": " **(B) Amy finished last**.\n\n### Let's summarize the known positions", "answer": "B", "a0": "D", "same_as_a0": false}
+{"id": "bbh-119", "j": 1, "k": 24, "n": 49, "answer_raw": ": **(B) Amy finished last**.\n\n---\n\n### Final Answer: **", "answer": "B", "a0": "D", "same_as_a0": false}
+{"id": "bbh-119", "j": 2, "k": 19, "n": 38, "answer_raw": " **(A) Eve finished last**.\n\n### Final Answer: **(A", "answer": "A", "a0": "D", "same_as_a0": false}
+{"id": "bbh-119", "j": 3, "k": 23, "n": 46, "answer_raw": ":\n\n**(B) Amy finished last**\n\n### Final Answer: **(B)**", "answer": "B", "a0": "D", "same_as_a0": false}
+{"id": "bbh-119", "j": 4, "k": 22, "n": 45, "answer_raw": " **(B) Amy finished last**.\n\n### Let's summarize the known facts", "answer": "B", "a0": "D", "same_as_a0": false}
+{"id": "bbh-120", "j": 0, "k": 27, "n": 55, "answer_raw": " **(E) The purple book is the second from the right**.\n\n###", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-120", "j": 1, "k": 23, "n": 46, "answer_raw": ": **(E) The purple book is the second from the right**\n\n---\n\n", "answer": "E", "a0": "C", "same_as_a0": false}
+{"id": "bbh-120", "j": 2, "k": 27, "n": 54, "answer_raw": ":\n\n**(A) The yellow book is the second from the right**\n\n### Let", "answer": "A", "a0": "C", "same_as_a0": false}
+{"id": "bbh-120", "j": 3, "k": 31, "n": 62, "answer_raw": ": **(E) The purple book is the second from the right.**\n\n", "answer": "E", "a0": "C", "same_as_a0": false}
+{"id": "bbh-120", "j": 4, "k": 19, "n": 38, "answer_raw": ":\n\n**(C) The gray book is the second from the right**\n\n---\n\n###", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-122", "j": 0, "k": 21, "n": 42, "answer_raw": ": **(E) The watermelons are the most expensive**.\n\nThis", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-122", "j": 1, "k": 19, "n": 39, "answer_raw": ":\n\n**(E) The watermelons are the most expensive**\n\n### Explanation:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-122", "j": 2, "k": 22, "n": 45, "answer_raw": ":\n\n**(E) The watermelons are the most expensive**\n\n### Explanation:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-122", "j": 3, "k": 21, "n": 43, "answer_raw": ":\n\n**(E) The watermelons are the most expensive**\n\nThis is directly", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-122", "j": 4, "k": 18, "n": 37, "answer_raw": ":\n\n**(E) The watermelons are the most expensive**\n\nThis is directly", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-126", "j": 0, "k": 26, "n": 53, "answer_raw": " **(A) Amy finished second**.\n\n### Final Answer: **(A", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-126", "j": 1, "k": 23, "n": 46, "answer_raw": " **(A) Amy finished second**.\n\n---\n\n### Final Answer: **(", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-126", "j": 2, "k": 15, "n": 31, "answer_raw": " **(A) Amy finished second**.\n\n### Let's summarize the reasoning:\n\n", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-126", "j": 3, "k": 19, "n": 38, "answer_raw": " **(A) Amy finished second**.\n\n### Final Answer: **(A", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-126", "j": 4, "k": 21, "n": 43, "answer_raw": " **(A) Amy finished second**.\n\n### Let's summarize the known facts", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-128", "j": 0, "k": 21, "n": 42, "answer_raw": " **(C) The crow is the third from the left**.\n\n### Explanation", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-128", "j": 1, "k": 22, "n": 44, "answer_raw": ": **(C) The crow is the third from the left.**\n\n---\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-128", "j": 2, "k": 23, "n": 46, "answer_raw": ": **(C) The crow is the third from the left**.\n\n###", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-128", "j": 3, "k": 24, "n": 49, "answer_raw": " **(C) The crow is the third from the left**.\n\n### Let", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-128", "j": 4, "k": 26, "n": 52, "answer_raw": ": **(C) The crow is the third from the left**\n\n### Final", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-131", "j": 0, "k": 21, "n": 43, "answer_raw": ": **(A) The gray book is the third from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-131", "j": 1, "k": 26, "n": 53, "answer_raw": ": **(A) The gray book is the third from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-131", "j": 2, "k": 26, "n": 52, "answer_raw": ": **(A) The gray book is the third from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-131", "j": 3, "k": 22, "n": 45, "answer_raw": " **(A) The gray book is the third from the left**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-131", "j": 4, "k": 22, "n": 44, "answer_raw": ": **(A) The gray book is the third from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-132", "j": 0, "k": 21, "n": 43, "answer_raw": " **(E) The gray book is the second from the right**.\n\n---\n\n", "answer": "E", "a0": "A", "same_as_a0": false}
+{"id": "bbh-132", "j": 1, "k": 22, "n": 45, "answer_raw": ": **(E) The gray book is the second from the right**.\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-132", "j": 2, "k": 24, "n": 48, "answer_raw": ": **(E) The gray book is the second from the right.**\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-132", "j": 3, "k": 21, "n": 43, "answer_raw": " **(E) The gray book is the second from the right**.\n\n---\n\n", "answer": "E", "a0": "D", "same_as_a0": false}
+{"id": "bbh-132", "j": 4, "k": 25, "n": 50, "answer_raw": ": **(E) The gray book is the second from the right.**\n\n", "answer": "E", "a0": "A", "same_as_a0": false}
+{"id": "bbh-133", "j": 0, "k": 25, "n": 51, "answer_raw": ":\n\n**(D) The plums are the second-cheapest**\n\nThis is directly", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-133", "j": 1, "k": 18, "n": 36, "answer_raw": ":\n\n**(D) The plums are the second-cheapest**\n\n### Explanation:\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-133", "j": 2, "k": 21, "n": 42, "answer_raw": ":\n\n**(D) The plums are the second-cheapest**\n\n---\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-133", "j": 3, "k": 20, "n": 40, "answer_raw": ": **(D) The plums are the second-cheapest.**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-133", "j": 4, "k": 20, "n": 41, "answer_raw": ":\n\n**(D) The plums are the second-cheapest**\n\nThis is directly", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-134", "j": 0, "k": 23, "n": 47, "answer_raw": ":\n\n**(C) Eli finished second-to-last**\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-134", "j": 1, "k": 25, "n": 51, "answer_raw": ": **(C) Eli finished second-to-last**\n\n---\n\n### Step-by-step", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-134", "j": 2, "k": 20, "n": 41, "answer_raw": ": **(C) Eli finished second-to-last**\n\n### Final Answer: **", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-134", "j": 3, "k": 14, "n": 29, "answer_raw": ":\n\n**(C) Eli finished second-to-last**\n\n### Explanation:\n\nWe are told", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-134", "j": 4, "k": 20, "n": 40, "answer_raw": ": **(C) Eli finished second-to-last**.\n\n---\n\n### Step-by", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-135", "j": 0, "k": 30, "n": 60, "answer_raw": ": **(B) The brown book is the second from the left**\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-135", "j": 1, "k": 25, "n": 50, "answer_raw": " **(B) The brown book is the second from the left**.\n\nThis", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-135", "j": 2, "k": 23, "n": 47, "answer_raw": " **(B) The brown book is the second from the left**.\n\nThis", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-135", "j": 3, "k": 23, "n": 47, "answer_raw": " **(B) The brown book is the second from the left**.\n\nThis", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-135", "j": 4, "k": 22, "n": 44, "answer_raw": ": **(B) The brown book is the second from the left**.\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-137", "j": 0, "k": 18, "n": 36, "answer_raw": ": **(C) The truck is the oldest**.\n\n---\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-137", "j": 1, "k": 16, "n": 32, "answer_raw": " **(C) The truck is the oldest**.\n\n### Let's summarize the", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-137", "j": 2, "k": 23, "n": 46, "answer_raw": ": **(C) The truck is the oldest**.\n\n---\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-137", "j": 3, "k": 21, "n": 43, "answer_raw": ": **(C) The truck is the oldest**.\n\n### Final Answer:", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-137", "j": 4, "k": 22, "n": 44, "answer_raw": " **(C) The truck is the oldest**.\n\n### Final Answer: **", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-142", "j": 0, "k": 26, "n": 53, "answer_raw": " **(A) The black book is the second from the left**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-142", "j": 1, "k": 25, "n": 51, "answer_raw": ":\n\n**(A) The black book is the second from the left**\n\n### Explanation", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-142", "j": 2, "k": 23, "n": 47, "answer_raw": ":\n\n**(A) The black book is the second from the left**\n\n### Explanation", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-142", "j": 3, "k": 19, "n": 39, "answer_raw": " **(A) The black book is the second from the left**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-142", "j": 4, "k": 26, "n": 52, "answer_raw": ": **(A) The black book is the second from the left**\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-143", "j": 0, "k": 20, "n": 41, "answer_raw": ": **(B) The crow is the rightmost**.\n\n---\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-143", "j": 1, "k": 22, "n": 45, "answer_raw": ": **(B) The crow is the rightmost**\n\n### Final Answer:", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-143", "j": 2, "k": 24, "n": 48, "answer_raw": " **(B) The crow is the rightmost**.\n\n---\n\n### Final Answer", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-143", "j": 3, "k": 20, "n": 40, "answer_raw": ":\n\n**(B) The crow is the rightmost**\n\n### Final Answer: **", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-143", "j": 4, "k": 22, "n": 44, "answer_raw": " **(B) The crow is the rightmost**.\n\n### Final Answer:", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-145", "j": 0, "k": 21, "n": 43, "answer_raw": ": **(D) The hummingbird is the rightmost**\n\n---\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-145", "j": 1, "k": 23, "n": 46, "answer_raw": ": **(D) The hummingbird is the rightmost**.\n\n### Final", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-145", "j": 2, "k": 19, "n": 39, "answer_raw": " **(D) The hummingbird is the rightmost**.\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-145", "j": 3, "k": 18, "n": 37, "answer_raw": ": **(D) The hummingbird is the rightmost**.\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-145", "j": 4, "k": 21, "n": 43, "answer_raw": ": **(D) The hummingbird is the rightmost**\n\n---\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-147", "j": 0, "k": 24, "n": 48, "answer_raw": " **(A) Rob finished first**.\n\n---\n\n### Let's summarize the constraints", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-147", "j": 1, "k": 20, "n": 41, "answer_raw": " **(A) Rob finished first**.\n\n---\n\n### Let's summarize the constraints", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-147", "j": 2, "k": 20, "n": 40, "answer_raw": ": **(A) Rob finished first**\n\n### Final Answer: **(A", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-147", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(A) Rob finished first**\n\n---\n\n### **Step-by-step reasoning", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-147", "j": 4, "k": 22, "n": 45, "answer_raw": " **(A) Rob finished first**.\n\n### Reasoning:\n\nWe are told", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-148", "j": 0, "k": 17, "n": 35, "answer_raw": ":\n\n**(E) Ana finished last**\n\n### **Explanation:**\n\nFrom the logical", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-148", "j": 1, "k": 11, "n": 22, "answer_raw": " **(E) Ana finished last**.\n\n### Final Answer: **(E", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-148", "j": 2, "k": 16, "n": 32, "answer_raw": ": **(E) Ana finished last**\n\n### Final Answer: **(E", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-148", "j": 3, "k": 23, "n": 46, "answer_raw": ": **(E) Ana finished last**.\n\n### Final Answer: **(", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-148", "j": 4, "k": 9, "n": 18, "answer_raw": " **(E) Ana finished last**.\n\n### Step-by-step reasoning:\n\nWe", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-150", "j": 0, "k": 27, "n": 55, "answer_raw": ": **(D) Joe finished second-to-last**.\n\n---\n\n### Let's", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-150", "j": 1, "k": 20, "n": 40, "answer_raw": " **(D) Joe finished second-to-last**.\n\n### Final Answer: **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-150", "j": 2, "k": 20, "n": 40, "answer_raw": ": **(D) Joe finished second-to-last**\n\n---\n\n### Final Answer:", "answer": "D", "a0": null, "same_as_a0": false}
+{"id": "bbh-150", "j": 3, "k": 17, "n": 35, "answer_raw": " **(D) Joe finished second-to-last**.\n\n---\n\n### Final Answer:", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-150", "j": 4, "k": 25, "n": 51, "answer_raw": " **(D) Joe finished second-to-last**.\n\n---\n\n### Let's summarize", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-151", "j": 0, "k": 16, "n": 33, "answer_raw": ":\n\n**(C) The robin is the leftmost**\n\n### Explanation:\n\nWe are", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-151", "j": 1, "k": 18, "n": 37, "answer_raw": ":\n\n**(C) The robin is the leftmost**\n\nThis is directly stated in", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-151", "j": 2, "k": 21, "n": 42, "answer_raw": ":  \n**(C) The robin is the leftmost**\n\n### Explanation:\n\nFrom", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-151", "j": 3, "k": 22, "n": 44, "answer_raw": ":\n\n**(C) The robin is the leftmost**\n\n### Explanation:\n\nFrom the", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-151", "j": 4, "k": 21, "n": 42, "answer_raw": ":\n\n**(C) The robin is the leftmost**\n\n### Explanation:\n\nWe are", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-153", "j": 0, "k": 20, "n": 41, "answer_raw": " **(C) Joe finished third**.\n\n---\n\n### Let's reconstruct the full", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-153", "j": 1, "k": 25, "n": 51, "answer_raw": " **(D) Rob finished third**.\n\n---\n\n### Let's summarize the constraints", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-153", "j": 2, "k": 20, "n": 40, "answer_raw": " **(D) Rob finished third**.\n\n---\n\n### Let's finalize the order", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-153", "j": 3, "k": 23, "n": 47, "answer_raw": " **(D) Rob finished third**.\n\n---\n\n### Final Answer: **(", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-153", "j": 4, "k": 28, "n": 56, "answer_raw": " **(C) Joe finished third**.\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-155", "j": 0, "k": 22, "n": 44, "answer_raw": ":\n\n**(A) The oranges are the most expensive**\n\nThis is directly stated in", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-155", "j": 1, "k": 20, "n": 40, "answer_raw": ":\n\n**(A) The oranges are the most expensive**\n\n### Explanation:\n\nFrom the", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-155", "j": 2, "k": 23, "n": 46, "answer_raw": ":\n\n**(A) The oranges are the most expensive**\n\n### Explanation:\n\nWe are", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-155", "j": 3, "k": 16, "n": 33, "answer_raw": ":\n\n**(A) The oranges are the most expensive**\n\n### Reasoning:\n\nFrom", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-155", "j": 4, "k": 18, "n": 37, "answer_raw": ":\n\n**(A) The oranges are the most expensive**\n\n### Explanation:\n\nFrom the", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-159", "j": 0, "k": 26, "n": 52, "answer_raw": ":  \n**(E) The red book is the leftmost**\n\n### Explanation:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-159", "j": 1, "k": 16, "n": 33, "answer_raw": ":\n\n**(E) The red book is the leftmost**\n\n### Explanation:\n\nWe", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-159", "j": 2, "k": 24, "n": 48, "answer_raw": ":\n\n**(E) The red book is the leftmost**\n\n### Explanation:\n\nWe", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-159", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(E) The red book is the leftmost**.\n\n### Explanation", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-159", "j": 4, "k": 22, "n": 44, "answer_raw": ":  \n**(E) The red book is the leftmost**\n\n### Final Answer", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-160", "j": 0, "k": 22, "n": 44, "answer_raw": ": **(A) The owl is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-160", "j": 1, "k": 22, "n": 45, "answer_raw": " **(A) The owl is the leftmost**.\n\n### Final Answer:", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-160", "j": 2, "k": 22, "n": 44, "answer_raw": ": **(A) The owl is the leftmost**\n\n### Final Answer:", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-160", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(A) The owl is the leftmost**\n\n---\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-160", "j": 4, "k": 19, "n": 38, "answer_raw": " **(A) The owl is the leftmost**.\n\n### Final Answer:", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-162", "j": 0, "k": 17, "n": 34, "answer_raw": " **(E) Mel finished second**.\n\n### Let's verify this step-by", "answer": "E", "a0": "D", "same_as_a0": false}
+{"id": "bbh-162", "j": 1, "k": 26, "n": 52, "answer_raw": " **(D) Eli finished second**.\n\n---\n\n### Let's reconstruct the full", "answer": "D", "a0": null, "same_as_a0": false}
+{"id": "bbh-162", "j": 2, "k": 25, "n": 50, "answer_raw": ": **(D) Eli finished second**\n\n---\n\n### Final Answer: **(", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-162", "j": 3, "k": 26, "n": 52, "answer_raw": " **(D) Eli finished second**.\n\n---\n\n### Let's summarize the known", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-162", "j": 4, "k": 23, "n": 47, "answer_raw": " **(A) Amy finished second**.\n\n### Let's verify this with the", "answer": "A", "a0": null, "same_as_a0": false}
+{"id": "bbh-163", "j": 0, "k": 20, "n": 41, "answer_raw": " **(C) Amy finished second**.\n\n---\n\n### **Let’s summarize the", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-163", "j": 1, "k": 22, "n": 44, "answer_raw": ": **(C) Amy finished second**.\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-163", "j": 2, "k": 22, "n": 44, "answer_raw": ": **(C) Amy finished second**.\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-163", "j": 3, "k": 19, "n": 39, "answer_raw": ":\n\n**(C) Amy finished second**\n\n---\n\n### Final Answer: **(C", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-163", "j": 4, "k": 20, "n": 41, "answer_raw": ": **(C) Amy finished second**.\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-164", "j": 0, "k": 22, "n": 45, "answer_raw": " **(C) The limousine is the second-newest**.\n\n---\n\n", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-164", "j": 1, "k": 27, "n": 54, "answer_raw": ":\n\n**(C) The limousine is the second-newest**\n\n---\n\n###", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-164", "j": 2, "k": 23, "n": 46, "answer_raw": " **(C) The limousine is the second-newest**.\n\n---\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-164", "j": 3, "k": 28, "n": 56, "answer_raw": ": **(C) The limousine is the second-newest.**\n\n", "answer": "C", "a0": "A", "same_as_a0": false}
+{"id": "bbh-164", "j": 4, "k": 23, "n": 47, "answer_raw": ": **(C) The limousine is the second-newest**.\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-165", "j": 0, "k": 23, "n": 47, "answer_raw": " **(A) The tractor is the newest**.\n\n### Let's summarize the", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-165", "j": 1, "k": 23, "n": 46, "answer_raw": ": **(A) The tractor is the newest**.\n\n---\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-165", "j": 2, "k": 17, "n": 34, "answer_raw": ": **(A) The tractor is the newest**\n\n### Final Answer: **", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-165", "j": 3, "k": 20, "n": 40, "answer_raw": ": **(A) The tractor is the newest**\n\n### Final Answer: **", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-165", "j": 4, "k": 17, "n": 35, "answer_raw": " **(A) The tractor is the newest**.\n\n### Final Answer: **", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-168", "j": 0, "k": 19, "n": 39, "answer_raw": " **(B) The truck is the third-newest**.\n\n---\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-168", "j": 1, "k": 16, "n": 33, "answer_raw": ": **(B) The truck is the third-newest**\n\n---\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-168", "j": 2, "k": 21, "n": 42, "answer_raw": " **(B) The truck is the third-newest**.\n\n---\n\n### Step", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-168", "j": 3, "k": 21, "n": 42, "answer_raw": ": **(B) The truck is the third-newest**.\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-168", "j": 4, "k": 18, "n": 36, "answer_raw": ": **(B) The truck is the third-newest.**\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-170", "j": 0, "k": 21, "n": 42, "answer_raw": ": **(D) The hawk is the leftmost**.\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-170", "j": 1, "k": 22, "n": 44, "answer_raw": " **(D) The hawk is the leftmost**.\n\n---\n\n### Step-by", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-170", "j": 2, "k": 26, "n": 52, "answer_raw": " **(D) The hawk is the leftmost**.\n\n---\n\n### Final Answer", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-170", "j": 3, "k": 17, "n": 35, "answer_raw": " **(D) The hawk is the leftmost**.\n\n---\n\n### Let's", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-170", "j": 4, "k": 20, "n": 41, "answer_raw": ": **(D) The hawk is the leftmost**\n\n---\n\n### Let's", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-171", "j": 0, "k": 21, "n": 42, "answer_raw": " **(C) Dan finished second**.\n\n---\n\n### Let's summarize the known", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-171", "j": 1, "k": 22, "n": 44, "answer_raw": " **(C) Dan finished second**.\n\n---\n\n### Final Deduction:\n\nWe", "answer": "C", "a0": null, "same_as_a0": false}
+{"id": "bbh-171", "j": 2, "k": 20, "n": 41, "answer_raw": ": **(C) Dan finished second**\n\n### Final Answer: **(C", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-171", "j": 3, "k": 18, "n": 36, "answer_raw": ": **(C) Dan finished second**\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-171", "j": 4, "k": 19, "n": 39, "answer_raw": ": **(C) Dan finished second**.\n\n---\n\n### Final Answer: **", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-172", "j": 0, "k": 22, "n": 45, "answer_raw": ": **(D) The loquats are the second-cheapest**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-172", "j": 1, "k": 15, "n": 31, "answer_raw": ": **(D) The loquats are the second-cheapest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-172", "j": 2, "k": 24, "n": 49, "answer_raw": ": **(D) The loquats are the second-cheapest**\n\nThis", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-172", "j": 3, "k": 16, "n": 32, "answer_raw": ": **(D) The loquats are the second-cheapest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-172", "j": 4, "k": 22, "n": 45, "answer_raw": ": **(D) The loquats are the second-cheapest.**\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-173", "j": 0, "k": 24, "n": 48, "answer_raw": " **(A) The blue book is the rightmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-173", "j": 1, "k": 29, "n": 58, "answer_raw": ": **(A) The blue book is the rightmost**\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-173", "j": 2, "k": 20, "n": 41, "answer_raw": " **(A) The blue book is the rightmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-173", "j": 3, "k": 25, "n": 51, "answer_raw": " **(A) The blue book is the rightmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-173", "j": 4, "k": 23, "n": 47, "answer_raw": ": **(A) The blue book is the rightmost**.\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-175", "j": 0, "k": 25, "n": 50, "answer_raw": " **(A) The black book is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-175", "j": 1, "k": 25, "n": 50, "answer_raw": " **(A) The black book is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-175", "j": 2, "k": 26, "n": 53, "answer_raw": " **(A) The black book is the leftmost**.\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-175", "j": 3, "k": 24, "n": 48, "answer_raw": ": **(A) The black book is the leftmost**\n\n---\n\n### Final", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-175", "j": 4, "k": 21, "n": 43, "answer_raw": " **(A) The black book is the leftmost**.\n\n### Let's", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-178", "j": 0, "k": 17, "n": 34, "answer_raw": " **(B) The hatchback is the second-newest**.\n\n### Let", "answer": "B", "a0": "E", "same_as_a0": false}
+{"id": "bbh-178", "j": 1, "k": 16, "n": 33, "answer_raw": ": **(B) The hatchback is the second-newest.**\n\n###", "answer": "B", "a0": "E", "same_as_a0": false}
+{"id": "bbh-178", "j": 2, "k": 23, "n": 46, "answer_raw": " **(B) The hatchback is the second-newest**.\n\n### Let", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-178", "j": 3, "k": 22, "n": 44, "answer_raw": " **(B) The hatchback is the second-newest**.\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-178", "j": 4, "k": 24, "n": 49, "answer_raw": ": **(B) The hatchback is the second-newest**.\n\n---\n\n", "answer": "B", "a0": "E", "same_as_a0": false}
+{"id": "bbh-179", "j": 0, "k": 19, "n": 38, "answer_raw": ":\n\n**(A) The watermelons are the most expensive**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-179", "j": 1, "k": 19, "n": 39, "answer_raw": ":\n\n**(A) The watermelons are the most expensive**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-179", "j": 2, "k": 18, "n": 37, "answer_raw": ":\n\n**(A) The watermelons are the most expensive**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-179", "j": 3, "k": 14, "n": 29, "answer_raw": ": **(A) The watermelons are the most expensive**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-179", "j": 4, "k": 20, "n": 41, "answer_raw": ": **(A) The watermelons are the most expensive**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-180", "j": 0, "k": 23, "n": 46, "answer_raw": ": **(D) Mya finished third**\n\n---\n\n### **Step-by-step", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-180", "j": 1, "k": 23, "n": 46, "answer_raw": ": **(D) Mya finished third**\n\n---\n\n### Final Answer: **", "answer": "D", "a0": "B", "same_as_a0": false}
+{"id": "bbh-180", "j": 2, "k": 19, "n": 39, "answer_raw": ": **(D) Mya finished third**\n\n---\n\n### Final Answer: **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-180", "j": 3, "k": 21, "n": 42, "answer_raw": " **(D) Mya finished third**.\n\n---\n\n### Step-by-step reasoning", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-180", "j": 4, "k": 20, "n": 40, "answer_raw": " **(D) Mya finished third**.\n\n---\n\n### Let's summarize the", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-181", "j": 0, "k": 20, "n": 40, "answer_raw": ":\n\n**(D) The robin is the second from the right**\n\n### Explanation:\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-181", "j": 1, "k": 24, "n": 48, "answer_raw": ": **(D) The robin is the second from the right**.\n\nThis", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-181", "j": 2, "k": 18, "n": 37, "answer_raw": ": **(D) The robin is the second from the right**\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-181", "j": 3, "k": 21, "n": 43, "answer_raw": ": **(D) The robin is the second from the right.**\n\n###", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-181", "j": 4, "k": 23, "n": 46, "answer_raw": ":\n\n**(C) The raven is the second from the right**\n\n### Explanation", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-183", "j": 0, "k": 22, "n": 45, "answer_raw": ": **(D) The peaches are the third-most expensive.**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-183", "j": 1, "k": 26, "n": 53, "answer_raw": ": **(D) The peaches are the third-most expensive.**\n\n###", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-183", "j": 2, "k": 24, "n": 48, "answer_raw": " **(D) The peaches are the third-most expensive**.\n\n---\n\n###", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-183", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(D) The peaches are the third-most expensive**\n\n---\n\n###", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-183", "j": 4, "k": 24, "n": 49, "answer_raw": ": **(D) The peaches are the third-most expensive**.\n\n---\n\n", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-184", "j": 0, "k": 23, "n": 47, "answer_raw": " **(B) The apples are the most expensive**.\n\n---\n\n### Step-by", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-184", "j": 1, "k": 19, "n": 39, "answer_raw": " **(B) The apples are the most expensive**.\n\n---\n\n### Let's", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-184", "j": 2, "k": 13, "n": 26, "answer_raw": ": **(B) The apples are the most expensive**.\n\n---\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-184", "j": 3, "k": 24, "n": 48, "answer_raw": " **(B) The apples are the most expensive**.\n\n---\n\n### Final Answer", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-184", "j": 4, "k": 21, "n": 43, "answer_raw": " **(B) The apples are the most expensive**.\n\n---\n\n### Let's", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-189", "j": 0, "k": 21, "n": 42, "answer_raw": ":\n\n**(E) The raven is the second from the left**\n\n### Explanation", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-189", "j": 1, "k": 20, "n": 41, "answer_raw": ": **(E) The raven is the second from the left**\n\n---\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-189", "j": 2, "k": 17, "n": 34, "answer_raw": ": **(E) The raven is the second from the left**.\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-189", "j": 3, "k": 17, "n": 35, "answer_raw": ":\n\n**(E) The raven is the second from the left**\n\n### Explanation", "answer": "E", "a0": "A", "same_as_a0": false}
+{"id": "bbh-189", "j": 4, "k": 21, "n": 43, "answer_raw": ": **(A) The owl is the second from the left**\n\nThis is", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-190", "j": 0, "k": 27, "n": 55, "answer_raw": ":\n\n**(D) The station wagon is the oldest**\n\n---\n\n### Explanation:\n\nFrom", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-190", "j": 1, "k": 28, "n": 57, "answer_raw": ": **(D) The station wagon is the oldest**.\n\n### Explanation:\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-190", "j": 2, "k": 23, "n": 47, "answer_raw": ": **(D) The station wagon is the oldest**.\n\n### Reasoning", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-190", "j": 3, "k": 21, "n": 43, "answer_raw": ": **(D) The station wagon is the oldest.**\n\n### Explanation:\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-190", "j": 4, "k": 26, "n": 53, "answer_raw": ": **(D) The station wagon is the oldest**.\n\n### Reasoning", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-191", "j": 0, "k": 19, "n": 38, "answer_raw": ": **(C) Amy finished second-to-last**\n\n---\n\n### Final Answer:", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-191", "j": 1, "k": 24, "n": 48, "answer_raw": ": **(C) Amy finished second-to-last**.\n\n---\n\n### Final Answer", "answer": "C", "a0": "D", "same_as_a0": false}
+{"id": "bbh-191", "j": 2, "k": 21, "n": 43, "answer_raw": ": **(C) Amy finished second-to-last**\n\n---\n\n### Final Answer:", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-191", "j": 3, "k": 18, "n": 36, "answer_raw": ": **(C) Amy finished second-to-last**.\n\n---\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-191", "j": 4, "k": 19, "n": 39, "answer_raw": ": **(C) Amy finished second-to-last**.\n\n---\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-196", "j": 0, "k": 27, "n": 54, "answer_raw": " **(A) The gray book is the third from the left**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-196", "j": 1, "k": 21, "n": 42, "answer_raw": " **(A) The gray book is the third from the left**.\n\n###", "answer": "A", "a0": "B", "same_as_a0": false}
+{"id": "bbh-196", "j": 2, "k": 23, "n": 46, "answer_raw": " **(A) The gray book is the third from the left**.\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-196", "j": 3, "k": 21, "n": 43, "answer_raw": " **(A) The gray book is the third from the left**.\n\n###", "answer": "A", "a0": "B", "same_as_a0": false}
+{"id": "bbh-196", "j": 4, "k": 22, "n": 45, "answer_raw": " **(A) The gray book is the third from the left**.\n\n###", "answer": "A", "a0": "B", "same_as_a0": false}
+{"id": "bbh-198", "j": 0, "k": 20, "n": 40, "answer_raw": ": **(D) The hawk is the third from the left.**\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-198", "j": 1, "k": 27, "n": 54, "answer_raw": " **(D) The hawk is the third from the left**.\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-198", "j": 2, "k": 23, "n": 46, "answer_raw": " **(D) The hawk is the third from the left**.\n\n### Let", "answer": "D", "a0": "E", "same_as_a0": false}
+{"id": "bbh-198", "j": 3, "k": 26, "n": 52, "answer_raw": " **(D) The hawk is the third from the left**.\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-198", "j": 4, "k": 24, "n": 48, "answer_raw": " **(D) The hawk is the third from the left**.\n\n---\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-199", "j": 0, "k": 23, "n": 46, "answer_raw": ": **(B) The apples are the third-most expensive**.\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-199", "j": 1, "k": 18, "n": 37, "answer_raw": ": **(B) The apples are the third-most expensive**.\n\n---\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-199", "j": 2, "k": 23, "n": 46, "answer_raw": " **(B) The apples are the third-most expensive**.\n\n---\n\n### Let", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-199", "j": 3, "k": 20, "n": 41, "answer_raw": " **(B) The apples are the third-most expensive**.\n\n### Let's", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-199", "j": 4, "k": 23, "n": 47, "answer_raw": ": **(B) The apples are the third-most expensive**\n\n---\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-200", "j": 0, "k": 24, "n": 49, "answer_raw": ": **(B) Mya finished second**\n\n---\n\n### Final Answer: **", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-200", "j": 1, "k": 16, "n": 32, "answer_raw": " the one that matches the **final ranking** we deduced:\n\nFrom the logical", "answer": null, "a0": "A", "same_as_a0": false}
+{"id": "bbh-200", "j": 2, "k": 19, "n": 39, "answer_raw": ":\n\n**(B) Mya finished second**\n\n### Explanation:\n\nFrom the logical deductions", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-200", "j": 3, "k": 16, "n": 33, "answer_raw": " **(B) Mya finished second**.\n\n---\n\n### Let's summarize the", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-200", "j": 4, "k": 18, "n": 36, "answer_raw": ": **(B) Mya finished second**\n\n### Explanation:\n\nWe are given", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-201", "j": 0, "k": 17, "n": 34, "answer_raw": ": **(B) Amy finished last**.\n\n### Explanation:\n\nWe are told", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-201", "j": 1, "k": 21, "n": 43, "answer_raw": " **(B) Amy finished last**.\n\n---\n\n### Step-by-step Reasoning", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-201", "j": 2, "k": 22, "n": 44, "answer_raw": " **(B) Amy finished last**.\n\n### Final Answer: **(B", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-201", "j": 3, "k": 24, "n": 49, "answer_raw": " **(B) Amy finished last**.\n\n---\n\n### Final Answer: **(", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-201", "j": 4, "k": 21, "n": 42, "answer_raw": " **(B) Amy finished last**.\n\n### Final Answer: **(B", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-202", "j": 0, "k": 21, "n": 42, "answer_raw": " **(D) The tractor is the oldest**.\n\n### Final Answer: **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-202", "j": 1, "k": 22, "n": 45, "answer_raw": ": **(D) The tractor is the oldest**.\n\n---\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-202", "j": 2, "k": 22, "n": 44, "answer_raw": ": **(D) The tractor is the oldest**.\n\n---\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-202", "j": 3, "k": 20, "n": 40, "answer_raw": ": **(D) The tractor is the oldest**.\n\n---\n\n### Final Answer", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-202", "j": 4, "k": 23, "n": 47, "answer_raw": " **(D) The tractor is the oldest**.\n\n### Final Answer: **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-204", "j": 0, "k": 18, "n": 37, "answer_raw": ":\n\n**(B) Eve finished second**\n\n### Final Answer: **(B)**", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-204", "j": 1, "k": 25, "n": 51, "answer_raw": " **(B) Eve finished second**.\n\n---\n\n### Step-by-step reasoning:\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-204", "j": 2, "k": 25, "n": 50, "answer_raw": " **(B) Eve finished second**.\n\n---\n\n### Final Answer: **(", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-204", "j": 3, "k": 21, "n": 43, "answer_raw": " **(B) Eve finished second**.\n\n### Final Answer: **(B", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-204", "j": 4, "k": 24, "n": 48, "answer_raw": " **(B) Eve finished second**.\n\n### Final Answer: **(B", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-207", "j": 0, "k": 21, "n": 42, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\n### Final", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-207", "j": 1, "k": 19, "n": 38, "answer_raw": ": **(C) The yellow book is the rightmost**.\n\n### Final", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-207", "j": 2, "k": 25, "n": 50, "answer_raw": " **(C) The yellow book is the rightmost**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-207", "j": 3, "k": 20, "n": 40, "answer_raw": " **(C) The yellow book is the rightmost**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-207", "j": 4, "k": 21, "n": 42, "answer_raw": " **(C) The yellow book is the rightmost**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-209", "j": 0, "k": 25, "n": 51, "answer_raw": " **(A) The blue jay is the second from the right**.\n\n", "answer": "A", "a0": "B", "same_as_a0": false}
+{"id": "bbh-209", "j": 1, "k": 28, "n": 56, "answer_raw": " **(A) The blue jay is the second from the right**.\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-209", "j": 2, "k": 23, "n": 47, "answer_raw": ": **(A) The blue jay is the second from the right**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-209", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(B) The raven is the second from the right**.\n\n", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-209", "j": 4, "k": 23, "n": 46, "answer_raw": " **(A) The blue jay is the second from the right**.\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-210", "j": 0, "k": 19, "n": 39, "answer_raw": ": **(A) The truck is the oldest**.\n\n---\n\n### Final Answer", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-210", "j": 1, "k": 22, "n": 44, "answer_raw": ": **(A) The truck is the oldest**.\n\n---\n\n### Final Answer", "answer": "A", "a0": "E", "same_as_a0": false}
+{"id": "bbh-210", "j": 2, "k": 18, "n": 36, "answer_raw": ": **(A) The truck is the oldest**.\n\n---\n\n### Final Answer", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-210", "j": 3, "k": 19, "n": 39, "answer_raw": " **(E) The hatchback is the oldest**.\n\n### Final Answer:", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-210", "j": 4, "k": 20, "n": 40, "answer_raw": ": **(A) The truck is the oldest**.\n\n### Final Answer:", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-212", "j": 0, "k": 21, "n": 43, "answer_raw": ": **(B) The loquats are the third-most expensive**\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-212", "j": 1, "k": 19, "n": 38, "answer_raw": ": **(B) The loquats are the third-most expensive**.\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-212", "j": 2, "k": 21, "n": 43, "answer_raw": " **(B) The loquats are the third-most expensive**.\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-212", "j": 3, "k": 19, "n": 39, "answer_raw": ": **(B) The loquats are the third-most expensive**.\n\n", "answer": "B", "a0": "A", "same_as_a0": false}
+{"id": "bbh-212", "j": 4, "k": 25, "n": 50, "answer_raw": ":\n\n**(B) The loquats are the third-most expensive**\n\n### Explanation", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-213", "j": 0, "k": 19, "n": 39, "answer_raw": " **(B) Eve finished second-to-last**.\n\n### Let's summarize the", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-213", "j": 1, "k": 24, "n": 49, "answer_raw": " **(B) Eve finished second-to-last**.\n\n---\n\n### Final Answer:", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-213", "j": 2, "k": 26, "n": 53, "answer_raw": ": **(C) Mel finished second-to-last**\n\n---\n\n### Final Answer:", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-213", "j": 3, "k": 19, "n": 38, "answer_raw": " **(B) Eve finished second-to-last**.\n\n### Final Answer: **", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-213", "j": 4, "k": 20, "n": 41, "answer_raw": ":\n\n**(B) Eve finished second-to-last**\n\n---\n\n### Let's verify this", "answer": "B", "a0": "C", "same_as_a0": false}
+{"id": "bbh-214", "j": 0, "k": 22, "n": 44, "answer_raw": ":\n\n**(B) The watermelons are the second-cheapest**\n\nThis is", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-214", "j": 1, "k": 18, "n": 36, "answer_raw": " **(E) The cantaloupes are the second-cheapest**.\n\n", "answer": "E", "a0": "B", "same_as_a0": false}
+{"id": "bbh-214", "j": 2, "k": 19, "n": 39, "answer_raw": ":\n\n**(B) The watermelons are the second-cheapest**\n\nThis is", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-214", "j": 3, "k": 20, "n": 40, "answer_raw": " **(B) The watermelons are the second-cheapest**.\n\nThis", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-214", "j": 4, "k": 21, "n": 43, "answer_raw": " **(B) The watermelons are the second-cheapest**.\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-215", "j": 0, "k": 20, "n": 40, "answer_raw": ": **(D) The minivan is the second-oldest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-215", "j": 1, "k": 20, "n": 41, "answer_raw": ": **(D) The minivan is the second-oldest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-215", "j": 2, "k": 17, "n": 34, "answer_raw": ": **(D) The minivan is the second-oldest**.\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-215", "j": 3, "k": 26, "n": 52, "answer_raw": " **(D) The minivan is the second-oldest**.\n\n---\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-215", "j": 4, "k": 16, "n": 32, "answer_raw": ": **(D) The minivan is the second-oldest.**\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-216", "j": 0, "k": 20, "n": 41, "answer_raw": ":\n\n**(E) Joe finished second**\n\nThis is directly supported by the statement:", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-216", "j": 1, "k": 20, "n": 40, "answer_raw": ":\n\n**(E) Joe finished second**\n\nThis is directly stated in the paragraph:", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-216", "j": 2, "k": 19, "n": 39, "answer_raw": ":\n\n**(E) Joe finished second**\n\nThis is directly stated in the problem,", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-216", "j": 3, "k": 21, "n": 42, "answer_raw": " **(E) Joe finished second**.\n\n### Let's summarize the key facts", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-216", "j": 4, "k": 22, "n": 45, "answer_raw": ":\n\n**(E) Joe finished second**\n\nThis is directly supported by the statement:", "answer": "E", "a0": null, "same_as_a0": false}
+{"id": "bbh-218", "j": 0, "k": 13, "n": 27, "answer_raw": ":\n\n**(E) The kiwis are the most expensive**\n\n### Explanation:\n\nFrom", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-218", "j": 1, "k": 16, "n": 32, "answer_raw": ":\n\n**(E) The kiwis are the most expensive**\n\n### Explanation:\n\nWe", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-218", "j": 2, "k": 19, "n": 39, "answer_raw": ": **(E) The kiwis are the most expensive**\n\n### Explanation:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-218", "j": 3, "k": 15, "n": 31, "answer_raw": " **(E) The kiwis are the most expensive**.\n\n### Let's", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-218", "j": 4, "k": 17, "n": 35, "answer_raw": ": **(E) The kiwis are the most expensive**.\n\n### Explanation", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-222", "j": 0, "k": 23, "n": 46, "answer_raw": ":\n\n**(C) The purple book is the second from the left**\n\n### Final", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-222", "j": 1, "k": 18, "n": 37, "answer_raw": ": **(C) The purple book is the second from the left.**\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-222", "j": 2, "k": 26, "n": 53, "answer_raw": ": **(C) The purple book is the second from the left.**\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-222", "j": 3, "k": 21, "n": 43, "answer_raw": " **(C) The purple book is the second from the left**.\n\n---\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-222", "j": 4, "k": 23, "n": 46, "answer_raw": " **(C) The purple book is the second from the left**.\n\n---\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-223", "j": 0, "k": 18, "n": 36, "answer_raw": ":\n\n**(C) The motorcyle is the second-newest**\n\nThis is", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-223", "j": 1, "k": 19, "n": 39, "answer_raw": ":\n\n**(C) The motorcyle is the second-newest**\n\n---\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-223", "j": 2, "k": 21, "n": 42, "answer_raw": ": **(C) The motorcyle is the second-newest**.\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-223", "j": 3, "k": 17, "n": 35, "answer_raw": ": **(C) The motorcyle is the second-newest**\n\n---\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-223", "j": 4, "k": 15, "n": 31, "answer_raw": ": **(C) The motorcyle is the second-newest**.\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-224", "j": 0, "k": 26, "n": 52, "answer_raw": ":\n\n**(C) The cardinal is the second from the right**\n\n### Explanation:\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-224", "j": 1, "k": 28, "n": 56, "answer_raw": ":\n\n**(C) The cardinal is the second from the right**\n\n### Explanation:\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-224", "j": 2, "k": 21, "n": 43, "answer_raw": ":  \n**(C) The cardinal is the second from the right**\n\n---\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-224", "j": 3, "k": 23, "n": 46, "answer_raw": ":\n\n**(C) The cardinal is the second from the right**\n\nThis is directly", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-224", "j": 4, "k": 21, "n": 42, "answer_raw": ": **(C) The cardinal is the second from the right**\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-225", "j": 0, "k": 25, "n": 51, "answer_raw": " **(B) The kiwis are the second-most expensive**.\n\n### Final", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-225", "j": 1, "k": 24, "n": 48, "answer_raw": ": **(B) The kiwis are the second-most expensive.**\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-225", "j": 2, "k": 23, "n": 46, "answer_raw": ": **(B) The kiwis are the second-most expensive**.\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-225", "j": 3, "k": 22, "n": 45, "answer_raw": ": **(B) The kiwis are the second-most expensive**.\n\n---\n\n", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-225", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(B) The kiwis are the second-most expensive.**\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-227", "j": 0, "k": 18, "n": 37, "answer_raw": " **(C) The sedan is the third-newest**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-227", "j": 1, "k": 21, "n": 43, "answer_raw": ": **(C) The sedan is the third-newest**.\n\n---\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-227", "j": 2, "k": 19, "n": 39, "answer_raw": ": **(C) The sedan is the third-newest**.\n\n---\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-227", "j": 3, "k": 21, "n": 42, "answer_raw": ": **(C) The sedan is the third-newest**.\n\n---\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-227", "j": 4, "k": 19, "n": 38, "answer_raw": ":\n\n**(C) The sedan is the third-newest**\n\n---\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-229", "j": 0, "k": 15, "n": 31, "answer_raw": " **(E) The pears are the most expensive**.\n\n### Let's", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-229", "j": 1, "k": 15, "n": 30, "answer_raw": ": **(E) The pears are the most expensive**.\n\n### Reason", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-229", "j": 2, "k": 15, "n": 31, "answer_raw": ": **(E) The pears are the most expensive**.\n\n### Reason", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-229", "j": 3, "k": 20, "n": 40, "answer_raw": ": **(E) The pears are the most expensive**.\n\n### Reason", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-229", "j": 4, "k": 13, "n": 27, "answer_raw": ": **(E) The pears are the most expensive**.\n\n### Explanation", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-230", "j": 0, "k": 15, "n": 31, "answer_raw": ":\n\n**(B) The oranges are the most expensive**\n\n### Explanation:\n\nWe are", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-230", "j": 1, "k": 16, "n": 33, "answer_raw": ":\n\n**(B) The oranges are the most expensive**\n\nThis is directly stated in", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-230", "j": 2, "k": 17, "n": 34, "answer_raw": ":\n\n**(B) The oranges are the most expensive**\n\n### Explanation:\n\nWe are", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-230", "j": 3, "k": 21, "n": 42, "answer_raw": ":\n\n**(B) The oranges are the most expensive**\n\n### Explanation:\n\nWe are", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-230", "j": 4, "k": 17, "n": 35, "answer_raw": ":\n\n**(B) The oranges are the most expensive**\n\n### Explanation:\n\nWe are", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-231", "j": 0, "k": 22, "n": 45, "answer_raw": " **(A) The cantaloupes are the most expensive**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-231", "j": 1, "k": 20, "n": 40, "answer_raw": " **(A) The cantaloupes are the most expensive**.\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-231", "j": 2, "k": 21, "n": 42, "answer_raw": ": **(A) The cantaloupes are the most expensive**\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-231", "j": 3, "k": 18, "n": 37, "answer_raw": ": **(A) The cantaloupes are the most expensive**\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-231", "j": 4, "k": 20, "n": 40, "answer_raw": ": **(A) The cantaloupes are the most expensive**\n\n###", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-232", "j": 0, "k": 16, "n": 32, "answer_raw": ":\n\n**(B) Mel finished second**\n\nThis is directly stated in the clue:", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-232", "j": 1, "k": 18, "n": 36, "answer_raw": ":\n\n**(B) Mel finished second**\n\nThis is directly stated in the problem:", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-232", "j": 2, "k": 17, "n": 34, "answer_raw": ":\n\n**(B) Mel finished second**\n\nThis is directly stated in the problem:", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-232", "j": 3, "k": 18, "n": 36, "answer_raw": ":\n\n**(B) Mel finished second**\n\n### Explanation:\n\nWe are told:\n\n1", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-232", "j": 4, "k": 13, "n": 27, "answer_raw": ":\n\n**(B) Mel finished second**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-233", "j": 0, "k": 19, "n": 38, "answer_raw": ": **(D) The loquats are the second-most expensive.**\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-233", "j": 1, "k": 20, "n": 40, "answer_raw": ": **(D) The loquats are the second-most expensive**.\n\n", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-233", "j": 2, "k": 18, "n": 36, "answer_raw": ": **(D) The loquats are the second-most expensive.**\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-233", "j": 3, "k": 19, "n": 38, "answer_raw": ": **(D) The loquats are the second-most expensive**.\n\n", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-233", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(D) The loquats are the second-most expensive.**\n\n", "answer": "D", "a0": "C", "same_as_a0": false}
+{"id": "bbh-234", "j": 0, "k": 17, "n": 35, "answer_raw": ": **(D) The blue jay is the leftmost**.\n\n###", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-234", "j": 1, "k": 17, "n": 35, "answer_raw": ":  \n**(D) The blue jay is the leftmost**\n\n### **", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-234", "j": 2, "k": 23, "n": 46, "answer_raw": ":  \n**(D) The blue jay is the leftmost**\n\n### Explanation", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-234", "j": 3, "k": 21, "n": 43, "answer_raw": ":\n\n**(D) The blue jay is the leftmost**\n\n### Explanation:\n\n", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-234", "j": 4, "k": 21, "n": 43, "answer_raw": ":  \n**(D) The blue jay is the leftmost**\n\n### Final", "answer": "D", "a0": "D", "same_as_a0": true}
+{"id": "bbh-235", "j": 0, "k": 16, "n": 32, "answer_raw": ":\n\n**(A) The sedan is the second-newest**\n\n---\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-235", "j": 1, "k": 19, "n": 38, "answer_raw": ": **(A) The sedan is the second-newest**\n\n### Explanation:\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-235", "j": 2, "k": 19, "n": 39, "answer_raw": ":\n\n**(A) The sedan is the second-newest**\n\n### Explanation:\n\nWe", "answer": "A", "a0": "C", "same_as_a0": false}
+{"id": "bbh-235", "j": 3, "k": 18, "n": 37, "answer_raw": " **(A) The sedan is the second-newest**.\n\n### Let's", "answer": "A", "a0": "C", "same_as_a0": false}
+{"id": "bbh-235", "j": 4, "k": 20, "n": 41, "answer_raw": ":\n\n**(A) The sedan is the second-newest**\n\nThis is **explicit", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-236", "j": 0, "k": 21, "n": 42, "answer_raw": " **(C) The orange book is the leftmost**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-236", "j": 1, "k": 24, "n": 49, "answer_raw": " **(C) The orange book is the leftmost**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-236", "j": 2, "k": 19, "n": 39, "answer_raw": " **(C) The orange book is the leftmost**.\n\n### Final Answer", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-236", "j": 3, "k": 24, "n": 49, "answer_raw": " **(C) The orange book is the leftmost**.\n\n### Let's", "answer": "C", "a0": "B", "same_as_a0": false}
+{"id": "bbh-236", "j": 4, "k": 26, "n": 52, "answer_raw": ": **(C) The orange book is the leftmost**.\n\n### Final", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-239", "j": 0, "k": 22, "n": 44, "answer_raw": " **(A) Eve finished first**.\n\n---\n\n### Step 3: Use", "answer": "A", "a0": "C", "same_as_a0": false}
+{"id": "bbh-239", "j": 1, "k": 19, "n": 38, "answer_raw": " **(A) Eve finished first**.\n\n### Let's summarize the known facts", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-239", "j": 2, "k": 26, "n": 52, "answer_raw": ":\n\n**(C) Ada finished first**\n\n### Final Answer: **(C)**", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-239", "j": 3, "k": 19, "n": 39, "answer_raw": ":\n\n**(C) Ada finished first**\n\n### Final Answer: **(C)**", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-239", "j": 4, "k": 17, "n": 35, "answer_raw": ":\n\n**(C) Ada finished first**\n\n### Final Answer: **(C)**", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-240", "j": 0, "k": 18, "n": 36, "answer_raw": ": **(C) The peaches are the third-most expensive**.\n\n---\n\n", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-240", "j": 1, "k": 23, "n": 46, "answer_raw": " **(C) The peaches are the third-most expensive**.\n\n---\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-240", "j": 2, "k": 19, "n": 38, "answer_raw": " **(C) The peaches are the third-most expensive**.\n\n---\n\n###", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-240", "j": 3, "k": 23, "n": 46, "answer_raw": ": **(C) The peaches are the third-most expensive**.\n\n---\n\n", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-240", "j": 4, "k": 23, "n": 46, "answer_raw": ": **(C) The peaches are the third-most expensive**.\n\n---\n\n", "answer": "C", "a0": "E", "same_as_a0": false}
+{"id": "bbh-241", "j": 0, "k": 22, "n": 44, "answer_raw": ": **(C) The gray book is the second from the right**.\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-241", "j": 1, "k": 21, "n": 42, "answer_raw": ":\n\n**(C) The gray book is the second from the right**\n\n### Explanation", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-241", "j": 2, "k": 19, "n": 38, "answer_raw": ":\n\n**(C) The gray book is the second from the right**\n\nThis is", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-241", "j": 3, "k": 23, "n": 47, "answer_raw": ": **(C) The gray book is the second from the right**.\n\n", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-241", "j": 4, "k": 22, "n": 44, "answer_raw": ": **(C) The gray book is the second from the right**\n\n###", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-242", "j": 0, "k": 21, "n": 43, "answer_raw": ":\n\n**(E) The crow is the rightmost**\n\n### Explanation:\n\nFrom the", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-242", "j": 1, "k": 22, "n": 44, "answer_raw": ":  \n**(E) The crow is the rightmost**\n\n### Explanation:\n\nFrom", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-242", "j": 2, "k": 24, "n": 48, "answer_raw": ": **(E) The crow is the rightmost.**\n\n### Final Answer", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-242", "j": 3, "k": 22, "n": 44, "answer_raw": ": **(E) The crow is the rightmost.**\n\n### Explanation:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-242", "j": 4, "k": 20, "n": 40, "answer_raw": ": **(E) The crow is the rightmost**.\n\n### Explanation:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-244", "j": 0, "k": 14, "n": 29, "answer_raw": ":\n\n**(A) Amy finished third**\n\n---\n\n### Let's verify the full order", "answer": "A", "a0": "C", "same_as_a0": false}
+{"id": "bbh-244", "j": 1, "k": 18, "n": 37, "answer_raw": ":\n\n**(C) Rob finished third**\n\n### Explanation:\n\nWe are told:\n\n-", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-244", "j": 2, "k": 19, "n": 39, "answer_raw": ":\n\n**(C) Rob finished third**\n\n---\n\n### Final Answer: **(C", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-244", "j": 3, "k": 23, "n": 47, "answer_raw": ":\n\n**(A) Amy finished third**\n\nBut wait — let's double-check the", "answer": "A", "a0": "C", "same_as_a0": false}
+{"id": "bbh-244", "j": 4, "k": 18, "n": 36, "answer_raw": " **(C) Rob finished third**.\n\n---\n\n### Let's reconstruct the full", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-245", "j": 0, "k": 23, "n": 46, "answer_raw": ": **(C) Dan finished first**\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-245", "j": 1, "k": 18, "n": 36, "answer_raw": " **(C) Dan finished first**.\n\n---\n\n### Final Answer: **(", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-245", "j": 2, "k": 20, "n": 41, "answer_raw": ": **(C) Dan finished first**\n\n### Final Answer: **(C", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-245", "j": 3, "k": 17, "n": 34, "answer_raw": " **(C) Dan finished first**.\n\n---\n\n### Let's summarize the known", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-245", "j": 4, "k": 19, "n": 38, "answer_raw": " **(C) Dan finished first**.\n\n### Final Answer: **(C", "answer": "C", "a0": "C", "same_as_a0": true}
+{"id": "bbh-246", "j": 0, "k": 21, "n": 42, "answer_raw": " **(D) The blue book is the third from the left**.\n\n---\n\n", "answer": "D", "a0": "A", "same_as_a0": false}
+{"id": "bbh-246", "j": 1, "k": 22, "n": 45, "answer_raw": ": **(A) The white book is the third from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-246", "j": 2, "k": 22, "n": 45, "answer_raw": ": **(D) The blue book is the third from the left.**\n\n", "answer": "D", "a0": "A", "same_as_a0": false}
+{"id": "bbh-246", "j": 3, "k": 23, "n": 46, "answer_raw": ": **(A) The white book is the third from the left**\n\n---\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-246", "j": 4, "k": 25, "n": 50, "answer_raw": ": **(A) The white book is the third from the left.**\n\n", "answer": "A", "a0": "A", "same_as_a0": true}
+{"id": "bbh-248", "j": 0, "k": 16, "n": 32, "answer_raw": ":\n\n**(E) The crow is the third from the left**\n\nThis is directly", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-248", "j": 1, "k": 14, "n": 29, "answer_raw": ": **(E) The crow is the third from the left**\n\nThis is", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-248", "j": 2, "k": 16, "n": 32, "answer_raw": ":\n\n**(E) The crow is the third from the left**\n\nThis is **", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-248", "j": 3, "k": 17, "n": 34, "answer_raw": ":\n\n**(E) The crow is the third from the left**\n\n### Explanation:\n\n", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-248", "j": 4, "k": 15, "n": 31, "answer_raw": ":\n\n**(E) The crow is the third from the left**\n\nThis is directly", "answer": "E", "a0": "E", "same_as_a0": true}
+{"id": "bbh-249", "j": 0, "k": 22, "n": 45, "answer_raw": " **(B) The raven is the second from the left**.\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-249", "j": 1, "k": 17, "n": 35, "answer_raw": " **(B) The raven is the second from the left**.\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-249", "j": 2, "k": 20, "n": 41, "answer_raw": " **(B) The raven is the second from the left**.\n\nThis", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-249", "j": 3, "k": 20, "n": 41, "answer_raw": " **(B) The raven is the second from the left**.\n\nThis", "answer": "B", "a0": "B", "same_as_a0": true}
+{"id": "bbh-249", "j": 4, "k": 16, "n": 32, "answer_raw": " **(B) The raven is the second from the left**.\n\n###", "answer": "B", "a0": "B", "same_as_a0": true}

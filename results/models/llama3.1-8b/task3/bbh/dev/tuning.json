@@ -1,0 +1,21 @@
+{
+  "n_dev_items": 96,
+  "k": 5,
+  "dev_accuracy": {
+    "unchanged@0.0": 0.5208333333333334,
+    "unchanged@0.25": 0.5416666666666666,
+    "unchanged@0.5": 0.5729166666666666,
+    "unchanged@0.75": 0.59375,
+    "loadbearing@0.0": 0.5520833333333334,
+    "loadbearing@0.25": 0.5625,
+    "loadbearing@0.5": 0.5833333333333334,
+    "loadbearing@0.75": 0.59375
+  },
+  "dev_accuracy_plain_sc": 0.6145833333333334,
+  "dev_accuracy_mean_single_sample": 0.5208333333333334,
+  "chosen": {
+    "faithful_if": "unchanged",
+    "alpha": 0.75
+  },
+  "selection_rule": "max dev accuracy; ties: unchanged before loadbearing, then alpha closest to 0.5, then larger alpha"
+}

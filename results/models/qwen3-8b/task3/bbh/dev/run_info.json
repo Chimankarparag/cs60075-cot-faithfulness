@@ -1,0 +1,31 @@
+[
+  {
+    "task": "task3-dev",
+    "host": "gpu74.cse.iitkgp",
+    "gpus": [
+      "NVIDIA A40"
+    ],
+    "cuda_visible_devices": "1",
+    "backend": "vllm",
+    "tensor_parallel": 1,
+    "model_key": "qwen3-8b",
+    "model": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "seed": 49,
+    "started": "2026-11-06T20:44:15+05:30",
+    "finished": "2026-11-06T20:49:33+05:30",
+    "seconds": 317.6,
+    "stages": {
+      "dev/sample": 276.9,
+      "dev/early50": 37.2,
+      "dev/prior": 2.3
+    },
+    "status": "ok",
+    "versions": {
+      "python": "3.11.16",
+      "vllm": "0.30.0",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.17.0"
+    }
+  }
+]

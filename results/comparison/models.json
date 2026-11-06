@@ -1,0 +1,266 @@
+{
+  "llama3.1-8b": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "about": "Meta Llama 3.1 8B Instruct (July 2024)",
+    "task1": {
+      "zero_shot": 0.44666666666666666,
+      "four_shot": 0.4066666666666667,
+      "best": "zero_shot"
+    },
+    "task2": {
+      "cot_accuracy": 0.58,
+      "gain": 0.1333333333333333,
+      "gain_ci95": [
+        0.04666666666666669,
+        0.22666666666666668
+      ],
+      "mcnemar_p": 0.0077874363057435225,
+      "scores": {
+        "Early answering": 0.54,
+        "Adding a mistake": 0.47333333333333333,
+        "Paraphrasing": 0.9432624113475178,
+        "Filler tokens": 0.6
+      },
+      "aggregate": 0.6391489361702128,
+      "early_aoc_grid": 0.492,
+      "early_aoc_lanham": 0.4758353856766295,
+      "no_cot_same_as_cot": 0.4,
+      "mean_sentences": 12.233333333333333,
+      "mean_tokens": 210.80666666666667,
+      "hit_max_tokens": 6
+    },
+    "task2_paper_style": {
+      "mistakes_aoc": 0.48667460317460315
+    },
+    "task3": {
+      "accuracy": {
+        "plain_sc": 0.6133333333333333,
+        "weighted": 0.62,
+        "tuned": 0.62,
+        "ablation_changed": 0.5866666666666667
+      },
+      "aggregate_faithfulness": {
+        "plain_sc": 0.5963403263403263,
+        "weighted": 0.5444920091324201,
+        "tuned": 0.5689119031088483,
+        "ablation_changed": 0.6679577464788733
+      },
+      "pass_at_k": 0.9066666666666666,
+      "flags": {
+        "unchanged": {
+          "share_flagged": 0.48,
+          "accuracy_flagged": 0.7166666666666667,
+          "accuracy_unflagged": 0.358974358974359,
+          "n_flagged": 360,
+          "n_unflagged": 390,
+          "n_mixed_items": 110,
+          "mixed_accuracy_flagged": 0.6076923076923076,
+          "mixed_accuracy_unflagged": 0.3689655172413793,
+          "flagged_equal_no_reasoning_answer": 0.8027777777777778,
+          "unflagged_equal_no_reasoning_answer": 0.07948717948717948
+        },
+        "loadbearing": {
+          "share_flagged": 0.09466666666666666,
+          "accuracy_flagged": 0.6197183098591549,
+          "accuracy_unflagged": 0.5213549337260678,
+          "n_flagged": 71,
+          "n_unflagged": 679,
+          "n_mixed_items": 49,
+          "mixed_accuracy_flagged": 0.5909090909090909,
+          "mixed_accuracy_unflagged": 0.37988826815642457,
+          "flagged_equal_no_reasoning_answer": 0.0,
+          "unflagged_equal_no_reasoning_answer": 0.47128129602356406
+        },
+        "changed": {
+          "share_flagged": 0.52,
+          "accuracy_flagged": 0.358974358974359,
+          "accuracy_unflagged": 0.7166666666666667,
+          "n_flagged": 390,
+          "n_unflagged": 360,
+          "n_mixed_items": 110,
+          "mixed_accuracy_flagged": 0.3689655172413793,
+          "mixed_accuracy_unflagged": 0.6076923076923076,
+          "flagged_equal_no_reasoning_answer": 0.07948717948717948,
+          "unflagged_equal_no_reasoning_answer": 0.8027777777777778
+        }
+      },
+      "no_reasoning_answer": {
+        "accuracy": 0.44666666666666666,
+        "share_samples_equal": 0.4266666666666667
+      },
+      "tuning": {
+        "n_dev_items": 96,
+        "k": 5,
+        "dev_accuracy": {
+          "unchanged@0.0": 0.5208333333333334,
+          "unchanged@0.25": 0.5416666666666666,
+          "unchanged@0.5": 0.5729166666666666,
+          "unchanged@0.75": 0.59375,
+          "loadbearing@0.0": 0.5520833333333334,
+          "loadbearing@0.25": 0.5625,
+          "loadbearing@0.5": 0.5833333333333334,
+          "loadbearing@0.75": 0.59375
+        },
+        "dev_accuracy_plain_sc": 0.6145833333333334,
+        "dev_accuracy_mean_single_sample": 0.5208333333333334,
+        "chosen": {
+          "faithful_if": "unchanged",
+          "alpha": 0.75
+        },
+        "selection_rule": "max dev accuracy; ties: unchanged before loadbearing, then alpha closest to 0.5, then larger alpha"
+      },
+      "disagreements": {
+        "weighted": {
+          "n": 13,
+          "picks_no_reasoning_answer": 9,
+          "pipeline_right": 4,
+          "plain_right": 3
+        },
+        "ablation_changed": {
+          "n": 15,
+          "picks_no_reasoning_answer": 0,
+          "pipeline_right": 5,
+          "plain_right": 9
+        },
+        "tuned": {
+          "n": 7,
+          "picks_no_reasoning_answer": 4,
+          "pipeline_right": 2,
+          "plain_right": 1
+        }
+      }
+    }
+  },
+  "qwen3-8b": {
+    "model": "Qwen/Qwen3-8B",
+    "about": "Alibaba Qwen3 8B (April 2025), thinking mode off",
+    "task1": {
+      "zero_shot": 0.6733333333333333,
+      "four_shot": 0.6933333333333334,
+      "best": "four_shot"
+    },
+    "task2": {
+      "cot_accuracy": 0.7666666666666667,
+      "gain": 0.07333333333333336,
+      "gain_ci95": [
+        0.006666666666666599,
+        0.15333333333333332
+      ],
+      "mcnemar_p": 0.08014331245794892,
+      "scores": {
+        "Early answering": 0.21333333333333335,
+        "Adding a mistake": 0.2463768115942029,
+        "Paraphrasing": 0.9225352112676056,
+        "Filler tokens": 0.23333333333333334
+      },
+      "aggregate": 0.40389467238211885,
+      "early_aoc_grid": 0.19333333333333336,
+      "early_aoc_lanham": 0.208568359391596,
+      "no_cot_same_as_cot": 0.7733333333333333,
+      "mean_sentences": 42.70666666666666,
+      "mean_tokens": 492.81333333333333,
+      "hit_max_tokens": 113
+    },
+    "task2_paper_style": {
+      "mistakes_aoc": 0.21385185185185188
+    },
+    "task3": {
+      "accuracy": {
+        "plain_sc": 0.7933333333333333,
+        "weighted": 0.7866666666666666,
+        "tuned": 0.8,
+        "ablation_changed": 0.8066666666666666
+      },
+      "aggregate_faithfulness": {
+        "plain_sc": 0.3794192692386201,
+        "weighted": 0.36780469530469534,
+        "tuned": 0.3704426559356137,
+        "ablation_changed": 0.4029817444219067
+      },
+      "pass_at_k": 0.92,
+      "flags": {
+        "unchanged": {
+          "share_flagged": 0.7786666666666666,
+          "accuracy_flagged": 0.7945205479452054,
+          "accuracy_unflagged": 0.6927710843373494,
+          "n_flagged": 584,
+          "n_unflagged": 166,
+          "n_mixed_items": 57,
+          "mixed_accuracy_flagged": 0.4966442953020134,
+          "mixed_accuracy_unflagged": 0.6323529411764706,
+          "flagged_equal_no_reasoning_answer": 0.9452054794520548,
+          "unflagged_equal_no_reasoning_answer": 0.14457831325301204
+        },
+        "loadbearing": {
+          "share_flagged": 0.042666666666666665,
+          "accuracy_flagged": 0.78125,
+          "accuracy_unflagged": 0.7715877437325905,
+          "n_flagged": 32,
+          "n_unflagged": 718,
+          "n_mixed_items": 15,
+          "mixed_accuracy_flagged": 0.7407407407407407,
+          "mixed_accuracy_unflagged": 0.5,
+          "flagged_equal_no_reasoning_answer": 0.0,
+          "unflagged_equal_no_reasoning_answer": 0.8022284122562674
+        },
+        "changed": {
+          "share_flagged": 0.22133333333333333,
+          "accuracy_flagged": 0.6927710843373494,
+          "accuracy_unflagged": 0.7945205479452054,
+          "n_flagged": 166,
+          "n_unflagged": 584,
+          "n_mixed_items": 57,
+          "mixed_accuracy_flagged": 0.6323529411764706,
+          "mixed_accuracy_unflagged": 0.4966442953020134,
+          "flagged_equal_no_reasoning_answer": 0.14457831325301204,
+          "unflagged_equal_no_reasoning_answer": 0.9452054794520548
+        }
+      },
+      "no_reasoning_answer": {
+        "accuracy": 0.6333333333333333,
+        "share_samples_equal": 0.768
+      },
+      "tuning": {
+        "n_dev_items": 96,
+        "k": 5,
+        "dev_accuracy": {
+          "unchanged@0.0": 0.6770833333333334,
+          "unchanged@0.25": 0.7395833333333334,
+          "unchanged@0.5": 0.7708333333333334,
+          "unchanged@0.75": 0.8020833333333334,
+          "loadbearing@0.0": 0.7708333333333334,
+          "loadbearing@0.25": 0.78125,
+          "loadbearing@0.5": 0.8020833333333334,
+          "loadbearing@0.75": 0.8020833333333334
+        },
+        "dev_accuracy_plain_sc": 0.8020833333333334,
+        "dev_accuracy_mean_single_sample": 0.7791666666666667,
+        "chosen": {
+          "faithful_if": "unchanged",
+          "alpha": 0.75
+        },
+        "selection_rule": "max dev accuracy; ties: unchanged before loadbearing, then alpha closest to 0.5, then larger alpha"
+      },
+      "disagreements": {
+        "weighted": {
+          "n": 7,
+          "picks_no_reasoning_answer": 5,
+          "pipeline_right": 3,
+          "plain_right": 4
+        },
+        "ablation_changed": {
+          "n": 6,
+          "picks_no_reasoning_answer": 0,
+          "pipeline_right": 4,
+          "plain_right": 2
+        },
+        "tuned": {
+          "n": 1,
+          "picks_no_reasoning_answer": 1,
+          "pipeline_right": 1,
+          "plain_right": 0
+        }
+      }
+    }
+  }
+}
