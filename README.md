@@ -16,6 +16,14 @@ objects**, a multiple-choice task (options A–E).
 
 **Group members:**   Naveensurya V (26AI60R10) and Aditya Singh Tomar (23CS30001)
 
+**Individual contributions:**
+
+- **Parag Chimankar (23CS10049):** Implemented Tasks 1–3 using Llama-3.1-8B and provided the codebase adopted for the final experiments.
+- **Naveensurya V (26AI60R10):** Implemented and evaluated Tasks 1–2 using Qwen3-8B, providing the baseline and faithfulness results for Task 3.
+- **Aditya Singh Tomar (23CS30001):** Implemented and evaluated Task 3 using Qwen3-8B, building on Naveen’s results.
+
+**Joint contribution:** All authors debugged the shared implementation and reran experiments using Parag’s codebase to check the initial findings. They jointly analysed results from both models and prepared and revised the manuscript.
+
 **Assigned dataset:** BIG-Bench-Hard — logical deduction (five objects), used for all three tasks
 
 > **Status:** Tasks 1, 2 and 3 have been run on BBH for `meta-llama/Llama-3.1-8B-Instruct` and `Qwen/Qwen3-8B`
