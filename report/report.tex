@@ -18,7 +18,7 @@
 
 \title{Measuring and Using Chain-of-Thought Faithfulness\\on BIG-Bench-Hard Logical Deduction\\[4pt]
 \large CS60075 Natural Language Processing --- Assignment 2, Project 8}
-\author{Parag Chimankar (23CS10049), Naveensurya V (26AI60R10) and Aditya Singh Tomar (23CS30001) \\
+\author{Parag Chimankar (23CS10049),\\ Naveensurya V (26AI60R10),\\ Aditya Singh Tomar (23CS30001) \\
 IIT Kharagpur}
 \date{November 2026}
 
@@ -34,7 +34,9 @@ interventions of Lanham et al.\ (2023): early answering, adding a mistake, parap
 self-consistency vote that up-weights samples whose answer does not change when the CoT is cut at 50\%. One seed (49) fixes
 the item split and every sampled generation. CoT improves accuracy for both models (+13.3 points for Llama, significant;
 +7.3 for Qwen, which already answers 69\% correctly without reasoning). Llama's reasoning is far more load-bearing than
-Qwen's (aggregate faithfulness 63.9\% vs 40.4\%; Qwen's answer is already fixed before any reasoning on 77\% of items), in
+Qwen's (aggregate faithfulness 63.9\% vs 40.4\%; ),Qwen’s answer with an empty CoT matched its answer with the full CoT on 77.3\% 
+of items, compared with 40.0\% for Llama. Under our intervention-based measures, Qwen was less sensitive to the supplied reasoning,
+ compared with 40.0\% for Llama. Under our intervention-based measures, Qwen was less sensitive to the supplied reasoning. in
 line with the paper's finding that more capable models reason less faithfully. Faithfulness weighting does not beat plain
 voting (+0.7 and $-0.7$ points), even when its rule is chosen on 96 held-out items. The reason is that the 50\% check
 mostly detects CoTs that agree with the model's no-reasoning answer (80\% and 95\% of flagged samples), and weighting toward
@@ -44,8 +46,9 @@ them selects less faithful CoTs.
 \section{Problem and approach}
 Chain-of-thought prompting \cite{wei} improves accuracy on reasoning tasks, but a written rationale can be
 \emph{post-hoc}: generated after the model has already settled on an answer. Lanham et al.\ \cite{lanham} test this by
-intervening on a sampled CoT and checking whether the final answer moves. If cutting the CoT short, inserting a mistake
-or replacing it with filler leaves the answer unchanged, the reasoning was not what produced it. Our group was assigned
+intervening on a sampled CoT and checking whether the final answer moves. These interventions test how sensitive the 
+final answer is to the supplied CoT. An unchanged answer is consistent with limited reliance on that reasoning, but 
+does not by itself establish how the model reached the answer . Our group was assigned
 BIG-Bench-Hard \cite{bbh} \emph{logical deduction, five objects}, where five objects must be placed in order from
 three or four clues and one of five statements (A--E) is true. The project has three parts:
 \begin{enumerate}
@@ -161,7 +164,7 @@ paraphrases (Llama 141, Qwen 142).}
 \centering
 \includegraphics[width=0.48\textwidth]{figures/early_answering.pdf}
 \caption{Early answering: share of items whose answer equals $A_0$ when only the first part of the CoT is kept. Qwen's
-curve starts at 77\%: three out of four answers are fixed before any reasoning.}
+curve starts at 77\%: At the empty-CoT endpoint, Qwen gives the same answer as with the full CoT on 77.3\% of items.}
 \label{fig:early}
 \end{figure}
 

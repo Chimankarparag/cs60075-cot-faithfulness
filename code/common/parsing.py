@@ -1,8 +1,5 @@
 """Turning model text into comparable answers, and splitting a CoT into sentences.
 
-Two jobs live here because both are pure text processing with no model involved,
-which makes them easy to unit-test on a laptop:
-
 1. Answer extraction: map free text such as " (C) The raven ..." or "is C." to a
    canonical option letter ("C") so answers can be compared with `==`.
 2. Sentence splitting: early answering, adding mistakes and paraphrasing all work
