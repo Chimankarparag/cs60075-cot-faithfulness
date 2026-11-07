@@ -197,7 +197,7 @@ Early-answering AOC, grid 0--100\% & 0.49 & 0.19 & 0.26 \\
 Early-answering AOC, every sentence & 0.48 & 0.21 & --- \\
 Adding-mistakes AOC, $\le$10 positions per CoT & 0.49 [0.44, 0.53] & 0.21 [0.17, 0.26] & 0.31 \\
 Accuracy without $\to$ with CoT (\%) & 45 $\to$ 58 & 69 $\to$ 77 & 42 $\to$ 43 \\
-Filler of any length helps? & no (43--46 vs 45) & no (62--64 vs 69) & no \\
+Consistent gain from filler? & no (43--46 vs 45) & no (62--64 vs 64) & no \\
 Paraphrased prefix: accuracy vs original CoT (\%) & 44--54 vs 58 & 81--90 vs 77 & about equal \\
 \bottomrule
 \end{tabular}
@@ -224,14 +224,15 @@ inverse scaling, Sec.~3). Here the more accurate model is also the less faithful
 \item \textbf{Later mistakes matter less} for Llama (Figure~\ref{fig:paper}a): a mistake in the first fifth of the CoT
 leaves the answer unchanged 48\% of the time, one in the last fifth 68\%, the same shape as the paper's Figure~4. Qwen ignores
 mistakes wherever they are (74--83\% unchanged).
-\item \textbf{No test-time-compute effect}: filler of any length gives no accuracy gain (Figure~\ref{fig:paper}c), as in
-the paper's Figure~5.
-\item \textbf{Paraphrasing a prefix}: Qwen's accuracy \emph{rises} (81--90\% vs 77\%). Its original CoTs are mostly cut by
-the 512-token limit (Table~\ref{tab:task2}); a paraphrased prefix is shorter, which leaves room for the continuation to
-finish the reasoning. Llama's accuracy falls to 44--54\%, below its original CoT (58\%). Part of that is a return to the
-mean (the re-sampled continuations are fresh draws, and Llama's mean single-sample accuracy is 53\%), so this run does
-not show the paper's ``about equal'' result as clearly for Llama; the whole-CoT paraphrase test above (94\% same answer)
-still shows no sign of encoded reasoning.
+\item \textbf{Filler tokens}: across the tested filler lengths, we observed no consistent accuracy improvement
+(Figure~\ref{fig:paper}c). Llama's accuracy ranged from 43.3\% to 46.0\%, compared with 44.7\% at zero filler tokens;
+Qwen's ranged from 62.0\% to 64.0\%, compared with 64.0\% at zero filler tokens. These comparisons use the same
+forced-answer prompt with and without filler, rather than Task 1's direct-answer prompt.
+\item \textbf{Paraphrasing a prefix}: Qwen's accuracy ranged from 81.3\% to 89.9\% among valid cases, compared with
+76.7\% for the original CoTs across all 150 items. The paraphrase conditions retained different subsets of 125--140
+items, so these are not matched comparisons. Llama's accuracy ranged from 44.3\% to 54.1\% on subsets of 118--146
+valid items, compared with 58.0\% across all original CoTs. Changes in wording, regenerated continuations and the
+token budget may all contribute to these differences; the present experiments do not isolate their effects.
 \end{itemize}
 The main differences in setup are scale (8B, one CoT per question, 150 items instead of 100 samples per question), the
 mistake writer (the same model instead of a separate pretrained one) and the task. Our higher AOC for Llama is consistent
@@ -415,10 +416,13 @@ added as controls.
 \item The 512-token cap was kept for Qwen even though it truncates most of its CoTs, because the spec fixes it.
 \end{itemize}
 
-\paragraph{Limitations.} 150 items give intervals of about $\pm8$ points, so a few-point difference between voting schemes
-is within noise; paired tests are our guard against over-reading. All results come from one seed, and with one sampled CoT per item the single-CoT accuracy is itself
-a noisy draw (Llama's Task 2 CoT is 5 points above its mean single-sample accuracy in Task 3). Both models are 8B and open; the paper's model is 175B. The mistake writer is the
-model itself, so some rewrites are not real errors (we reject only unchanged or punctuation-only rewrites).
+\paragraph{Limitations.} The experiments use one BBH subtask, 150 evaluation items and one base seed. Accuracy estimates
+therefore reflect both the selected items and generation variability. Both models are 8B, whereas the paper's main
+model is 175B. The intervention scores measure changes in output behaviour and do not directly reveal the model's
+internal reasoning. The same model generates the mistakes; validation checks for textual changes rather than
+confirming that each edit introduces a logical error. Paraphrase validation checks answer and option-letter
+preservation rather than full semantic equivalence. Some intervention results also use different subsets after
+filtering. Finally, Qwen's frequent truncation at 512 tokens limits the interpretation of comparisons between the models.
 
 \paragraph{Reproducibility.} Code, prompts, the committed item split, every generation, every metric file and the logs of
 the final runs are in the repository. Each task is one notebook in \code{code/task1}, \code{code/task2}, \code{code/task3}; run with
