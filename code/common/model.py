@@ -106,7 +106,7 @@ class VLLMGenerator(Generator):
         if not requests:
             return []
         start = time.time()
-        # Pass token ids (not text) so vLLM does not add a second BOS token.
+        # Pass token ids so vLLM does not add a second BOS token.
         prompts = [{"prompt_token_ids": self.encode(self.render(r.prompt))} for r in requests]
         # not depend on batch composition or order.
         params = [SamplingParams(temperature=r.decoding.temperature, top_p=r.decoding.top_p,
@@ -152,8 +152,7 @@ class HFGenerator(Generator):
             return []
         start = time.time()
         texts = [self.render(r.prompt) for r in requests]
-        # Batch requests with identical decoding settings, shortest prompts together
-        # to minimise padding.
+        # Batch requests with identical decoding settings, shortest prompts together to minimise padding.
         order = sorted(range(len(requests)), key=lambda i: (
             requests[i].decoding.temperature, requests[i].decoding.top_p,
             requests[i].decoding.max_new_tokens, len(texts[i])))
@@ -167,7 +166,7 @@ class HFGenerator(Generator):
                 batch = []
         print(f"[gen] {desc or 'generate'}: {len(requests)} requests in {time.time() - start:.0f}s",
               flush=True)
-        return outputs  # type: ignore[return-value]
+        return outputs  
 
     def _run_batch(self, batch, requests, texts, outputs, torch) -> None:
         dec = requests[batch[0]].decoding

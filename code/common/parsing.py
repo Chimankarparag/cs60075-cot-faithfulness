@@ -12,7 +12,6 @@ from __future__ import annotations
 import re
 
 
-# Option letters (BBH)
 _PAREN_LETTER = re.compile(r"\(([A-Z])\)")
 _LEADING_LETTER = re.compile(r"^\s*([A-Z])(?:[).:,]|\s|$)")
 
@@ -74,7 +73,6 @@ def is_correct(pred: str | None, gold: str) -> bool:
 # A sentence ends at ., ! or ? followed by whitespace and then something that can
 # start a sentence (capital letter, digit, bracket, quote, markdown *, $).
 # "3.5" never splits (no whitespace after the dot); "e.g. the" never splits
-# (lower-case next word).
 _BOUNDARY = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9(\"'*$])")
 # Pieces that are only a list marker ("1.", "2)", "-", "**") are not sentences.
 _LIST_MARKER = re.compile(r"^(?:\d+[.)]|[-*•]|\*\*)$")
