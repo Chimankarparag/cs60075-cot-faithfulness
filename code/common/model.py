@@ -108,7 +108,6 @@ class VLLMGenerator(Generator):
         start = time.time()
         # Pass token ids (not text) so vLLM does not add a second BOS token.
         prompts = [{"prompt_token_ids": self.encode(self.render(r.prompt))} for r in requests]
-        # One SamplingParams per request: each item gets its own seed, so results do
         # not depend on batch composition or order.
         params = [SamplingParams(temperature=r.decoding.temperature, top_p=r.decoding.top_p,
                                  max_tokens=r.decoding.max_new_tokens, seed=r.seed)

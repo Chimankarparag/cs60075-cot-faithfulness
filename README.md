@@ -14,7 +14,7 @@ objects**, a multiple-choice task (options A–E).
 
 **Author:** Parag Chimankar (23CS10049), IIT Kharagpur 
 
-**Group members:**   Naveensurya V (26AI60R10), Aditya Singh Tomar (23CS30001)
+**Group members:**   Naveensurya V (26AI60R10) and Aditya Singh Tomar (23CS30001)
 
 **Assigned dataset:** BIG-Bench-Hard — logical deduction (five objects), used for all three tasks
 
@@ -257,7 +257,7 @@ Per-stage times are in the `run_info.json` of every results folder; the logs are
 | Rewrite retries | temperature 0.7, top-p 0.95, seed 49 + 1000 × attempt + position in the rewrite list |
 | Bootstrap confidence intervals | 1,000 resamples |
 
-vLLM uses one seed per request, so greedy outputs do not depend on batching. Sampled text can still differ between
+vLLM uses one seed per request, so greedy outputs do not depend on batching.
 GPU types and batch layouts (Task 3's sample 0 has Task 2's seed but matches its text for only 34 / 4 of 150 items),
 so a fresh run gives fresh draws. Every number is rebuilt exactly from the committed generations by running a
 notebook with `RUN_MODEL = False`.
