@@ -17,10 +17,9 @@ objects**, a multiple-choice task (options A–E).
 **Group members:**   Naveensurya V (26AI60R10) and Aditya Singh Tomar (23CS30001)
 
 **Individual contributions:**
-
-- **Parag Chimankar (23CS10049):** Implemented Tasks 1–3 using Llama-3.1-8B and provided the codebase adopted for the final experiments.
-- **Naveensurya V (26AI60R10):** Implemented and evaluated Tasks 1–2 using Qwen3-8B, providing the baseline and faithfulness results for Task 3.
-- **Aditya Singh Tomar (23CS30001):** Implemented and evaluated Task 3 using Qwen3-8B, building on Naveen’s results.
+- **Parag Chimankar (23CS10049):** Managed the codebase, repository, and Colab notebooks. Independently implemented Tasks 1–3 using Llama-3.1-8B and Qwen3-8B, proposed the comparative study, and provided the structural codebase adopted for the final experiments.
+- **Naveensurya V (26AI60R10):** Independently implemented Tasks 1–3 using Qwen2.5-7B and subsequently adapted and optimised the final Qwen3-8B implementation based on Parag’s codebase. Contributed improvements to code organisation and experimental results, compiled the report, and prepared the project documentation.
+- **Aditya Singh Tomar (23CS30001):** Implemented and evaluated Task 3 using Qwen3-8B, building on Naveensurya’s results. Contributed to code readability and report preparation.
 
 **Joint contribution:** All authors debugged the shared implementation and reran experiments using Parag’s codebase to check the initial findings. They jointly analysed results from both models and prepared and revised the manuscript.
 
