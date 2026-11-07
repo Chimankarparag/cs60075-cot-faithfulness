@@ -93,9 +93,8 @@ def filler_scores(rows: list[dict], early_rows: list[dict], gold: dict[str, str]
             "mean_cot_tokens": mean(r["n_cot_tokens"] for r in rows)}
 
 
-# --------------------------------------------------------------------------- #
+
 # Per-item score vectors and the four scores of a folder of intervention files
-# --------------------------------------------------------------------------- #
 def early_item_scores(early_rows: list[dict]) -> dict[str, float]:
     table = same_by_item(early_rows)
     n_of = {r["id"]: r["n"] for r in early_rows}

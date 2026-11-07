@@ -1,6 +1,6 @@
 """Download, normalise and sample the BIG-Bench-Hard logical-deduction data.
 
-Every question becomes an *item* with the same keys:
+Every question becomes an item with the same keys:
 
     {"id": "bbh-7",          # stable identifier: row index in the source file
      "index": 7,
@@ -11,7 +11,7 @@ Every question becomes an *item* with the same keys:
 The 250 rows are split once, with seed 49, into 4 few-shot exemplars, 150 evaluation
 items and 96 dev items. The chosen row indices are committed in data/splits/bbh.json, so
 anyone can check which questions were used; the items themselves are rebuilt from the
-downloaded file in memory (it takes well under a second).
+downloaded file in memory.
 """
 from __future__ import annotations
 

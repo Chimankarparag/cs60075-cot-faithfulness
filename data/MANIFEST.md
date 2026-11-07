@@ -18,4 +18,4 @@ Field notes (checked against the file, which differs from the assignment PDF):
 
 - BBH: `input` (question with embedded `(A)`..`(E)` options), `target` = the option **letter**, e.g. `(A)`
   (the PDF describes `target` as the option's text). The loader raises an error if `target` is not among the parsed options.
-- 250 rows: 150 are the evaluation sample, 4 are few-shot exemplars (disjoint from the sample), 96 are unused.
+- 250 rows: 150 are the evaluation sample, 4 are few-shot exemplars (disjoint from the sample).

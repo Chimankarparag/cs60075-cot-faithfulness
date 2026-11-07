@@ -14,9 +14,8 @@ from __future__ import annotations
 
 import re
 
-# --------------------------------------------------------------------------- #
+
 # Option letters (BBH)
-# --------------------------------------------------------------------------- #
 _PAREN_LETTER = re.compile(r"\(([A-Z])\)")
 _LEADING_LETTER = re.compile(r"^\s*([A-Z])(?:[).:,]|\s|$)")
 
@@ -44,9 +43,8 @@ def extract_letter(text: str, options: dict[str, str] | None, last: bool = False
     return None
 
 
-# --------------------------------------------------------------------------- #
+
 # One entry point for answer extraction
-# --------------------------------------------------------------------------- #
 def parse_answer(text: str, options: dict[str, str] | None = None, last: bool = False) -> str | None:
     """Canonical option letter from a short model output, or None if nothing parseable."""
     return extract_letter(text, options, last)
@@ -74,9 +72,8 @@ def is_correct(pred: str | None, gold: str) -> bool:
     return pred is not None and pred == gold
 
 
-# --------------------------------------------------------------------------- #
+
 # Sentence splitting
-# --------------------------------------------------------------------------- #
 # A sentence ends at ., ! or ? followed by whitespace and then something that can
 # start a sentence (capital letter, digit, bracket, quote, markdown *, $).
 # "3.5" never splits (no whitespace after the dot); "e.g. the" never splits

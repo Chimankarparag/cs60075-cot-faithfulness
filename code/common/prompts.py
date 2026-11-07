@@ -49,9 +49,8 @@ def gold_as_text(gold: str) -> str:
     return f"({gold})"
 
 
-# --------------------------------------------------------------------------- #
+
 # Task 1: direct answering (no reasoning)
-# --------------------------------------------------------------------------- #
 DIRECT_INSTRUCTION = "Answer immediately with only the final answer. Do not explain or show any working."
 
 
@@ -70,9 +69,7 @@ def direct_prompt(item: dict, exemplars: list[dict] | None = None) -> Prompt:
     return Prompt(tuple(messages), prefill=DIRECT_PREFIX)
 
 
-# --------------------------------------------------------------------------- #
 # Task 2: chain of thought and reading off an answer
-# --------------------------------------------------------------------------- #
 def cot_prompt(item: dict, partial_reasoning: str = "") -> Prompt:
     """Ask for step-by-step reasoning. `partial_reasoning` lets us resume from a
     given point (used after inserting a mistake: the model continues from there)."""
@@ -96,9 +93,8 @@ def forced_answer_prompt(item: dict, reasoning: str) -> Prompt:
     )
 
 
-# --------------------------------------------------------------------------- #
+
 # Task 2 interventions: helper prompts that rewrite text
-# --------------------------------------------------------------------------- #
 # NOTE: these three few-shot examples were used for the reported BBH results and are kept
 # exactly as they were, so the results stay reproducible. Only the second one is about
 # logical ordering; the first (arithmetic) and third (a fact) only show the "make one

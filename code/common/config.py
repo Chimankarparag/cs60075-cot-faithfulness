@@ -1,18 +1,12 @@
 """Central configuration for the CoT-faithfulness project (BIG-Bench-Hard, logical deduction).
 
-Everything that must be identical across Tasks 1-3 lives here: paths, the models,
-the seed, the dataset definition and decoding settings. The task notebooks import
-these constants instead of hard-coding values, so one edit changes the whole
-pipeline and the report can point to a single file for "what settings were used".
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
 
-# --------------------------------------------------------------------------- #
 # Paths. REPO_ROOT is two levels above this file: code/common/config.py -> repo.
-# --------------------------------------------------------------------------- #
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"              # downloaded parquet file (gitignored download cache)
@@ -21,9 +15,7 @@ RESULTS_ROOT = REPO_ROOT / "results"   # generations + metrics (committed)
 DATASET = "bbh"                         # the one dataset; used in result paths
 
 
-# --------------------------------------------------------------------------- #
 # Models
-# --------------------------------------------------------------------------- #
 @dataclass(frozen=True)
 class ModelSpec:
     key: str                  # short name used in the notebooks and in result paths

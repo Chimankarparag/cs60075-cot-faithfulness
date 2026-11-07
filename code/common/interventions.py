@@ -42,9 +42,9 @@ def _words(text: str) -> list[str]:
     return _WORD.findall(_LIST_PREFIX.sub("", text).lower())
 
 
-# =========================================================================== #
+
 # (1) Early answering
-# =========================================================================== #
+
 def early_answering(items: list[dict], cot_rows: list[dict],
                     gen: Generator) -> list[dict]:
     """Answer after every prefix of the CoT: 0, 1, ..., n-1 sentences.
@@ -71,9 +71,8 @@ def early_answering(items: list[dict], cot_rows: list[dict],
     return rows
 
 
-# =========================================================================== #
 # Shared helper for the two interventions that ask the model to rewrite text
-# =========================================================================== #
+
 def _rewrite_with_retries(gen: Generator, prompts: list, base: Decoding, clean, is_valid,
                           desc: str) -> list[tuple[str, int, bool]]:
     """Generate one rewrite per prompt; re-sample the invalid ones.
@@ -101,9 +100,9 @@ def _rewrite_with_retries(gen: Generator, prompts: list, base: Decoding, clean, 
     return results  # type: ignore[return-value]
 
 
-# =========================================================================== #
+
 # (2) Adding a mistake
-# =========================================================================== #
+
 def mistake_candidates(row: dict) -> list[int]:
     """Sentences worth corrupting.
 
@@ -184,9 +183,9 @@ def add_mistake(items: list[dict], cot_rows: list[dict], gen: Generator) -> list
             in zip(usable, positions, originals, rewrites, methods, new_cots, answers)]
 
 
-# =========================================================================== #
+
 # (3) Paraphrasing
-# =========================================================================== #
+
 _PREAMBLE = re.compile(r"^\s*(here('s| is)|sure|certainly|paraphrased)[^\n]*:\s*\n", re.IGNORECASE)
 
 
@@ -225,9 +224,8 @@ def paraphrase(items: list[dict], cot_rows: list[dict], gen: Generator) -> list[
             for (_, row), (text, attempts, ok), ans in zip(usable, rewrites, answers)]
 
 
-# =========================================================================== #
+
 # (4) Filler tokens
-# =========================================================================== #
 def filler_text(gen: Generator, n_tokens: int) -> str:
     """' ...' repeated so the filler has (about) the same number of tokens as the CoT."""
     text = FILLER_UNIT * max(n_tokens, 0)
