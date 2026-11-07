@@ -12,8 +12,8 @@ the intervention methodology of Lanham et al. (2023), and tests whether faithful
 self-consistency voting. The project covers one dataset: **BIG-Bench-Hard (BBH), logical deduction with five
 objects**, a multiple-choice task (options A–E).
 
-**Author:** Parag Chimankar (23CS10049), IIT Kharagpur — CS60075 Natural Language Processing
-**Group members:** _to be added_
+**Author:** Parag Chimankar (23CS10049), IIT Kharagpur 
+**Group members:**   Naveensurya V (26AI60R10), Aditya Singh Tomar (23CS30001)
 **Assigned dataset:** BIG-Bench-Hard — logical deduction (five objects), used for all three tasks
 
 > **Status:** Tasks 1, 2 and 3 have been run on BBH for `meta-llama/Llama-3.1-8B-Instruct` and `Qwen/Qwen3-8B`
